@@ -41,7 +41,7 @@ class TestHemsida(TestCase):
     # HÄR BÖRJAR TESTERNA
     def testPageText(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
-        self.assertIn("Välkommen", self.browser.page_source)
+        self.assertIn("Florista", self.browser.page_source)
 
     def testPageNumber(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
