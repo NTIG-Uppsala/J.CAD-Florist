@@ -1,7 +1,7 @@
 # Florista
 Florista är en hemsida skapad åt ett floristföretag skapad av TE4 gruppen J.CAD. 
 
-Medlemmar: Carl, Albin, David och Joel
+Medlemmar: Carl, Albin, David och Joel.
 
 [Utvecklingsmiljö](https://docs.google.com/document/d/1f_0ZHIlPEgJNugq9ONmOOvSxKIHRBfFfb5jr5TF2Stk/edit?usp=sharing)
 
@@ -12,8 +12,9 @@ Medlemmar: Carl, Albin, David och Joel
 [Kodningsstandard](https://docs.google.com/document/d/1PoO_YusBlydWUBx8ExAqF2sXDw0Vks3bU6n6ZZFiCxE/edit)
 
 ## Tester
-Ramverket selenium krävs för att köra testerna (pip install selenium)
-För att konfiguera testerna så tryck  view --> testing --> configure python tests --> pytests --> tests
+Ramverket selenium krävs för att köra testerna (pip install selenium).
+
+För att konfiguera testerna så tryck  view --> testing --> configure python tests --> pytests --> tests.
 
 ## Uppdatera sidan
 Alla pushade ändringar går direkt till main och uppdaterar hemsidan.
