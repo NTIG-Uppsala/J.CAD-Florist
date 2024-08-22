@@ -43,9 +43,9 @@ class TestHemsida(TestCase):
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.assertIn("Florista", self.browser.page_source)
 
-    def testPageNumber(self):
+    def testPageMessage(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
-        self.assertIn("018-123456", self.browser.page_source)
+        self.assertIn("Den här hemsidan tillhör florista", self.browser.page_source)
 
 # denna bit finns här så att testerna körs om filen körs som vanligt python-program
 if __name__ == '__main__':
