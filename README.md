@@ -7,5 +7,5 @@ Logga:
 
 [Programmeringsspråk](https://docs.google.com/document/d/1VkwMXnPVqV50sCPsOB7-Xf0UsK789FGrJtV7VqE3ceg/edit)
 
-[Kodningsstandard](https://docs.google.com/document/d/1VkwMXnPVqV50sCPsOB7-Xf0UsK789FGrJtV7VqE3ceg/edit)
+[Kodningsstandard](https://docs.google.com/document/d/1PoO_YusBlydWUBx8ExAqF2sXDw0Vks3bU6n6ZZFiCxE/edit)
 
