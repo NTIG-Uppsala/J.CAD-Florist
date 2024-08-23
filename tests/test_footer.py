@@ -7,6 +7,18 @@ filePath = "file://" + \
  
 startPage = filePath + "index.html"  # Path to index.html
 
+socialMediaPaths = [
+    "images/facebook.svg",
+    "images/instagram.svg",
+    "images/twitter.svg"
+]
+
+socialMediaLinks = [
+    "https://www.facebook.com/ntiuppsala",
+    "https://www.instagram.com/ntiuppsala/",
+    "https://x.com/ntiuppsala"
+    ]
+
 class FooterTest(BaseCase):
 
     # inställningar för hur testerna körs
@@ -30,20 +42,16 @@ class FooterTest(BaseCase):
             self.assert_text(text, "footer")
         
     def testSocialMediaLinks(self):
-        self.open(startPage)
-        social_media_links = self.find_elements(By.CLASS_NAME, 'socialMediaLink')
+        #Check that the icon link exists, and clicks if it does
+        for i in range(len(socialMediaPaths)):
+            self.open(startPage)
+            self.click(f"[src=\"{socialMediaPaths[i]}\"]")
+                     #Checks that links lead to the right place
+            current_url = self.get_current_url()
+            if (self.get_current_url() != socialMediaLinks[i]):
+                print(f"Expected URL: {socialMediaLinks[i]}, but got: {current_url}")
+                raise NameError("Link does not lead to the right place")
         
-        # Check if any social media links are found
-        if not social_media_links:
-            self.fail("No social media links found on the page.")
-        
-        expected_links = [
-            "facebook.com/ntiuppsala",
-            "instagrom.com/ntiuppsala",
-            "twitter.com/ntiuppsala"
-        ]
-        for link in social_media_links:
-            self.assertIn(link.get_attribute("href"), expected_links)
 
 if __name__ == "__main__":
     from seleniumbase import main
