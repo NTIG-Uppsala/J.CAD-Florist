@@ -2,31 +2,38 @@ from seleniumbase import BaseCase
 import pathlib
 from selenium.webdriver.common.by import By
 
+#filsökvägen till rotmappen
 filePath = "file://" + \
     str(pathlib.Path(__file__).parent.resolve())[:-5].replace("\\", "/")
- 
-startPage = filePath + "index.html"  # Path to index.html
 
+#filsökväg till index.html
+startPage = filePath + "index.html"  
+
+#lista med alla sociala medier ikoner
 socialMediaPaths = [
     "images/facebook.svg",
     "images/instagram.svg",
     "images/twitter.svg"
 ]
 
+#lista med länkarna till alla sociala medier
 socialMediaLinks = [
     "https://www.facebook.com/ntiuppsala",
     "https://www.instagram.com/ntiuppsala/",
     "https://x.com/ntiuppsala"
     ]
 
+#klass för att testa footern
 class footer_test(BaseCase):
 
     # inställningar för hur testerna körs
     stangintebrowsern = False  # om True så hålls webbläsaren öppen efter testerna är klara, annars stängs den
     gomfonstret = True  # visar webbläsaren medan testerna kör
     
+    #testar att footern innehåller öppettider, adress och telefonnummer
     def testFooter(self):
         self.open(startPage)
+        #förväntade texter i footern
         expected_texts = [
             "Måndagar 10-18",
             "Tisdagar 10-18",
@@ -38,15 +45,19 @@ class footer_test(BaseCase):
             "Fjällgatan 32H 981 39 KIRUNA",
             "0630-555-555"
         ]
+
+        #kollar att alla förväntade texter finns i footern
         for text in expected_texts:
             self.assert_text(text, "footer")
         
     def testSocialMediaLinks(self):
-        #Check that the icon link exists, and clicks if it does
+        #Kollar så att ikonerna finns på sidan
         for i in range(len(socialMediaPaths)):
             self.open(startPage)
+            #klickar på iknerna
             self.click(f"[src=\"{socialMediaPaths[i]}\"]")
-                     #Checks that links lead to the right place
+            
+            #kontrollerar att vi hamnar på rätt sida
             current_url = self.get_current_url()
             if (self.get_current_url() != socialMediaLinks[i]):
                 print(f"Expected URL: {socialMediaLinks[i]}, but got: {current_url}")
