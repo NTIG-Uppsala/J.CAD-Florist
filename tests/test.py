@@ -49,7 +49,7 @@ class TestHemsida(TestCase):
         self.assertIn("Den här hemsidan tillhör florista", self.browser.page_source)
 
     def testFooter(self):
-        self.browser.get(path.join(getcwd(), 'testing.html'))
+        self.browser.get(path.join(getcwd(), 'index.html'))
         footer = self.browser.find_element(By.CLASS_NAME, 'footer')
         footer_html = footer.get_attribute("innerHTML")
         expected_texts = [
