@@ -1,6 +1,7 @@
 from unittest import TestCase, main
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
 from os import path, getcwd
 
 
@@ -46,6 +47,25 @@ class TestHemsida(TestCase):
     def testPageMessage(self):
         self.browser.get(path.join(getcwd(), 'index.html'))
         self.assertIn("Den här hemsidan tillhör florista", self.browser.page_source)
+
+    def testFooter(self):
+        self.browser.get(path.join(getcwd(), 'testing.html'))
+        footer = self.browser.find_element(By.CLASS_NAME, 'footer')
+        footer_html = footer.get_attribute("innerHTML")
+        expected_texts = [
+            "Måndagar 10-18",
+            "Tisdagar 10-18",
+            "Onsdagar 10-17",
+            "Torsdagar 10-17",
+            "Fredagar 10-28",
+            "Lördagar 12-16",
+            "Söndagar 12-15",
+            "Fjällgatan 32H 981 39 KIRUNA",
+            "0630-555-555"
+        ]
+        for text in expected_texts:
+            self.assertIn(text, footer_html)
+    
 
 # denna bit finns här så att testerna körs om filen körs som vanligt python-program
 if __name__ == '__main__':
