@@ -1,12 +1,11 @@
 from seleniumbase import BaseCase
-from selenium.webdriver.common.by import By
 import pathlib
-from os import path, getcwd
+from selenium.webdriver.common.by import By
 
 filePath = "file://" + \
     str(pathlib.Path(__file__).parent.resolve())[:-5].replace("\\", "/")
  
-startPage = filePath + "testing.html"  # Path to index.html
+startPage = filePath + "index.html"  # Path to index.html
 
 class FooterTest(BaseCase):
 
@@ -16,8 +15,6 @@ class FooterTest(BaseCase):
     
     def testFooter(self):
         self.open(startPage)
-        footer = self.find_element(By.CLASS_NAME, 'footer')
-        footer_html = footer.get_attribute("innerHTML")
         expected_texts = [
             "Måndagar 10-18",
             "Tisdagar 10-18",
@@ -30,7 +27,7 @@ class FooterTest(BaseCase):
             "0630-555-555"
         ]
         for text in expected_texts:
-            self.assertIn(text, footer_html)
+            self.assert_text(text, "footer")
         
     def testSocialMediaLinks(self):
         self.open(startPage)
