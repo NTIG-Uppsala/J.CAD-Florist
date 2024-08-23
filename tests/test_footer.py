@@ -19,11 +19,11 @@ socialMediaLinks = [
     "https://x.com/ntiuppsala"
     ]
 
-class FooterTest(BaseCase):
+class footer_test(BaseCase):
 
     # inställningar för hur testerna körs
     stangintebrowsern = False  # om True så hålls webbläsaren öppen efter testerna är klara, annars stängs den
-    gomfonstret = True  # visar webbläsaren medan testerna körs
+    gomfonstret = True  # visar webbläsaren medan testerna kör
     
     def testFooter(self):
         self.open(startPage)

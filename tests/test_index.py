@@ -1,13 +1,14 @@
 from seleniumbase import BaseCase
- 
 import pathlib
+
+#Path to the rootfile
+filePath = "file://" + str(pathlib.Path(__file__).parent.resolve())[:-5].replace("\\", "/")
+
+#Path to index.html
+startPage = filePath + "index.html"  
  
-filePath = "file://" + \
-    str(pathlib.Path(__file__).parent.resolve())[:-5].replace("\\", "/")
- 
-startPage = filePath + "index.html"  # Path to index.html
- 
-class testworkingWebsite(BaseCase):
+
+class test_index(BaseCase):
 
     def test_Title(self):
         self.open(startPage)
