@@ -9,10 +9,57 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 p{
     font-size: 2em;
     font-family: monospace;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+
+
+
+
+
+/* footer */
+footer{
+    position: fixed;
+    display: flex;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 10px;
+    justify-content: left;
+}
+
+ul{
+    list-style-type: none;
+}
+
+span{
+    font-weight: 800;
+}
+
+@media screen and (max-width: 500px) {
+    .mainHeader {
+        font-size: 3em;
+    }
+    p {
+        font-size: 1.5em;
+    }
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+
+@media screen and (max-width: 400px) {
+    p {
+        font-size: 1.2em;
+    }
 }
