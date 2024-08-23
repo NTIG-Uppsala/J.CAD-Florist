@@ -9,6 +9,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 p{
     font-size: 2em;
     font-family: monospace;
@@ -41,4 +42,24 @@ ul{
 
 span{
     font-weight: 800;
+}
+
+@media screen and (max-width: 500px) {
+    .mainHeader {
+        font-size: 3em;
+    }
+    p {
+        font-size: 1.5em;
+    }
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+
+@media screen and (max-width: 400px) {
+    p {
+        font-size: 1.2em;
+    }
 }
