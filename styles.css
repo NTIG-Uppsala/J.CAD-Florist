@@ -1,5 +1,7 @@
 body {
     background-color: rgb(255, 255, 242);
+    padding: 0;
+    margin: 0;
 }
 
 .mainHeader{
@@ -18,32 +20,56 @@ p{
     justify-content: center;
 }
 
-
-
-
-
-
-
-/* footer */
+/*footer*/
 footer{
     position: fixed;
     display: flex;
-    left: 0;
     bottom: 0;
     width: 100%;
     background-color: #f1f1f1;
-    padding: 10px;
     justify-content: left;
+}
+
+
+
+.footerinfo{
+background-color: green;
+width: 20%;
+}
+
+.openingHours{
+width: 20%;
 }
 
 ul{
     list-style-type: none;
 }
 
+.socialMedia{
+width: 60%;
+display: flex;
+align-items: flex-end;
+flex-direction: column;
+gap: 1vh;
+}
+
+.socialMedia li{
+width: 10%;
+}
+
+.socialMedia img{
+    height: 5vh;
+    width: 5vw;
+    font-size: 5em;
+    display: flex;
+}
+
 span{
     font-weight: 800;
 }
 
+
+/*media queries*/
 @media screen and (max-width: 500px) {
     .mainHeader {
         font-size: 3em;
