@@ -11,4 +11,4 @@ class footer_test(BaseCase):
     #testar att loggan finns i headern
     def testLogo(self):
         self.open(startPage)
-        self.assert_element(".header [src=\"images/instagram.svg\"]")
+        self.assert_element(".header [src=\"images/logo.png\"]")

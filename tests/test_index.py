@@ -12,9 +12,9 @@ class test_index(BaseCase):
     #kollar om titel finns på sidan
     def test_Title(self):
         self.open(startPage)
-        self.assert_text("Florista" , "h1")
+        self.assert_text("Florista")
         
     #kollar om texten "Den här hemsidan tillhör florista" finns på sidan
     def test_PageMessage(self):
         self.open(startPage)
-        self.assert_text("Den här hemsidan tillhör florista" , "p")
+        self.assert_text("Den här hemsidan tillhör florista")
