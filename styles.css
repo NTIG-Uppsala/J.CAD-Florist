@@ -89,7 +89,7 @@ footer{
 @media screen and (max-width: 1080px) {
     
     .logo {
-        width: 8%;
+        width: 6%;
     }
 
 }
@@ -110,12 +110,26 @@ footer{
     }
 }
 
+@media screen and (max-height: 720px) {
+    .title {
+        font-size: 2em;
+    }
+
+    .logo {
+        width: 4.5%;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .logo {
+        width: 8%;
+    }
+}
+
+
 @media screen and (max-width: 500px) {
     .title {
         font-size: 3em;
-    }
-    .header p {
-        font-size: 1.5em;
     }
     footer {
         display: flex;
@@ -127,9 +141,6 @@ footer{
 }
 
 @media screen and (max-width: 400px) {
-    .title {
-        font-size: 1.3em;
-    }
 
     .header p {
         font-size: 0.8em;
