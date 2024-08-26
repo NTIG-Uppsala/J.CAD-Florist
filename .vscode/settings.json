@@ -10,5 +10,6 @@
         "./tests",
         "-p",
         "*test.py"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }
