@@ -52,48 +52,38 @@ body {
 footer{
     position: fixed;
     display: flex;
+    flex-direction: column;
     bottom: 0;
     width: 100%;
     background-color: #f1f1f1;
-    justify-content: left;
+    justify-content: center; 
+    align-items: center; 
 }
 
+.footerInfo, .openingHours {
+    list-style: none; 
+    padding: 0; 
+    padding-top: 1em;
+    margin: 0; 
+    text-align: center; 
+    margin-bottom: 1em; 
 
-
-.footerinfo{
-background-color: green;
-width: 20%;
-}
-
-.openingHours{
-width: 20%;
-}
-
-ul{
-    list-style-type: none;
 }
 
 .socialMedia{
-width: 60%;
-display: flex;
-align-items: flex-end;
-flex-direction: column;
-gap: 1vh;
-}
-
-.socialMedia li{
-width: 10%;
-}
-
-.socialMedia img{
-    height: 5vh;
-    width: 5vw;
-    font-size: 5em;
     display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
 }
 
-span{
-    font-weight: 800;
+.socialMedia li {
+    margin: 0 0.5em;
+}
+
+.socialMedia img {
+    height: 30px;
+    width: 30px;
 }
 
 
