@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: rgb(255, 255, 242);
     padding: 0;
@@ -5,13 +10,11 @@ body {
 }
 
 /*header*/
-
 .title{
     color: white;
     font-size: 3em;
     font-family: monospace;
     height: 50%;
-    padding: 0;
     margin-bottom:1vh;
 }
 
@@ -21,8 +24,6 @@ body {
     color: white;
     font-size: 1em;
     font-family: monospace;
-    margin: 0;
-    padding: 0;
 }
 
 .header{
@@ -62,9 +63,7 @@ footer{
 
 .footerInfo, .openingHours {
     list-style: none; 
-    padding: 0; 
     padding-top: 1em;
-    margin: 0; 
     text-align: center; 
     margin-bottom: 1em; 
 
@@ -74,7 +73,6 @@ footer{
     display: flex;
     justify-content: center;
     list-style: none;
-    padding: 0;
 }
 
 .socialMedia li {
