@@ -62,7 +62,11 @@ class footer_test(BaseCase):
             if (self.get_current_url() != socialMediaLinks[i]):
                 print(f"Expected URL: {socialMediaLinks[i]}, but got: {current_url}")
                 raise NameError("Link does not lead to the right place")
-        
+            
+    #testar att loggan finns i headern
+    def testLogo(self):
+        self.open(startPage)
+        self.assert_element(".header [src=\"images/instagram.svg\"]")
 
 if __name__ == "__main__":
     from seleniumbase import main
