@@ -19,7 +19,7 @@ body {
     margin-bottom:1vh;
 }
 
-/*header message*/
+/*header meddelande*/
 .header p{
     height: 30%;
     color: white;
@@ -103,15 +103,17 @@ main {
     width: 60%;
     z-index: -1;
     position: relative;
+    height: auto;
 }
 
 /* .slide klassen stilar varje bild i bildspelet */
 .slide {
+    object-fit: cover;
     position: absolute;
     width: 100%;
     opacity: 0;
     animation: fade 18s infinite;
-    border-radius: 1%;
+    border-radius: 1%
 }
 
 /* Animerar den första bilden med full opacitet genom hela animationen */
@@ -145,7 +147,24 @@ main {
     66.66% { opacity: 1; }
     100% { opacity: 1; }
 }
+
 /*media queries*/
+@media screen and (max-width: 1600px) {
+    main {
+        height: 100vh;
+    }
+
+    .slideshow {
+        width: 100%;
+        height: 100vh; 
+    }
+
+    .slide {
+        height: 100vh; 
+        border-radius: 0; 
+    }
+}
+
 @media screen and (max-width: 1080px) {
     
     .logo {
