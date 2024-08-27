@@ -38,6 +38,14 @@ class footer_test(BaseCase):
             "Fredagar 10-28",
             "Lördagar 12-16",
             "Söndagar 12-15",
+            "Nyårsdagen 1 Januari",
+            "Trettondedag jul 6 Januari",
+            "Första maj 1 Maj",
+            "Sveriges nationaldag 6 Juni",
+            "Julafton 24 December",
+            "Juldagen 25 December",
+            "Annandag jul 26 December",
+            "Nyårsafton 31 December",
             "Fjällgatan 32H 981 39 KIRUNA",
             "0630-555-555"
         ]

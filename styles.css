@@ -64,12 +64,20 @@ footer{
     z-index: 1;
 }
 
-.footerInfo, .openingHours {
+.footerInfo, .openingHours, .closedDays {
     list-style: none; 
-    padding-top: 1em;
-    text-align: center; 
+    padding-top: 1em; 
     margin-bottom: 1em; 
+}
 
+.hoursContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 320px;
+}
+
+.openingHours, .closedDays {
+    text-align: left;
 }
 
 .socialMedia{
@@ -173,22 +181,6 @@ main {
 
 }
 
-@media screen and (max-width: 768px) {
-    .footerInfo, .openingHours {
-        width: 100%; 
-        text-align: center;
-    }
-    .footerInfo {
-        order: 1;
-    }
-    .openingHours {
-        order: 2;
-    }
-    .socialMedia {
-        order: 3;
-    }
-}
-
 @media screen and (max-height: 720px) {
     .title {
         font-size: 2em;
@@ -207,6 +199,15 @@ main {
 
 
 @media screen and (max-width: 500px) {
+    .hoursContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .openingHours, .closedDays {
+        width: 100%; 
+        text-align: center; 
+        margin-bottom: 1em;
+    }
     .title {
         font-size: 3em;
     }
@@ -216,6 +217,19 @@ main {
     }
     .logo {
         width: 12%;
+    }
+    .footerInfo, .openingHours .closedDays {
+        width: 100%; 
+        text-align: center;
+    }
+    .footerInfo {
+        order: 1;
+    }
+    .hoursContainer {
+        order: 2;
+    }
+    .socialMedia {
+        order: 3;
     }
 }
 
@@ -243,7 +257,7 @@ main {
     .footerInfo {
         order: 1;
     }
-    .openingHours {
+    .hoursContainer {
         order: 2;
     }
     .socialMedia {
