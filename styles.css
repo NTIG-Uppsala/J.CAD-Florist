@@ -10,7 +10,7 @@ body {
     overflow-x: hidden;
 }
 
-/*header*/
+/*titel*/
 .title{
     color: white;
     font-size: 3em;
@@ -27,6 +27,7 @@ body {
     font-family: monospace;
 }
 
+/*header*/
 .header{
     position: fixed;
     width: 100%;
@@ -46,6 +47,7 @@ body {
     width: 100%;
 }
 
+/*logga*/
 .logo{
     width: 4%;
     position: fixed;
@@ -80,6 +82,7 @@ footer{
     text-align: left;
 }
 
+/*Sociala medier*/
 .socialMedia{
     display: flex;
     justify-content: center;
@@ -95,16 +98,14 @@ footer{
     width: 30px;
 }
 
-/*slideshow*/
-
 main {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-/*bild container*/
 
+/*Bildspel*/
 .slideshow {
     display: flex;
     align-items: center;
