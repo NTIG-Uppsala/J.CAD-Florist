@@ -10,7 +10,7 @@ body {
     overflow-x: hidden;
 }
 
-/*titel*/
+/*Titel*/
 .title{
     color: white;
     font-size: 3em;
@@ -19,7 +19,7 @@ body {
     margin-bottom:1vh;
 }
 
-/*header meddelande*/
+/*Header meddelande*/
 .header p{
     height: 30%;
     color: white;
@@ -27,7 +27,7 @@ body {
     font-family: monospace;
 }
 
-/*header*/
+/*Header*/
 .header{
     position: fixed;
     width: 100%;
@@ -47,7 +47,7 @@ body {
     width: 100%;
 }
 
-/*logga*/
+/*Logga*/
 .logo{
     width: 4%;
     position: fixed;
@@ -55,7 +55,7 @@ body {
     margin: 1vh;
 }
 
-/*footer*/
+/*Footer*/
 footer{
     display: flex;
     flex-direction: column;
@@ -157,7 +157,7 @@ main {
     100% { opacity: 1; }
 }
 
-/*media queries*/
+/* Media queries */
 @media screen and (max-width: 1600px) {
     main {
         height: 100vh;

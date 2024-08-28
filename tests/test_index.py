@@ -1,15 +1,15 @@
 from seleniumbase import BaseCase
 import pathlib
 
-#Path to the rootfile
+# Filsökvägen till rotmappen
 filePath = "file://" + str(pathlib.Path(__file__).parent.resolve())[:-5].replace("\\", "/")
 
-#Path to index.html
+# Filsökväg till index.html
 startPage = filePath + "index.html"  
  
 
 class test_index(BaseCase):
-    #kollar om bilderna finns på sidan
+    # Kollar om bilderna finns på sidan
     def test_Images(self):
         self.open(startPage)
         for i in range(1, 4):
