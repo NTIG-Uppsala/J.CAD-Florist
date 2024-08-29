@@ -35,7 +35,7 @@ class footer_test(BaseCase):
             "Tisdagar 10-18",
             "Onsdagar 10-17",
             "Torsdagar 10-17",
-            "Fredagar 10-28",
+            "Fredagar 10-18",
             "Lördagar 12-16",
             "Söndagar 12-15",
             "Nyårsdagen 1 Januari",
