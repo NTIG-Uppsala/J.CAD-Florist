@@ -16,7 +16,7 @@ class header_test(BaseCase):
     # Kollar om titel finns på sidan
     def test_Title(self):
         self.open(startPage)
-        self.assert_text("Florista")
+        self.assert_text("florista")
         
     # Kollar om texten "Den här hemsidan tillhör florista" finns på sidan
     def test_PageMessage(self):
