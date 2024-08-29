@@ -216,7 +216,7 @@ main {
 }
 
 /* Media queries */
-/*@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1600px) {
     main {
         height: 100vh;
     }
@@ -317,4 +317,4 @@ main {
     .socialMedia {
         order: 3;
     }
-}*/
+}
