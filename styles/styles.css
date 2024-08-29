@@ -64,6 +64,8 @@ footer{
     justify-content: center; 
     align-items: center;
     z-index: 1;
+    padding-top:5px;
+    padding-bottom: 5px;
 }
 
 .footerInfo, .openingHours, .closedDays {
@@ -102,7 +104,10 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
+    padding-top: 9vh;
+    padding-bottom: 0;
 }
 
 /*Bildspel*/
@@ -113,6 +118,7 @@ main {
     z-index: -1;
     position: relative;
     height: auto;
+    margin-bottom: 5px;
 }
 
 /* .slide klassen stilar varje bild i bildspelet */
@@ -160,15 +166,15 @@ main {
 /*Iframe*/
 .produktIframe {
     width: 62%;
-    height: 20vh;
+    height: 35vh;
     display: block;
     display: flex;
     position: relative;
-    margin: 10px auto;
+    margin: 5px auto 0 auto;
 }
 
 /* Media queries */
-@media screen and (max-width: 1600px) {
+/*@media screen and (max-width: 1600px) {
     main {
         height: 100vh;
     }
@@ -269,4 +275,4 @@ main {
     .socialMedia {
         order: 3;
     }
-}
+}*/
