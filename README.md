@@ -3,13 +3,17 @@ Florista är en hemsida skapad åt ett floristföretag skapad av TE4 gruppen J.C
 
 Medlemmar: Carl, Albin, David och Joel.
 
-[Utvecklingsmiljö](https://docs.google.com/document/d/1f_0ZHIlPEgJNugq9ONmOOvSxKIHRBfFfb5jr5TF2Stk/edit?usp=sharing)
+[Länk till hemsidan](https://reimagined-dollop-1p9yrwl.pages.github.io/)
 
-[Kodanalys](https://docs.google.com/document/d/1O1wLIeYhRIPwpXu6x3uzLH0Io0B7zXKQkGfFgWYz4oY/edit)
+## MD Filer
 
-[Programmeringsspråk](https://docs.google.com/document/d/1VkwMXnPVqV50sCPsOB7-Xf0UsK789FGrJtV7VqE3ceg/edit)
+[Utvecklingsmiljö](MD_files/Utvecklingsmiljö.md)
 
-[Kodningsstandard](https://docs.google.com/document/d/1PoO_YusBlydWUBx8ExAqF2sXDw0Vks3bU6n6ZZFiCxE/edit)
+[Kodanalys](MD_files/Kodanalys.md)
+
+[Programmeringsspråk](MD_files/Programmeringsspråk.md)
+
+[Kodningsstandard](MD_files/Kodningsstandard.md)
 
 ## Tester
 Ramverket selenium och bibloteket seleniumbase krävs för att köra testerna (pip install selenium och pip install seleniumbase).
