@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Noto+Sans+JP:wght@100..900&display=swap');
 * {
     margin: 0;
     padding: 0;
 }
 
 body {
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
     background-color: rgb(255, 255, 242);
     padding: 0;
     margin: 0;
@@ -14,7 +17,6 @@ body {
 .title{
     color: white;
     font-size: 3em;
-    font-family: monospace;
     height: 50%;
     margin-bottom:1vh;
 }
@@ -24,7 +26,6 @@ body {
     height: 30%;
     color: white;
     font-size: 1em;
-    font-family: monospace;
 }
 
 /*Header*/
