@@ -107,7 +107,7 @@ main {
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    padding-top: 9vh;
+    padding-top: 0;
     padding-bottom: 0;
 }
 
