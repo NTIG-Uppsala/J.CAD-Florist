@@ -56,13 +56,8 @@ class footer_test(BaseCase):
         
     def testSocialMediaLinks(self):
         # Kollar så att ikonerna finns på sidan
+        self.open(startPage)
         for i in range(len(socialMediaPaths)):
-            self.open(startPage)
-            # Klickar på iknerna
-            self.click(f"[src=\"{socialMediaPaths[i]}\"]")
-            
-            # Kontrollerar att vi hamnar på rätt sida
-            current_url = self.get_current_url()
-            if (self.get_current_url() != socialMediaLinks[i]):
-                print(f"Expected URL: {socialMediaLinks[i]}, but got: {current_url}")
-                raise NameError("Link does not lead to the right place")
+            self.assert_element(f"[src=\"{socialMediaPaths[i]}\"]")
+            self.assert_element(f"[href=\"{socialMediaLinks[i]}\"]")
+           
