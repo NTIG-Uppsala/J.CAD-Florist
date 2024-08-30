@@ -1,7 +1,6 @@
-.product-Price {
-    text-align: center;
-    font-size: 1em;
-    margin: 30vh;
+* {
+    margin: 0;
+    padding: 0;
 }
 
 .product-container {
@@ -15,8 +14,10 @@
     flex-flow: column wrap;
     overflow: hidden;
     width: 100%;
+    height: 100%;
     position: relative;
     justify-content: center;
+    flex-direction: column;
 }
 
 .carousel-track {
@@ -26,12 +27,33 @@
 
 .carousel-item {
     min-width: calc(100% / 3 - 6vh);
-    width: 28vh;
-    height: 80vh;
+    width: 8em;
+    height: 31em;
     background-color: beige;
     border-radius: 5%;
     margin: 3vh;
     text-align: center;
+}
+
+.carouselFooter {
+    width: 100%;
+    height: 25%;
+}
+
+.carouselFooter h1 {
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+}
+.carouselFooter h2 {
+    font-size: 0.8em;
+    color: rgb(0, 0, 0);
+}
+
+.carousel-container img {
+    height: 75%;
+    width: 100%;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
 }
 
 .carousel-item > div {
