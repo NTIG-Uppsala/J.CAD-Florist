@@ -18,7 +18,7 @@ body {
     color: white;
     font-size: 3em;
     height: 50%;
-    margin-bottom:1vh;
+    margin-bottom:0.5em;
 }
 
 /*Header meddelande*/
@@ -30,13 +30,14 @@ body {
 
 /*Header*/
 .header{
-    position: fixed;
+    position: sticky;
+    top: 0;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #000000;
-    height: 8vh;
+    height: 8em;
     z-index: 1;
 }
 
@@ -50,9 +51,10 @@ body {
 
 /*Logga*/
 .logo{
-    width: 4%;
+    width: auto;
+    height: 95%;
     left: 0;
-    margin: 1vh;
+    margin: 1em;
 }
 
 /*Footer*/
@@ -60,7 +62,7 @@ footer{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 25vh;
+    height: 20vh;
     background-color: #f1f1f1;
     justify-content: center; 
     align-items: center;
@@ -144,27 +146,18 @@ main {
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    height: 72em;
-    padding-top: 20em;
-    padding-top: 8vh;
+    height: 72vh;
 }
 /*Här slutar footer*/
 
 /*Bildspel*/
-.slideshow {
-    display: flex;
-    align-items: center;
-    width: 60%;
-    z-index: -1;
-    position: relative;
-    height: auto;
-}
 
 /* .slide klassen stilar varje bild i bildspelet */
 .slide {
     object-fit: cover;
     position: absolute;
-    width: 100%;
+    width: 60%;
+    height: 60%;
     opacity: 0;
     animation: fade 18s infinite;
     border-radius: 1%
@@ -204,7 +197,7 @@ main {
 
 /*Iframe*/
 .produktIframe {
-    width: 75%;
+    width: 100em;
     height: 35em;
     display: block;
     display: flex;
@@ -290,7 +283,7 @@ main {
     .header p {
         font-size: 0.8em;
     }
-
+    
     .logo {
         width: 15%;
     }

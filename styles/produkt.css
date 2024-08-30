@@ -33,12 +33,12 @@ body {
 }
 
 .carousel-item {
-    min-width: calc(100% / 3 - 6vh);
+    min-width: calc(100% / 3 - 2em);
     width: 8em;
     height: 31em;
     background-color: beige;
     border-radius: 5%;
-    margin: 3vh;
+    margin: 1em;
     text-align: center;
 }
 
