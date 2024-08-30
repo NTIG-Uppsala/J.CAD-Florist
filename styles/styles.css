@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Noto+Sans+JP:wght@100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +7,6 @@
 
 body {
     font-family: "Noto Sans JP", sans-serif;
-    font-optical-sizing: auto;
     background-color: rgb(255, 255, 242);
     padding: 0;
     margin: 0;
@@ -61,24 +61,63 @@ footer{
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 25vh;
     background-color: #f1f1f1;
     justify-content: center; 
     align-items: center;
     z-index: 1;
-    padding-top:5px;
-    padding-bottom: 5px;
+    padding-top:1%;
+}
+
+.footerTop{
+    width: 100%;
+    height: 75%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footerCon1, .footerCon2, .footerCon3 {
+    display: flex;
+    justify-content: center;
+    position: relative; /* Behövs för att positionera pseudeoelement */
+}
+
+/*Skapar ett pseudeoelement inuti footerCon1 och footerCon2.
+   Pseudeoelementet placeras absolut med ett avstånd på 10% från toppen och botten,
+   samt längst till höger (skapar en border)*/
+.footerCon1::after, .footerCon2::after {
+    content: '';
+    position: absolute;
+    top: 10%; 
+    bottom: 10%; 
+    right: 0; 
+    width: 1px; 
+    background-color: rgb(0, 0, 0); 
+}
+
+
+.footerCon4{
+    height: 25%;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footerInfo, .openingHours, .closedDays {
     list-style: none; 
-    padding-top: 1em; 
-    margin-bottom: 1em; 
+    font-size: 1em;
+
 }
 
-.hoursContainer {
-    display: flex;
-    justify-content: space-between;
-    width: 300px;
+.footerInfo a {
+
+    color: black;
+}
+
+.footer span {
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 .openingHours, .closedDays {
@@ -93,12 +132,12 @@ footer{
 }
 
 .socialMedia li {
-    margin: 0 0.5em;
+    margin: 0 2em;
 }
 
 .socialMedia img {
-    height: 30px;
-    width: 30px;
+    height: 3em;
+    width: 3em;
 }
 
 main {
@@ -110,6 +149,7 @@ main {
     padding-top: 0;
     padding-bottom: 0;
 }
+/*Här slutar footer*/
 
 /*Bildspel*/
 .slideshow {
@@ -172,6 +212,7 @@ main {
     display: flex;
     position: relative;
     margin: 5px auto 0 auto;
+    border: 0;
 }
 
 /* Media queries */
