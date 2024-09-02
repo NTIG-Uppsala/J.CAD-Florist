@@ -42,7 +42,6 @@ testCases = [
     "123.45",
 ]
 
-
 class test_index(BaseCase):
     # Kollar om bilderna finns på sidan
     def test_Images(self):
@@ -51,16 +50,19 @@ class test_index(BaseCase):
             print("bild"+str(i))
             self.assert_element(f"[src=\"images/bild{i}.jpg\"]")
     
+    
     def test_flowerGram(self):
         self.open(startPage)
         # Kollar om texten "Skicka blommogram" finns på sidan
         self.assert_text("Skicka blommogram")
         
+        #Provar att skriva in alla testcases i inputfältet och klickar på knappen
         for postalCode in testCases:
             self.type("#postalCode", postalCode)
             self.click('button')
             self.assert_text("Felaktigt postnummer")
         
+        #Provar att skriva in alla korrekta postnummer i inputfältet och klickar på Enter istället
         for postalCode in correctPostalCodes:
             self.type("#postalCode", postalCode)
             self.get_element("#postalCode").send_keys(Keys.ENTER)
