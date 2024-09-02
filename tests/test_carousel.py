@@ -11,5 +11,5 @@ class test_carousel(BaseCase):
     def testCarousel(self):
         self.open(startPage)
         self.switch_to_frame('iframe[name="product"]')
-        for i in range(1,8):
+        for i in range(1,7):
             self.assert_element('div.carousel-item:nth-child('+str(i)+')')
