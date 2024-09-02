@@ -1,10 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Italiana&display=swap');
+
+
+.abel-regular {
+    font-family: "Abel", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
 * {
     margin: 0;
     padding: 0;
+    font-family: "abel", sans-serif;
 }
 
 body {
-    font-family: "Noto Sans JP", sans-serif;
     padding: 0;
     margin: 0;
     overflow-y: hidden;
@@ -52,11 +61,13 @@ body {
 }
 
 .carouselFooter h1 {
-    font-size: 1em;
+    font-size: 1.728rem;
     color: rgb(0, 0, 0);
 }
+
 .carouselFooter h2 {
-    font-size: 0.8em;
+    font-size: 1.44rem;
+    font-weight: lighter;
     color: rgb(0, 0, 0);
 }
 
