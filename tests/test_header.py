@@ -11,7 +11,7 @@ class header_test(BaseCase):
     # Testar att loggan finns i headern
     def testLogo(self):
         self.open(startPage)
-        self.assert_element(".header [src=\"images/florist_Logga.png\"]")
+        self.assert_element(".header [src=\"images/logga_florist.png\"]")
 
     # Kollar om titel finns på sidan
     def test_Title(self):

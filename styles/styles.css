@@ -26,7 +26,7 @@ body {
 
 /*Titel*/
 .title{
-    color: white;
+    color: rgb(206, 175, 73);
     font-size: 2.986rem;
     height: 50%;
     margin-bottom:0.5em;
@@ -35,7 +35,7 @@ body {
 /*Header meddelande*/
 .header p{
     height: 30%;
-    color: white;
+    color: rgb(206, 175, 73);
     font-size: 1rem;
 }
 
