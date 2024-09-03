@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/images/florista-favicon-color.ico">
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/flowerGram.js"></script>
     <title>Florista</title>
 </head>
 <body>
@@ -29,7 +30,11 @@
                 <h1>Överraska någon med ett blommogram</h1>
                 <p>Vill du skicka ett blommogram? Besök oss i butiken för att göra din beställning.</p>
                 <p>Kontrollera här om vi levererar till ditt postnummer:</p>
-                <input id="postalCode" type="text" placeholder="Ange postnummer" maxlength="5">
+                <div class="inputContainer">
+                    <input id="postalCode" type="text" placeholder="Ange postnummer" maxlength="6" onkeydown="handleKeyDown(event)">
+                    <button onclick="getPostalCode()">Submit</button>
+                </div>
+                <p id="inputMessage"></p>
             </div>
         </div>
     </main>
