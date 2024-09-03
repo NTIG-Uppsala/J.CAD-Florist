@@ -8,6 +8,17 @@ document.addEventListener("DOMContentLoaded", function() {
             .then(response => response.text())
             .then(data => {
                 include.innerHTML = data;
+
+                const track = document.querySelector('.carousel-track');
+                const items = document.querySelectorAll('.carousel-item');
+                const itemsToShow = 3;
+
+                const fragment = document.createDocumentFragment();
+                for (let i = 0; i < itemsToShow; i++) {
+                    const clone = items[i].cloneNode(true);
+                    fragment.appendChild(clone);
+                }
+                track.appendChild(fragment);
             })
             .catch(error => console.error('Error loading file:', error));
     });
@@ -55,16 +66,3 @@ function moveCarousel(direction) {
     const newTransform = -currentIndex * itemWidth;
     track.style.transform = `translateX(${newTransform}px)`;
 }
-
-// klona första items och lägg till dem i slutet
-window.onload = function() {
-    const track = document.querySelector('.carousel-track');
-    const items = document.querySelectorAll('.carousel-item');
-    const itemsToShow = 3;
-
-    
-    for (let i = 0; i < itemsToShow; i++) {
-        const clone = items[i].cloneNode(true);
-        track.appendChild(clone);
-    }
-};
