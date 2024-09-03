@@ -137,15 +137,14 @@ main {
     width:40%;
 }
 
-/*Iframe*/
-.produktIframe {
+
+/*Embeddar en annan html fil i den här diven med javascript*/
+.productEmbedd {
     width: 100em;
     height: 35em;
     display: block;
-    display: flex;
     position: relative;
     margin: 0 auto 0 auto;
-    border: 0;
 }
 
 /*Footer*/

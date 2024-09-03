@@ -1,5 +1,18 @@
 let currentIndex = 0;
 
+document.addEventListener("DOMContentLoaded", function() {
+    var includes = document.querySelectorAll('[data-include]');
+    includes.forEach(function(include) {
+        var file = include.getAttribute('data-include') + '.html';
+        fetch(file)
+            .then(response => response.text())
+            .then(data => {
+                include.innerHTML = data;
+            })
+            .catch(error => console.error('Error loading file:', error));
+    });
+});
+
 function moveCarousel(direction) {
     const track = document.querySelector('.carousel-track');
     const items = document.querySelectorAll('.carousel-item');
@@ -47,7 +60,7 @@ function moveCarousel(direction) {
 window.onload = function() {
     const track = document.querySelector('.carousel-track');
     const items = document.querySelectorAll('.carousel-item');
-    const itemsToShow = 3; // Show only 3 items
+    const itemsToShow = 3;
 
     
     for (let i = 0; i < itemsToShow; i++) {
