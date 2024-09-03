@@ -68,11 +68,11 @@ class test_index(BaseCase):
         for postalCode in testCases:
             self.type("#postalCode", postalCode)
             self.click('button')
-            self.assert_text("Felaktigt postnummer")
+            self.assert_text("Vi levererar tyvär inte till denna adress")
         
         #Provar att skriva in alla korrekta postnummer i inputfältet och klickar på Enter istället
         for postalCode in correctPostalCodes:
             self.type("#postalCode", postalCode)
             self.get_element("#postalCode").send_keys(Keys.ENTER)
-            self.assert_text("Tack for din beställning!")
+            self.assert_text("Vi levererar till denna adress")
          
