@@ -161,11 +161,12 @@ footer{
     padding-top:1%;
 }
 
-.footerTop{
+.footerTop {
     width: 100%;
     flex-grow: 1;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
 }
 
 .footerCon1, .footerCon2, .footerCon3 {
@@ -266,8 +267,40 @@ footer{
     }
 }
 
-@media screen and (max-width: 1080px) { 
+/* For screens smaller than 800px */
+@media screen and (max-width: 700px) { 
+    .footerTop {
+        grid-template-columns: 1fr;
+    }
+    .footerCon1, .footerCon2, .footerCon3 {
+        justify-content: center;
+        text-align: center;
+    }
 
+    .openingHours, .closedDays {
+        text-align: center;
+    }
+
+    .footerCon1::after, .footerCon2::after {
+        content: none;
+    }
+
+    .footerInfo {
+        order: 1;
+        margin-bottom: 1rem;
+    }
+    .openingHours {
+        order: 2;
+        margin-bottom: 1rem;
+    }
+    .closedDays {
+        order: 3;
+        margin-bottom: 1rem;
+    }
+    .footerCon4 {
+        order: 4;
+        margin-top: 1rem;
+    }
 }
 
 @media screen and (max-height: 720px) {
@@ -276,72 +309,21 @@ footer{
     }
 }
 
-@media screen and (max-width: 680px) {
-
-}
-
-
 @media screen and (max-width: 500px) {
-    .hoursContainer {
-        flex-direction: column;
-        align-items: center;
-    }
-    .openingHours, .closedDays {
-        width: 100%; 
-        text-align: center; 
-        margin-bottom: 1em;
-    }
-    footer {
-        display: flex;
-        flex-direction: column;
-    }
     .logo {
         width: 12%;
         height: auto;
     }
-    .footerInfo, .openingHours .closedDays {
-        width: 100%; 
-        text-align: center;
-    }
-    .footerInfo {
-        order: 1;
-    }
-    .hoursContainer {
-        order: 2;
-    }
-    .socialMedia {
-        order: 3;
-    }
 }
 
 @media screen and (max-width: 400px) {
-
     .header p {
         font-size: 0.8em;
-    }
-    
+    }   
     .logo {
         width: 15%;
     }
-
-    footer {
-        flex-direction: column;
-        align-items: center;
-    }
-    .footerInfo, .openingHours, .socialMedia {
-        width: 100%;
-        text-align: center;
-    }
-    .footerInfo, .openingHours {
-        margin-bottom: 1em;
-    }
-    .footerInfo {
-        order: 1;
-    }
-    .hoursContainer {
-        order: 2;
-    }
-    .socialMedia {
-        order: 3;
+    .socialMedia li {
+        margin: 0 1em;
     }
 }
