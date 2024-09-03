@@ -9,38 +9,7 @@ filePath = "file://" + str(pathlib.Path(__file__).parent.resolve())[:-5].replace
 startPage = filePath + "index.html"  
 
 
-#lista med korrekta postnummer
-correctPostalCodes = [
-    "12345",
-    "54321",
-    "00000",
-    "99999",
-    "123 45",
-    "12345",
-    "12345",
-]
 
-#lista av testfall som ska köras i blommogrammet
-testCases = [
-    #inkorrekt postnummer
-    "12345",
-    #bokstäver istället för siffror
-    "abcde",
-    #storat bokstäver
-    "ABCDE",
-    #för kort postnummer
-    "1234",
-    #för långt postnummer
-    "123456",
-    #tomt postnummer
-    "",
-    #postnummer med mellanslag
-    "1 23 4 5 ",
-    #postnummer med bindestreck
-    "123-45",
-    #postnummer med punkt
-    "123.45",
-]
 
 class test_index(BaseCase):
     # Kollar om bilderna finns på sidan
@@ -50,12 +19,55 @@ class test_index(BaseCase):
             print("bild"+str(i))
             self.assert_element(f"[src=\"images/bild{i}.jpg\"]")
     
-    
-    def test_flowerGram(self):
+    #Kollar om texten finns på sidan
+    def test_flowerGramText(self):
         self.open(startPage)
-        # Kollar om texten "Skicka blommogram" finns på sidan
-        self.assert_text("Skicka blommogram")
-        
+        # List of expected texts
+        expected_texts = [
+            "Överraska någon med ett blommogram",
+            "Vill du skicka ett blommogram? Besök oss i butiken för att göra din beställning.",
+            "Kontrollera här om vi levererar till ditt postnummer:",
+        ]
+        # Loop through the expected texts and assert each one
+        for text in expected_texts:
+            self.assert_text(text)
+
+    # Testar att skriva in postnummer i inputfältet
+    def test_flowerGramInput(self):
+        #lista med korrekta postnummer
+        correctPostalCodes = [
+            "12345",
+            "54321",
+            "00000",
+            "99999",
+            "123 45",
+            "12345",
+            "12345",
+        ]
+
+        #lista av testfall som ska köras i blommogrammet
+        testCases = [
+            #inkorrekt postnummer
+            "12345",
+            #bokstäver istället för siffror
+            "abcde",
+            #storat bokstäver
+            "ABCDE",
+            #för kort postnummer
+            "1234",
+            #för långt postnummer
+            "123456",
+            #tomt postnummer
+            "",
+            #postnummer med mellanslag
+            "1 23 4 5 ",
+            #postnummer med bindestreck
+            "123-45",
+            #postnummer med punkt
+            "123.45",
+        ]
+
+        self.open(startPage)
         #Provar att skriva in alla testcases i inputfältet och klickar på knappen
         for postalCode in testCases:
             self.type("#postalCode", postalCode)
