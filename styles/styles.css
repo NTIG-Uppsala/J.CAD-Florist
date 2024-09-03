@@ -100,7 +100,7 @@ main {
     right: 0;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
-    border-left: 5px solid rgb(206, 175, 73); /* Border only on the left side */
+    border-left: 5px solid rgb(0, 0, 0); /* Border only on the left side */
 }
 
 .flowerGram h1{
