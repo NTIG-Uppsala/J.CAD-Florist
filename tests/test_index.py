@@ -36,19 +36,15 @@ class test_index(BaseCase):
     def test_flowerGramInput(self):
         #lista med korrekta postnummer
         correctPostalCodes = [
-            "12345",
-            "54321",
-            "00000",
-            "99999",
-            "123 45",
-            "12345",
-            "12345",
+            "981 38",
+            "981 44	",
+            "981 47"
         ]
 
         #lista av testfall som ska köras i blommogrammet
         testCases = [
             #inkorrekt postnummer
-            "12345",
+            "123 45",
             #bokstäver istället för siffror
             "abcde",
             #storat bokstäver
