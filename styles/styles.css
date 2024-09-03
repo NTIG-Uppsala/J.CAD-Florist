@@ -104,7 +104,8 @@ main {
 }
 
 .flowerGram h1{
-    width: 100%;
+    margin: 1rem 0.5rem 1rem 0.5rem; 
+    width: 90%;
     text-align: center;
     font-size: 1.728rem;
     color: rgb(0, 0, 0);
@@ -112,9 +113,9 @@ main {
 
 .flowerGram p{
     margin: 1rem 0.5rem 1rem 0.5rem;    
-    width: 100%;
+    width: 90%;
     font-size: 1rem;
-    color: rgb(105, 105, 105);
+    color: rgb(0, 0, 0);
 }
 
 #postalCode{
@@ -356,6 +357,15 @@ footer{
 @media screen and (max-height: 720px) {
     .title {
         font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 1230px) {
+    .flowerGram{
+        width: 100%;
+        height: 35%;
+        bottom: 0;
+        border-style: none;
     }
 }
 
