@@ -8,7 +8,7 @@
     <title>Florista</title>
 </head>
 <body>
-    <!--Header-->
+    <!--Header börjar här-->
     <!--logga rgb färg(R:206, G:175, B:73)-->
     <header class="header">
         <img class="logo" src="images/logga_florist.png" alt="Logga på hemsidan">
@@ -17,20 +17,30 @@
             <p>Den här hemsidan tillhör florista</p>  
         </div>
     </header>
+    <!--Header slutar här-->
 
-    <!--Slideshow-->
+    <!--Slideshow börjar här-->
     <main>
+        <div class="slideshowContainer">
             <img src="images/bild1.jpg" class="slide" alt="Bild 1">
             <img src="images/bild2.jpg" class="slide" alt="Bild 2">
             <img src="images/bild3.jpg" class="slide" alt="Bild 3">
+            <div class="flowerGram">
+                <h1>Överraska någon med ett blommogram</h1>
+                <p>Vill du skicka ett blommogram? Besök oss i butiken för att göra din beställning.</p>
+                <p>Kontrollera här om vi levererar till ditt postnummer:</p>
+                <input id="postalCode" type="text" placeholder="Ange postnummer" maxlength="5">
+            </div>
+        </div>
     </main>
-    <!--Iframe-->
+    <!--Slideshow slutar här-->
+
+    <!--Produkter börjar här-->
     <div class="dividerContainer">  
         <hr>
             <h1>Produkter</h1>
         <hr>
     </div>
-
     <div class="productEmbedd">
         <div data-include="product_Embedd"></div>
     </div>
