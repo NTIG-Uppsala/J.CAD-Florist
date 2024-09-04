@@ -24,10 +24,10 @@ socialMediaLinks = [
     ]
 
 # Klass för att testa footern
-class footer_test(BaseCase):
+class test_footer(BaseCase):
     
     # Testar att footern innehåller öppettider, adress och telefonnummer
-    def testFooter(self):
+    def test_Footer(self):
         self.open(startPage)
         # Förväntade texter i footern
         expected_texts = [
@@ -54,7 +54,7 @@ class footer_test(BaseCase):
         for text in expected_texts:
             self.assert_text(text, "footer")
         
-    def testSocialMediaLinks(self):
+    def test_SocialMediaLinks(self):
         # Kollar så att ikonerna finns på sidan
         self.open(startPage)
         for i in range(len(socialMediaPaths)):

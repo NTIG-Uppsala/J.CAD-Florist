@@ -5,7 +5,7 @@ filePath = "file://" + str(pathlib.Path(__file__).parent.resolve())[:-5].replace
 
 startPage = filePath + "index.html"  
 
-class CarouselTest(BaseCase):
+class test_carousel(BaseCase):
     def test_carousel_items_count(self):
         self.open(startPage)
         
