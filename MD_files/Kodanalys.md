@@ -6,6 +6,6 @@ Om något annat problem gå till https://validator.w3.org/.
 
 För att validera python använder vi https://extendsclass.com/python-tester.html
 
-Slutligen validerar vi javascript med https://codebeautify.org/jsvalidate
+Slutligen validerar vi javascript med https://www.piliapp.com/syntax-check/es6/
 
 
