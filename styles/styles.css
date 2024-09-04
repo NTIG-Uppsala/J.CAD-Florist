@@ -43,13 +43,15 @@ body {
     font-size: 2.986rem;
     height: 50%;
     margin-bottom:0.5em;
+    font-weight: bolder;
 }
 
 /*Header meddelande*/
 .header p{
     height: 30%;
     color: rgb(206, 175, 73);
-    font-size: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .headerContainer{
@@ -64,7 +66,21 @@ body {
 .logo{
     height: 95%;
     width: auto;
+    position: absolute;
+    left:1rem;
 
+}
+/*Stängt eller öppet*/
+.openOrClosedContainer{
+    background-color: beige;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*Main delen av hemsidan*/
