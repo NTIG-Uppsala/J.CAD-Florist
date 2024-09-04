@@ -17,7 +17,7 @@ Medlemmar: Carl, David och Joel.
 
 ## Tester
 Ramverket selenium och bibloteket seleniumbase krävs för att köra testerna (pip install selenium och pip install seleniumbase).
-[Läs mer om sleleniumbase här](https://seleniumbase.io/)
+[Läs mer om seleniumbase här](https://seleniumbase.io/)
 
 För att konfiguera testerna så tryck  view --> testing --> configure python tests --> pytests --> tests.
 
