@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
-        //Kollar om det är öppet eller stängt
+        //Kollar om det är öppet
         if (currentTime >= openHoursDict[currentWeekDay].open && currentTime < openHoursDict[currentWeekDay].close) {
             openHoursText.innerHTML = "Vi har just nu öppet!"+" Butiken stänger klockan " + openHoursDict[currentWeekDay].close;
         //Körs om det är stängt och innan öppningstid
