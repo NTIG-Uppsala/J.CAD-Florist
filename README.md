@@ -3,7 +3,7 @@ Florista är en hemsida skapad åt ett floristföretag skapad av TE4 gruppen J.C
 
 Medlemmar: Carl, David och Joel.
 
-[Länk till hemsidan](https://reimagined-dollop-1p9yrwl.pages.github.io/)
+[Länk till hemsidan](https://ntig-uppsala.github.io/J.CAD-Florist/)
 
 ## MD Filer
 
