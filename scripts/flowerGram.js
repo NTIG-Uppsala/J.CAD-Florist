@@ -6,7 +6,7 @@ const postalCodes = [
     "981 44",
     "981 45",
     "981 46",
-    "981 47"
+    "981 47",
 ]
 
 function handleKeyDown(event) {

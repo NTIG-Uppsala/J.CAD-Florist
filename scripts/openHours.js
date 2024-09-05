@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
         'torsdag': {'open': '10', 'close': '17'},
         'fredag': {'open': '10', 'close': '18'},
         'lördag': {'open': '12', 'close': '16'},
-        'söndag': {'open': '12', 'close': '15'}
+        'söndag': {'open': '12', 'close': '15'},
     }
 
     //Stängda dagar
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "24/12",
         "25/12",
         "26/12",
-        "31/12"
+        "31/12",
     ]
     //Får dagens datum
     const date = new Date();

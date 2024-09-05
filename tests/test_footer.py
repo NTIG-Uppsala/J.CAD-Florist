@@ -13,14 +13,14 @@ startPage = filePath + "index.html"
 socialMediaPaths = [
     "images/facebook.svg",
     "images/instagram.svg",
-    "images/twitter.svg"
+    "images/twitter.svg",
 ]
 
 # Lista med länkarna till alla sociala medier
 socialMediaLinks = [
     "https://www.facebook.com/ntiuppsala",
     "https://www.instagram.com/ntiuppsala/",
-    "https://x.com/ntiuppsala"
+    "https://x.com/ntiuppsala",
     ]
 
 # Klass för att testa footern
@@ -47,7 +47,7 @@ class test_footer(BaseCase):
             "26 dec - Annandag jul",
             "31 dec - Nyårsafton",
             "Fjällgatan 32H 981 39 KIRUNA",
-            "0630-555-555"
+            "0630-555-555",
         ]
 
         # Kollar att alla förväntade texter finns i footern

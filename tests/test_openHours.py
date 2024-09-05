@@ -13,7 +13,7 @@ english_to_swedish = {
     'Thursday': 'Torsdag',
     'Friday': 'Fredag',
     'Saturday': 'Lördag',
-    'Sunday': 'Söndag'
+    'Sunday': 'Söndag',
 }
 
 openHoursDict = {
@@ -23,7 +23,7 @@ openHoursDict = {
     'Torsdag': {'open': '10', 'close': '17'},
     'Fredag': {'open': '10', 'close': '18'},
     'Lördag': {'open': '12', 'close': '16'},
-    'Söndag': {'open': '12', 'close': '15'}
+    'Söndag': {'open': '12', 'close': '15'},
 }
 closedDays = [
     "01/01",
@@ -33,7 +33,7 @@ closedDays = [
     "24/12",
     "25/12",
     "26/12",
-    "31/12"
+    "31/12",
 ]
 #datum och tid just nu 
 now = datetime.now()
