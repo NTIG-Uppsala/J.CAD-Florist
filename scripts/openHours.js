@@ -1,11 +1,11 @@
 openHoursDict = {
-    'Måndag': {'open': '10', 'close': '18'},
-    'Tisdag': {'open': '10', 'close': '18'},
-    'Onsdag': {'open': '10', 'close': '17'},
-    'Torsdag': {'open': '10', 'close': '17'},
-    'Fredag': {'open': '10', 'close': '18'},
-    'Lördag': {'open': '12', 'close': '16'},
-    'Söndag': {'open': '12', 'close': '15'}
+    'måndag': {'open': '10', 'close': '18'},
+    'tisdag': {'open': '10', 'close': '18'},
+    'onsdag': {'open': '10', 'close': '17'},
+    'torsdag': {'open': '10', 'close': '17'},
+    'fredag': {'open': '10', 'close': '18'},
+    'lördag': {'open': '12', 'close': '16'},
+    'söndag': {'open': '12', 'close': '15'}
 }
 
 //Stängda dagar
@@ -32,10 +32,16 @@ function getTodaysDate(date) {
 
 function checkOpenHours(date) {
     //räknar ut vilken veckodag det är idag och imorgon
-    const day = date.getDay()
-    const currentWeekDay = Object.keys(openHoursDict)[day - 1];
+    let day = date.getDay()
+    console.log(day);
+    if (day == 0) {
+        currentWeekDay = Object.keys(openHoursDict)[6];
+    } else {
+        currentWeekDay = Object.keys(openHoursDict)[day - 1];
+    }
+    console.log("current",currentWeekDay);
     const nextWeekDay = Object.keys(openHoursDict)[day];
-
+    console.log("next",nextWeekDay);
     //Texten som ska stylas
     const openHoursText = document.getElementById("openOrClosed");
 
@@ -56,10 +62,5 @@ function checkOpenHours(date) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    //Öppettider
-    
-
-
-    
     checkOpenHours(new Date());
 });
