@@ -31,13 +31,13 @@ class test_footer(BaseCase):
         self.open(startPage)
         # Förväntade texter i footern
         expected_texts = [
-            "Måndagar 10-18",
-            "Tisdagar 10-18",
-            "Onsdagar 10-17",
-            "Torsdagar 10-17",
-            "Fredagar 10-18",
-            "Lördagar 12-16",
-            "Söndagar 12-15",
+            "Måndag 10-18",
+            "Tisdag 10-18",
+            "Onsdag 10-17",
+            "Torsdag 10-17",
+            "Fredag 10-18",
+            "Lördag 12-16",
+            "Söndag 12-15",
             "1 jan - Nyårsdagen",
             "6 jan - Trettondedag jul",
             "1 maj - Första maj",
