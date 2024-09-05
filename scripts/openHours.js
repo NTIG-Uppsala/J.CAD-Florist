@@ -8,7 +8,6 @@ openHoursDict = {
     'söndag': {'open': '12', 'close': '15'}
 }
 
-//Stängda dagar
 closedDays = [
     "1/1",
     "6/1",
@@ -20,8 +19,6 @@ closedDays = [
     "31/12"
 ]
 
-
-
 function getTodaysDate(date) {
     const month = date.getMonth();  // 0-11
     const dayOfMonth = date.getDate();
@@ -29,21 +26,17 @@ function getTodaysDate(date) {
     return todaysDate;
 }
 
-
 function checkOpenHours(date) {
     //räknar ut vilken veckodag det är idag och imorgon
     let day = date.getDay()
-    console.log(day);
-    if (day == 0) {
+    if (day == 0) { // day = 0 är söndag men i openHoursDict är söndag sista dagen (index 6)
         currentWeekDay = Object.keys(openHoursDict)[6];
-    } else {
+    } else { // indexeringen i date.getDay() är 0-6 där 0 är söndag, så vi behöver subtrahera 1 för att få rätt index
         currentWeekDay = Object.keys(openHoursDict)[day - 1];
     }
-    console.log("current",currentWeekDay);
     const nextWeekDay = Object.keys(openHoursDict)[day];
-    console.log("next",nextWeekDay);
-    //Texten som ska stylas
-    const openHoursText = document.getElementById("openOrClosed");
+    
+    const openHoursText = document.getElementById("openOrClosed"); //Texten som ska stylas
 
     const nextDayOpenHour = openHoursDict[nextWeekDay].open
     const currentDayOpenHour = openHoursDict[currentWeekDay].open;
