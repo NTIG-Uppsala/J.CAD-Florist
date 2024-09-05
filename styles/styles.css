@@ -226,11 +226,8 @@ main {
 
 
 /*Embeddar en annan html fil i den här diven med javascript*/
-.productEmbedd {
-    width: 100em;
-    height: 35em;
-    display: block;
-    position: relative;
+.productEmbed {
+    width: 80%;
     margin: 0 auto 0 auto;
 }
 

@@ -25,8 +25,8 @@ class test_index(BaseCase):
         # List of expected texts
         expected_texts = [
             "Överraska någon med ett blommogram",
-            "Vill du skicka ett blommogram? Besök oss i butiken för att göra din beställning.",
-            "Kontrollera här om vi levererar till ditt postnummer:",
+            "Vill du skicka ett blommogram? Besök oss i butiken eller ring oss på 0630-555-555!",
+            "Kontrollera här om vi levererar till ditt önskade postnummer:",
         ]
         # Loop through the expected texts and assert each one
         for text in expected_texts:
@@ -68,11 +68,11 @@ class test_index(BaseCase):
         for postalCode in testCases:
             self.type("#postalCode", postalCode)
             self.click('button')
-            self.assert_text("Vi levererar tyvär inte till denna adress")
+            self.assert_text("Vi levererar tyvärr inte till detta postnummer!")
         
         #Provar att skriva in alla korrekta postnummer i inputfältet och klickar på Enter istället
         for postalCode in correctPostalCodes:
             self.type("#postalCode", postalCode)
             self.get_element("#postalCode").send_keys(Keys.ENTER)
-            self.assert_text("Vi levererar till denna adress")
+            self.assert_text("Vi levererar till detta postnummer!")
          
