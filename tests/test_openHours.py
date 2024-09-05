@@ -13,7 +13,7 @@ english_to_swedish = {
     'Thursday': 'Torsdag',
     'Friday': 'Fredag',
     'Saturday': 'Lördag',
-    'Sunday': 'Söndag',
+    'Sunday': 'Söndag'
 }
 
 openHoursDict = {
@@ -23,7 +23,7 @@ openHoursDict = {
     'Torsdag': {'open': '10', 'close': '17'},
     'Fredag': {'open': '10', 'close': '18'},
     'Lördag': {'open': '12', 'close': '16'},
-    'Söndag': {'open': '12', 'close': '15'},
+    'Söndag': {'open': '12', 'close': '15'}
 }
 closedDays = [
     "01/01",
@@ -33,7 +33,7 @@ closedDays = [
     "24/12",
     "25/12",
     "26/12",
-    "31/12",
+    "31/12"
 ]
 #datum och tid just nu 
 now = datetime.now()
@@ -49,13 +49,32 @@ nextDay = days[(days.index(weekday_string) + 1)]
 startPage = filePath + "index.html"
 
 class test_openHours(BaseCase):
+    
+    def helperTime(self, datetime, expected):
+        self.open(startPage)
+        self.execute_script(f"checkOpenHours(new Date('{datetime}'))")
+        self.assert_text(expected)
+        
     def test_openHoursText(self):
         self.open(startPage)
-        if(date_string in closedDays):
-            self.assert_text("Stängt för helgdag, vi öppnar kl " + openHoursDict[nextDay]['open'] + " på " + nextDay)
-        elif(time_string >= openHoursDict[weekday_string]['open'] and time_string <= openHoursDict[weekday_string]['close']):
-                self.assert_text("Öppet, vi stänger kl " + openHoursDict[weekday_string]['close'])
-        elif(time_string < openHoursDict[weekday_string]['open']):
-            self.assert_text("Stängt, vi öppnar kl " + openHoursDict[weekday_string]['open'] + " idag")
-        else:
-            self.assert_text("Stängt, vi öppnar kl " + openHoursDict[nextDay]['open'] + " på " + nextDay)
+        self.execute_script("checkOpenHours(new Date('2024-09-05T17:32:00'))")
+        self.assert_text("Stängt, vi öppnar kl 10")
+        
+    def test_openHoursText2(self):
+        self.open(startPage)
+        self.execute_script("checkOpenHours(new Date('2024-09-05T15:32:00'))")
+        self.assert_text("Öppet, vi stänger kl 17")
+        
+    def test_openHoursText3(self):
+        self.open(startPage)
+        self.execute_script("checkOpenHours(new Date('2024-09-05T06:32:00'))")
+        self.assert_text("Stängt, vi öppnar kl 10")
+        
+    
+    def test_openHoursMultiple(self):
+        self.helperTime("2024-09-05T06:32:00", "Stängt, vi öppnar kl 10")  # Torsdag före öppning
+        self.helperTime("2024-09-08T06:32:00", "Stängt, vi öppnar kl 10")  # Torsdag före öppning
+        self.helperTime("2024-09-05T06:32:00", "Stängt, vi öppnar kl 10")  # Torsdag före öppning
+        self.helperTime("2024-09-08T06:32:00", "Stängt, vi öppnar kl 10")  # Torsdag före öppning
+        
+     
