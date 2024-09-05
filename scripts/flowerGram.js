@@ -14,10 +14,10 @@ function handleKeyDown(event) {
     if (event.key === "Enter") {
         getPostalCode();
     }
-    //Får värdet ifrån input fältet
+    //Får värdet ifrån inputfältet
     let currentInput = document.getElementById("postalCode").value;
 
-    //förhindrar att användaren kan trycka space förutom efter de tre första sifforna
+    //Förhindrar att användaren kan trycka space förutom efter de tre första siffrorna
     if (event.key === " " && currentInput.length !== 3) {
         event.preventDefault();
         return;
@@ -29,7 +29,7 @@ function handleKeyDown(event) {
         return;
     }
 
-    //Kallar handleInput om backsapce eller space inte trycks och om längden är 3 
+    //Kallar handleInput om backspace eller space inte trycks och om längden är 3 
     //(om användaren glömmer trycka space efter de tre första siffrorna)
     if (event.key !== "Backspace" && event.key !== " " && currentInput.length == 3) {
         handleInput(); 
@@ -44,18 +44,18 @@ function handleInput(){
     }
 }
 
-//Funktion som kollar om postnummret finns i listan
+//Funktion som kollar om postnumret finns i listan
 function getPostalCode() {
-    //Får värdet ifrån input fältet
+    //Får värdet ifrån inputfältet
     var userInput = document.getElementById("postalCode").value;
     var inputMessage = document.getElementById("inputMessage");
-    //Om postnummret finns i listan så skrivs detta ut
+    //Om postnumret finns i listan så skrivs detta ut
     if(postalCodes.includes(userInput)) {
-        inputMessage.innerHTML = "Vi levererar till denna adress";
+        inputMessage.innerHTML = "Vi levererar till detta postnummer!";
         inputMessage.style.color = "green";
-    //Om postnummret inte finns i listan så skrivs detta ut
+    //Om postnumret inte finns i listan så skrivs detta ut
     } else {
-        inputMessage.innerHTML = "Vi levererar tyvär inte till denna adress";
+        inputMessage.innerHTML = "Vi levererar tyvärr inte till detta postnummer!";
         inputMessage.style.color = "red";
     }
 }

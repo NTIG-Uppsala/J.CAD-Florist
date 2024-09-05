@@ -134,6 +134,10 @@ main {
     color: rgb(0, 0, 0);
 }
 
+.flowerGram a{
+    color: black;
+}
+
 #postalCode{
     width: 65%;
     margin: 0rem 0.5rem 1rem 0.5rem; 

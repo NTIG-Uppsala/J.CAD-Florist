@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
     //Öppettider
     openHoursDict = {
-        'Måndag': {'open': '10', 'close': '18'},
-        'Tisdag': {'open': '10', 'close': '18'},
-        'Onsdag': {'open': '10', 'close': '17'},
-        'Torsdag': {'open': '10', 'close': '17'},
-        'Fredag': {'open': '10', 'close': '18'},
-        'Lördag': {'open': '12', 'close': '16'},
-        'Söndag': {'open': '12', 'close': '15'}
+        'måndag': {'open': '10', 'close': '18'},
+        'tisdag': {'open': '10', 'close': '18'},
+        'onsdag': {'open': '10', 'close': '17'},
+        'torsdag': {'open': '10', 'close': '17'},
+        'fredag': {'open': '10', 'close': '18'},
+        'lördag': {'open': '12', 'close': '16'},
+        'söndag': {'open': '12', 'close': '15'}
     }
 
     //Stängda dagar
@@ -41,25 +41,19 @@ document.addEventListener("DOMContentLoaded", function() {
     function checkOpenHours() {
         //Kollar om det är en stängd dag
         if (closedDays.includes(todaysDate)) {
-            console.log("Stängt för helgdag");
-            console.log("Vi öppnar kl", openHoursDict[nextDay].open, "på", nextDay);
-            openHoursText.innerHTML = "Stängt för helgdag, vi öppnar kl " + openHoursDict[nextDay].open + " på " + nextDay;
+            openHoursText.innerHTML = "Stängt för helgdag, vi öppnar klockan " + openHoursDict[nextDay].open + " på " + nextDay;
             return;
         }
 
         //Kollar om det är öppet eller stängt
         if (currentTime >= openHoursDict[currentWeekDay].open && currentTime < openHoursDict[currentWeekDay].close) {
-            console.log("Öppet", currentTime, "vi stänger kl", openHoursDict[currentWeekDay].close);
-            openHoursText.innerHTML = "Öppet, vi stänger kl " + openHoursDict[currentWeekDay].close;
+            openHoursText.innerHTML = "Vi har just nu öppet!"+" Butiken stänger klockan " + openHoursDict[currentWeekDay].close;
         //Körs om det är stängt och innan öppningstid
         } else if(currentTime < openHoursDict[currentWeekDay].open) {
-            console.log("Stängt, vi öppnar kl", openHoursDict[currentWeekDay].open, " idag");
-            openHoursText.innerHTML = "Stängt, vi öppnar kl " + openHoursDict[currentWeekDay].open + " idag";
+            openHoursText.innerHTML = "Butiken är stängd men vi öppnar klockan " + openHoursDict[currentWeekDay].open + " idag";
         //Körs om det är stängt och efter stängningstid
         } else {
-            console.log();
-            console.log("Stängt, vi öppnar kl", openHoursDict[nextDay].open, "på", nextDay);
-            openHoursText.innerHTML = "Stängt, vi öppnar kl " + openHoursDict[nextDay].open + " på " + nextDay;
+            openHoursText.innerHTML = "Butiken är stängd men vi öppnar klockan " + openHoursDict[nextDay].open + " på " + nextDay;
         }
     }
     checkOpenHours();
