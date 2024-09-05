@@ -29,6 +29,7 @@ function handleKeyDown(event) {
         return;
     }
 
+    // lägger till space efter de tre första siffrorna (postnummerstandard)
     //Kallar handleInput om backsapce eller space inte trycks och om längden är 3 
     //(om användaren glömmer trycka space efter de tre första siffrorna)
     if (event.key !== "Backspace" && event.key !== " " && currentInput.length == 3) {
