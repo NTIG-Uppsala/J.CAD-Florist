@@ -305,6 +305,23 @@ footer{
     text-align: left;
 }
 
+.openingHours {
+    margin: 0rem 0.5rem 0rem 0.5rem;
+}
+
+.footerCon2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.openingHoursCon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 /*Sociala medier*/
 .socialMedia{
     display: flex;
