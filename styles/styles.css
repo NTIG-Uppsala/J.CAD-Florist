@@ -14,6 +14,10 @@
     font-family: "abel", sans-serif;
 }
 
+html {
+    font-size: 16px;
+}
+
 /*styling för h1-h6 och p taggar*/
 h1{font-size: 2.986rem;}
 h2{font-size: 2.488rem;}
@@ -24,12 +28,12 @@ h6{font-size: 1.2rem;}
 p{font-size: 1rem;}
 
 body {
-    
     background-color: rgb(255, 255, 242);
     padding: 0;
     margin: 0;
     overflow-x: hidden;
 }
+
 
 /*Header*/
 .header{
@@ -120,6 +124,7 @@ main {
     position: absolute;
     left: 5rem;
     top: 10rem;
+    background-color: red;
 }
 
 .flowerGramContainer h2{
@@ -411,7 +416,10 @@ footer{
 }
 
 @media screen and (max-width: 700px) { 
-    .popupButtonContainer {
+    html {
+        font-size: 12px;
+    }
+    .flowerGramContainer {
         width: 20rem;
         left: 1rem;
         top: 5rem;
@@ -462,12 +470,6 @@ footer{
 }
 
 @media screen and (max-width: 500px) {
-    .flowerGram{
-        width: 100%;
-        height: 50%;
-        bottom: 0;
-        border-style: none;
-    }
     .logo {
         width: 12%;
         height: auto;
@@ -475,13 +477,6 @@ footer{
 }
 
 @media screen and (max-width: 400px) {
-    .flowerGram{
-        width: 100%;
-        height: 60%;
-        bottom: 0;
-        border-style: none;
-    }
- 
     .logo {
         width: 15%;
     }
