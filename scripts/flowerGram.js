@@ -55,4 +55,9 @@ function getPostalCode() {
         inputResponse.innerHTML = "Vi levererar tyvärr inte till detta postnummer!";
         inputResponse.style.color = "red";
     }
+
+        //Kör en animation för att ge användaren visuell feedback
+        inputResponse.classList.remove("fade-in");//Tar bort fade-in klassen för att kunna köra animationen igen
+        void inputResponse.offsetWidth;//Tvingar browsern att uppdatera sidan så att animationen körs om
+        inputResponse.classList.add("fade-in");//Lägger till fade-in klassen för att köra animationen
 }
