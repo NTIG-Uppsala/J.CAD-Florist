@@ -1,6 +1,6 @@
 //Visar blommogrammet om man kallar funktionen
 function flowerGramPopUp() {
-    var flowerGramPopUp = document.getElementById('flowerGram');
+    let flowerGramPopUp = document.getElementById('flowerGram');
     flowerGramPopUp.classList.toggle('show');
 }
 
@@ -44,8 +44,8 @@ function handleKeyDown(event) {
 //Funktion som kollar om postnumret finns i listan
 function getPostalCode() {
     //Får värdet ifrån inputfältet
-    var postalCodeInput = document.getElementById("postalCode").value;
-    var inputResponse = document.getElementById("inputMessage");
+    let postalCodeInput = document.getElementById("postalCode").value;
+    let inputResponse = document.getElementById("inputResponse");
     //Om postnumret finns i listan så skrivs detta ut
     if(postalCodes.includes(postalCodeInput)) {
         inputResponse.innerHTML = "Vi levererar till detta postnummer!";
