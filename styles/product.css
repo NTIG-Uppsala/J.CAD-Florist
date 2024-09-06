@@ -27,6 +27,7 @@ body {
     height: 100%;
 }
 
+/*produkt*/
 .product {
     font-size: 1em;
     width: 30em;
@@ -34,7 +35,7 @@ body {
     margin: 1em;
 }
 
-
+/*produkt footer*/
 .productFooter {
     width: 100%;
     height: 25%;
@@ -46,17 +47,19 @@ body {
     border-bottom-right-radius: 1em;
 }
 
+/*produkt namn*/
 .productFooter h1 {
     font-size: 1.728rem;
     color: rgb(0, 0, 0);
 }
 
+/*produkt pris*/
 .productFooter h2 {
     font-size: 1.44rem;
     font-weight: lighter;
     color: rgb(0, 0, 0);
 }
-
+/*produkt bild*/
 .product img {
     height: 75%;
     width: 100%;
@@ -65,6 +68,8 @@ body {
 }
 
 
+
+/*Media queries*/
 @media  screen and (max-width: 660px) {
     .product {
         width: 25em;
