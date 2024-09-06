@@ -142,6 +142,11 @@ main {
     border-radius: 1rem;
 }
 
+.flowerGramContainer h4:hover {
+    background-color: rgb(255, 255, 189);
+    cursor: pointer;
+}
+
 #flowerGram{
     visibility: hidden;
     opacity: 0;
