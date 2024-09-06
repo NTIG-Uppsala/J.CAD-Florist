@@ -72,11 +72,11 @@ class test_openHours(BaseCase):
         self.helperTime("2024-09-08T16:00:00", "Stängt, vi öppnar kl 10 på måndag")  # Efter stängning
         
         # Stängda dagar
-        self.helperTime("2024-01-01T12:00:00", "Stängt för helgdag, vi öppnar kl 10 på tisdag")  # Nyårsdagen (måndag)
-        self.helperTime("2024-01-06T12:00:00", "Stängt för helgdag, vi öppnar kl 12 på söndag")  # Trettondedag jul (lördag)
-        self.helperTime("2024-05-01T12:00:00", "Stängt för helgdag, vi öppnar kl 10 på torsdag")  # Första maj (onsdag)
-        self.helperTime("2024-06-06T12:00:00", "Stängt för helgdag, vi öppnar kl 10 på fredag")  # Nationaldagen (torsdag)
-        self.helperTime("2024-12-24T12:00:00", "Stängt för helgdag, vi öppnar kl 10 på onsdag")  # Julafton (tisdag)
-        self.helperTime("2024-12-25T12:00:00", "Stängt för helgdag, vi öppnar kl 10 på torsdag")  # Juldagen (onsdag)
-        self.helperTime("2024-12-26T12:00:00", "Stängt för helgdag, vi öppnar kl 10 på fredag")  # Annandag jul (torsdag)
-        self.helperTime("2024-12-31T12:00:00", "Stängt för helgdag, vi öppnar kl 10 på onsdag")  # Nyårsafton (tisdag)
+        self.helperTime("2024-01-01T12:00:00", "Stängt för helgdag")  # Nyårsdagen (måndag)
+        self.helperTime("2024-01-06T12:00:00", "Stängt för helgdag")  # Trettondedag jul (lördag)
+        self.helperTime("2024-05-01T12:00:00", "Stängt för helgdag")  # Första maj (onsdag)
+        self.helperTime("2024-06-06T12:00:00", "Stängt för helgdag")  # Nationaldagen (torsdag)
+        self.helperTime("2024-12-24T12:00:00", "Stängt för helgdag")  # Julafton (tisdag)
+        self.helperTime("2024-12-25T12:00:00", "Stängt för helgdag")  # Juldagen (onsdag)
+        self.helperTime("2024-12-26T12:00:00", "Stängt för helgdag")  # Annandag jul (torsdag)
+        self.helperTime("2024-12-31T12:00:00", "Stängt för helgdag")  # Nyårsafton (tisdag)
