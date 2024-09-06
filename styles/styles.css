@@ -14,15 +14,26 @@
     font-family: "abel", sans-serif;
 }
 
+html {
+    font-size: 16px;
+}
 
+/*styling för h1-h6 och p taggar*/
+h1{font-size: 2.986rem;}
+h2{font-size: 2.488rem;}
+h3{font-size: 2.074rem;}
+h4{font-size: 1.728rem;}
+h5{font-size: 1.44rem;}
+h6{font-size: 1.2rem;}
+p{font-size: 1rem;}
 
 body {
-    
     background-color: rgb(255, 255, 242);
     padding: 0;
     margin: 0;
     overflow-x: hidden;
 }
+
 
 /*Header*/
 .header{
@@ -51,7 +62,6 @@ body {
     height: 30%;
     color: rgb(206, 175, 73);
     font-weight: bold;
-    font-size: 1.2rem;
 }
 
 .headerContainer{
@@ -95,53 +105,85 @@ main {
 .slideshowContainer {
     display: flex;
     justify-content: center;
-    width: 75%;
-    height: 85%;
+    width: 100%;
+    height: 100%;
     flex-direction: row;
     align-items: center;
     position: relative;
-    border-radius: 1rem;
-    overflow: hidden; /* Ensure slides respect the container's border-radius */
+    overflow: hidden; 
 }
 
-.flowerGram{
-    width: 20%;
-    height: 100%;
+/*Blommor grammet*/
+.flowerGramContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 40rem;
+    height: 80%;
+    position: absolute;
+    left: 5rem;
+    top: 10rem;
+}
+
+.flowerGramContainer h2{
+    color: white;
+}
+
+.flowerGramContainer h4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    width: 60%;
+    height: 5rem;
+    background-color: beige;
+    border: 2px solid black;
+    border-radius: 1rem;
+}
+
+.flowerGramContainer h4:hover {
+    background-color: rgb(255, 255, 189);
+    cursor: pointer;
+}
+
+#flowerGram{
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+    height: 10rem;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
     background-color: beige;
-    position: absolute;
-    right: 0;
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    border-left: 5px solid rgb(0, 0, 0); /* Border only on the left side */
+    margin-top: 3rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 2px solid black;
 }
 
-.flowerGram h1{
-    margin: 1rem 0.5rem 1rem 0.5rem; 
+#flowerGram.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+#flowerGram p{  
     width: 90%;
-    text-align: center;
-    font-size: 1.728rem;
+    margin: 0.2rem 0 0.2rem 0;
     color: rgb(0, 0, 0);
 }
 
-.flowerGram p{
-    margin: 1rem 0.5rem 1rem 0.5rem;    
-    width: 90%;
-    font-size: 1rem;
-    color: rgb(0, 0, 0);
-}
-
-.flowerGram a{
+#flowerGram a{
     color: black;
 }
 
 #postalCode{
     width: 65%;
-    margin: 0rem 0.5rem 1rem 0.5rem; 
+    margin-top: 0.5rem;
     font-size: 1rem;
+    border: 1px solid black;
+    border-radius: 0.2rem;
 }
 
 .postalCodeBtn {
@@ -152,13 +194,15 @@ main {
     display: inline-block;
     font-size: 1rem;
     border-radius: 0.2rem;
-    transition-duration: 0.6s;
+    border: 1px solid black;
 }
 
 .postalCodeBtn:hover {
     background-color: rgb(0, 0, 0);
     color: white;
+    cursor: pointer;
 }
+/*Blommogrammet slutar här*/
 
 /*Bildspel*/
 /* .slide klassen stilar varje bild i bildspelet */
@@ -169,7 +213,6 @@ main {
     height: 100%;
     opacity: 0;
     animation: fade 18s infinite;
-    border-radius: 1rem;
 }
 
 /* Animerar den första bilden med full opacitet genom hela animationen */
@@ -390,12 +433,19 @@ footer{
 }
 
 @media screen and (max-width: 700px) { 
-    .flowerGram{
-        width: 100%;
-        height: 45%;
-        bottom: 0;
-        border-style: none;
+    html {
+        font-size: 12px;
     }
+    .flowerGramContainer {
+        width: 20rem;
+        left: 1rem;
+        top: 5rem;
+    }
+
+    #flowerGram {
+        margin-top: 1rem;
+    }
+
     .footerTop {
         grid-template-columns: 1fr;
     }
@@ -437,12 +487,6 @@ footer{
 }
 
 @media screen and (max-width: 500px) {
-    .flowerGram{
-        width: 100%;
-        height: 50%;
-        bottom: 0;
-        border-style: none;
-    }
     .logo {
         width: 12%;
         height: auto;
@@ -450,15 +494,6 @@ footer{
 }
 
 @media screen and (max-width: 400px) {
-    .flowerGram{
-        width: 100%;
-        height: 60%;
-        bottom: 0;
-        border-style: none;
-    }
-    .header p {
-        font-size: 0.8em;
-    }   
     .logo {
         width: 15%;
     }

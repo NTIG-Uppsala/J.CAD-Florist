@@ -29,6 +29,7 @@ function getTodaysDate(date) {
 function checkOpenHours(date) {
     //räknar ut vilken veckodag det är idag och imorgon
     let day = date.getDay()
+    let currentWeekDay;
     if (day == 0) { // day = 0 är söndag men i openHoursDict är söndag sista dagen (index 6)
         currentWeekDay = Object.keys(openHoursDict)[6];
     } else { // indexeringen i date.getDay() är 0-6 där 0 är söndag, så vi behöver subtrahera 1 för att få rätt index
