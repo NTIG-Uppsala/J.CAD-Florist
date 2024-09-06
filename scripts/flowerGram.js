@@ -1,3 +1,9 @@
+//Visar blommogrammet om man kallar funktionen
+function popUp() {
+    var popup = document.getElementById('flowerGram');
+    popup.classList.toggle('show');
+}
+
 //Lista av alla korrekta postnummer
 const postalCodes = [
     "981 38",
