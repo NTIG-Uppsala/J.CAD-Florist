@@ -54,6 +54,6 @@ function checkOpenHours(date) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    checkOpenHours(new Date());
-});
+
+checkOpenHours(new Date());
+

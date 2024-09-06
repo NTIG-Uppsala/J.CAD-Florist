@@ -1,14 +1,12 @@
-document.addEventListener("DOMContentLoaded", function() {
-    var includes = document.querySelectorAll('[data-include]');
-    includes.forEach(function(include) {
+//Script som inkluderar html-filer i andra html-filer
+
+var includes = document.querySelectorAll('[data-include]');
+    includes.forEach(function(include) { //hämtar filnamn från 'data-include' attributet och lägger till .html
         var file = include.getAttribute('data-include') + '.html';
-        fetch(file)
+        fetch(file) //hämtar html-filen
             .then(response => response.text())
             .then(data => {
-                include.innerHTML = data;
-                const fragment = document.createDocumentFragment();
-                include.appendChild(fragment);
+                include.innerHTML = data; //lägger in html-koden i elementet
             })
             .catch(error => console.error('Error loading file:', error));
     });
-});
