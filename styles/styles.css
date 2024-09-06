@@ -306,10 +306,11 @@ footer{
     margin: 0rem 0.5rem 0rem 0.5rem;
 }
 
-.footerCon2{
+.footerCon2, .footerCon3 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
 }
 
 .openingHoursCon{
@@ -318,6 +319,18 @@ footer{
     align-items: center;
     justify-content: center;
 }
+
+.closedDays	 {
+    margin: 0rem 0.5rem 0rem 0.5rem;
+}
+
+.closedDaysCon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 
 /*Sociala medier*/
 .socialMedia{
