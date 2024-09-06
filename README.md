@@ -29,6 +29,6 @@ Alla pushade ändringar går direkt till main och uppdaterar hemsidan.
 Alla tester ligger i tests mappen. Testerna är uppdelade i flera filer som alla börjar på "test_"
 
 # Ikoner
-[icons8](https://icons8.com/)
+Icons by: [icons8](https://icons8.com/)
 
 
