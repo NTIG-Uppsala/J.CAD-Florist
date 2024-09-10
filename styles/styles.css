@@ -219,7 +219,7 @@ main {
     border: 1px solid black;
     border-left: none;
     width: 2.5rem;
-    background-image: url(/images/iconmonstr-search-thinBlack.svg);
+    background-image: url('../images/iconmonstr-search-thinBlack.svg');
     background-size: 1.3rem;
     background-repeat: no-repeat;
     background-position: center;
@@ -227,7 +227,7 @@ main {
 
 .postalCodeBtn:hover {
     background-color: rgb(0, 0, 0);
-    background-image: url(/images/iconmonstr-search-thinWhite.svg);
+    background-image: url('../images/iconmonstr-search-thinWhite.svg');
     cursor: pointer;
 }
 
