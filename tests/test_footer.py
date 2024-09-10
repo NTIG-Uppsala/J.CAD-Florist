@@ -11,9 +11,9 @@ startPage = filePath + "index.html"
 
 # Lista med alla sociala medier ikoner
 socialMediaPaths = [
-    "images/facebook.svg",
-    "images/instagram.svg",
-    "images/twitter.svg",
+    "images/icons8-facebook.svg",
+    "images/icons8-instagram.svg",
+    "images/icons8-twitterx.svg",
 ]
 
 # Lista med länkarna till alla sociala medier

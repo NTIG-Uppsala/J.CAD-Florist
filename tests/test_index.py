@@ -22,10 +22,12 @@ class test_index(BaseCase):
     #Kollar om texten finns på sidan
     def test_flowerGramText(self):
         self.open(startPage)
+        self.click("h4[onclick='flowerGramPopUp()']")
         # List of expected texts
         expected_texts = [
-            "Överraska någon med ett blommogram",
-            "Vill du skicka ett blommogram? Besök oss i butiken eller ring oss på 0630-555-555!",
+            "Överraska med ett blommogram",
+            "Vill du skicka ett blommogram?",
+            "Besök oss i butiken eller ring oss på 0630-555-555!",
             "Kontrollera här om vi levererar till ditt önskade postnummer:",
         ]
         # Loop through the expected texts and assert each one
@@ -64,6 +66,7 @@ class test_index(BaseCase):
         ]
 
         self.open(startPage)
+        self.click("h4[onclick='flowerGramPopUp()']")
         #Provar att skriva in alla testcases i inputfältet och klickar på knappen
         for postalCode in testCases:
             self.type("#postalCode", postalCode)

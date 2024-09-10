@@ -19,7 +19,6 @@
         <img class="logo" src="images/logga_florist1.png" alt="Hemsidans logga">
         <div class="headerContainer">
             <h1 class="title">florista</h1>
-            <p>Den här hemsidan tillhör florista</p>  
         </div>
     </header>
     <!--Header slutar här-->
@@ -40,11 +39,13 @@
                 <h4 onclick="flowerGramPopUp()">Skicka blommogram</h4>
                 <!--Rutan som kommer upp om man trycker på "Skicka blommogram-->
                 <div id="flowerGram">
-                    <p>Vill du skicka ett blommogram? Besök oss i butiken eller ring oss på <a href="tel:0630555555">0630-555-555</a>!</p>
+                    <h6>Vill du skicka ett blommogram?</h6>
+                    <p>Besök oss i butiken eller ring oss på <a href="tel:0630555555">0630-555-555</a>!</p>
+                    <hr class="flowerGramSeparator">
                     <p>Kontrollera här om vi levererar till ditt önskade postnummer:</p>
                     <div class="inputContainer">
                         <input id="postalCode" type="text" placeholder="Ange postnummer" maxlength="6" onkeydown="handleKeyDown(event)">
-                        <button class="postalCodeBtn" onclick="getPostalCode()">Sök</button>
+                        <button class="postalCodeBtn" onclick="getPostalCode()"></button>
                     </div>
                     <p id="inputResponse"></p>
                 </div>
