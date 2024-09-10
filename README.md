@@ -15,6 +15,9 @@ Medlemmar: Carl, David och Joel.
 
 [Kodningsstandard](MD_files/Kodningsstandard.md)
 
+## Guider
+[Samling av guider för hemsidan](MD_files/Guider.md)
+
 ## Tester
 Ramverket selenium och bibloteket seleniumbase krävs för att köra testerna (pip install selenium och pip install seleniumbase).
 [Läs mer om seleniumbase här](https://seleniumbase.io/)
@@ -28,7 +31,7 @@ Alla pushade ändringar går direkt till main och uppdaterar hemsidan.
 ## Filsystem
 Alla tester ligger i tests mappen. Testerna är uppdelade i flera filer som alla börjar på "test_"
 
-# Ikoner
-Ikoner tagna från: [icons8](https://icons8.com/)
+## Ikoner
+Ikoner tagna från: [icons8](https://icons8.com/), [iconmonstr](https://iconmonstr.com/)
 
 
