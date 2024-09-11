@@ -57,4 +57,3 @@ function checkOpenHours(date) {
 
 
 checkOpenHours(new Date());
-
