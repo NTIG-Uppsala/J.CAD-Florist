@@ -324,7 +324,7 @@ footer{
     padding-top:1%;
 }
 
-.footerTop {
+#footerTop {
     width: 100%;
     flex-grow: 1;
     display: grid;
@@ -332,7 +332,7 @@ footer{
     gap: 1rem;
 }
 
-#footerContainer1, #footerContainer2, #footerContainer3 {
+#footerContainer1, #footerContainer2, #footerBottom {
     display: flex;
     justify-content: center;
     position: relative; /* Behövs för att positionera pseudeoelement */
@@ -359,11 +359,11 @@ footer{
     justify-content: center;
 }
 
-.footerInfo, .openingHours, .closedDays {
+#footerInfo, .openingHours, .closedDays {
     list-style: none; 
 }
 
-.footerInfo a {
+#footerInfo a {
     color: black;
 }
 
@@ -384,7 +384,7 @@ footer li{
     margin: 0rem 0.5rem 0rem 0.5rem;
 }
 
-#footerContainer2, #footerContainer3 {
+#footerContainer2, #footerBottom {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -410,17 +410,17 @@ footer li{
 }
 
 /*Sociala medier*/
-.socialMedia{
+#socialMediaContainer{
     display: flex;
     justify-content: center;
     list-style: none;
 }
 
-.socialMedia li {
+#socialMediaContainer li {
     margin: 0 2em;
 }
 
-.socialMedia img {
+#socialMediaContainer img {
     height: 3rem;
     width: 3rem;
 }
@@ -485,11 +485,11 @@ footer li{
         margin-top: 1rem;
     }
 
-    .footerTop {
+    #footerTop {
         grid-template-columns: 1fr;
     }
 
-    #footerContainer1, #footerContainer2, #footerContainer3 {
+    #footerContainer1, #footerContainer2, #footerBottom {
         justify-content: center;
         text-align: center;
     }
@@ -502,7 +502,7 @@ footer li{
         content: none;
     }
 
-    .footerInfo {
+    #footerInfo {
         order: 1;
         margin-bottom: 1rem;
     }
@@ -540,7 +540,7 @@ footer li{
     .logo {
         width: 15%;
     }
-    .socialMedia li {
+    #socialMediaContainer li {
         margin: 0 1em;
     }
 }
