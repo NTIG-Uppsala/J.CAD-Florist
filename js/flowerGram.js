@@ -1,7 +1,7 @@
 //Visar blommogrammet om man kallar funktionen
-function flowerGramPopUp() {
-    let flowerGramPopUp = document.getElementById('flowerGram');
-    flowerGramPopUp.classList.toggle('show');
+function flowergramBtnPressed() {
+    let flowergramPopUp = document.getElementById('flowergram');
+    flowergramPopUp.classList.toggle('show');
 }
 
 //Lista av alla korrekta postnummer
