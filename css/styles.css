@@ -35,7 +35,7 @@ body {
 
 
 /*Header*/
-.header{
+header {
     position: sticky;
     top: 0;
     width: 100%;
@@ -57,7 +57,7 @@ body {
 }
 
 /*Header meddelande*/
-.header p{
+header p{
     height: 30%;
     color: rgb(206, 175, 73);
     font-weight: bold;
@@ -81,7 +81,7 @@ body {
 }
 
 /*Stängt eller öppet*/
-.openOrClosedContainer{
+#openOrClosedContainer{
     background-color: beige;
     color: black;
     font-size: 1rem;
@@ -93,7 +93,7 @@ body {
     align-items: center;
 }
 
-/*Main delen av hemsidan*/
+/*Bildspel och blommogram*/
 .slideshowAndFlowergramContainer {
     display: flex;
     justify-content: center;
@@ -302,13 +302,6 @@ body {
     transform: scaleY(0.5);
     transform-origin: center;
     border: none;
-}
-
-
-/*Embeddar en annan html fil i den här diven med javascript*/
-.productEmbed {
-    width: 80%;
-    margin: 0 auto 0 auto;
 }
 
 /*Footer*/
