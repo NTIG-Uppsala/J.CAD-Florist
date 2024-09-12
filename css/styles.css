@@ -367,12 +367,12 @@ footer{
     color: black;
 }
 
-.footer span {
+footer span {
     font-weight: bold;
     font-size: 1.2rem;
 }
 
-.footer li{
+footer li{
     font-size: 1rem;
 }
 
