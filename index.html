@@ -22,9 +22,9 @@
     <!--Header börjar här-->
     <!--logga rgb färg(R:206, G:175, B:73)-->
     <header>
-        <img class="logo" src="images/logga_florist1.png" alt="Hemsidans logga">
-        <div class="headerContainer">
-            <h1 class="title">florista</h1>
+        <img id="logo" src="images/logga_florist1.png" alt="Hemsidans logga">
+        <div id="headerContainer">
+            <h1 id="title">florista</h1>
         </div>
     </header>
     <!--Header slutar här-->
@@ -34,24 +34,24 @@
     </div>
     <!--Öppet/Stängt slutar här-->
     <!--Slideshow börjar här-->
-    <div class="slideshowAndFlowergramContainer">
-        <div class="slideshowContainer">
+    <div id="slideshowAndFlowergramContainer">
+        <div id="slideshowContainer">
             <img src="images/bild1.jpg" class="slide" alt="Bild 1 av en sommarbukett">
             <img src="images/bild2.jpg" class="slide" alt="Bild 1 av en tulpanbukett">
             <img src="images/bild3.jpg" class="slide" alt="Bild av en höstbukett">
             <!--Här börjar blommogrammet-->
-            <div class="flowergramContainer">
+            <div id="flowergramContainer">
                 <h2>Överraska med ett blommogram</h2>
                 <h4 id="flowergramBtn" onclick="flowergramBtnPressed()">Skicka blommogram</h4>
                 <!--Rutan som kommer upp om man trycker på "Skicka blommogram-->
                 <div id="flowergram">
                     <h6>Vill du skicka ett blommogram?</h6>
                     <p>Besök oss i butiken eller ring oss på <a href="tel:0630555555">0630-555-555</a>!</p>
-                    <hr class="flowergramSeparator">
+                    <hr id="flowergramSeparator">
                     <p>Kontrollera här om vi levererar till ditt önskade postnummer:</p>
-                    <div class="inputContainer">
+                    <div id="inputContainer">
                         <input id="postalCode" type="text" placeholder="Ange postnummer" maxlength="6" onkeydown="handleKeyDown(event)">
-                        <button class="postalCodeBtn" onclick="getPostalCode()"></button>
+                        <button id="postalCodeBtn" onclick="getPostalCode()"></button>
                     </div>
                     <p id="inputResponse"></p>
                 </div>
@@ -62,12 +62,12 @@
     <!--Slideshow slutar här-->
 
     <!--Produkter börjar här-->
-    <div class="dividerContainer">  
+    <div id="dividerContainer">  
         <hr>
             <h1>Produkter</h1>
         <hr>
     </div>
-    <div class="productContainer">
+    <div id="productContainer">
         <div class="product">
             <img src="images/brollopsbukett.jpg" alt="bröllopsbukett">
             <div class="productFooter">

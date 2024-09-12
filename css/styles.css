@@ -48,7 +48,7 @@ header {
 }
 
 /*Titel*/
-.title{
+#title{
     color: rgb(206, 175, 73);
     height: 50%;
     margin-bottom:0.5em;
@@ -63,7 +63,7 @@ header p{
     font-weight: bold;
 }
 
-.headerContainer{
+#headerContainer{
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -72,7 +72,7 @@ header p{
 }
 
 /*Logga*/
-.logo{
+#logo{
     height: 95%;
     width: auto;
     position: absolute;
@@ -94,7 +94,7 @@ header p{
 }
 
 /*Bildspel och blommogram*/
-.slideshowAndFlowergramContainer {
+#slideshowAndFlowergramContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,7 +102,7 @@ header p{
     height: 82vh;
 }
 
-.slideshowContainer {
+#slideshowContainer {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -114,7 +114,7 @@ header p{
 }
 
 /*Blommogrammet*/
-.flowergramContainer {
+#flowergramContainer {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -126,11 +126,11 @@ header p{
     top: 10rem;
 }
 
-.flowergramContainer h2{
+#flowergramContainer h2{
     color: white;
 }
 
-.flowergramContainer h4{
+#flowergramContainer h4{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -142,7 +142,7 @@ header p{
     border-radius: 1rem;
 }
 
-.flowergramContainer h4:hover {
+#flowergramContainer h4:hover {
     background-color: rgb(255, 255, 189);
     cursor: pointer;
 }
@@ -174,7 +174,7 @@ header p{
     color: rgb(0, 0, 0);
 }
 
-.flowergramSeparator{
+#flowergramSeparator{
     background-color: black;
     height: 1px;
     transform: scaleY(0.5);
@@ -188,7 +188,7 @@ header p{
     color: black;
 }
 
-.inputContainer{
+#inputContainer{
     margin-top: 0.5rem;
     display: flex;
 }
@@ -211,7 +211,7 @@ header p{
     outline: none;
 }
 
-.postalCodeBtn {
+#postalCodeBtn {
     background-color: rgb(255, 255, 242);
     color: black;
     font-size: 1rem;
@@ -225,7 +225,7 @@ header p{
     background-position: center;
 }
 
-.postalCodeBtn:hover {
+#postalCodeBtn:hover {
     background-color: rgb(0, 0, 0);
     background-image: url('../images/iconmonstr-search-thinWhite.svg');
     cursor: pointer;
@@ -285,7 +285,7 @@ header p{
 }
 
 /*Avgränsare*/
-.dividerContainer {
+#dividerContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -294,7 +294,7 @@ header p{
     height: 10%;
 }
 
-.dividerContainer hr{
+#dividerContainer hr{
     background-color: black;
     margin:0 5em;
     flex-grow: 1;
@@ -427,7 +427,7 @@ footer li{
         height: 100%;
     }
 
-    .slideshowAndFlowergramContainer {
+    #slideshowAndFlowergramContainer {
         width: 100%;
         height: 100vh;
         display: flex;
@@ -464,7 +464,7 @@ footer li{
         font-size: 12px;
     }
     
-    .flowergramContainer {
+    #flowergramContainer {
         width: 20rem;
         left: 1rem;
         top: 5rem;
@@ -517,20 +517,20 @@ footer li{
 }
 
 @media screen and (max-height: 720px) {
-    .title {
+    #title {
         font-size: 2em;
     }
 }
 
 @media screen and (max-width: 500px) {
-    .logo {
+    #logo {
         width: 12%;
         height: auto;
     }
 }
 
 @media screen and (max-width: 400px) {
-    .logo {
+    #logo {
         width: 15%;
     }
     #socialMediaContainer li {

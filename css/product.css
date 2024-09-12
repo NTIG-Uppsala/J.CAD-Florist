@@ -18,7 +18,7 @@ body {
     margin: 0;
 }
 
-.productContainer{
+#productContainer{
     display: flex;
     justify-content: center;
     flex-direction: row;
