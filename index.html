@@ -34,20 +34,20 @@
     </div>
     <!--Öppet/Stängt slutar här-->
     <!--Slideshow börjar här-->
-    <main>
+    <div class="slideshowAndFlowergramContainer">
         <div class="slideshowContainer">
             <img src="images/bild1.jpg" class="slide" alt="Bild 1 av en sommarbukett">
             <img src="images/bild2.jpg" class="slide" alt="Bild 1 av en tulpanbukett">
             <img src="images/bild3.jpg" class="slide" alt="Bild av en höstbukett">
             <!--Här börjar blommogrammet-->
-            <div class="flowerGramContainer">
+            <div class="flowergramContainer">
                 <h2>Överraska med ett blommogram</h2>
-                <h4 onclick="flowerGramPopUp()">Skicka blommogram</h4>
+                <h4 onclick="flowergramPopUp()">Skicka blommogram</h4>
                 <!--Rutan som kommer upp om man trycker på "Skicka blommogram-->
-                <div id="flowerGram">
+                <div id="flowergram">
                     <h6>Vill du skicka ett blommogram?</h6>
                     <p>Besök oss i butiken eller ring oss på <a href="tel:0630555555">0630-555-555</a>!</p>
-                    <hr class="flowerGramSeparator">
+                    <hr class="flowergramSeparator">
                     <p>Kontrollera här om vi levererar till ditt önskade postnummer:</p>
                     <div class="inputContainer">
                         <input id="postalCode" type="text" placeholder="Ange postnummer" maxlength="6" onkeydown="handleKeyDown(event)">
@@ -58,7 +58,7 @@
             </div>
             <!--Här slutar blommogrammet-->
         </div>
-    </main>
+    </div>
     <!--Slideshow slutar här-->
 
     <!--Produkter börjar här-->

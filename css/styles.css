@@ -94,7 +94,7 @@ body {
 }
 
 /*Main delen av hemsidan*/
-main {
+.slideshowAndFlowergramContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,8 +113,8 @@ main {
     overflow: hidden; 
 }
 
-/*Blommor grammet*/
-.flowerGramContainer {
+/*Blommogrammet*/
+.flowergramContainer {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -126,11 +126,11 @@ main {
     top: 10rem;
 }
 
-.flowerGramContainer h2{
+.flowergramContainer h2{
     color: white;
 }
 
-.flowerGramContainer h4{
+.flowergramContainer h4{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -142,12 +142,12 @@ main {
     border-radius: 1rem;
 }
 
-.flowerGramContainer h4:hover {
+.flowergramContainer h4:hover {
     background-color: rgb(255, 255, 189);
     cursor: pointer;
 }
 
-#flowerGram{
+#flowergram{
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.7s ease-in-out;
@@ -163,18 +163,18 @@ main {
     border: 2px solid black;
 }
 
-#flowerGram.show {
+#flowergram.show {
     visibility: visible;
     opacity: 1;
     flex-direction: column;
 }
 
-#flowerGram p{  
+#flowergram p{  
     width: 90%;
     color: rgb(0, 0, 0);
 }
 
-.flowerGramSeparator{
+.flowergramSeparator{
     background-color: black;
     height: 1px;
     transform: scaleY(0.5);
@@ -184,7 +184,7 @@ main {
     margin: 0.2rem 0 0.2rem 0;
 }
 
-#flowerGram a{
+#flowergram a{
     color: black;
 }
 
@@ -434,7 +434,7 @@ footer li{
         height: 100%;
     }
 
-    main {
+    .slideshowAndFlowergramContainer {
         width: 100%;
         height: 100vh;
         display: flex;
@@ -458,7 +458,7 @@ footer li{
 }
 
 @media screen and (max-width: 1230px) {
-    .flowerGram{
+    .flowergram{
         width: 100%;
         height: 40%;
         bottom: 0;
@@ -471,17 +471,17 @@ footer li{
         font-size: 12px;
     }
     
-    .flowerGramContainer {
+    .flowergramContainer {
         width: 20rem;
         left: 1rem;
         top: 5rem;
     }
 
-    #flowerGram {
+    #flowergram {
         height: 12rem;
     }
 
-    #flowerGram {
+    #flowergram {
         margin-top: 1rem;
     }
 
