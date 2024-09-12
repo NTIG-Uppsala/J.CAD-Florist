@@ -21,8 +21,8 @@ class TestWebsite(unittest.TestCase):
         self.playwright.stop()
 
     def setUp(self, pathFromRoot) -> None:
-        path = path.abspath(path.join(path.dirname(__file__), "..", pathFromRoot))
-        self.page.goto(f"file://{path}")
+        filePath = path.abspath(path.join(path.dirname(__file__), "..", pathFromRoot))
+        self.page.goto(f"file://{filePath}")
         self.page.wait_for_selector("#JSLoaded")
 
     def tearDown(self) -> None:
