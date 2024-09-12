@@ -35,8 +35,8 @@ header {
     position: sticky;
     top: 0;
     width: 100%;
-    background-color: #000000;
     height: 8em;
+    background-color: #000000;
     z-index: 1;
 }
 
@@ -44,14 +44,19 @@ header {
     display: flex;
 }
 
-.centeredContainer {
+.centered-container {
     align-items: center;
     justify-content: center;
 }
 
-.flexStartContainer {
+.flex-start-container {
     align-items: flex-start;
     justify-content: flex-start;
+}
+
+.wh-100 {
+    width: 100%;
+    height: 100%;
 }
 
 /*Titel*/
@@ -70,23 +75,21 @@ header p {
     font-weight: bold;
 }
 
-#headerContainer {
+#header-container {
     flex-direction: column;
-    height: 100%;
-    width: 100%;
 }
 
 /*Logga*/
 #logo {
-    height: 95%;
     width: auto;
+    height: 95%;
     position: absolute;
     left:1rem;
 
 }
 
 /*Stängt eller öppet*/
-#openOrClosedContainer {
+#opening-or-closed-container {
     background-color: beige;
     color: black;
     font-size: 1rem;
@@ -96,21 +99,19 @@ header p {
 }
 
 /*Bildspel och blommogram*/
-#slideshowAndFlowergramContainer {
+#slideshow-and-flowergram-container {
     flex-direction: column;
     height: 82vh;
 }
 
-#slideshowContainer {
-    width: 100%;
-    height: 100%;
+#slideshow-container {
     flex-direction: row;
     position: relative;
     overflow: hidden; 
 }
 
 /*Blommogrammet*/
-#flowergramContainer {
+#flowergram-container {
     flex-direction: column;
     width: 40rem;
     height: 80%;
@@ -119,11 +120,11 @@ header p {
     top: 10rem;
 }
 
-#flowergramContainer h2{
+#flowergram-container h2{
     color: white;
 }
 
-#flowergramContainer h4{
+#flowergram-container h4{
     color: black;
     width: 60%;
     height: 5rem;
@@ -132,7 +133,7 @@ header p {
     border-radius: 1rem;
 }
 
-#flowergramContainer h4:hover {
+#flowergram-container h4:hover {
     background-color: rgb(255, 255, 189);
     cursor: pointer;
 }
@@ -161,13 +162,13 @@ header p {
     color: rgb(0, 0, 0);
 }
 
-#flowergramSeparator {
+#flowergram-separator {
     background-color: black;
+    width: 100%;
     height: 1px;
     transform: scaleY(0.5);
     transform-origin: center;
     border: none;
-    width: 100%;
     margin: 0.2rem 0 0.2rem 0;
 }
 
@@ -175,29 +176,29 @@ header p {
     color: black;
 }
 
-#inputContainer {
+#input-container {
     margin-top: 0.5rem;
 }
 
-#postalCode {
+#postal-code {
     background-color:rgb(255, 255, 242);
     width: 65%;
+    height: 2rem;
     font-size: 1rem;
     border: 1px solid black;
     padding: 0 0 0 2rem;
     border-radius: 0.5rem 0 0 0.5rem;
-    height: 2rem;
 }
 
-#postalCode::placeholder {
+#postal-code::placeholder {
     color: rgb(0, 0, 0);
 }
 
-#postalCode:focus {
+#postal-code:focus {
     outline: none;
 }
 
-#postalCodeBtn {
+#postal-code-btn {
     background-color: rgb(255, 255, 242);
     color: black;
     font-size: 1rem;
@@ -205,15 +206,15 @@ header p {
     border: 1px solid black;
     border-left: none;
     width: 2.5rem;
-    background-image: url('../images/iconmonstr-search-thinBlack.svg');
+    background-image: url('../images/iconmonstr-search-thin-black.svg');
     background-size: 1.3rem;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-#postalCodeBtn:hover {
+#postal-code-btn:hover {
     background-color: rgb(0, 0, 0);
-    background-image: url('../images/iconmonstr-search-thinWhite.svg');
+    background-image: url('../images/iconmonstr-search-thin-white.svg');
     cursor: pointer;
 }
 
@@ -232,8 +233,6 @@ header p {
 .slide {
     object-fit: cover;
     position: absolute;
-    width: 100%;
-    height: 100%;
     opacity: 0;
     animation: fade 18s infinite;
 }
@@ -271,17 +270,17 @@ header p {
 }
 
 /*Avgränsare*/
-#dividerContainer {
+#divider-container {
     flex-direction: row;
     width: 100%;
     height: 10%;
 }
 
-#dividerContainer hr {
+#divider-container hr {
     background-color: black;
-    margin:0 5em;
-    flex-grow: 1;
+    margin: 0 5em;
     height: 1px;
+    flex-grow: 1;
     transform: scaleY(0.5);
     transform-origin: center;
     border: none;
@@ -297,7 +296,7 @@ footer {
     padding-top:1%;
 }
 
-#footerTop {
+#footer-top {
     width: 100%;
     flex-grow: 1;
     display: grid;
@@ -305,15 +304,15 @@ footer {
     gap: 1rem;
 }
 
-.footerContainer {
+.footer-container {
     justify-content: center;
     position: relative; /* Behövs för att positionera pseudeoelement */
 }
 
-/*Skapar ett pseudeoelement inuti footerCon1 och footerCon2.
+/*Skapar ett pseudeoelement inuti footer-container-1 och footer-container-2.
    Pseudeoelementet placeras absolut med ett avstånd på 10% från toppen och botten,
    samt längst till höger (skapar en border)*/
-#footerContainer1::after, #footerContainer2::after {
+#footer-container-1::after, #footer-container-2::after {
     content: '';
     position: absolute;
     top: 10%; 
@@ -323,16 +322,16 @@ footer {
     background-color: rgb(0, 0, 0); 
 }
 
-#footerBottom {
-    height: 25%;
+#footer-bottom {
     width: 25%;
+    height: 25%;
 }
 
-#footerInfo, .openingHours, .closedDays {
+#footer-info, .opening-hours, .closed-days {
     list-style: none; 
 }
 
-#footerInfo a {
+#footer-info a {
     color: black;
 }
 
@@ -345,45 +344,45 @@ footer li{
     font-size: 1rem;
 }
 
-.openingHours, .closedDays {
+.opening-hours, .closed-days {
     text-align: left;
 }
 
-.openingHours {
+.opening-hours {
     margin: 0rem 0.5rem 0rem 0.5rem;
 }
 
-#footerContainer2, #footerContainer3 {
+#footer-container-2, #footer-container-3 {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
 }
 
-#openingHoursContainer {
+#opening-hours-container {
     flex-direction: row;
 }
 
-.closedDays	 {
+.closed-days	 {
     margin: 0rem 0.5rem 0rem 0.5rem;
 }
 
-#closedDaysContainer {
+#closed-days-container {
     flex-direction: row;
 }
 
 /*Sociala medier*/
-#socialMediaContainer {
+#social-media-container {
     justify-content: center;
     list-style: none;
 }
 
-#socialMediaContainer li {
+#social-media-container li {
     margin: 0 2em;
 }
 
-#socialMediaContainer img {
-    height: 3rem;
+#social-media-container img {
     width: 3rem;
+    height: 3rem;
 }
 
 /* Media queries */
@@ -395,7 +394,7 @@ footer li{
         height: 100%;
     }
 
-    #slideshowAndFlowergramContainer {
+    #slideshow-and-flowergram-container {
         width: 100%;
         height: 100vh;
     }
@@ -421,7 +420,7 @@ footer li{
         font-size: 12px;
     }
     
-    #flowergramContainer {
+    #flowergram-container {
         width: 20rem;
         left: 1rem;
         top: 5rem;
@@ -435,39 +434,39 @@ footer li{
         margin-top: 1rem;
     }
 
-    #footerTop {
+    #footer-top {
         grid-template-columns: 1fr;
     }
 
-    .footerContainer {
+    .footer-container {
         justify-content: center;
         text-align: center;
     }
 
-    .openingHours, .closedDays {
+    .opening-hours, .closed-days {
         text-align: center;
     }
 
-    #footerContainer1::after, #footerContainer2::after {
+    #footer-container-1::after, #footer-container-2::after {
         content: none;
     }
 
-    #footerInfo {
+    #footer-info {
         order: 1;
         margin-bottom: 1rem;
     }
 
-    .openingHours {
+    .opening-hours {
         order: 2;
         margin-bottom: 1rem;
     }
 
-    .closedDays {
+    .closed-days {
         order: 3;
         margin-bottom: 1rem;
     }
 
-    #footerBottom {
+    #footer-bottom {
         order: 4;
         margin-top: 1rem;
     }
@@ -490,7 +489,7 @@ footer li{
     #logo {
         width: 15%;
     }
-    #socialMediaContainer li {
+    #social-media-container li {
         margin: 0 1em;
     }
 }

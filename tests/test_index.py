@@ -17,7 +17,7 @@ class test_index(BaseCase):
         self.open(startPage)
         for i in range(1, 4):
             print("bild"+str(i))
-            self.assert_element(f"[src=\"images/bild{i}.jpg\"]")
+            self.assert_element(f"[src=\"images/bild-{i}.jpg\"]")
     
     #Kollar om texten finns på sidan
     def test_flowerGramText(self):
@@ -69,12 +69,12 @@ class test_index(BaseCase):
         self.click("h4[onclick='flowergramBtnPressed()']")
         #Provar att skriva in alla testcases i inputfältet och klickar på knappen
         for postalCode in testCases:
-            self.type("#postalCode", postalCode)
+            self.type("#postal-code", postalCode)
             self.click('button')
             self.assert_text("Vi levererar tyvärr inte till detta postnummer!")
         
         #Provar att skriva in alla korrekta postnummer i inputfältet och klickar på Enter istället
         for postalCode in correctPostalCodes:
-            self.type("#postalCode", postalCode)
-            self.get_element("#postalCode").send_keys(Keys.ENTER)
+            self.type("#postal-code", postalCode)
+            self.get_element("#postal-code").send_keys(Keys.ENTER)
             self.assert_text("Vi levererar till detta postnummer!")

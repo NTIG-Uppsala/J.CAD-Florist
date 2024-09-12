@@ -11,6 +11,6 @@ class test_header(BaseCase):
     #testar att all info finns på headern
     def test_HeaderInfo(self):
         self.open(startPage)
-        self.assert_element("header [src=\"images/logga_florist1.png\"]")
+        self.assert_element("header [src=\"images/logga-florist-1.png\"]")
         self.assert_text("florista")
 

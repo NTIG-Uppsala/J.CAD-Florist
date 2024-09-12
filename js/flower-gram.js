@@ -22,7 +22,7 @@ function handleKeyDown(event) {
     }
     
     //Får värdet ifrån inputfältet
-    let currentInput = document.getElementById("postalCode").value;
+    let currentInput = document.getElementById("postal-code").value;
 
     //Förhindrar att användaren kan trycka space förutom efter de tre första siffrorna
     if (event.key === " " && currentInput.length !== 3) {
@@ -38,15 +38,15 @@ function handleKeyDown(event) {
 
     //om användaren glömmer trycka space efter de tre första siffrorna
     if (event.key !== "Backspace" && event.key !== " " && currentInput.length == 3) {
-        document.getElementById("postalCode").value += " ";
+        document.getElementById("postal-code").value += " ";
     }  
 }
 
 //Funktion som kollar om postnumret finns i listan
 function getPostalCode() {
     //Får värdet ifrån inputfältet
-    let postalCodeInput = document.getElementById("postalCode").value;
-    let inputResponse = document.getElementById("inputResponse");
+    let postalCodeInput = document.getElementById("postal-code").value;
+    let inputResponse = document.getElementById("input-response");
     //Om postnumret finns i listan så skrivs detta ut
     if(postalCodes.includes(postalCodeInput)) {
         inputResponse.innerHTML = "Vi levererar till detta postnummer!";

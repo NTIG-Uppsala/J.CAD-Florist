@@ -37,7 +37,7 @@ function checkOpenHours(date) {
     }
     const nextWeekDay = Object.keys(openHoursDict)[day];
     
-    const openHoursText = document.getElementById("openOrClosed"); //Texten som ska stylas
+    const openHoursText = document.getElementById("open-or-closed"); //Texten som ska stylas
 
     const nextDayOpenHour = openHoursDict[nextWeekDay].open
     const currentDayOpenHour = openHoursDict[currentWeekDay].open;
