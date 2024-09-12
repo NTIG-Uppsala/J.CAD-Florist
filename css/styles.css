@@ -332,7 +332,7 @@ footer{
     gap: 1rem;
 }
 
-.footerCon1, .footerCon2, .footerCon3 {
+#footerContainer1, #footerContainer2, #footerContainer3 {
     display: flex;
     justify-content: center;
     position: relative; /* Behövs för att positionera pseudeoelement */
@@ -341,7 +341,7 @@ footer{
 /*Skapar ett pseudeoelement inuti footerCon1 och footerCon2.
    Pseudeoelementet placeras absolut med ett avstånd på 10% från toppen och botten,
    samt längst till höger (skapar en border)*/
-.footerCon1::after, .footerCon2::after {
+#footerContainer1::after, #footerContainer2::after {
     content: '';
     position: absolute;
     top: 10%; 
@@ -351,7 +351,7 @@ footer{
     background-color: rgb(0, 0, 0); 
 }
 
-.footerCon4{
+#footerContainer4{
     height: 25%;
     width: 25%;
     display: flex;
@@ -384,14 +384,14 @@ footer li{
     margin: 0rem 0.5rem 0rem 0.5rem;
 }
 
-.footerCon2, .footerCon3 {
+#footerContainer2, #footerContainer3 {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
 }
 
-.openingHoursCon{
+#openingHoursContainer{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -402,7 +402,7 @@ footer li{
     margin: 0rem 0.5rem 0rem 0.5rem;
 }
 
-.closedDaysCon{
+#closedDaysContainer{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -489,7 +489,7 @@ footer li{
         grid-template-columns: 1fr;
     }
 
-    .footerCon1, .footerCon2, .footerCon3 {
+    #footerContainer1, #footerContainer2, #footerContainer3 {
         justify-content: center;
         text-align: center;
     }
@@ -498,7 +498,7 @@ footer li{
         text-align: center;
     }
 
-    .footerCon1::after, .footerCon2::after {
+    #footerContainer1::after, #footerContainer2::after {
         content: none;
     }
 
@@ -517,7 +517,7 @@ footer li{
         margin-bottom: 1rem;
     }
 
-    .footerCon4 {
+    #footerContainer4 {
         order: 4;
         margin-top: 1rem;
     }
