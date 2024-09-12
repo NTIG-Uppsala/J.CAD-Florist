@@ -21,35 +21,35 @@
 <body>
     <!--Header börjar här-->
     <!--logga rgb färg(R:206, G:175, B:73)-->
-    <header>
+    <header class="container centeredContainer">
         <img id="logo" src="images/logga_florist1.png" alt="Hemsidans logga">
-        <div id="headerContainer">
+        <div id="headerContainer" class="container centeredContainer">
             <h1 id="title">florista</h1>
         </div>
     </header>
     <!--Header slutar här-->
     <!--Öppet/Stängt börjar här-->
-    <div id="openOrClosedContainer">
+    <div id="openOrClosedContainer" class="container centeredContainer">
         <p id="openOrClosed"></p>
     </div>
     <!--Öppet/Stängt slutar här-->
     <!--Slideshow börjar här-->
-    <div id="slideshowAndFlowergramContainer">
-        <div id="slideshowContainer">
+    <div id="slideshowAndFlowergramContainer" class="container centeredContainer">
+        <div id="slideshowContainer" class="container centeredContainer">
             <img src="images/bild1.jpg" class="slide" alt="Bild 1 av en sommarbukett">
             <img src="images/bild2.jpg" class="slide" alt="Bild 1 av en tulpanbukett">
             <img src="images/bild3.jpg" class="slide" alt="Bild av en höstbukett">
             <!--Här börjar blommogrammet-->
-            <div id="flowergramContainer">
+            <div id="flowergramContainer" class="container flexStartContainer">
                 <h2>Överraska med ett blommogram</h2>
-                <h4 id="flowergramBtn" onclick="flowergramBtnPressed()">Skicka blommogram</h4>
+                <h4 id="flowergramBtn" class="container centeredContainer" onclick="flowergramBtnPressed()">Skicka blommogram</h4>
                 <!--Rutan som kommer upp om man trycker på "Skicka blommogram-->
-                <div id="flowergram">
+                <div id="flowergram" class="container flexStartContainer">
                     <h6>Vill du skicka ett blommogram?</h6>
                     <p>Besök oss i butiken eller ring oss på <a href="tel:0630555555">0630-555-555</a>!</p>
                     <hr id="flowergramSeparator">
                     <p>Kontrollera här om vi levererar till ditt önskade postnummer:</p>
-                    <div id="inputContainer">
+                    <div id="inputContainer" class="container">
                         <input id="postalCode" type="text" placeholder="Ange postnummer" maxlength="6" onkeydown="handleKeyDown(event)">
                         <button id="postalCodeBtn" onclick="getPostalCode()"></button>
                     </div>
@@ -62,12 +62,12 @@
     <!--Slideshow slutar här-->
 
     <!--Produkter börjar här-->
-    <div id="dividerContainer">  
+    <div id="dividerContainer" class="container centeredContainer">  
         <hr>
             <h1>Produkter</h1>
         <hr>
     </div>
-    <div id="productContainer">
+    <div id="productContainer" class="container">
         <div class="product">
             <img src="images/brollopsbukett.jpg" alt="bröllopsbukett">
             <div class="productFooter">
@@ -113,11 +113,11 @@
     </div>
 
     <!--Footer-->
-    <footer>
+    <footer class="container centeredContainer">
         <!--Översta delen av footern börjar här-->
         <div id="footerTop">
 
-            <div id="footerContainer1" class="footerContainer">
+            <div id="footerContainer1" class="footerContainer container">
                 
                 
                 <ul id="footerInfo">
@@ -131,10 +131,10 @@
                 </ul>
             </div>
 
-            <div id="footerContainer2" class="footerContainer">
+            <div id="footerContainer2" class="footerContainer container">
                 <!--Öppettider-->
                 <span>Öppettider</span>
-                <div id="openingHoursContainer">
+                <div id="openingHoursContainer" class="container centeredContainer">
                     <ul class="openingHours">
                         <li>Måndag</li>
                         <li>Tisdag</li>
@@ -156,10 +156,10 @@
                 </div>
             </div>
 
-            <div id="footerContainer3" class="footerContainer">
+            <div id="footerContainer3" class="footerContainer container">
                 <!--Stängda dagar-->
                 <span>Stängda dagar</span>
-                <div id="closedDaysContainer">
+                <div id="closedDaysContainer" class="container centeredContainer">
                     <ul class="closedDays">
                         <li>1 jan</li>
                         <li>6 jan</li>
@@ -186,9 +186,9 @@
       <!--Översta delen av footern Slutar här-->
 
       <!--Nedre delen av footern börjar här-->
-        <div id="footerBottom">
+        <div id="footerBottom" class="container centeredContainer">
             <!--Sociala medier-->
-            <ul id="socialMediaContainer">
+            <ul id="socialMediaContainer" class="container">
                 <li id="facebook">
                     <a href="https://www.facebook.com/ntiuppsala">
                         <img src="images/icons8-facebook.svg" alt="Facebook ikon">

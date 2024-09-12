@@ -18,8 +18,8 @@ body {
     margin: 0;
 }
 
-#productContainer{
-    display: flex;
+#productContainer {
+    /* display: flex; */
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
