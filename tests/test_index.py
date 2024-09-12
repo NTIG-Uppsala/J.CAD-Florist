@@ -49,7 +49,7 @@ class test_index(BaseCase):
             "123 45",
             #bokstäver istället för siffror
             "abcde",
-            #storat bokstäver
+            #stora bokstäver
             "ABCDE",
             #för kort postnummer
             "1234",
@@ -78,4 +78,3 @@ class test_index(BaseCase):
             self.type("#postalCode", postalCode)
             self.get_element("#postalCode").send_keys(Keys.ENTER)
             self.assert_text("Vi levererar till detta postnummer!")
-         

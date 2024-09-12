@@ -1,22 +1,23 @@
-# guider
+# Guider
 ## Ändra öppetider på hemsidan
 1. Öppna index.html
 2. Lokalisera div class="footerCon2"
 3. Ändra dagar och/eller tider i listorna
 ### Ändra öppettider i test_openHours.py
 Om man ändrar öppettider på hemsidan måste man se till att även ändra dem i testet
-<br>
+
 1. Öppna test_openHours.py
 2. Lokalisera funktionen def test_openHoursMultiple(self):
 3. Ändra datum och tid i self.helperTime()-argumenten så att de matchar hemsidans öppettider
 
 ## Publicera GitHub Pages
 1. Logga in på github.com
-2. Öppna J.CAD-FLORIST-repositoryt
-3. Navigera till Settings
-4. Välj fliken Pages under Code and automation
-5. Under Branch, välj main och / (root)
-6. Tryck sedan på Save
+2. Öppna J.CAD-FLORIST-repositoryn
+3. Navigera till "Settings"
+4. Välj fliken "Pages" under "Code and automation"
+5. Se till att "Source" under "Build and deployment" är satt till "Deploy from a branch"
+6. Under "Branch", välj "live" och "/ (root)"
+7. Tryck sedan på "Save"
 
 ## Hur man kommer åt webbservern
 
@@ -32,27 +33,23 @@ Om man ändrar öppettider på hemsidan måste man se till att även ändra dem 
     ```
 5. Om det inte finns något i mappen:
     ```bash
-    git clone https://github.com/NTIG-Uppsala/J.CAD-Florist
+    git clone https://github.com/NTIG-Uppsala/J.CAD-Florist .
     ```
 6. Växla till den senaste releasen:
     ```bash
-    git checkout tags/<din tag> 
+    git checkout <din tag> 
     ```
 
 ## Hur man släpper en ny release
 
-1. Öpnna en kommandotolk och skriv:
+Öppna en kommandotolk och skriv:
 
-    ```bash
-    git fetch
-    ```
-2. <br>
-
-    ```bash
-    git checkout tags/<din tag> 
-    ```
-3. Om du är osäker lista alla taggar genom att skriva
-    ```bash
-    git tag
-    ```
+```bash
+git fetch
+git checkout <din tag> 
+```
+Om du är osäker, lista alla taggar genom att skriva
+```bash
+git tag
+```
 

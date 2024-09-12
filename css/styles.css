@@ -1,7 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Italiana&display=swap');
 
-
 .abel-regular {
     font-family: "Abel", sans-serif;
     font-weight: 400;
@@ -80,6 +79,7 @@ body {
     left:1rem;
 
 }
+
 /*Stängt eller öppet*/
 .openOrClosedContainer{
     background-color: beige;
@@ -351,7 +351,6 @@ footer{
     background-color: rgb(0, 0, 0); 
 }
 
-
 .footerCon4{
     height: 25%;
     width: 25%;
@@ -365,7 +364,6 @@ footer{
 }
 
 .footerInfo a {
-
     color: black;
 }
 
@@ -410,7 +408,6 @@ footer{
     align-items: center;
     justify-content: center;
 }
-
 
 /*Sociala medier*/
 .socialMedia{
@@ -473,6 +470,7 @@ footer{
     html {
         font-size: 12px;
     }
+    
     .flowerGramContainer {
         width: 20rem;
         left: 1rem;
@@ -490,6 +488,7 @@ footer{
     .footerTop {
         grid-template-columns: 1fr;
     }
+
     .footerCon1, .footerCon2, .footerCon3 {
         justify-content: center;
         text-align: center;
@@ -507,14 +506,17 @@ footer{
         order: 1;
         margin-bottom: 1rem;
     }
+
     .openingHours {
         order: 2;
         margin-bottom: 1rem;
     }
+
     .closedDays {
         order: 3;
         margin-bottom: 1rem;
     }
+
     .footerCon4 {
         order: 4;
         margin-top: 1rem;

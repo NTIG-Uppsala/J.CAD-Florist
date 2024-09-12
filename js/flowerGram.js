@@ -20,6 +20,7 @@ function handleKeyDown(event) {
     if (event.key === "Enter") {
         getPostalCode();
     }
+    
     //Får värdet ifrån inputfältet
     let currentInput = document.getElementById("postalCode").value;
 
