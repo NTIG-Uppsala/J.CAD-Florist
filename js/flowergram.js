@@ -26,7 +26,7 @@ const checkZIPCode = () => {
     const zip = inputField.value.replace(/\D/g, "");
 
     // List of valid ZIP codes
-    const zipCodes = ["981 38", "981 40", "981 41", "981 44", "981 45", "981 46", "981 47"];
+    const zipCodes = ["98138", "98140", "98141", "98144", "98145", "98146", "98147"];
 
     // Check if the user has entered a ZIP code
     if (zip === "") {
