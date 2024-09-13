@@ -1,10 +1,10 @@
 import unittest
 from playwright.sync_api import sync_playwright
-from bs4 import BeautifulSoup
+from lxml import etree, html
 from os import path
 
 
-class TestWebsite(unittest.TestCase):
+class TestBase(unittest.TestCase):
 
     @classmethod
     def setUpClass(self):
@@ -20,8 +20,8 @@ class TestWebsite(unittest.TestCase):
         self.browser.close()
         self.playwright.stop()
 
-    def setUp(self, pathFromRoot) -> None:
-        filePath = path.abspath(path.join(path.dirname(__file__), "..", pathFromRoot))
+    def setUp(self, filePathFromRoot: str) -> None:
+        filePath = path.abspath(path.join(path.dirname(__file__), "..", filePathFromRoot))
         self.page.goto(f"file://{filePath}")
         self.page.wait_for_selector("#JSLoaded")
 
@@ -30,23 +30,58 @@ class TestWebsite(unittest.TestCase):
 
     # Helper functions
 
-    def getHTML(self, page: str) -> str:
-        soup = BeautifulSoup(page, "html.parser")
-        for element in soup.find_all():
-            element.clear()
+    def getHTML(self) -> str:
+        tree = html.fromstring(self.page.content(), parser=etree.HTMLParser())
+        for element in tree.iter():
+            if element.text:
+                element.text = None
+            if element.tail:
+                element.tail = None
+        return html.tostring(tree, pretty_print=True, method="html", encoding="unicode")
 
-        return str(soup)
+    def setTime(self, year: int, month: int, day: int, hour: int, minute: int) -> None:
+        self.page.evaluate(f"checkOpenHours(new Date({year}, {month - 1}, {day}, {hour}, {minute}))")
 
-    # Assert functions
+    def setTimeAndAssertMatch(self, year: int, month: int, day: int, hour: int, minute: int, match: str) -> None:
+        self.setTime(year, month, day, hour, minute)
+        self.assertInText(match)
+
+    def setTimeAndAssertMatches(self, year: int, month: int, day: int, hour: int, minute: int, matches: list[str]) -> None:
+        self.setTime(year, month, day, hour, minute)
+        self.assertAllInText(matches)
+
+    def fillAndSubmitAndAssertInText(self, fieldSelector: str, buttonSelector: str, fieldInput: str, match: str) -> None:
+        self.page.fill(fieldSelector, fieldInput)
+        self.page.click(buttonSelector)
+        self.assertInText(match)
+
+    def submitAndAssertZIPCodeValidityInText(self, fieldInput: str, match: str) -> None:
+        self.fillAndSubmitAndAssertInText("#postalCode", ".postalCodeBtn", fieldInput, match)
 
     def assertInText(self, match: str) -> None:
         self.assertIn(match, self.page.text_content("body"))
 
+    def assertAllInText(self, matches: list[str]) -> None:
+        for match in matches:
+            self.assertInText(match)
+
     def assertInHTML(self, match: str) -> None:
-        self.assertIn(match, self.getHTML(self.page.content()))
+        self.assertIn(match, self.getHTML())
+
+    def assertAllInHTML(self, matches: list[str]) -> None:
+        for match in matches:
+            self.assertInHTML(match)
 
     def assertNotInText(self, match: str) -> None:
         self.assertNotIn(match, self.page.text_content("body"))
 
+    def assertAllNotInText(self, matches: list[str]) -> None:
+        for match in matches:
+            self.assertNotInText(match)
+
     def assertNotInHTML(self, match: str) -> None:
-        self.assertNotIn(match, self.getHTML(self.page.content()))
+        self.assertNotIn(match, self.getHTML())
+
+    def assertAllNotInHTML(self, matches: list[str]) -> None:
+        for match in matches:
+            self.assertNotInHTML(match)
