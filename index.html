@@ -44,7 +44,7 @@
             <!--Här börjar blommogrammet-->
             <div id="flowergram-container" class="container flex-start-container">
                 <h2>Överraska med ett blommogram</h2>
-                <h4 id="flowergram-btn" class="container centered-container" onclick="flowergramBtnPressed()">Skicka blommogram</h4>
+                <h4 id="flowergram-btn" class="container centered-container">Skicka blommogram</h4>
                 <!--Rutan som kommer upp om man trycker på "Skicka blommogram-->
                 <div id="flowergram" class="container flex-start-container">
                     <h6>Vill du skicka ett blommogram?</h6>
@@ -52,8 +52,8 @@
                     <hr id="flowergram-separator">
                     <p>Kontrollera här om vi levererar till ditt önskade postnummer:</p>
                     <div id="input-container" class="container">
-                        <input id="postal-code" type="text" placeholder="Ange postnummer" maxlength="6" onkeydown="handleKeyDown(event)">
-                        <button id="postal-code-btn" onclick="getPostalCode()"></button>
+                        <input id="postal-code" type="text" placeholder="Ange postnummer">
+                        <button id="postal-code-btn"></button>
                     </div>
                     <p id="input-response"></p>
                 </div>

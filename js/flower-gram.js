@@ -1,85 +1,76 @@
+<<<<<<< HEAD
 //Visar blommogrammet om man kallar funktionen
 <<<<<<< HEAD:js/flower-gram.js
 function flowergramBtnPressed() {
     let flowergramPopUp = document.getElementById('flowergram');
     flowergramPopUp.classList.toggle('show');
 =======
+=======
+popupButton = document.querySelector("#flowergram-btn");
+inputField = document.querySelector("#postal-code");
+inputButton = document.querySelector("#postal-code-btn");
+
+// Helper function to write output to the user
+const writeOutput = (message, color) => {
+    const output = document.querySelector("#input-response");
+    output.innerHTML = message;
+    output.style.color = color;
+    output.classList.remove("fade-in");
+    void output.offsetWidth;
+    output.classList.add("fade-in");
+};
+
+// Function to check if the ZIP code is valid
+const checkZIPCode = () => {
+    // Get the value from the input field and remove all non-digit characters
+    const zip = inputField.value.replace(/\D/g, "");
+
+    // List of valid ZIP codes
+    const zipCodes = ["981 38", "981 40", "981 41", "981 44", "981 45", "981 46", "981 47"];
+
+    // Check if the user has entered a ZIP code
+    if (zip === "") {
+        writeOutput("Du måste skriva in ett postnummer!", "red");
+        return;
+    }
+
+    // Check if the ZIP code is 5 digits long
+    if (zip.length !== 5) {
+        writeOutput("Postnumret måste vara 5 siffror!", "red");
+        return;
+    }
+
+    // Check if the ZIP code is valid
+    if (!zipCodes.includes(zip)) {
+        writeOutput("Vi levererar tyvärr inte till detta postnummer!", "red");
+        return;
+    }
+    writeOutput("Vi levererar till detta postnummer!", "green");
+};
+
+// Adds event listeners to the input field and button
+
+inputButton.addEventListener("click", checkZIPCode);
+
+inputField.addEventListener("blur", checkZIPCode);
+
+inputField.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        checkZIPCode();
+    }
+});
+
+// Function to toggle the flowergram popup
+>>>>>>> 40aa214 (Skrev färdigt blommogramkoden och skrev kommenterar för allt)
 const flowerGramPopUp = () => {
     const flowerGramPopUp = document.querySelector("#flowerGram");
     flowerGramPopUp.classList.toggle("show");
+<<<<<<< HEAD
 >>>>>>> 8e3c501 (Påbörjat omskrivning av postnummerscheck):js/flowerGram.js
 }
+=======
+};
+>>>>>>> 40aa214 (Skrev färdigt blommogramkoden och skrev kommenterar för allt)
 
-//Lista av alla korrekta postnummer
-const postalCodes = [
-    "981 38",
-    "981 40",
-    "981 41",
-    "981 44",
-    "981 45",
-    "981 46",
-    "981 47",
-]
-
-const checkZIPCode = () => {
-    const input = document.querySelector("#postalCode").value;
-    const response = document.querySelector("#inputResponse");
-    if (postalCodes.includes(input)) {
-        response.innerHTML = "Vi levererar till detta postnummer!";
-        response.style.color = "green";
-    } else {
-        response.innerHTML = "Vi levererar tyvärr inte till detta postnummer!";
-        response.style.color = "red";
-    }
-    response.classList.remove("fade-in");
-    void response.offsetWidth;
-    response.classList.add("fade-in");
-}
-
-function handleKeyDown(event) {
-    //Om enter trycks så kör getPostalCode
-    if (event.key === "Enter") {
-        getPostalCode();
-    }
-    
-    //Får värdet ifrån inputfältet
-    let currentInput = document.getElementById("postal-code").value;
-
-    //Förhindrar att användaren kan trycka space förutom efter de tre första siffrorna
-    if (event.key === " " && currentInput.length !== 3) {
-        event.preventDefault();
-        return;
-    }
-
-    //Förhindrar att användaren kan skriva in något annat än siffror, backspace och space
-    if (!/^[0-9]$/.test(event.key) && event.key !== 'Backspace' && event.key !== ' ' && event.key !== 'Enter') {
-        event.preventDefault();
-        return;
-    }
-
-    //om användaren glömmer trycka space efter de tre första siffrorna
-    if (event.key !== "Backspace" && event.key !== " " && currentInput.length == 3) {
-        document.getElementById("postal-code").value += " ";
-    }  
-}
-
-//Funktion som kollar om postnumret finns i listan
-function getPostalCode() {
-    //Får värdet ifrån inputfältet
-    let postalCodeInput = document.getElementById("postal-code").value;
-    let inputResponse = document.getElementById("input-response");
-    //Om postnumret finns i listan så skrivs detta ut
-    if(postalCodes.includes(postalCodeInput)) {
-        inputResponse.innerHTML = "Vi levererar till detta postnummer!";
-        inputResponse.style.color = "green";
-    //Om postnumret inte finns i listan så skrivs detta ut
-    } else {
-        inputResponse.innerHTML = "Vi levererar tyvärr inte till detta postnummer!";
-        inputResponse.style.color = "red";
-    }
-
-        //Kör en animation för att ge användaren visuell feedback
-        inputResponse.classList.remove("fade-in");//Tar bort fade-in klassen för att kunna köra animationen igen
-        void inputResponse.offsetWidth;//Tvingar browsern att uppdatera sidan så att animationen körs om
-        inputResponse.classList.add("fade-in");//Lägger till fade-in klassen för att köra animationen
-}
+// Adds event listener to the button
+popupButton.addEventListener("click", flowerGramPopUp);

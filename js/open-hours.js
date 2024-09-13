@@ -1,3 +1,5 @@
+// List of closed days
+// month: [days]
 const closedDays = {
     0: [1, 6],
     1: [],
@@ -13,6 +15,8 @@ const closedDays = {
     11: [24, 25, 26, 31],
 };
 
+// Object with opening hours for each day
+// day: { index: number, open: boolean, from: { hour: number, minute: number }, to: { hour: number, minute: number }, name: string }
 const openHours = {
     monday: { index: 1, open: true, from: { hour: 10, minute: 0 }, to: { hour: 18, minute: 0 }, name: "måndag" },
     tuesday: { index: 2, open: true, from: { hour: 10, minute: 0 }, to: { hour: 18, minute: 0 }, name: "tisdag" },
@@ -23,10 +27,19 @@ const openHours = {
     sunday: { index: 0, open: true, from: { hour: 12, minute: 0 }, to: { hour: 15, minute: 0 }, name: "söndag" },
 };
 
+// Get the current date and time
 const now = new Date();
 
+// Function to update the text field with the current status
 const updateCurrentStatus = () => {
+<<<<<<< HEAD
     const outputTextField = document.querySelector("#openOrClosed");
+=======
+    // Get the output text field
+    const outputTextField = document.querySelector("#open-or-closed");
+
+    // Get the current day, date, hour, minute, month and the opening hours for the current day
+>>>>>>> 40aa214 (Skrev färdigt blommogramkoden och skrev kommenterar för allt)
     const currentDay = now.getDay();
     const currentDate = now.getDate();
     const currentHour = now.getHours();
@@ -34,10 +47,12 @@ const updateCurrentStatus = () => {
     const currentMonth = now.getMonth();
     const currentDayObject = openHours[Object.keys(openHours).find((key) => openHours[key].index === currentDay)];
 
+    // Create a new date object
     let tempDate = new Date(now);
     let nextOpenDayObject = currentDayObject;
     let nextOpenDay = currentDay;
 
+    // Loop through the days until we find the next open day
     while (
         !nextOpenDayObject.open ||
         closedDays[tempDate.getMonth()].includes(tempDate.getDate()) ||
@@ -56,26 +71,34 @@ const updateCurrentStatus = () => {
 =======
 >>>>>>> df3a7e4 (Funktionell datum- och tidshantering):js/openHours.js
 
+    // Get the name of the next open day, the opening time and the closing time
     const nextOpenDayName = nextOpenDayObject.name;
     const nextOpenMinute = nextOpenDayObject.from.minute;
     const nextOpenString = `${nextOpenDayObject.from.hour}:${nextOpenMinute < 10 ? "0" + nextOpenMinute : nextOpenMinute}`;
     const nextCloseMinute = nextOpenDayObject.to.minute;
     const nextCloseString = `${nextOpenDayObject.to.hour}:${nextCloseMinute < 10 ? "0" + nextCloseMinute : nextCloseMinute}`;
+
+    // Check if the store is closed for a holiday
     if (closedDays[currentMonth].includes(currentDate)) {
         outputTextField.innerHTML = `Stängt för helgdag, vi öppnar kl ${nextOpenString} på ${nextOpenDayName}`;
         return;
     }
+
+    // Check if the store has not opened for the day yet
     if (currentHour < currentDayObject.from.hour || (currentHour === currentDayObject.from.hour && currentMinute < currentDayObject.from.minute)) {
         outputTextField.innerHTML = `Stängt, vi öppnar kl ${currentDayObject.from.hour}:${currentDayObject.from.minute < 10 ? "0" + currentDayObject.from.minute : currentDayObject.from.minute} idag`;
         return;
     }
 
+    // Check if the store has closed for the day
     if (currentHour >= currentDayObject.to.hour || (currentHour === currentDayObject.to.hour && currentMinute >= currentDayObject.to.minute)) {
         outputTextField.innerHTML = `Stängt, vi öppnar kl ${nextOpenString} på ${nextOpenDayName}`;
         return;
     }
 
+    // The store is open
     outputTextField.innerHTML = `Öppet, vi stänger kl ${nextCloseString} idag`;
 };
 
+// Update the current status
 updateCurrentStatus();
