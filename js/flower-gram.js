@@ -1,7 +1,13 @@
 //Visar blommogrammet om man kallar funktionen
+<<<<<<< HEAD:js/flower-gram.js
 function flowergramBtnPressed() {
     let flowergramPopUp = document.getElementById('flowergram');
     flowergramPopUp.classList.toggle('show');
+=======
+const flowerGramPopUp = () => {
+    const flowerGramPopUp = document.querySelector("#flowerGram");
+    flowerGramPopUp.classList.toggle("show");
+>>>>>>> 8e3c501 (Påbörjat omskrivning av postnummerscheck):js/flowerGram.js
 }
 
 //Lista av alla korrekta postnummer
@@ -14,6 +20,21 @@ const postalCodes = [
     "981 46",
     "981 47",
 ]
+
+const checkZIPCode = () => {
+    const input = document.querySelector("#postalCode").value;
+    const response = document.querySelector("#inputResponse");
+    if (postalCodes.includes(input)) {
+        response.innerHTML = "Vi levererar till detta postnummer!";
+        response.style.color = "green";
+    } else {
+        response.innerHTML = "Vi levererar tyvärr inte till detta postnummer!";
+        response.style.color = "red";
+    }
+    response.classList.remove("fade-in");
+    void response.offsetWidth;
+    response.classList.add("fade-in");
+}
 
 function handleKeyDown(event) {
     //Om enter trycks så kör getPostalCode
