@@ -7,6 +7,17 @@
     font-family: "abel", sans-serif;
 }
 
+body {
+    background-color: rgb(255, 255, 242);
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* html {
+    font-size: 16px;
+} */
+
 /*styling för h1-h6 och p taggar*/
 h1{font-size: 2.986rem;}
 h2{font-size: 2.488rem;}
@@ -15,24 +26,6 @@ h4{font-size: 1.728rem;}
 h5{font-size: 1.44rem;}
 h6{font-size: 1.2rem;}
 p{font-size: 1rem;}
-
-body {
-    background-color: rgb(255, 255, 242);
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-}
-
-
-/*Header*/
-header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    height: 8em;
-    background-color: #000000;
-    z-index: 1;
-}
 
 .container {
     display: flex;
@@ -53,13 +46,15 @@ header {
     height: 100%;
 }
 
-/*Titel*/
-#title {
-    color: rgb(206, 175, 73);
-    height: 50%;
-    margin-bottom:0.5em;
-    font-weight: bolder;
-    font-size: 4.5rem;
+
+/*Header*/
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 8em;
+    background-color: #000000;
+    z-index: 1;
 }
 
 /*Header meddelande*/
@@ -67,6 +62,15 @@ header p {
     height: 30%;
     color: rgb(206, 175, 73);
     font-weight: bold;
+}
+
+/*Titel*/
+#title {
+    color: rgb(206, 175, 73);
+    height: 50%;
+    margin-bottom: 0.5em;
+    font-weight: bolder;
+    font-size: 4.5rem;
 }
 
 #header-container {
@@ -78,7 +82,7 @@ header p {
     width: auto;
     height: 95%;
     position: absolute;
-    left:1rem;
+    left: 1rem;
 
 }
 
@@ -265,7 +269,7 @@ header p {
 
 /*Avgränsare*/
 #divider-container {
-    flex-direction: row;
+    /* flex-direction: row; */
     width: 100%;
     height: 10%;
 }
@@ -287,7 +291,7 @@ footer {
     min-height: 20vh;
     background-color: #f1f1f1; 
     z-index: 1;
-    padding-top:1%;
+    padding-top: 1%;
 }
 
 #footer-top {
@@ -295,7 +299,6 @@ footer {
     flex-grow: 1;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
 }
 
 .footer-container {
@@ -309,11 +312,11 @@ footer {
 #footer-container-1::after, #footer-container-2::after {
     content: '';
     position: absolute;
-    top: 10%; 
-    bottom: 10%; 
-    right: 0; 
-    width: 1px; 
-    background-color: rgb(0, 0, 0); 
+    top: 10%;
+    bottom: 10%;
+    right: 0;
+    width: 1px;
+    background-color: rgb(0, 0, 0);
 }
 
 #footer-bottom {
@@ -352,17 +355,17 @@ footer li{
     justify-content: flex-start;
 }
 
-#opening-hours-container {
+/* #opening-hours-container {
     flex-direction: row;
-}
+} */
 
 .closed-days	 {
     margin: 0rem 0.5rem 0rem 0.5rem;
 }
 
-#closed-days-container {
+/* #closed-days-container {
     flex-direction: row;
-}
+} */
 
 /*Sociala medier*/
 #social-media-container {
@@ -382,9 +385,6 @@ footer li{
 /* Media queries */
 @media screen and (max-width: 1600px) {
     html, body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
         height: 100%;
     }
 
