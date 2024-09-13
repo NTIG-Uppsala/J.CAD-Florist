@@ -14,6 +14,10 @@
     margin: 1em;
 }
 
+.product h5 {
+    font-weight: lighter;
+}
+
 /*produktfooter*/
 .product-footer {
     width: 100%;
