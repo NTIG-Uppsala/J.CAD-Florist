@@ -32,14 +32,10 @@ const now = new Date();
 
 // Function to update the text field with the current status
 const updateCurrentStatus = () => {
-<<<<<<< HEAD
-    const outputTextField = document.querySelector("#openOrClosed");
-=======
     // Get the output text field
     const outputTextField = document.querySelector("#open-or-closed");
 
     // Get the current day, date, hour, minute, month and the opening hours for the current day
->>>>>>> 40aa214 (Skrev färdigt blommogramkoden och skrev kommenterar för allt)
     const currentDay = now.getDay();
     const currentDate = now.getDate();
     const currentHour = now.getHours();
@@ -64,12 +60,6 @@ const updateCurrentStatus = () => {
 
         nextOpenDayObject = openHours[Object.keys(openHours).find((key) => openHours[key].index === nextOpenDay)];
     }
-<<<<<<< HEAD:js/open-hours.js
-    const nextWeekDay = Object.keys(openHoursDict)[day];
-    
-    const openHoursText = document.getElementById("open-or-closed"); //Texten som ska stylas
-=======
->>>>>>> df3a7e4 (Funktionell datum- och tidshantering):js/openHours.js
 
     // Get the name of the next open day, the opening time and the closing time
     const nextOpenDayName = nextOpenDayObject.name;

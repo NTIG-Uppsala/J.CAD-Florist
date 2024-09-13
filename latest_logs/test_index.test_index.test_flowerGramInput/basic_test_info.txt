@@ -1,0 +1,22 @@
+tests/test_index.py::test_index::test_flowerGramInput
+--------------------------------------------------------------------
+Last Page: file:///C:/Users/jesper.cejie/Documents/TE4/hemsidor/J.CAD-Florist/index.html
+ Duration: 7.72s
+  Browser: Chrome 128.0.6613.138
+   Driver: chromedriver 128.0.6613.137
+Timestamp: 1726233078  (Unix Timestamp)
+     Date: Friday, 13 September 2024
+     Time: 3:11:18 PM  (Västeuropa, sommartid, UTC+02:00)
+--------------------------------------------------------------------
+Traceback:
+  File "c:\Users\jesper.cejie\Documents\TE4\hemsidor\J.CAD-Florist\tests\test_index.py", line 69, in test_flowerGramInput
+    self.click("h4[onclick='flowergramBtnPressed()']")
+  File "c:\Users\jesper.cejie\AppData\Local\Programs\Python\Python312\Lib\site-packages\seleniumbase\fixtures\base_case.py", line 413, in click
+    element = page_actions.wait_for_element_visible(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\jesper.cejie\AppData\Local\Programs\Python\Python312\Lib\site-packages\seleniumbase\fixtures\page_actions.py", line 496, in wait_for_element_visible
+    timeout_exception(NoSuchElementException, message)
+  File "c:\Users\jesper.cejie\AppData\Local\Programs\Python\Python312\Lib\site-packages\seleniumbase\fixtures\page_actions.py", line 254, in timeout_exception
+    raise exc(msg)
+Exception: Message: 
+ Element {h4[onclick='flowergramBtnPressed()']} was not present after 7 seconds!
