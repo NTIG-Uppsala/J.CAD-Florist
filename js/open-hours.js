@@ -1,59 +1,81 @@
-openHoursDict = {
-    'måndag': {'open': '10', 'close': '18'},
-    'tisdag': {'open': '10', 'close': '18'},
-    'onsdag': {'open': '10', 'close': '17'},
-    'torsdag': {'open': '10', 'close': '17'},
-    'fredag': {'open': '10', 'close': '18'},
-    'lördag': {'open': '12', 'close': '16'},
-    'söndag': {'open': '12', 'close': '15'}
-}
+const closedDays = {
+    0: [1, 6],
+    1: [],
+    2: [],
+    3: [],
+    4: [1],
+    5: [6],
+    6: [],
+    7: [],
+    8: [],
+    9: [],
+    10: [],
+    11: [24, 25, 26, 31],
+};
 
-closedDays = [
-    "1/1",
-    "6/1",
-    "1/5",
-    "6/6",
-    "24/12",
-    "25/12",
-    "26/12",
-    "31/12"
-]
+const openHours = {
+    monday: { index: 1, open: true, from: { hour: 10, minute: 0 }, to: { hour: 18, minute: 0 }, name: "måndag" },
+    tuesday: { index: 2, open: true, from: { hour: 10, minute: 0 }, to: { hour: 18, minute: 0 }, name: "tisdag" },
+    wednesday: { index: 3, open: true, from: { hour: 10, minute: 0 }, to: { hour: 17, minute: 0 }, name: "onsdag" },
+    thursday: { index: 4, open: true, from: { hour: 10, minute: 0 }, to: { hour: 17, minute: 0 }, name: "torsdag" },
+    friday: { index: 5, open: true, from: { hour: 10, minute: 0 }, to: { hour: 18, minute: 0 }, name: "fredag" },
+    saturday: { index: 6, open: true, from: { hour: 12, minute: 0 }, to: { hour: 16, minute: 0 }, name: "lördag" },
+    sunday: { index: 0, open: true, from: { hour: 12, minute: 0 }, to: { hour: 15, minute: 0 }, name: "söndag" },
+};
 
-function getTodaysDate(date) {
-    const month = date.getMonth();  // 0-11
-    const dayOfMonth = date.getDate();
-    const todaysDate = `${dayOfMonth}/${month + 1}`;  // lägger till 1 för att månaderna ska räknas som 1-12
-    return todaysDate;
-}
+const now = new Date();
 
-function checkOpenHours(date) {
-    //räknar ut vilken veckodag det är idag och imorgon
-    let day = date.getDay()
-    let currentWeekDay;
-    if (day == 0) { // day = 0 är söndag men i openHoursDict är söndag sista dagen (index 6)
-        currentWeekDay = Object.keys(openHoursDict)[6];
-    } else { // indexeringen i date.getDay() är 0-6 där 0 är söndag, så vi behöver subtrahera 1 för att få rätt index
-        currentWeekDay = Object.keys(openHoursDict)[day - 1];
+const updateCurrentStatus = () => {
+    const outputTextField = document.querySelector("#openOrClosed");
+    const currentDay = now.getDay();
+    const currentDate = now.getDate();
+    const currentHour = now.getHours();
+    const currentMinute = now.getMinutes();
+    const currentMonth = now.getMonth();
+    const currentDayObject = openHours[Object.keys(openHours).find((key) => openHours[key].index === currentDay)];
+
+    let tempDate = new Date(now);
+    let nextOpenDayObject = currentDayObject;
+    let nextOpenDay = currentDay;
+
+    while (
+        !nextOpenDayObject.open ||
+        closedDays[tempDate.getMonth()].includes(tempDate.getDate()) ||
+        (tempDate.getDate() === currentDate && (currentHour > currentDayObject.to.hour || (currentHour === currentDayObject.to.hour && currentMinute >= currentDayObject.to.minute)))
+    ) {
+        nextOpenDay = (nextOpenDay + 1) % 7;
+
+        tempDate.setDate(tempDate.getDate() + 1);
+
+        nextOpenDayObject = openHours[Object.keys(openHours).find((key) => openHours[key].index === nextOpenDay)];
     }
+<<<<<<< HEAD:js/open-hours.js
     const nextWeekDay = Object.keys(openHoursDict)[day];
     
     const openHoursText = document.getElementById("open-or-closed"); //Texten som ska stylas
+=======
+>>>>>>> df3a7e4 (Funktionell datum- och tidshantering):js/openHours.js
 
-    const nextDayOpenHour = openHoursDict[nextWeekDay].open
-    const currentDayOpenHour = openHoursDict[currentWeekDay].open;
-    const currentDayCloseHour = openHoursDict[currentWeekDay].close;
-    const currentHour = date.getHours();
-
-    if (closedDays.includes(getTodaysDate(date))) {  // helgdag
-        openHoursText.innerHTML = "Stängt för helgdag, vi öppnar kl " + nextDayOpenHour + " på " + nextWeekDay;
-    } else if (currentHour >= currentDayCloseHour) { // efter stängningstid
-        openHoursText.innerHTML = "Stängt, vi öppnar kl " + nextDayOpenHour + " på " + nextWeekDay;
-    } else if(currentHour < currentDayOpenHour) {  // innan öppningstid
-        openHoursText.innerHTML = "Stängt, vi öppnar kl " + currentDayOpenHour + " idag";
-    } else { // öppet
-        openHoursText.innerHTML = "Öppet, vi stänger kl " + currentDayCloseHour + " idag";
+    const nextOpenDayName = nextOpenDayObject.name;
+    const nextOpenMinute = nextOpenDayObject.from.minute;
+    const nextOpenString = `${nextOpenDayObject.from.hour}:${nextOpenMinute < 10 ? "0" + nextOpenMinute : nextOpenMinute}`;
+    const nextCloseMinute = nextOpenDayObject.to.minute;
+    const nextCloseString = `${nextOpenDayObject.to.hour}:${nextCloseMinute < 10 ? "0" + nextCloseMinute : nextCloseMinute}`;
+    if (closedDays[currentMonth].includes(currentDate)) {
+        outputTextField.innerHTML = `Stängt för helgdag, vi öppnar kl ${nextOpenString} på ${nextOpenDayName}`;
+        return;
     }
-}
+    if (currentHour < currentDayObject.from.hour || (currentHour === currentDayObject.from.hour && currentMinute < currentDayObject.from.minute)) {
+        outputTextField.innerHTML = `Stängt, vi öppnar kl ${currentDayObject.from.hour}:${currentDayObject.from.minute < 10 ? "0" + currentDayObject.from.minute : currentDayObject.from.minute} idag`;
+        return;
+    }
 
+    if (currentHour >= currentDayObject.to.hour || (currentHour === currentDayObject.to.hour && currentMinute >= currentDayObject.to.minute)) {
+        outputTextField.innerHTML = `Stängt, vi öppnar kl ${nextOpenString} på ${nextOpenDayName}`;
+        return;
+    }
 
-checkOpenHours(new Date());
+    outputTextField.innerHTML = `Öppet, vi stänger kl ${nextCloseString} idag`;
+};
+
+updateCurrentStatus();
