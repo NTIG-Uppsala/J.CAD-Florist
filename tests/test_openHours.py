@@ -6,6 +6,7 @@ class TestOpenHours(TestBase):
     def setUp(self) -> None:
         super().setUp(filePathFromRoot="index.html")
 
+    # Test that the open hours are displayed
     def testOpenHours(self) -> None:
         self.assertInText("Öppettider")
         self.assertInText("Måndag")
@@ -20,6 +21,7 @@ class TestOpenHours(TestBase):
         self.assertInText("12-16")
         self.assertInText("12-15")
 
+    # Test that the closed days are displayed
     def testClosedDays(self) -> None:
         self.assertInText("1 jan")
         self.assertInText("6 jan")

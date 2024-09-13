@@ -6,6 +6,7 @@ class TestProducts(TestBase):
     def setUp(self) -> None:
         super().setUp(filePathFromRoot="index.html")
 
+    # Test that the products are displayed
     def testProducts(self) -> None:
         self.assertInText("Bröllopsbukett")
         self.assertInText("Rosor 10-pack")
@@ -14,6 +15,7 @@ class TestProducts(TestBase):
         self.assertInText("Höstbukett")
         self.assertInText("Begravningskrans")
 
+    # Test that the product prices are displayed
     def testPrices(self) -> None:
         self.assertInText("1 200 kr")
         self.assertInText("150 kr")
@@ -22,6 +24,7 @@ class TestProducts(TestBase):
         self.assertInText("400 kr")
         self.assertInText("800 kr")
 
+    # Test that the product images are displayed
     def testImages(self) -> None:
         self.assertInHTML('<img src="images/brollopsbukett.jpg" alt="bröllopsbukett">')
         self.assertInHTML('<img src="images/rosor-10-pack.jpg" alt="rosor 10-pack">')
