@@ -4,7 +4,7 @@ from utils import *
 class TestProducts(TestBase):
 
     def setUp(self) -> None:
-        super().setUp(filePathFromRoot="product_Embed.html")
+        super().setUp(filePathFromRoot="index.html")
 
     def testProducts(self) -> None:
         self.assertInText("Bröllopsbukett")
@@ -24,7 +24,7 @@ class TestProducts(TestBase):
 
     def testImages(self) -> None:
         self.assertInHTML('<img src="images/brollopsbukett.jpg" alt="bröllopsbukett">')
-        self.assertInHTML('<img src="images/rosor10pack.jpg" alt="rosor 10-pack">')
+        self.assertInHTML('<img src="images/rosor-10-pack.jpg" alt="rosor 10-pack">')
         self.assertInHTML('<img src="images/tulpanbukett.jpg" alt="tulpaner 10-pack">')
         self.assertInHTML('<img src="images/sommarbukett.jpg" alt="sommarbukett">')
         self.assertInHTML('<img src="images/hostbukett.jpg" alt="höstbukett">')

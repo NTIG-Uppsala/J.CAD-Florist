@@ -10,7 +10,7 @@ class TestDynamicOpenHoursHolidays(TestBase):
         self.setTimeAndAssertMatches(2024, 1, 1, 9, 59, matches=["Stängt för helgdag, vi öppnar kl 10 på tisdag"])
 
     def testDynamicOpenHoursDisplayEpiphany(self) -> None:
-        self.setTimeAndAssertMatches(2024, 1, 6, 9, 59, matches=["Stängt för helgdag, vi öppnar kl 10 på måndag"])
+        self.setTimeAndAssertMatches(2024, 1, 6, 9, 59, matches=["Stängt för helgdag, vi öppnar kl 12 på söndag"])
 
     def testDynamicOpenHoursDisplayMayDay(self) -> None:
         self.setTimeAndAssertMatches(2024, 5, 1, 9, 59, matches=["Stängt för helgdag, vi öppnar kl 10 på torsdag"])

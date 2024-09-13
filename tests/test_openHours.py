@@ -32,7 +32,7 @@ class TestOpenHours(TestBase):
         self.assertInText("Nyårsdag")
         self.assertInText("Trettondag")
         self.assertInText("Första maj")
-        self.assertInText("Nationaldagen")
+        self.assertInText("Nationaldag")
         self.assertInText("Julafton")
         self.assertInText("Juldagen")
         self.assertInText("Annandag jul")

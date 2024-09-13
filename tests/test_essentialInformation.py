@@ -23,7 +23,7 @@ class TestEssentialInformation(TestBase):
                 "images/icons8-facebook.svg",
                 "instagram.com/ntiuppsala",
                 "images/icons8-instagram.svg",
-                "twitter.com/ntiuppsala",
+                "x.com/ntiuppsala",
                 "images/icons8-twitterx.svg",
             ]
         )

@@ -23,7 +23,7 @@ class TestBase(unittest.TestCase):
     def setUp(self, filePathFromRoot: str) -> None:
         filePath = path.abspath(path.join(path.dirname(__file__), "..", filePathFromRoot))
         self.page.goto(f"file://{filePath}")
-        self.page.wait_for_selector("#JSLoaded")
+        self.page.wait_for_selector("#JSLoaded", state="attached")
 
     def tearDown(self) -> None:
         self.page.goto("about:blank")
@@ -56,7 +56,10 @@ class TestBase(unittest.TestCase):
         self.assertInText(match)
 
     def submitAndAssertZIPCodeValidityInText(self, fieldInput: str, match: str) -> None:
-        self.fillAndSubmitAndAssertInText("#postalCode", ".postalCodeBtn", fieldInput, match)
+        button = self.page.query_selector("#flowergram-btn")
+        button.click()
+        self.fillAndSubmitAndAssertInText("#postal-code", "#postal-code-btn", fieldInput, match)
+        button.click()
 
     def assertInText(self, match: str) -> None:
         self.assertIn(match, self.page.text_content("body"))

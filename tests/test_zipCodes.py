@@ -7,7 +7,7 @@ class TestZipCodes(TestBase):
         super().setUp(filePathFromRoot="index.html")
 
     def testFlorogramText(self) -> None:
-        button = self.page.query_selector(".flowerGramContainer>h4")
+        button = self.page.query_selector("#flowergram-btn")
         button.click()
         self.assertAllInText(
             [
