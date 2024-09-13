@@ -19,24 +19,24 @@ class TestZipCodes(TestBase):
         )
 
     def testValidZIPCodes(self) -> None:
-        self.submitAndAssertZIPCodeValidityInText("981 38", "Vi levererar till detta postnummer!")
-        self.submitAndAssertZIPCodeValidityInText("981 44", "Vi levererar till detta postnummer!")
-        self.submitAndAssertZIPCodeValidityInText("981 47", "Vi levererar till detta postnummer!")
+        self.submitAndAssertZIPCodeValidityInText("98138", "Vi levererar till detta postnummer!")
+        self.submitAndAssertZIPCodeValidityInText("98144", "Vi levererar till detta postnummer!")
+        self.submitAndAssertZIPCodeValidityInText("98147", "Vi levererar till detta postnummer!")
 
     def testEmptyZIPCode(self) -> None:
-        self.submitAndAssertZIPCodeValidityInText("", "Vi levererar tyvärr inte till detta postnummer!")
+        self.submitAndAssertZIPCodeValidityInText("", "Du måste skriva in ett postnummer!")
 
     def testInvalidZIPCodes(self) -> None:
         self.submitAndAssertZIPCodeValidityInText("12345", "Vi levererar tyvärr inte till detta postnummer!")
         self.submitAndAssertZIPCodeValidityInText("54321", "Vi levererar tyvärr inte till detta postnummer!")
 
     def testInvalidCharactersInZIPCode(self) -> None:
-        self.submitAndAssertZIPCodeValidityInText("abcde", "Vi levererar tyvärr inte till detta postnummer!")
-        self.submitAndAssertZIPCodeValidityInText("ABCDE", "Vi levererar tyvärr inte till detta postnummer!")
+        self.submitAndAssertZIPCodeValidityInText("abcde", "Du måste skriva in ett postnummer!")
+        self.submitAndAssertZIPCodeValidityInText("ABCDE", "Du måste skriva in ett postnummer!")
 
     def testInvalidLengthZIPCode(self) -> None:
-        self.submitAndAssertZIPCodeValidityInText("1234", "Vi levererar tyvärr inte till detta postnummer!")
-        self.submitAndAssertZIPCodeValidityInText("123456", "Vi levererar tyvärr inte till detta postnummer!")
+        self.submitAndAssertZIPCodeValidityInText("1234", "Postnumret måste vara 5 siffror!")
+        self.submitAndAssertZIPCodeValidityInText("123456", "Postnumret måste vara 5 siffror!")
 
 
 if __name__ == "__main__":

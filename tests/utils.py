@@ -40,7 +40,13 @@ class TestBase(unittest.TestCase):
         return html.tostring(tree, pretty_print=True, method="html", encoding="unicode")
 
     def setTime(self, year: int, month: int, day: int, hour: int, minute: int) -> None:
-        self.page.evaluate(f"checkOpenHours(new Date({year}, {month - 1}, {day}, {hour}, {minute}))")
+        self.page.evaluate(
+            f"""
+            now.setFullYear({year}, {month - 1}, {day});
+            now.setHours({hour}, {minute});
+            updateCurrentStatus();
+            """
+        )
 
     def setTimeAndAssertMatch(self, year: int, month: int, day: int, hour: int, minute: int, match: str) -> None:
         self.setTime(year, month, day, hour, minute)
