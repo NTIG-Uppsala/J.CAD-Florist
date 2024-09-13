@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-//Visar blommogrammet om man kallar funktionen
-<<<<<<< HEAD:js/flower-gram.js
-function flowergramBtnPressed() {
-    let flowergramPopUp = document.getElementById('flowergram');
-    flowergramPopUp.classList.toggle('show');
-=======
-=======
 popupButton = document.querySelector("#flowergram-btn");
 inputField = document.querySelector("#postal-code");
 inputButton = document.querySelector("#postal-code-btn");
@@ -61,16 +53,10 @@ inputField.addEventListener("keydown", (event) => {
 });
 
 // Function to toggle the flowergram popup
->>>>>>> 40aa214 (Skrev färdigt blommogramkoden och skrev kommenterar för allt)
 const flowerGramPopUp = () => {
     const flowerGramPopUp = document.querySelector("#flowerGram");
     flowerGramPopUp.classList.toggle("show");
-<<<<<<< HEAD
->>>>>>> 8e3c501 (Påbörjat omskrivning av postnummerscheck):js/flowerGram.js
-}
-=======
 };
->>>>>>> 40aa214 (Skrev färdigt blommogramkoden och skrev kommenterar för allt)
 
 // Adds event listener to the button
 popupButton.addEventListener("click", flowerGramPopUp);
