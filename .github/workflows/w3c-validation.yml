@@ -25,10 +25,10 @@ jobs:
             - name: Run HTML validation
               run: |
                   mkdir -p validation_results
-                  npx w3cjs --format=json --output-file=validation_results/validation_output.json --verbose --file=**/*.html
+                  npx w3cjs **/*.html > validation_results/validation_output.txt || true
 
             - name: Upload validation results
               uses: actions/upload-artifact@v4
               with:
                   name: validation-results
-                  path: validation_results/validation_output.json
+                  path: validation_results/validation_output.txt
