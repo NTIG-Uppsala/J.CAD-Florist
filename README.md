@@ -47,3 +47,9 @@ Alla tester ligger i tests-mappen. Testerna är uppdelade i flera filer som alla
 ## Ikoner
 
 Ikoner tagna från: [icons8](https://icons8.com/), [iconmonstr](https://iconmonstr.com/)
+
+## Hur man ändrar information på hemsidan:
+
+Allt som följer måste även ändras i test-filerna.
+
+För att ändra namnet, bilden eller priset på existerande produkter eller lägga till nya produkter
