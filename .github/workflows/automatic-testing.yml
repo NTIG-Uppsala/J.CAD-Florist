@@ -21,12 +21,13 @@ jobs:
             - name: Install dependencies
               run: |
                   python -m pip install --upgrade pip
-                  pip install lxml playwright
+                  pip install lxml playwright unittest-xml-reporting xmltodict
                   playwright install
 
             - name: Run tests with Playwright and unittest
               run: |
-                  python -m unittest discover tests
+                  python -m xmlrunner discover -o test-reports
+                  python scripts/automated-testing-save-results.py
               continue-on-error: true
 
             - name: Upload test results
