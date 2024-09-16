@@ -286,16 +286,6 @@ header {
     height: 10vh;
 }
 
-#divider-container hr {
-    background-color: var(--main-border-color);
-    margin: 0 5em;
-    height: 1px;
-    flex-grow: 1;
-    transform: scaleY(0.5);
-    transform-origin: center;
-    border: none;
-}
-
 /*Footer*/
 footer {
     flex-direction: column;
