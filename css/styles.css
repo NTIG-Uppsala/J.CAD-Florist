@@ -18,12 +18,12 @@
     --border-thin: 1px solid var(--main-border-color);
     --border-reg: 2px solid var(--main-border-color);
     --base-font-size: 1rem;
-    --lvl1-font-size: calc(var(--base-font-size)*1.2*1.2*1.2*1.2*1.2*1.2);
-    --lvl2-font-size: calc(var(--base-font-size)*1.2*1.2*1.2*1.2*1.2);
-    --lvl3-font-size: calc(var(--base-font-size)*1.2*1.2*1.2*1.2);
-    --lvl4-font-size: calc(var(--base-font-size)*1.2*1.2*1.2);
-    --lvl5-font-size: calc(var(--base-font-size)*1.2*1.2);
-    --lvl6-font-size: calc(var(--base-font-size)*1.2);
+    --lvl1-font-size: calc(var(--base-font-size)*pow(1.2, 6));
+    --lvl2-font-size: calc(var(--base-font-size)*pow(1.2, 5));
+    --lvl3-font-size: calc(var(--base-font-size)*pow(1.2, 4));
+    --lvl4-font-size: calc(var(--base-font-size)*pow(1.2, 3));
+    --lvl5-font-size: calc(var(--base-font-size)*pow(1.2, 2));
+    --lvl6-font-size: calc(var(--base-font-size)*pow(1.2, 1));
 }
 
 * {
