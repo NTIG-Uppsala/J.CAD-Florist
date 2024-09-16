@@ -18,9 +18,9 @@
     --border-thin: 1px solid var(--main-border-color);
     --border-reg: 2px solid var(--main-border-color);
     --base-font-size: 1rem;
-    --lvl1-font-size: calc(var(--base-font-size)*pow(1.2, 6));
-    --lvl2-font-size: calc(var(--base-font-size)*pow(1.2, 5));
-    --lvl3-font-size: calc(var(--base-font-size)*pow(1.2, 4));
+    --lvl1-font-size: calc(var(--base-font-size)*4.5);
+    --lvl2-font-size: calc(var(--base-font-size)*pow(1.2, 6));
+    --lvl3-font-size: calc(var(--base-font-size)*pow(1.2, 5));
     --lvl4-font-size: calc(var(--base-font-size)*pow(1.2, 3));
     --lvl5-font-size: calc(var(--base-font-size)*pow(1.2, 2));
     --lvl6-font-size: calc(var(--base-font-size)*pow(1.2, 1));
@@ -88,7 +88,7 @@ header {
     height: 50%;
     margin-bottom: 0.5em;
     font-weight: bolder;
-    font-size: 4.5rem;
+    font-size: var(--lvl1-font-size);
 }
 
 #header-container {
@@ -138,7 +138,7 @@ header {
     top: 10rem;
 }
 
-#flowergram-container h2{
+#flowergram-container h3{
     color: var(--secondary-text-color);
 }
 
@@ -198,7 +198,7 @@ header {
     background-color:var(--main-color-light);
     width: 65%;
     height: 2rem;
-    font-size: 1rem;
+    font-size: var(--base-font-size);
     border: var(--border-thin);
     padding: 0 0 0 2rem;
     border-radius: 0.5rem 0 0 0.5rem;

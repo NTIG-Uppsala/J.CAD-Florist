@@ -8,7 +8,7 @@
 
 /*produkt*/
 .product {
-    font-size: 1em;
+    /* font-size: 1em; */
     width: 30em;
     height: 30em;
     margin: 1em;
@@ -59,7 +59,7 @@
     }
 
     .product-footer h4 {
-        font-size: 1.3em;
+        font-size: 1.3rem;
     }
     
     .product-footer h5 {
@@ -74,10 +74,10 @@
     }
 
     .product-footer h4 {
-        font-size: 1.1em;
+        font-size: 1.1rem;
     }
     
     .product-footer h5 {
-        font-size: 0.9em;
+        font-size: 0.9rem;
     }
 }
