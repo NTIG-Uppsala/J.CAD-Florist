@@ -20,12 +20,12 @@ jobs:
 
             - name: Install dependencies
               run: |
-                  npm install -g w3cjs
+                  npm install -g w3cjs glob
 
-            - name: Validate HTML files
+            - name: Run HTML validation
               run: |
-                  mkdir -p validation_results  # Create directory for validation results
-                  w3cjs --format=json --output-file=validation_results/validation_output.json --verbose --file=**/*.html
+                  mkdir -p validation_results
+                  node scripts/validate-html.js
 
             - name: Upload validation results
               uses: actions/upload-artifact@v4
