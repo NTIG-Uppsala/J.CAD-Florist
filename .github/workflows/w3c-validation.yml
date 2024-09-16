@@ -20,15 +20,15 @@ jobs:
 
             - name: Install dependencies
               run: |
-                  npm install -g glob
+                  npm install -g glob w3cjs
 
             - name: Run HTML validation
               run: |
                   mkdir -p validation_results
-                  npx w3cjs **/*.html > validation_results/validation_output.txt || true
+                  npx node scripts/validate-html.js
 
             - name: Upload validation results
               uses: actions/upload-artifact@v4
               with:
                   name: validation-results
-                  path: validation_results/validation_output.txt
+                  path: validation_results/validation_output.json
