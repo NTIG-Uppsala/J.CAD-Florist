@@ -38,12 +38,13 @@ jobs:
                           validation_failed=1
                           continue
                       fi
-                      echo "$response" > "validation_results/w3c-validation-$(basename $file .html).json"
-                      if echo "$response" | grep -q "error"; then
-                          echo "Error in response for $file: $response"
+                      if echo "$response" | grep -q "<html>"; then
+                          echo "HTML error response received for $file"
+                          echo "$response" > "validation_results/w3c-validation-$(basename $file .html).html"
                           validation_failed=1
                           continue
                       fi
+                      echo "$response" > "validation_results/w3c-validation-$(basename $file .html).json"
                       errors=$(echo "$response" | python3 -c "import sys, json; data = json.load(sys.stdin); print(len([msg for msg in data['messages'] if msg['type'] in ['error', 'warning']]))")
                       if [ "$errors" -gt 0 ]; then
                           echo "Validation issues found in $file"
@@ -65,12 +66,13 @@ jobs:
                           validation_failed=1
                           continue
                       fi
-                      echo "$response" > "validation_results/w3c-validation-$(basename $file .css).json"
-                      if echo "$response" | grep -q "error"; then
-                          echo "Error in response for $file: $response"
+                      if echo "$response" | grep -q "<html>"; then
+                          echo "HTML error response received for $file"
+                          echo "$response" > "validation_results/w3c-validation-$(basename $file .css).html"
                           validation_failed=1
                           continue
                       fi
+                      echo "$response" > "validation_results/w3c-validation-$(basename $file .css).json"
                       errors=$(echo "$response" | python3 -c "import sys, json; data = json.load(sys.stdin); print(len(data.get('cssvalidation', {}).get('errors', [])))")
                       if [ "$errors" -gt 0 ]; then
                           echo "Validation issues found in $file"
