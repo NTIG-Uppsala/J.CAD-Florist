@@ -26,7 +26,9 @@ jobs:
 
             - name: Run tests with Playwright and unittest
               run: |
+                  mkdir -p test-reports   # Ensure the directory exists
                   python -m xmlrunner discover -s tests -p "test_*.py" -o test-reports
+                  ls -al test-reports     # List the contents of the test-reports directory for debugging
                   python scripts/automated-testing-save-results.py
               continue-on-error: true
 
