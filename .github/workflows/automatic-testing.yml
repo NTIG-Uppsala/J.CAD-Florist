@@ -35,13 +35,13 @@ jobs:
               uses: actions/upload-artifact@v4
               with:
                   name: test-results
-                  path: test.results.json
+                  path: test_results/test_output.json
 
             # Fail the build if any tests failed or if no tests were run
             - name: Check for test failures
               run: |
                   if [ -f test.results.json ]; then
-                      if grep -q '"status": "failed"' test.results.json; then
+                      if grep -q '"status": "failed"' test_results/test_output.json; then
                           echo "Tests failed"
                           exit 1
                       else
