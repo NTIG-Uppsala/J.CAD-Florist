@@ -17,6 +17,13 @@
 
     --border-thin: 1px solid var(--main-border-color);
     --border-reg: 2px solid var(--main-border-color);
+    --base-font-size: 1rem;
+    --lvl1-font-size: calc(var(--base-font-size)*1.2*1.2*1.2*1.2*1.2*1.2);
+    --lvl2-font-size: calc(var(--base-font-size)*1.2*1.2*1.2*1.2*1.2);
+    --lvl3-font-size: calc(var(--base-font-size)*1.2*1.2*1.2*1.2);
+    --lvl4-font-size: calc(var(--base-font-size)*1.2*1.2*1.2);
+    --lvl5-font-size: calc(var(--base-font-size)*1.2*1.2);
+    --lvl6-font-size: calc(var(--base-font-size)*1.2);
 }
 
 * {
@@ -34,13 +41,13 @@ body {
 }
 
 /*styling för h1-h6 och p taggar*/
-h1{font-size: 2.986rem;}
-h2{font-size: 2.488rem;}
-h3{font-size: 2.074rem;}
-h4{font-size: 1.728rem;}
-h5{font-size: 1.44rem;}
-h6{font-size: 1.2rem;}
-p{font-size: 1rem;}
+h1{font-size: var(--lvl1-font-size);}
+h2{font-size: var(--lvl2-font-size);}
+h3{font-size: var(--lvl3-font-size);}
+h4{font-size: var(--lvl4-font-size);}
+h5{font-size: var(--lvl5-font-size);}
+h6{font-size: var(--lvl6-font-size);}
+p{font-size: var(--base-font-size);}
 
 a {
     color: var(--link-color);
@@ -103,6 +110,10 @@ header {
     font-weight: bold;
     width: 100%;
     height: 3rem;
+}
+
+#open-or-closed-container p {
+    font-size: calc(var(--lvl6-font-size));
 }
 
 /*Bildspel och blommogram*/
