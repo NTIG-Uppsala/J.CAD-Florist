@@ -18,18 +18,17 @@ jobs:
               with:
                   node-version: "16"
 
-            - name: Install global dependencies
+            - name: Install dependencies
               run: |
-                  npm install -g w3cjs glob
+                  npm install -g glob
 
             - name: Run HTML validation
               run: |
                   mkdir -p validation_results
-                  npx node scripts/validate-html.js
+                  npx w3cjs --format=json --output-file=validation_results/validation_output.json --verbose --file=**/*.html
 
             - name: Upload validation results
               uses: actions/upload-artifact@v4
               with:
                   name: validation-results
                   path: validation_results/validation_output.json
-                
