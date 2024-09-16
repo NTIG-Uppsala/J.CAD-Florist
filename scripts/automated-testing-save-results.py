@@ -1,3 +1,5 @@
+# This file is ran by github workflows. There is no need to install any dependencies in this file or to run it manually.
+
 import xmltodict, json
 import os
 

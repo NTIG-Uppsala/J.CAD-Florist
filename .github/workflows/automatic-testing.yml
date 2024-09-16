@@ -26,7 +26,7 @@ jobs:
 
             - name: Run tests with Playwright and unittest
               run: |
-                  python -m xmlrunner discover -o test-reports
+                  python -m xmlrunner discover -s tests -p "test_*.py" -o test-reports
                   python scripts/automated-testing-save-results.py
               continue-on-error: true
 
@@ -34,18 +34,18 @@ jobs:
               uses: actions/upload-artifact@v4
               with:
                   name: test-results
-                  path: test-results.json
+                  path: test.results.json
 
             - name: Check if any tests ran
               run: |
-                  if grep -q '"total": 0,' test-results.json; then
+                  if grep -q '"total": 0,' test.results.json; then
                     echo "No tests were run"
                     exit 1
                   fi
 
             - name: Check test results
               run: |
-                  if grep -q '"failed":' test-results.json; then
+                  if grep -q '"failed":' test.results.json; then
                     echo "Tests failed"
                     exit 1
                   else
