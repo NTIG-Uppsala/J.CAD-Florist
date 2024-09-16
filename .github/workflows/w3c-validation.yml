@@ -1,0 +1,34 @@
+name: W3C Validation
+
+on:
+    push:
+        branches:
+            - "**"
+
+jobs:
+    validation:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: "16"
+
+            - name: Install dependencies
+              run: |
+                  npm install -g w3cjs
+
+            - name: Validate HTML files
+              run: |
+                  mkdir -p validation_results  # Create directory for validation results
+                  w3cjs --format=json --output-file=validation_results/validation_output.json --verbose --file=**/*.html
+
+            - name: Upload validation results
+              uses: actions/upload-artifact@v4
+              with:
+                  name: validation-results
+                  path: validation_results/validation_output.json
