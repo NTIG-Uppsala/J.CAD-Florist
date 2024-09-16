@@ -20,7 +20,7 @@ jobs:
 
             - name: Install dependencies
               run: |
-                  npm install -g glob w3cjs
+                  npm install axios glob
 
             - name: Run HTML validation
               run: |
