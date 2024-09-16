@@ -40,7 +40,7 @@ jobs:
             # Fail the build if any tests failed or if no tests were run
             - name: Check for test failures
               run: |
-                  if [ -f test.results.json ]; then
+                  if [ -f test_results/test_output.json ]; then
                       if grep -q '"status": "failed"' test_results/test_output.json; then
                           echo "Tests failed"
                           exit 1
