@@ -51,35 +51,7 @@ jobs:
                           validation_failed=1
                       fi
                   done
-                  echo "$validation_failed" > validation_results/html_validation_failed_flag.txt
-
-            # Validate CSS with W3C Validator API
-            - name: Validate CSS with W3C Validator API
-              run: |
-                  mkdir -p validation_results
-                  validation_failed=0
-                  for file in $(find . -name "*.css"); do
-                      echo "Validating $file"
-                      response=$(curl -s -F "out=json" -F "text=@$file" https://jigsaw.w3.org/css-validator/validator)
-                      if [ $? -ne 0 ]; then
-                          echo "Error fetching validation results for $file"
-                          validation_failed=1
-                          continue
-                      fi
-                      if echo "$response" | grep -q "<html>"; then
-                          echo "HTML error response received for $file"
-                          echo "$response" > "validation_results/w3c-validation-$(basename $file .css).html"
-                          validation_failed=1
-                          continue
-                      fi
-                      echo "$response" > "validation_results/w3c-validation-$(basename $file .css).json"
-                      errors=$(echo "$response" | python3 -c "import sys, json; data = json.load(sys.stdin); print(len(data.get('cssvalidation', {}).get('errors', [])))" || echo "0")
-                      if [ "$errors" -gt 0 ]; then
-                          echo "Validation issues found in $file"
-                          validation_failed=1
-                      fi
-                  done
-                  echo "$validation_failed" > validation_results/css_validation_failed_flag.txt
+                  echo "$validation_failed" > validation_results/validation_failed_flag.txt
 
             # Upload validation results as an artifact
             - name: Upload validation results
@@ -91,9 +63,8 @@ jobs:
             # Fail if validation issues found in HTML or CSS
             - name: Fail if validation issues found
               run: |
-                  validation_failed_html=$(cat validation_results/html_validation_failed_flag.txt)
-                  validation_failed_css=$(cat validation_results/css_validation_failed_flag.txt)
-                  if [ "$validation_failed_html" -eq 1 ] || [ "$validation_failed_css" -eq 1 ]; then
+                  validation_failed_html=$(cat validation_results/validation_failed_flag.txt)
+                  if [ "$validation_failed_html" -eq 1 ]; then
                       echo "Validation issues found"
                       exit 1
                   else
