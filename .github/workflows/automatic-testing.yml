@@ -28,7 +28,7 @@ jobs:
             - name: Run tests and output to JSON file
               run: |
                   mkdir -p test_results  # Create directory for test results
-                  python automated-testing-run-tests.py
+                  python scripts/automated-testing-run-tests.py
 
             # Upload test results as an artifact
             - name: Upload test results
