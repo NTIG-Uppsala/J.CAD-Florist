@@ -28,7 +28,7 @@ class TestProducts(TestBase):
     def testImages(self) -> None:
         self.assertInHTML('<img src="images/brollopsbukett.jpg" alt="bröllopsbukett">')
         self.assertInHTML('<img src="images/rosor-10-pack.jpg" alt="rosor 10-pack">')
-        self.assertInHTML('<img src="images/tulpanbukett.jpg" alt="tulpaner 10-pack">')
+        self.assertInHTML('<img src="images/tulpaner-10-pack.jpg" alt="tulpaner 10-pack">')
         self.assertInHTML('<img src="images/sommarbukett.jpg" alt="sommarbukett">')
         self.assertInHTML('<img src="images/hostbukett.jpg" alt="höstbukett">')
         self.assertInHTML('<img src="images/begravningskrans.jpg" alt="begravningskrans">')

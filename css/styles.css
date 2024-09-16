@@ -214,7 +214,7 @@ header p {
     border: var(--border-thin);
     border-left: none;
     width: 2.5rem;
-    background-image: url('../images/iconmonstr-search-thin-black.svg');
+    background-image: url('../images/search-thin-black.svg');
     background-size: 1.3rem;
     background-repeat: no-repeat;
     background-position: center;

@@ -24,11 +24,11 @@ class TestEssentialInformation(TestBase):
         self.assertAllInHTML(
             [
                 "facebook.com/ntiuppsala",
-                "images/icons8-facebook.svg",
+                "images/facebook.svg",
                 "instagram.com/ntiuppsala",
-                "images/icons8-instagram.svg",
+                "images/instagram.svg",
                 "x.com/ntiuppsala",
-                "images/icons8-twitterx.svg",
+                "images/twitter-x.svg",
             ]
         )
 
