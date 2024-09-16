@@ -75,13 +75,6 @@ header {
     z-index: 1;
 }
 
-/*Header meddelande*/
-header p {
-    height: 30%;
-    color: var(--main-logo-color);
-    font-weight: bold;
-}
-
 /*Titel*/
 #title {
     color: var(--main-logo-color);
