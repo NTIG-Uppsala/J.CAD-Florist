@@ -66,3 +66,34 @@ jobs:
                           continue
                       fi
                       echo "$response" > "validation_results/w3c-validation-$(basename $file .css).json"
+                      if echo "$response" | grep -q "error"; then
+                          echo "Error in response for $file: $response"
+                          validation_failed=1
+                          continue
+                      fi
+                      errors=$(echo "$response" | python3 -c "import sys, json; data = json.load(sys.stdin); print(len(data.get('cssvalidation', {}).get('errors', [])))")
+                      if [ "$errors" -gt 0 ]; then
+                          echo "Validation issues found in $file"
+                          validation_failed=1
+                      fi
+                  done
+                  echo "$validation_failed" > validation_results/css_validation_failed_flag.txt
+
+            # Upload validation results as an artifact
+            - name: Upload validation results
+              uses: actions/upload-artifact@v4
+              with:
+                  name: validation-results
+                  path: validation_results
+
+            # Fail if validation issues found in HTML or CSS
+            - name: Fail if validation issues found
+              run: |
+                  validation_failed_html=$(cat validation_results/html_validation_failed_flag.txt)
+                  validation_failed_css=$(cat validation_results/css_validation_failed_flag.txt)
+                  if [ "$validation_failed_html" -eq 1 ] || [ "$validation_failed_css" -eq 1 ]; then
+                      echo "Validation issues found"
+                      exit 1
+                  else
+                      echo "Validation passed"
+                  fi
