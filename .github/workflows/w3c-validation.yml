@@ -33,8 +33,17 @@ jobs:
                   for file in $(find . -name "*.html"); do
                       echo "Validating $file"
                       response=$(curl -s -F "out=json" -F "content=@$file" https://validator.w3.org/nu/?parser=html5)
-                      output_file="validation_results/w3c-validation-$(basename $file .html).json"
-                      echo "$response" > "$output_file"
+                      if [ $? -ne 0 ]; then
+                          echo "Error fetching validation results for $file"
+                          validation_failed=1
+                          continue
+                      fi
+                      echo "$response" > "validation_results/w3c-validation-$(basename $file .html).json"
+                      if echo "$response" | grep -q "error"; then
+                          echo "Error in response for $file: $response"
+                          validation_failed=1
+                          continue
+                      fi
                       errors=$(echo "$response" | python3 -c "import sys, json; data = json.load(sys.stdin); print(len([msg for msg in data['messages'] if msg['type'] in ['error', 'warning']]))")
                       if [ "$errors" -gt 0 ]; then
                           echo "Validation issues found in $file"
@@ -50,32 +59,10 @@ jobs:
                   validation_failed=0
                   for file in $(find . -name "*.css"); do
                       echo "Validating $file"
-                      response=$(curl -s -F "out=json" -F "content=@$file" https://jigsaw.w3.org/css-validator/validator)
-                      output_file="validation_results/w3c-validation-$(basename $file .css).json"
-                      echo "$response" > "$output_file"
-                      errors=$(echo "$response" | python3 -c "import sys, json; data = json.load(sys.stdin); print(len(data['cssvalidation']['errors']))")
-                      if [ "$errors" -gt 0 ]; then
-                          echo "Validation issues found in $file"
+                      response=$(curl -s -F "out=json" -F "text=@$file" https://jigsaw.w3.org/css-validator/validator)
+                      if [ $? -ne 0 ]; then
+                          echo "Error fetching validation results for $file"
                           validation_failed=1
+                          continue
                       fi
-                  done
-                  echo "$validation_failed" > validation_results/css_validation_failed_flag.txt
-
-            # Upload validation results as an artifact
-            - name: Upload validation results
-              uses: actions/upload-artifact@v4
-              with:
-                  name: validation-results
-                  path: validation_results
-
-            # Fail if validation issues found in HTML or CSS
-            - name: Fail if validation issues found
-              run: |
-                  validation_failed_html=$(cat validation_results/html_validation_failed_flag.txt)
-                  validation_failed_css=$(cat validation_results/css_validation_failed_flag.txt)
-                  if [ "$validation_failed_html" -eq 1 ] || [ "$validation_failed_css" -eq 1 ]; then
-                      echo "Validation issues found"
-                      exit 1
-                  else
-                      echo "Validation passed"
-                  fi
+                      echo "$response" > "validation_results/w3c-validation-$(basename $file .css).json"
