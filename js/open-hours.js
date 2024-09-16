@@ -70,24 +70,24 @@ const updateCurrentStatus = () => {
 
     // Check if the store is closed for a holiday
     if (closedDays[currentMonth].includes(currentDate)) {
-        outputTextField.innerHTML = `Stängt för helgdag, vi öppnar kl ${nextOpenString} på ${nextOpenDayName}`;
+        outputTextField.innerHTML = `Det är helgdag. Vi har stängt. Vi öppnar kl ${nextOpenString} på ${nextOpenDayName}`;
         return;
     }
 
     // Check if the store has not opened for the day yet
     if (currentHour < currentDayObject.from.hour || (currentHour === currentDayObject.from.hour && currentMinute < currentDayObject.from.minute)) {
-        outputTextField.innerHTML = `Stängt, vi öppnar kl ${currentDayObject.from.hour}:${currentDayObject.from.minute < 10 ? "0" + currentDayObject.from.minute : currentDayObject.from.minute} idag`;
+        outputTextField.innerHTML = `Vi har stängt. Vi öppnar kl ${currentDayObject.from.hour}:${currentDayObject.from.minute < 10 ? "0" + currentDayObject.from.minute : currentDayObject.from.minute} idag`;
         return;
     }
 
     // Check if the store has closed for the day
     if (currentHour >= currentDayObject.to.hour || (currentHour === currentDayObject.to.hour && currentMinute >= currentDayObject.to.minute)) {
-        outputTextField.innerHTML = `Stängt, vi öppnar kl ${nextOpenString} på ${nextOpenDayName}`;
+        outputTextField.innerHTML = `Vi har stängt. Vi öppnar kl ${nextOpenString} på ${nextOpenDayName}`;
         return;
     }
 
     // The store is open
-    outputTextField.innerHTML = `Öppet, vi stänger kl ${nextCloseString} idag`;
+    outputTextField.innerHTML = `Vi har öppet. Vi stänger kl ${nextCloseString} idag`;
 };
 
 // Update the current status

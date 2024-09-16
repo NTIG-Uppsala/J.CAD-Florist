@@ -7,7 +7,7 @@ class TestZipCodes(TestBase):
         super().setUp(filePathFromRoot="index.html")
 
     # Tests that the florogram text is displayed correctly
-    def testFlorogramText(self) -> None:
+    def testFlowergramText(self) -> None:
         button = self.page.query_selector("#flowergram-btn")
         button.click()
         self.assertAllInText(
