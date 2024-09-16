@@ -21,35 +21,33 @@ jobs:
             - name: Install dependencies
               run: |
                   python -m pip install --upgrade pip
-                  pip install lxml playwright unittest-xml-reporting xmltodict
+                  pip install lxml playwright
                   playwright install
 
-            - name: Run tests with Playwright and unittest
+            # Run tests using custom JSON test runner
+            - name: Run tests and output to JSON file
               run: |
-                  mkdir -p test-reports   # Ensure the directory exists
-                  python -m xmlrunner discover -s tests -p "test_*.py" -o test-reports
-                  ls -al test-reports     # List the contents of the test-reports directory for debugging
-                  python scripts/automated-testing-save-results.py
-              continue-on-error: true
+                  mkdir -p test_results  # Create directory for test results
+                  python automated-testing-run-tests.py
 
+            # Upload test results as an artifact
             - name: Upload test results
               uses: actions/upload-artifact@v4
               with:
                   name: test-results
                   path: test.results.json
 
-            - name: Check if any tests ran
+            # Fail the build if any tests failed or if no tests were run
+            - name: Check for test failures
               run: |
-                  if grep -q '"total": 0,' test.results.json; then
-                    echo "No tests were run"
-                    exit 1
-                  fi
-
-            - name: Check test results
-              run: |
-                  if grep -q '"failed":' test.results.json; then
-                    echo "Tests failed"
-                    exit 1
+                  if [ -f test.results.json ]; then
+                      if grep -q '"status": "failed"' test.results.json; then
+                          echo "Tests failed"
+                          exit 1
+                      else
+                          echo "Tests passed"
+                      fi
                   else
-                    echo "Tests passed"
+                      echo "No tests were run"
+                      exit 1
                   fi
