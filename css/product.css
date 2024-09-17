@@ -8,10 +8,10 @@
 
 /* Product */
 .product {
-    /* font-size: 1em; */
-    width: 30em;
-    height: 30em;
-    margin: 1em;
+    aspect-ratio: 1 / 1; /* Make sure that product is always a square*/
+    width: 30rem;
+    height: auto;
+    margin: 1rem;
 }
 
 .product h5 {
@@ -25,59 +25,47 @@
     display: flex;
     flex-direction: column;
     background-color: var(--main-color-reg);
-    border-bottom-left-radius: 1em;
-    border-bottom-right-radius: 1em;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
 }
 
 /* Product image */
 .product img {
     height: 75%;
     width: 100%;
-    border-top-left-radius: 1em;
-    border-top-right-radius: 1em;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
 }
 
 /* Media queries */
-@media  screen and (max-width: 660px) {
+@media screen and (max-width: 440px) {
+    #product-container {
+        width: 100%; /* Make products cover a larger width of the screen when screen width is less than 441px*/
+    }
+
     .product {
-        width: 25em;
-        height: 25em;
+        margin-top: 0;
     }
 }
 
-@media screen and (max-width: 560px) {
-    .product {
-        width: 20em;
-        height: 20em;
-    }
-}
+/* Scale down font-sizes in the products when the screen is small enough */
 
-@media screen and (max-width: 460px) {
-    .product {
-        width: 15em;
-        height: 15em;
-    }
-
+@media screen and (max-width: 350px) {
     .product-footer h4 {
-        font-size: 1.3rem;
+        font-size: var(--lvl5-font-size);
     }
-    
+
     .product-footer h5 {
-        font-size: 1rem;
+        font-size: var(--lvl6-font-size);
     }
 }
 
-@media screen and (max-width: 360px) {
-    .product {
-        width: 10em;
-        height: 10em;
+@media screen and (max-width: 300px) {
+    .product-footer h4 {
+        font-size: var(--lvl6-font-size);
     }
 
-    .product-footer h4 {
-        font-size: 1.1rem;
-    }
-    
     .product-footer h5 {
-        font-size: 0.9rem;
+        font-size: var(--lvl7-font-size);
     }
 }
