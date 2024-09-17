@@ -128,7 +128,7 @@ header {
     height: 3rem;
 }
 
-#open-or-closed-container p {
+#open-or-closed {
     font-size: calc(var(--lvl9-font-size));
 }
 
@@ -487,5 +487,9 @@ footer {
 @media screen and (max-width: 290px) {
     #title {
         font-size: var(--lvl4-font-size);
+    }
+
+    #open-or-closed {
+        font-size: var(--lvl10-font-size);
     }
 }
