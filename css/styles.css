@@ -28,6 +28,7 @@
     --lvl8-font-size: calc(var(--base-font-size) * pow(1.2, 2));
     --lvl9-font-size: calc(var(--base-font-size) * pow(1.2, 1));
     --lvl10-font-size: calc(var(--base-font-size) * pow(1.2, 0));
+    --lvl11-font-size: calc(var(--base-font-size) * pow(1.2, -1));
 }
 
 * {
@@ -163,10 +164,14 @@ header {
     box-sizing: border-box;
     color: var(--main-text-color);
     width: 60%;
-    height: 5rem;
     background-color: var(--main-color-reg);
     border: var(--border-reg);
     border-radius: 1rem;
+    padding: 0.5rem;
+    min-height: 5rem;
+    max-height: max-content;
+    word-break: normal;
+    overflow-wrap: break-word;
 }
 
 #flowergram-container h4:hover {
@@ -176,15 +181,18 @@ header {
 
 #flowergram {
     visibility: hidden;
+    width: 60%;
     opacity: 0;
     transition: opacity 0.7s ease-in-out;
-    height: 10rem;
+    height: fit-content;
     flex-direction: column;
     background-color: var(--main-color-reg);
     margin-top: 3rem;
     padding: 1rem;
     border-radius: 1rem;
     border: var(--border-reg);
+    min-height: min-content;
+    max-height: max-content;
 }
 
 #flowergram.show {
@@ -218,7 +226,7 @@ header {
     height: 2rem;
     font-size: var(--base-font-size);
     border: var(--border-thin);
-    padding: 0 0 0 2rem;
+    padding-left: 0.5rem;
     border-radius: 0.5rem 0 0 0.5rem;
 }
 
@@ -419,6 +427,7 @@ footer {
         left: auto;
         right: auto;
         top: 5rem;
+        align-items: center;
     }
 
     #flowergram-container h3 {
@@ -426,15 +435,14 @@ footer {
     }
 
     #flowergram-container h4 {
-        width: 100%;
-    }
-
-    #flowergram {
-        height: 12rem;
+        width: 20rem;
+        max-width: 90dvw;
     }
 
     #flowergram {
         margin-top: 1rem;
+        width: 20rem;
+        max-width: 80dvw;
     }
 
     #footer-top {
@@ -482,12 +490,28 @@ footer {
     }
 }
 
-@media screen and (max-width: 290px) {
+@media screen and (max-width: 300px) {
     #title {
         font-size: var(--lvl4-font-size);
     }
 
     #open-or-closed {
         font-size: var(--lvl10-font-size);
+    }
+
+    #logo {
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    #open-or-closed {
+        font-size: var(--lvl11-font-size);
+    } 
+}
+
+@media screen and (max-width: 220px) {
+    #logo {
+        display: none;
     }
 }

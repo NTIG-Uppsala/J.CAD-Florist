@@ -6,14 +6,15 @@ class TestZipCodes(TestBase):
     def setUp(self) -> None:
         super().setUp(filePathFromRoot="index.html")
 
-    # Tests that the florogram text is displayed correctly
+    # Tests that the flowergram text is displayed correctly
     def testFlowergramText(self) -> None:
         button = self.page.query_selector("#flowergram-btn")
         button.click()
         self.assertAllInText(
             [
-                "Överraska med ett blommogram",
-                "Vill du skicka ett blommogram?",
+                "Över\xadraska med ett blommo\xadgram",
+                "Skicka blommo\xadgram",
+                "Vill du skicka ett blommo\xadgram?",
                 "Besök oss i butiken eller ring oss på 0630-555-555!",
                 "Kontrollera här om vi levererar till ditt önskade postnummer:",
             ]
