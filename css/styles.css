@@ -152,6 +152,7 @@ header {
     position: absolute;
     left: 5rem;
     top: 10rem;
+    max-width: 90dvw;
 }
 
 #flowergram-container h3 {
