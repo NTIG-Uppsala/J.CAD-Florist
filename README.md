@@ -46,19 +46,19 @@ För att konfiguera testerna så tryck view --> testing --> configure python tes
 
 ## Uppdatera sidan
 
-Pusha de features som är helt klara till "live"-branchen. Andra ändringar ska pushas till "main"-branchen
+Pusha de features som är helt klara till `live`-branchen. Andra ändringar ska pushas till `main`-branchen.
 
 ---
 
 ## Filsystem
 
-Alla tester ligger i tests-mappen. Testerna är uppdelade i flera filer som alla börjar på "test\_"
+Alla tester ligger i tests-mappen. Testerna är uppdelade i flera filer som alla börjar på `test_`.
 
 ---
 
 ## Ikoner
 
-Ikoner tagna från: [icons8](https://icons8.com/), [iconmonstr](https://iconmonstr.com/)
+Ikoner tagna från: [icons8](https://icons8.com/), [iconmonstr](https://iconmonstr.com/).
 
 ---
 
@@ -77,5 +77,3 @@ För att ändra öppetider ändra det i `#opening-hours-container` i index.html 
 För att ändra stängda dagar ändra det i `#closed-days-container` i index.html och objektet `closedDays` i js/open-hours.js. För att ändra vilka dagar lägg till eller ta bort dem i listan för deras respektive månad. Notera att januari är månad 0 och december är månad 11.
 
 För att ändra vilka postnummer som levereras till ändra det i listan `zipCodes` i js/flowergram.js.
-
----
