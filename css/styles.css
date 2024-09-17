@@ -138,11 +138,12 @@ header {
     top: 10rem;
 }
 
-#flowergram-container h3{
+#flowergram-container h3 {
     color: var(--secondary-text-color);
 }
 
-#flowergram-container h4{
+#flowergram-container h4 {
+    box-sizing: border-box;
     color: var(--main-text-color);
     width: 60%;
     height: 5rem;
@@ -378,24 +379,20 @@ footer {
     }
 }
 
-@media screen and (max-width: 1230px) {
-    .flowergram{
-        width: 100%;
-        height: 40%;
-        bottom: 0;
-        border-style: none;
-    }
-}
-
 @media screen and (max-width: 700px) { 
-    html {
-        font-size: 12px;
-    }
-    
     #flowergram-container {
         width: 20rem;
-        left: 1rem;
+        left: auto;
+        right: auto;
         top: 5rem;
+    }
+
+    #flowergram-container h3 {
+        text-align: center;
+    }
+
+    #flowergram-container h4 {
+        width: 100%;
     }
 
     #flowergram {
