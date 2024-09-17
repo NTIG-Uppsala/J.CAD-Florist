@@ -324,6 +324,7 @@ footer {
     background-color: var(--main-color-light);
     z-index: 1;
     padding-top: 1%;
+    margin: 1rem 0;
 }
 
 #footer-top {
@@ -347,8 +348,8 @@ footer {
 #footer-container-2::after {
     content: "";
     position: absolute;
-    top: 10%;
-    bottom: 10%;
+    top: 5%;
+    bottom: 5%;
     right: 0;
     width: 1px;
     background-color: var(--main-border-color);
@@ -454,10 +455,6 @@ footer {
 
     .footer-col {
         margin-bottom: 1rem;
-    }
-
-    #footer-bottom {
-        margin-top: 1rem;
     }
 }
 
