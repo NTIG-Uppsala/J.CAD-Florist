@@ -6,6 +6,8 @@ Medlemmar: Axel Thornberg, Jesper Cejie, Eskil Tornberg.
 
 [Länk till hemsidan](https://ntig-uppsala.github.io/J.CAD-Florist/)
 
+---
+
 ## MD Filer
 
 [Utvecklingsmiljö](docs/development-environment-standard.md)
@@ -16,9 +18,13 @@ Medlemmar: Axel Thornberg, Jesper Cejie, Eskil Tornberg.
 
 [Kodningsstandard](docs/coding-standard.md)
 
+---
+
 ## Guider
 
 [Samling av guider för hemsidan](docs/guides.md)
+
+---
 
 ## Tester
 
@@ -36,20 +42,40 @@ Kör sedan följade en kommandon i terminalen:
 
 För att konfiguera testerna så tryck view --> testing --> configure python tests --> unittests --> tests.
 
+---
+
 ## Uppdatera sidan
 
 Pusha de features som är helt klara till "live"-branchen. Andra ändringar ska pushas till "main"-branchen
+
+---
 
 ## Filsystem
 
 Alla tester ligger i tests-mappen. Testerna är uppdelade i flera filer som alla börjar på "test\_"
 
+---
+
 ## Ikoner
 
 Ikoner tagna från: [icons8](https://icons8.com/), [iconmonstr](https://iconmonstr.com/)
+
+---
 
 ## Hur man ändrar information på hemsidan:
 
 Allt som följer måste även ändras i test-filerna.
 
-För att ändra namnet, bilden eller priset på existerande produkter eller lägga till nya produkter
+För att ändra namnet, bilden eller priset på existerande produkter eller lägga till nya produkter hitta och ändra elementen i `#product-container` i index.html.
+
+För att ändra telefonnummer ändra texten och href i a-taggarna i `#flowergram` och `#number` i index.html.
+
+För att ändra adress ändra texten och href i a-taggarna i `#address` i index.html.
+
+För att ändra öppetider ändra det i `#opening-hours-container` i index.html och objektet `openHours` i js/open-hours.js. Objektet består av ett objekt för varje dag. `from` är när det öppnar och `to` är när det stänger för dagarna. `hour` och `minute` är timmarna respektive minuterna för öppetiderna.
+
+För att ändra stängda dagar ändra det i `#closed-days-container` i index.html och objektet `closedDays` i js/open-hours.js. För att ändra vilka dagar lägg till eller ta bort dem i listan för deras respektive månad. Notera att januari är månad 0 och december är månad 11.
+
+För att ändra vilka postnummer som levereras till ändra det i listan `zipCodes` i js/flowergram.js.
+
+---
