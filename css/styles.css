@@ -315,12 +315,6 @@ header {
     }
 }
 
-/* Divider */
-#divider-container {
-    width: 100%;
-    height: 10vh;
-}
-
 /* Footer */
 footer {
     flex-direction: column;
