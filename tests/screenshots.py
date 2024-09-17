@@ -80,22 +80,17 @@ def scrollAndSnap(driver, savePath, resName):
     # save screenshot of the bottom of the page with the resolution in the filename
     saveScreenshot(driver, savePath, resName, " bottom ")
 
-    menu = driver.find_element(By.ID, "menu") # find the element with the id of "menu"
-    scroll(driver, html, menu) # scroll to the menu
-    saveScreenshot(driver, savePath, resName, " menu ")
+    productContainer = driver.find_element(By.ID, "product-container") # find the element with the id of "product-container"
+    scroll(driver, html, productContainer) # scroll to the productContainer
+    saveScreenshot(driver, savePath, resName, " product-container ")
 
-    menuTitle = driver.find_element(By.ID, "menu-title") # find the element with the id "menu-title"
-    scroll(driver, html, menuTitle) # scroll to the top of the menu
-    saveScreenshot(driver, savePath, resName, " menu title ")
+    productHeader = driver.find_element(By.ID, "divider-container") # find the element with the id "divider-container"
+    scroll(driver, html, productHeader) # scroll to the top of the menu
+    saveScreenshot(driver, savePath, resName, " product header ")
 
-    welcomeCenter = driver.find_element(By.ID, "welcome-center") # find the element with the id of "welcome-center"
-    scroll(driver, html, welcomeCenter) # scroll to the welcome message
-    saveScreenshot(driver, savePath, resName, " welcome-center ")
-
-    bgImages = driver.find_elements(By.CLASS_NAME, "background") # collect all elements with the class "background" in a list
-    for img in bgImages: # iterate over the background images and take a screenshot of each
-        scroll(driver, html, img) # scroll to the image
-        saveScreenshot(driver, savePath, resName, " img-" + img.get_attribute("id") + " ")
+    flowergramContainer = driver.find_element(By.ID, "flowergram-container") # find the element with the id of "welcome-center"
+    scroll(driver, html, flowergramContainer) # scroll to the welcome message
+    saveScreenshot(driver, savePath, resName, " flowergram-container ")
 
 def getCurrentDateAndTime(): # function for getting the current date and time
     return datetime.now(timezone.utc).strftime('%Y-%m-%d-%H.%M.%S.%f')[:-3] # return the current date and time in a specific format
