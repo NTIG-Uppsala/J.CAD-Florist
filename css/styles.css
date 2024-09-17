@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Italiana&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Italiana&display=swap");
 
 :root {
     --main-color-light: rgb(255, 255, 242);
@@ -18,12 +18,12 @@
     --border-thin: 1px solid var(--main-border-color);
     --border-reg: 2px solid var(--main-border-color);
     --base-font-size: 1rem;
-    --lvl1-font-size: calc(var(--base-font-size)*4.5);
-    --lvl2-font-size: calc(var(--base-font-size)*pow(1.2, 6));
-    --lvl3-font-size: calc(var(--base-font-size)*pow(1.2, 5));
-    --lvl4-font-size: calc(var(--base-font-size)*pow(1.2, 3));
-    --lvl5-font-size: calc(var(--base-font-size)*pow(1.2, 2));
-    --lvl6-font-size: calc(var(--base-font-size)*pow(1.2, 1));
+    --lvl1-font-size: calc(var(--base-font-size) * 4.5);
+    --lvl2-font-size: calc(var(--base-font-size) * pow(1.2, 6));
+    --lvl3-font-size: calc(var(--base-font-size) * pow(1.2, 5));
+    --lvl4-font-size: calc(var(--base-font-size) * pow(1.2, 3));
+    --lvl5-font-size: calc(var(--base-font-size) * pow(1.2, 2));
+    --lvl6-font-size: calc(var(--base-font-size) * pow(1.2, 1));
 }
 
 * {
@@ -40,14 +40,28 @@ body {
     overflow-x: hidden;
 }
 
-/*styling för h1-h6 och p taggar*/
-h1{font-size: var(--lvl1-font-size);}
-h2{font-size: var(--lvl2-font-size);}
-h3{font-size: var(--lvl3-font-size);}
-h4{font-size: var(--lvl4-font-size);}
-h5{font-size: var(--lvl5-font-size);}
-h6{font-size: var(--lvl6-font-size);}
-p{font-size: var(--base-font-size);}
+/* Styling for header and paragraph tags */
+h1 {
+    font-size: var(--lvl1-font-size);
+}
+h2 {
+    font-size: var(--lvl2-font-size);
+}
+h3 {
+    font-size: var(--lvl3-font-size);
+}
+h4 {
+    font-size: var(--lvl4-font-size);
+}
+h5 {
+    font-size: var(--lvl5-font-size);
+}
+h6 {
+    font-size: var(--lvl6-font-size);
+}
+p {
+    font-size: var(--base-font-size);
+}
 
 a {
     color: var(--link-color);
@@ -72,7 +86,7 @@ a {
     height: 100%;
 }
 
-/*Header*/
+/* Header */
 header {
     position: sticky;
     top: 0;
@@ -82,7 +96,7 @@ header {
     z-index: 1;
 }
 
-/*Titel*/
+/* Title */
 #title {
     color: var(--main-logo-color);
     height: 50%;
@@ -95,7 +109,7 @@ header {
     flex-direction: column;
 }
 
-/*Logga*/
+/* Logo */
 #logo {
     width: auto;
     height: 95%;
@@ -103,7 +117,7 @@ header {
     left: 1rem;
 }
 
-/*Stängt eller öppet*/
+/* Open or closed */
 #open-or-closed-container {
     background-color: var(--main-color-reg);
     color: var(--main-text-color);
@@ -116,7 +130,7 @@ header {
     font-size: calc(var(--lvl6-font-size));
 }
 
-/*Bildspel och blommogram*/
+/* Slideshow and flowergram */
 #slideshow-and-flowergram-container {
     flex-direction: column;
     height: 82vh;
@@ -125,10 +139,10 @@ header {
 #slideshow-container {
     flex-direction: row;
     position: relative;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
-/*Blommogrammet*/
+/* Flowergram */
 #flowergram-container {
     flex-direction: column;
     width: 40rem;
@@ -176,7 +190,7 @@ header {
     flex-direction: column;
 }
 
-#flowergram p {  
+#flowergram p {
     width: 90%;
     color: var(--main-text-color);
 }
@@ -196,7 +210,7 @@ header {
 }
 
 #postal-code {
-    background-color:var(--main-color-light);
+    background-color: var(--main-color-light);
     width: 65%;
     height: 2rem;
     font-size: var(--base-font-size);
@@ -219,7 +233,7 @@ header {
     border: var(--border-thin);
     border-left: none;
     width: 2.5rem;
-    background-image: url('../images/search-thin-black.svg');
+    background-image: url("../images/search-thin-black.svg");
     background-size: 1.3rem;
     background-repeat: no-repeat;
     background-position: center;
@@ -235,13 +249,17 @@ header {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
-/*Blommogrammet slutar här*/
+/* Flowergram ends here */
 
-/*Bildspel*/
-/* .slide klassen stilar varje bild i bildspelet */
+/* Slideshow */
+/* the .slide class styles all images in the slideshow */
 .slide {
     object-fit: cover;
     position: absolute;
@@ -249,50 +267,65 @@ header {
     animation: fade 18s infinite;
 }
 
-/* Animerar den första bilden med full opacitet genom hela animationen */
+/* Animates the first image with full opacity through the entire animation */
 .slide:nth-child(1) {
     animation: fadeFirst 18s infinite;
 }
 
-/* Fördröjer animationen för den andra bilden med 6 sekunder */
+/* Delays the animation for the second image by 6 seconds */
 .slide:nth-child(2) {
     animation-delay: 6s;
 }
 
-/* Fördröjer animationen för den tredje bilden med 12 sekunder */
+/* Delays the animation for the third image by 12 seconds*/
 .slide:nth-child(3) {
     animation-delay: 12s;
 }
 
-
-/* Bildsanimation för att fasa in och ut bilder */
+/* Animation to fade images in and out */
 @keyframes fade {
-    0% { opacity: 0; }
-    33.33% { opacity: 1; }
-    66.66% { opacity: 0; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+    }
+    33.33% {
+        opacity: 1;
+    }
+    66.66% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
-/* Bildsanimation för att hålla första bilden med full opacitet */
+/* Animation to keep the first image's opacity full */
 @keyframes fadeFirst {
-    0% { opacity: 1; }
-    33.33% { opacity: 1; }
-    66.66% { opacity: 1; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+    33.33% {
+        opacity: 1;
+    }
+    66.66% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
-/*Avgränsare*/
+/* Divider */
 #divider-container {
     width: 100%;
     height: 10vh;
 }
 
-/*Footer*/
+/* Footer */
 footer {
     flex-direction: column;
     width: 100%;
     min-height: 20vh;
-    background-color: var(--main-color-light); 
+    background-color: var(--main-color-light);
     z-index: 1;
     padding-top: 1%;
 }
@@ -305,18 +338,18 @@ footer {
 }
 
 .footer-container {
-    position: relative; /* Behövs för att positionera pseudeoelement */
+    position: relative; /* Needed to position the pseudo-element */
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     text-align: center;
 }
 
-/*Skapar ett pseudeoelement inuti footer-container-1 och footer-container-2.
-   Pseudeoelementet placeras absolut med ett avstånd på 10% från toppen och botten,
-   samt längst till höger (skapar en border)*/
-#footer-container-1::after, #footer-container-2::after {
-    content: '';
+/* Creates a pseudo-element in footer-container-1 and footer-container-2. */
+/* The psuedo-element is positioned absolutely with a distance of 10% from the top and bottom as well as too the right to create a border. */
+#footer-container-1::after,
+#footer-container-2::after {
+    content: "";
     position: absolute;
     top: 10%;
     bottom: 10%;
@@ -330,8 +363,10 @@ footer {
     height: 25%;
 }
 
-#footer-info, .opening-hours, .closed-days {
-    list-style: none; 
+#footer-info,
+.opening-hours,
+.closed-days {
+    list-style: none;
 }
 
 .text-left {
@@ -342,11 +377,11 @@ footer {
     text-align: right;
 }
 
-.footer-col{
+.footer-col {
     margin: 0rem 0.5rem;
 }
 
-/*Sociala medier*/
+/* Social medias */
 #social-media-container {
     justify-content: center;
     list-style: none;
@@ -363,7 +398,8 @@ footer {
 
 /* Media queries */
 @media screen and (max-width: 1600px) {
-    html, body {
+    html,
+    body {
         height: 100%;
     }
 
@@ -374,12 +410,12 @@ footer {
 
     .slide {
         width: 100%;
-        height: 100vh; 
-        border-radius: 0; 
+        height: 100vh;
+        border-radius: 0;
     }
 }
 
-@media screen and (max-width: 700px) { 
+@media screen and (max-width: 700px) {
     #flowergram-container {
         width: 20rem;
         left: auto;
@@ -411,7 +447,8 @@ footer {
         justify-content: center;
     }
 
-    #footer-container-1::after, #footer-container-2::after {
+    #footer-container-1::after,
+    #footer-container-2::after {
         content: none;
     }
 
