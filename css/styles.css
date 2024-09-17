@@ -19,12 +19,15 @@
     --border-reg: 2px solid var(--main-border-color);
     --base-font-size: 1rem;
     --lvl1-font-size: calc(var(--base-font-size) * 4.5);
-    --lvl2-font-size: calc(var(--base-font-size) * pow(1.2, 6));
-    --lvl3-font-size: calc(var(--base-font-size) * pow(1.2, 5));
-    --lvl4-font-size: calc(var(--base-font-size) * pow(1.2, 3));
-    --lvl5-font-size: calc(var(--base-font-size) * pow(1.2, 2));
-    --lvl6-font-size: calc(var(--base-font-size) * pow(1.2, 1));
-    --lvl7-font-size: calc(var(--base-font-size) * pow(1.2, 0));
+    --lvl2-font-size: calc(var(--base-font-size) * pow(1.2, 8));
+    --lvl3-font-size: calc(var(--base-font-size) * pow(1.2, 7));
+    --lvl4-font-size: calc(var(--base-font-size) * pow(1.2, 6));
+    --lvl5-font-size: calc(var(--base-font-size) * pow(1.2, 5));
+    --lvl6-font-size: calc(var(--base-font-size) * pow(1.2, 4));
+    --lvl7-font-size: calc(var(--base-font-size) * pow(1.2, 3));
+    --lvl8-font-size: calc(var(--base-font-size) * pow(1.2, 2));
+    --lvl9-font-size: calc(var(--base-font-size) * pow(1.2, 1));
+    --lvl10-font-size: calc(var(--base-font-size) * pow(1.2, 0));
 }
 
 * {
@@ -46,19 +49,19 @@ h1 {
     font-size: var(--lvl1-font-size);
 }
 h2 {
-    font-size: var(--lvl2-font-size);
-}
-h3 {
-    font-size: var(--lvl3-font-size);
-}
-h4 {
     font-size: var(--lvl4-font-size);
 }
-h5 {
+h3 {
     font-size: var(--lvl5-font-size);
 }
+h4 {
+    font-size: var(--lvl7-font-size);
+}
+h5 {
+    font-size: var(--lvl8-font-size);
+}
 h6 {
-    font-size: var(--lvl6-font-size);
+    font-size: var(--lvl9-font-size);
 }
 p {
     font-size: var(--base-font-size);
@@ -100,8 +103,6 @@ header {
 /* Title */
 #title {
     color: var(--main-logo-color);
-    height: 50%;
-    margin-bottom: 0.5em;
     font-weight: bolder;
     font-size: var(--lvl1-font-size);
 }
@@ -128,7 +129,7 @@ header {
 }
 
 #open-or-closed-container p {
-    font-size: calc(var(--lvl6-font-size));
+    font-size: calc(var(--lvl9-font-size));
 }
 
 /* Slideshow and flowergram */
@@ -474,5 +475,17 @@ footer {
 
     .social-media-icon {
         margin: 0 1em;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    #title {
+        font-size: var(--lvl3-font-size);
+    }
+}
+
+@media screen and (max-width: 290px) {
+    #title {
+        font-size: var(--lvl4-font-size);
     }
 }

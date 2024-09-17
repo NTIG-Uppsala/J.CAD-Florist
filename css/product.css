@@ -63,20 +63,20 @@
 
 @media screen and (max-width: 350px) {
     .product-footer h4 {
-        font-size: var(--lvl5-font-size);
+        font-size: var(--lvl8-font-size);
     }
 
     .product-footer h5 {
-        font-size: var(--lvl6-font-size);
+        font-size: var(--lvl9-font-size);
     }
 }
 
 @media screen and (max-width: 300px) {
     .product-footer h4 {
-        font-size: var(--lvl6-font-size);
+        font-size: var(--lvl9-font-size);
     }
 
     .product-footer h5 {
-        font-size: var(--lvl7-font-size);
+        font-size: var(--lvl10-font-size);
     }
 }
