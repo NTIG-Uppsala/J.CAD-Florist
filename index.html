@@ -7,45 +7,44 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Favicon-->
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/florista-favicon-color.ico">
-    <!--Stylesheet-->
+    <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/product.css">
-    <!--Script-->
+    <!-- Scripts -->
     <script defer src="js/flowergram.js"></script>
     <script defer src="js/open-hours.js"></script>
 
-    <!-- Krävs för tester. Ska alltid laddas sist -->
+    <!-- Needed for tests. Should always be loaded last -->
     <script defer src="js/testing-wait-for-js.js"></script>
     <title>Florista</title>
 </head>
 <body>
-    <!--Header börjar här-->
-    <!--logga rgb färg(R:206, G:175, B:73)-->
+    <!-- Header starts here -->
     <header class="container centered-container">
         <img id="logo" src="images/logga-florist-1.png" alt="Hemsidans logga">
         <div id="header-container" class="container centered-container wh-100">
             <h1 id="title">florista</h1>
         </div>
     </header>
-    <!--Header slutar här-->
-    <!--Öppet/Stängt börjar här-->
+    <!-- Header ends here -->
+    <!-- Open or closed starts here -->
     <div id="open-or-closed-container" class="container centered-container">
         <p id="open-or-closed"></p>
     </div>
-    <!--Öppet/Stängt slutar här-->
-    <!--Slideshow börjar här-->
+    <!-- Open or closed ends here -->
+    <!-- Slideshow starts here -->
     <div id="slideshow-and-flowergram-container" class="container centered-container">
         <div id="slideshow-container" class="container centered-container wh-100">
             <img src="images/sommarbukett-lg.jpg" class="slide wh-100" alt="Bild av en sommarbukett">
             <img src="images/tulpanbukett-lg.jpg" class="slide wh-100" alt="Bild av en tulpanbukett">
             <img src="images/hostbukett-lg.jpg" class="slide wh-100" alt="Bild av en höstbukett">
-            <!--Här börjar blommogrammet-->
+            <!-- Flowergram starts here -->
             <div id="flowergram-container" class="container flex-start-container">
                 <h3>Överraska med ett blommogram</h3>
                 <h4 id="flowergram-btn" class="container centered-container">Skicka blommogram</h4>
-                <!--Rutan som kommer upp om man trycker på "Skicka blommogram-->
+                <!-- The popup that appears when pressing "Skicka blommogram" -->
                 <div id="flowergram" class="container flex-start-container">
                     <h6>Vill du skicka ett blommogram?</h6>
                     <p>Besök oss i butiken eller ring oss på <a href="tel:0630555555">0630-555-555</a>!</p>
@@ -58,12 +57,12 @@
                     <p id="input-response"></p>
                 </div>
             </div>
-            <!--Här slutar blommogrammet-->
+            <!-- Flowergram ends here -->
         </div>
     </div>
-    <!--Slideshow slutar här-->
+    <!-- Slideshow ends here -->
 
-    <!--Produkter börjar här-->
+    <!-- Products starts here -->
     <div id="divider-container" class="container centered-container">
         <h2>Produkter</h2>
     </div>
@@ -111,10 +110,11 @@
             </div>
         </div>
     </div>
+    <!-- Products ends here -->
 
-    <!--Footer-->
+    <!-- Footer -->
     <footer class="container centered-container">
-        <!--Översta delen av footern börjar här-->
+        <!-- Top part of the footer starts here -->
         <div id="footer-top">
             <div id="footer-container-1" class="footer-container container">
                 <h6>Kontakta oss</h6>
@@ -128,7 +128,7 @@
                 </div>
             </div>
             <div id="footer-container-2" class="footer-container container">
-                <!--Öppettider-->
+                <!-- Opening hours -->
                 <h6>Öppettider</h6>
                 <div id="opening-hours-container" class="container centered-container">
                     <div id="opening-hours-days" class="opening-hours text-left footer-col">
@@ -152,7 +152,7 @@
                 </div>
             </div>
             <div id="footer-container-3" class="footer-container container">
-                <!--Stängda dagar-->
+                <!-- Closed days -->
                 <h6>Stängda dagar</h6>
                 <div id="closed-days-container" class="container centered-container">
                     <div id="closed-days-dates" class="closed-days text-left footer-col">
@@ -178,11 +178,11 @@
                 </div>
             </div>
         </div>
-        <!--Översta delen av footern Slutar här-->
+        <!-- Top part of the footer ends here -->
 
-        <!--Nedre delen av footern börjar här-->
+        <!-- Bottom part of the footer starts here -->
         <div id="footer-bottom" class="container centered-container">
-            <!--Sociala medier-->
+            <!-- Social medias -->
             <div id="social-media-container" class="container">
                 <div id="facebook" class="social-media-icon">
                     <a href="https://www.facebook.com/ntiuppsala">
@@ -201,7 +201,7 @@
                 </div>
             </div>
         </div>
-        <!--Nedre delen av footern slutar här-->
+        <!-- Bottom part of the footer ends here -->
     </footer>
 </body>
 </html>
