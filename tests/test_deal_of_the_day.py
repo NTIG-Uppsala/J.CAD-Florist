@@ -12,3 +12,6 @@ class TestDealOfTheDay(TestBase):
     # check that it is accurate relative to the current date and that the price is correct
         # if current day is x then the deal of the day should be visible on product X
         # if current day is y then the deal of the day should be visible on product Y
+
+if __name__ == "__main__":
+    unittest.main(verbosity=2)
