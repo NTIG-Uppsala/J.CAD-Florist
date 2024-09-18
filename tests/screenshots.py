@@ -24,11 +24,11 @@ chrOptions.add_argument("--disable-search-engine-choice-screen")
 # -------------------------------------------------------------------------------------------------------------------------
 
 def initialScreenshotGen():
-    if os.path.isdir("generatedScreenshots") != True: # create a folder for the screenshots if it doesn't exist
-        os.mkdir("generatedScreenshots")
+    if os.path.isdir("generated-screenshots") != True: # create a folder for the screenshots if it doesn't exist
+        os.mkdir("generated-screenshots")
 
     subFolderName = "UTC"+getCurrentDateAndTime() # create a subfolder-name with the current time
-    savePath = "generatedScreenshots/" + subFolderName + "/" # set the save path to the subfolder
+    savePath = "generated-screenshots/" + subFolderName + "/" # set the save path to the subfolder
     os.mkdir(savePath) # create the subfolder
 
     initialDesktopScreenshots(savePath)
