@@ -11,13 +11,13 @@ def getPagePath(pagePathFromRoot: str) -> str:
     
 resolutions : dict[str, dict[str, int]] = {
     "1080p": {"width": 1920, "height": 1080},
-    # "1440p": {"width": 2560, "height": 1440},
-    # "iPhone SE": {"width": 320, "height": 568},
-    # "iPhone XR": {"width": 414, "height": 896},
-    # "iPhone 12 Pro": {"width": 390, "height": 844},
-    # "iPhone 14 Pro Max": {"width": 428, "height": 926},
-    # "Pixel 7": {"width": 393, "height": 851},
-    # "Samsung Galaxy S8+": {"width": 360, "height": 740},
+    "1440p": {"width": 2560, "height": 1440},
+    "iPhone SE": {"width": 320, "height": 568},
+    "iPhone XR": {"width": 414, "height": 896},
+    "iPhone 12 Pro": {"width": 390, "height": 844},
+    "iPhone 14 Pro Max": {"width": 428, "height": 926},
+    "Pixel 7": {"width": 393, "height": 851},
+    "Samsung Galaxy S8+": {"width": 360, "height": 740},
     "Galaxy Fold": {"width": 280, "height": 653},
     "iPad": {"width": 768, "height": 1024},
 }
