@@ -44,11 +44,6 @@ För att konfiguera testerna så tryck view --> testing --> configure python tes
 
 Det finns också ett python-script som genererar skärmdumpar av hemsidan. Detta skript körs genom att skriva `py .\tests\screenshots.py` i en terminal som har navigerat till projektets huvudmapp.
 
-Man kan även behöva installera selenium genom att köra följande kommando i terminalen:
-```bash
-pip install selenium
-```
-
 ---
 
 ## Uppdatera sidan
