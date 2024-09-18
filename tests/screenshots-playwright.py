@@ -1,6 +1,6 @@
 from playwright.sync_api import sync_playwright
 from os import path
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 import time
 
 
@@ -43,12 +43,24 @@ def takeScreenshot(filePath : str, outputFile : str, resolution : dict[str, dict
         if locator['button']: # if there is a button to click, click it
             page.click(locator['button'])
             time.sleep(0.6) # wait for the element to appear
-            
+
         page.screenshot(path=outputFile)
         browser.close()
 
 def getCurrentDateAndTime(): # function for getting the current date and time
-    return datetime.now(timezone.utc).strftime('%Y-%m-%d-%H.%M.%S.%f')[:-3] # return the current date and time in a specific format
+    # Get current UTC time
+    nowUtc = datetime.now(timezone.utc)
+
+    # Define your offset (e.g., 2 hours ahead)
+    offset = timedelta(hours=2)
+
+    # Apply the offset
+    offsetTime = nowUtc + offset
+
+    # Format the datetime as required
+    formattedTime = offsetTime.strftime('%Y-%m-%d-%H.%M.%S.%f')[:-3]
+
+    return formattedTime # return the current date and time in a specific format
 
 def genFileName(resIndex : int, locIndex : int, res : str, loc : str, currentDateAndTime : str) -> str: # function for generating the filename aswell as a folder for the current batch of screenshots
     return f"{currentDateAndTime}/{resIndex}-{locIndex}-{res}-{loc}-{currentDateAndTime}.png"
