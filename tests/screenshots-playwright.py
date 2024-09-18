@@ -35,7 +35,7 @@ def getFilePath(filePathFromRoot: str) -> str:
     filePath = path.abspath(path.join(path.dirname(__file__), "..", filePathFromRoot))
     return f"file://{filePath}"
     
-resolutions : object = {
+resolutions : dict[str, dict[str, int]] = {
     "1080p": {"width": 1920, "height": 1080},
     "1440p": {"width": 2560, "height": 1440},
     "iPhone SE": {"width": 320, "height": 568},
@@ -48,13 +48,15 @@ resolutions : object = {
     # "iPad": {"width": 768, "height": 1024},
 }
 
-locators : object = {
-    "top": None,
-    "product-container": "product-container",
-    "footer": "footer",
+locators : dict[str, dict[str, str | None]] = {
+    "top": {"selector": None, "button": None},
+    "flowergram-container": {"selector": "#flowergram-container", "button": "#flowergram-btn"},
+    "product-header": {"selector": "#divider-container", "button": None},
+    "product-container": {"selector": "#product-container", "button": None},
+    "footer": {"selector": "footer", "button": None},
 }
 
-def takeScreenshot(filePath : str, outputFile : str, resolution : object, locator : str | None = None) -> None:
+def takeScreenshot(filePath : str, outputFile : str, resolution : dict[str, dict[str, int]], locator : dict[str, dict[str, str | None]]) -> None:
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
@@ -62,18 +64,21 @@ def takeScreenshot(filePath : str, outputFile : str, resolution : object, locato
         fileUrl = getFilePath(filePath)
         page.set_viewport_size(resolution)
         page.goto(fileUrl)
-        if locator:
-            page.locator(locator).scroll_into_view_if_needed()
-            # page.keyboard.press("Home")
-            # page.keyboard.press("End")
+        print(locator)
+        print(type(locator))
+        if locator['selector']:
+            page.locator(locator['selector']).scroll_into_view_if_needed()
+        if locator['button']:
+            page.click(locator['button'])
+            time.sleep(0.6)
         page.screenshot(path=outputFile)
         browser.close()
 
 if __name__ == "__main__":
     
     for resIndex, res in enumerate(resolutions):
-        takeScreenshot("index.html", f"generated-screenshots/{resIndex}-{res}.png", resolutions[res])
-        takeScreenshot("index.html", f"generated-screenshots/{resIndex}-{res}-footer.png", resolutions[res], "footer")
+        for locIndex, loc in enumerate(locators):
+            takeScreenshot("index.html", f"generated-screenshots/{resIndex}-{locIndex}-{res}-{loc}.png", resolutions[res], locators[loc])
 
 # chrOptions = Options()
 
