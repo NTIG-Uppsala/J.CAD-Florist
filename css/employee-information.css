@@ -15,16 +15,16 @@
 }
 
 .employee-img {
-    aspect-ratio: 2/3;
+    aspect-ratio: 2 / 3; /* Make sure that all employee images always have the same aspect ratio */
     width: 17rem;
-    object-fit: cover;
+    object-fit: cover; /* Make sure that the image is not squished */
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
 }
 
 #employees {
     margin: 1rem 0;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
     padding: 0 1rem;
 }
 
@@ -32,7 +32,7 @@
     margin-bottom: 3rem;
 }
 
-@media screen and (max-width: 321px) {
+@media screen and (max-width: 321px) { /* Make sure that employee containers scale well on smaller screens */
     #employees {
         padding: 0;
     }
@@ -42,7 +42,7 @@
         margin-right: 1rem;
     }
 
-    .employee-img{
+    .employee-img {
         width: 100%
     }
 }

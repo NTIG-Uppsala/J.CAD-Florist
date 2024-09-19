@@ -18,6 +18,8 @@
     --border-thin: 1px solid var(--main-border-color);
     --border-reg: 2px solid var(--main-border-color);
     --base-font-size: 1rem;
+
+    /* This section defines font sizes that scale exponentially*/
     --lvl1-font-size: calc(var(--base-font-size) * 4.5);
     --lvl2-font-size: calc(var(--base-font-size) * pow(1.2, 8));
     --lvl3-font-size: calc(var(--base-font-size) * pow(1.2, 7));

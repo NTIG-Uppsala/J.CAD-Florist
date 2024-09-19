@@ -30,6 +30,7 @@ locators: dict[str, dict[str, str | None]] = {  # locators for scrolling to spec
     "flowergram-container": {"selector": "#flowergram-container", "button": "#flowergram-btn"},
     "product-header": {"selector": "#divider-container", "button": None},
     "product-container": {"selector": "#product-container", "button": None},
+    "employee-information-container": {"selector": "#employee-section", "button": None},
     "footer": {"selector": "footer", "button": None},
 }
 
