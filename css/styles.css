@@ -6,7 +6,6 @@
     --main-color-darker: rgb(202, 202, 182);
     --main-color-dark: rgb(0, 0, 0);
     --main-logo-color: rgb(206, 175, 73);
-    --main-color-gray: rgb(128, 128, 128);
     --btn-hover-color: var(--main-color-darker);
 
     --main-text-color: var(--main-color-dark);
@@ -44,9 +43,6 @@
     padding: 0;
     font-family: "abel", sans-serif;
     text-wrap: balance;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
 }
 
 body {

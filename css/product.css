@@ -15,11 +15,10 @@
 
 /* Product */
 .product {
-    /* aspect-ratio: 1 / 1; Make sure that product is always a square */
+    aspect-ratio: 1 / 1; /* Make sure that product is always a square*/
     width: 30rem;
     height: auto;
     margin: 1rem;
-    position: relative;
 }
 
 .product h5 {
@@ -35,8 +34,6 @@
     background-color: var(--main-color-reg);
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
-    padding: 0.5rem;
-    min-height: calc(var(--lvl7-font-size) + var(--lvl8-font-size) + var(--lvl9-font-size) + 1rem);
 }
 
 /* Product image */
@@ -47,49 +44,6 @@
     border-top-right-radius: 1rem;
 }
 
-.deal-of-the-day {
-    visibility: hidden;
-    height: 0;
-    width: 0;
-}
-
-.active {
-    visibility: visible;
-    position: absolute;
-    height: fit-content;
-    width: auto;
-    top: 0;
-    padding: 0.5rem;
-    border-top-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    background-color: var(--main-logo-color);
-    color: var(--main-color-dark);
-    font-size: var(--lvl9-font-size);
-}
-
-.old-price {
-    font-size: var(--lvl9-font-size);
-    color: var(--main-color-gray);
-    text-decoration: line-through;
-}
-
-.product:has(*.active) {
-    border-radius: 1rem;
-    box-shadow: inset 0px 0px 0px 0.2rem var(--main-logo-color);
-    -webkit-box-shadow: inset 0px 0px 0px 0.2rem var(--main-logo-color);
-    -moz-box-shadow: inset 0px 0px 0px 0.2rem var(--main-logo-color);
-}
-
-.product:has(*.active) img {
-    border: 0.2rem solid var(--main-logo-color);
-    border-bottom-style: none;
-}
-
-.product:has(*.active) .product-footer {
-    border: 0.2rem solid var(--main-logo-color);
-    border-top-style: none;
-}
-
 /* Media queries */
 @media screen and (max-width: 440px) {
     #product-container {
@@ -97,7 +51,7 @@
     }
 
     .product {
-        margin: 1.5rem 1rem;
+        margin-top: 0;
     }
 
     #divider-container {
