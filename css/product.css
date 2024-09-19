@@ -14,7 +14,7 @@
 
 /* Product */
 .product {
-    aspect-ratio: 1 / 1; /* Make sure that product is always a square*/
+    aspect-ratio: 1 / 1; /* Make sure that product is always a square */
     width: 30rem;
     height: auto;
     margin: 1rem;
@@ -41,6 +41,54 @@
     width: 100%;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
+}
+
+.deal-of-the-day {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}
+
+.active {
+    visibility: visible;
+    position: absolute;
+    height: fit-content;
+    width: auto;
+    top: 0;
+    padding: 0.5rem;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    background-color: var(--main-color-deal);
+    color: var(--main-color-light);
+    font-size: var(--lvl9-font-size);
+    font-weight: 600;
+}
+
+.old-price {
+    font-size: var(--lvl9-font-size);
+    color: var(--main-color-gray);
+    text-decoration: line-through;
+}
+
+.new-price {
+    color: var(--main-color-deal);
+}
+
+.product:has(.active) {
+    border-radius: 1rem;
+    box-shadow: inset 0px 0px 0px 0.2rem var(--main-color-deal);
+    -webkit-box-shadow: inset 0px 0px 0px 0.2rem var(--main-color-deal);
+    -moz-box-shadow: inset 0px 0px 0px 0.2rem var(--main-color-deal);
+}
+
+.product:has(.active) img {
+    border: 0.2rem solid var(--main-color-deal);
+    border-bottom-style: none;
+}
+
+.product:has(.active) .product-footer {
+    border: 0.2rem solid var(--main-color-deal);
+    border-top-style: none;
 }
 
 /* Media queries */

@@ -83,3 +83,5 @@ För att ändra stängda dagar ändra det i `#closed-days-container` i index.htm
 För att ändra vilka postnummer som levereras till ändra det i listan `zipCodes` i js/flowergram.js.
 
 För att ändra information om personalen, gå till index.html och leta efter en div-tagg med id `employee-section`. Under den div-taggen finns all information om personal som går att ändra på.
+
+För att ändra dagens klipp är det objektet `dealsOfTheDay` i js/deal-of-the-day.js som ska ändras. Objektet har 7 nycklar, en för varje dag där söndag är dag 0 och Lördag är dag 6. Dessa nycklars världen är listor med objekt där varje objekt är ett klipp. Varje klipp har två nycklar och två världen. `price` bestämmer nya priset och `id` bestämmer id:t på produkten. Ändra värdet på dessa nycklar om existerande klipp ska ändras. För att lägga till nya klipp skapa nya objekt som följer samma struktur i listan som motsvarar den dag som klippet ska gälla på.
