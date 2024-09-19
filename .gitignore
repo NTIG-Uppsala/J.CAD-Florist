@@ -2,3 +2,4 @@ __pycache__
 .pytest_cache
 notes.txt
 generated-screenshots/
+resolutions-and-aspect-ratios.txt
