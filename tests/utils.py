@@ -51,6 +51,7 @@ class TestBase(unittest.TestCase):
             now.setFullYear({year}, {month - 1}, {day});
             now.setHours({hour}, {minute});
             updateCurrentStatus();
+            setDealOfTheDay();
             """
         )
 
