@@ -1,5 +1,5 @@
 import unittest
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, expect
 from lxml import etree, html
 from os import path
 
@@ -64,6 +64,16 @@ class TestBase(unittest.TestCase):
     def setTimeAndAssertMatches(self, year: int, month: int, day: int, hour: int, minute: int, matches: list[str]) -> None:
         self.setTime(year, month, day, hour, minute)
         self.assertAllInText(matches)
+
+    # Checks that the number of elements with the given selector is equal to the given number of expected occurrences
+    def checkNumberOfElements(self, selector: str, expected: int) -> None:
+        elementCount = self.page.locator(selector).count()
+        self.assertEqual(elementCount, expected)
+
+    # Sets the time on the page and checks that the number of elements with the given selector is equal to the given number of expected occurrences
+    def setTimeAndCheckNumberOfElements(self, year: int, month: int, day: int, hour: int, minute: int, selector: str, expected: int) -> None:
+        self.setTime(year, month, day, hour, minute)
+        self.checkNumberOfElements(selector, expected)
 
     # Fills a field, submits the form, and asserts that the given match is in the text content
     def fillAndSubmitAndAssertInText(self, fieldSelector: str, buttonSelector: str, fieldInput: str, match: str) -> None:
