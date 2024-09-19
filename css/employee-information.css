@@ -1,0 +1,6 @@
+.employee-img{
+    aspect-ratio: 2/3;
+    height: 25rem;
+    width: auto;
+    object-fit: cover;
+}
