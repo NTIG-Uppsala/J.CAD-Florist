@@ -44,13 +44,16 @@ jobs:
             - name: Check for test failures
               run: |
                   if [ -f test_results/test_output.json ]; then
-                      if grep -q '"status": "failed"' test_results/test_output.json; then
+                      if grep -q '"outcome": "failure"' test_results/test_output.json; then
                           echo "Tests failed"
+                          exit 1
+                      elif ! grep -q '"outcome"' test_results/test_output.json; then
+                          echo "No tests were run"
                           exit 1
                       else
                           echo "Tests passed"
                       fi
                   else
-                      echo "No tests were run"
+                      echo "No test results file found"
                       exit 1
                   fi
