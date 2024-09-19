@@ -16,7 +16,7 @@ class TestEmployeeInformation(TestBase):
 
     # Check that the images are displayed
     def testEmployeeImages(self) -> None:
-        self.assertAllInHTML(["images/fredrik_ortqvist.jpg", "images/orjan_johansson.jpg", "images/anna_pettersson.jpg"])
+        self.assertAllInHTML(["images/employees/fredrik-ortqvist.jpg", "images/employees/orjan-johansson.jpg", "images/employees/anna-pettersson.jpg"])
 
 
 if __name__ == "__main__":
