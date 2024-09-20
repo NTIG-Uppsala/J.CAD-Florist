@@ -14,10 +14,14 @@
     <link rel="stylesheet" type="text/css" href="css/product.css">
     <link rel="stylesheet" type="text/css" href="css/employee-information.css">
     <link rel="stylesheet" type="text/css" href="css/interactive-map.css">
+    <!-- OSM -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
     <!-- Scripts -->
     <script defer src="js/flowergram.js"></script>
     <script defer src="js/open-hours.js"></script>
     <script defer src="js/embed-osm-map.js"></script>
+    <script defer src="js/show-script.js"></script>
 
     <!-- Needed for tests. Should always be loaded last -->
     <script defer src="js/testing-wait-for-js.js"></script>
@@ -118,9 +122,8 @@
     <!-- Interactive map starts here -->
     <section id="interactive-map-section" class="container flex-column centered-container">
         <h2>Karta</h2>
-        <div id="map">
-
-        </div>
+        <!-- OSM interactive map -->
+        <div id="map" class="script"></div>
         <noscript>
             <img src="images/noscript-map.png" id="#noscript-map">
         </noscript>
