@@ -1,3 +1,8 @@
 #noscript-map {
     aspect-ratio: 2 / 1;
 }
+
+#map {
+    aspect-ratio: 2 / 1;
+    width: 60dvw;
+}
