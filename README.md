@@ -79,3 +79,5 @@ För att ändra öppetider ändra det i `#opening-hours-container` i index.html 
 För att ändra stängda dagar ändra det i `#closed-days-container` i index.html och objektet `closedDays` i js/open-hours.js. För att ändra vilka dagar lägg till eller ta bort dem i listan för deras respektive månad. Notera att januari är månad 0 och december är månad 11.
 
 För att ändra vilka postnummer som levereras till ändra det i listan `zipCodes` i js/flowergram.js.
+
+För att ändra information om personalen, gå till index.html och leta efter en div-tagg med id `employee-section`. Under den div-taggen finns all information om personal som går att ändra på.
