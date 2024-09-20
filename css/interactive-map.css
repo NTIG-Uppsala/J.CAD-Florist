@@ -6,3 +6,14 @@
     aspect-ratio: 2 / 1;
     width: 60dvw;
 }
+
+@media screen and (orientation: portrait) {
+    #noscript-map {
+        aspect-ratio: 1 / 2;
+    }
+    #map {
+        width: 90dvw;
+        height: 85dvh;
+        aspect-ratio: initial;
+    }
+}

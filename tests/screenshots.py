@@ -28,9 +28,8 @@ resolutions: dict[str, dict[str, int]] = {  # resolutions for the screenshots
 locators: dict[str, dict[str, str | None]] = {  # locators for scrolling to specific elements on the page and clicking buttons if needed
     "top": {"selector": None, "button": None},
     "flowergram-container": {"selector": "#flowergram-container", "button": "#flowergram-btn"},
-    "product-header": {"selector": "#divider-container", "button": None},
     "product-container": {"selector": "#product-container", "button": None},
-    "employee-information-header": {"selector": "#employee-header", "button": None},
+    "interactive-map-section": {"selector": "#interactive-map-section", "button": None},
     "employee-information-container": {"selector": "#employee-section", "button": None},
     "footer": {"selector": "footer", "button": None},
 }
