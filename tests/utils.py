@@ -11,7 +11,7 @@ class TestBase(unittest.TestCase):
     def setUpClass(self, jsEnabled: bool = True):
         self.playwright = sync_playwright().start()
         self.browser = self.playwright.chromium.launch(headless=True)
-        self.context = self.browser.new_context(java_script_enabled=jsEnabled)
+        self.context = self.browser.new_context(java_script_enabled=jsEnabled) # enable JavaScript by default
         self.page = self.context.new_page()
 
     # Close the browser and page after running the tests
@@ -26,7 +26,7 @@ class TestBase(unittest.TestCase):
     def setUp(self, filePathFromRoot: str, jsEnabled: bool = True) -> None:
         filePath = path.abspath(path.join(path.dirname(__file__), "..", filePathFromRoot))
         self.page.goto(f"file://{filePath}")
-        if jsEnabled:
+        if jsEnabled: # wait for JavaScript to load if enabled
             self.page.wait_for_selector("#JSLoaded", state="attached")
 
     # Close the page after each test
