@@ -32,6 +32,10 @@ class TestProducts(TestBase):
         self.assertInHTML('<img src="images/sommarbukett.jpg" alt="sommarbukett">')
         self.assertInHTML('<img src="images/hostbukett.jpg" alt="höstbukett">')
         self.assertInHTML('<img src="images/begravningskrans.jpg" alt="begravningskrans">')
+        self.assertInHTML('<img src="images/liljor.jpg" alt="liljor">')
+        self.assertInHTML('<img src="images/hortensia.jpg" alt="hortensia">')
+        self.assertInHTML('<img src="images/aloe-vera.jpg" alt="aloe vera">')
+        self.assertInHTML('<img src="images/kaktus.jpg" alt="kaktus i kruka">')
 
 
 if __name__ == "__main__":

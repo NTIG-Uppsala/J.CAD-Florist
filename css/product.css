@@ -14,7 +14,7 @@
 
 /* Product */
 .product {
-    aspect-ratio: 1 / 1; /* Make sure that product is always a square */
+    aspect-ratio: 16 / 14; /* Make sure that product is always the same aspect ratio */
     width: 30rem;
     height: auto;
     margin: 1rem;
@@ -37,7 +37,6 @@
 
 /* Product image */
 .product img {
-    height: 75%;
     width: 100%;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
