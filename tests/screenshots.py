@@ -30,7 +30,9 @@ locators: dict[str, dict[str, str | None]] = {  # locators for scrolling to spec
     "flowergram-container": {"selector": "#flowergram-container", "button": "#flowergram-btn"},
     "product-header": {"selector": "#product-header", "button": None},
     "product-container": {"selector": "#product-container", "button": None},
+    "deal-of-the-day": {"selector": ".deal-of-the-day.active", "button": None},
     "interactive-map-section": {"selector": "#interactive-map-section", "button": None},
+    "employee-information-header": {"selector": "#employee-header", "button": None},
     "employee-information-container": {"selector": "#employee-section", "button": None},
     "footer": {"selector": "footer", "button": None},
 }
@@ -46,7 +48,10 @@ def takeScreenshot(pagePath: str, outputFile: str, resolution: dict[str, dict[st
         page.goto(fileUrl)  # go to the page
 
         if locator["selector"]:  # if there is a selector, scroll to it if needed
-            page.locator(locator["selector"]).scroll_into_view_if_needed()
+            try:
+                page.locator(locator["selector"]).scroll_into_view_if_needed()
+            except:
+                return
         if locator["button"]:  # if there is a button to click, click it
             page.click(locator["button"])
             time.sleep(0.6)  # wait for the element to appear
