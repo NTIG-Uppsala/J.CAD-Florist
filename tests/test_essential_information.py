@@ -19,6 +19,11 @@ class TestEssentialInformation(TestBase):
         self.assertInText("0630-555-555")
         self.assertInHTML("tel:0630555555")
 
+    # Test that the email address of the florist is displayed both as text and as a link
+    def testEmail(self) -> None:
+        self.assertInText("info@florista.ntig.dev")
+        self.assertInHTML("mailto:info@florista.ntig.dev")
+
     # Test that the email address of the florist is displayed both as text as links with images
     def testSocialMedia(self) -> None:
         self.assertAllInHTML(
