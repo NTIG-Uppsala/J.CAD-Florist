@@ -63,7 +63,7 @@
     font-weight: 600;
 }
 
-.old-price {
+.original-price {
     font-size: var(--lvl9-font-size);
     color: var(--main-color-gray);
     text-decoration: line-through;

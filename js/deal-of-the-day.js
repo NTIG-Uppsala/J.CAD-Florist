@@ -21,7 +21,7 @@ const setDealOfTheDay = () => {
     products.forEach((product) => {
         product.querySelector(".active").classList.remove("active");
         product.querySelector(".new-price").classList.remove("new-price");
-        product.querySelector(".old-price").remove();
+        product.querySelector(".original-price").remove();
     });
 
     // Set the deals of the day
@@ -30,7 +30,7 @@ const setDealOfTheDay = () => {
         const product = document.querySelector(deal.id);
 
         // Turn the old price gray and dash-through it
-        product.querySelector("h5").classList.add("old-price");
+        product.querySelector("h5").classList.add("original-price");
 
         // Create a new price element, style it, and set the new price
         const newPrice = document.createElement("h5");
@@ -39,7 +39,7 @@ const setDealOfTheDay = () => {
         newPrice.textContent = deal.price;
 
         // Insert the new price before the old price and make the product active to unhide the "Dagens klipp" text
-        product.querySelector(".old-price").before(newPrice);
+        product.querySelector(".original-price").before(newPrice);
         product.querySelector("p").classList.add("active");
     });
 };
