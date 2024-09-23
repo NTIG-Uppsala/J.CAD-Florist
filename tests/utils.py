@@ -53,6 +53,7 @@ class TestBase(unittest.TestCase):
             now.setHours({hour}, {minute});
             updateCurrentStatus();
             setDealOfTheDay();
+            sortClosedDays();
             """
         )
 

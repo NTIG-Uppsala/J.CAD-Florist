@@ -25,6 +25,7 @@
     <script defer src="js/embed-osm-map.js"></script>
     <script defer src="js/show-script.js"></script>
     <script defer src="js/deal-of-the-day.js"></script>
+    <script defer src="js/sort-closed-days.js"></script>
 
     <!-- Needed for tests. Should always be loaded last -->
     <script defer src="js/testing-wait-for-js.js"></script>
@@ -267,24 +268,24 @@
                 <h6>Stängda dagar</h6>
                 <div id="closed-days-container" class="container centered-container">
                     <div id="closed-days-dates" class="closed-days text-left footer-col">
-                        <p>1 jan</p>
-                        <p>6 jan</p>
-                        <p>1 maj</p>
-                        <p>6 jun</p>
-                        <p>24 dec</p>
-                        <p>25 dec</p>
-                        <p>26 dec</p>
-                        <p>31 dec</p>
+                        <p data-date="0001">1 jan</p>
+                        <p data-date="0006">6 jan</p>
+                        <p data-date="0401">1 maj</p>
+                        <p data-date="0506">6 jun</p>
+                        <p data-date="1124">24 dec</p>
+                        <p data-date="1125">25 dec</p>
+                        <p data-date="1126">26 dec</p>
+                        <p data-date="1131">31 dec</p>
                     </div>
                     <div id="closed-days-names" class="closed-days text-right footer-col">
-                        <p>Nyårsdagen</p>
-                        <p>Trettondedag jul</p>
-                        <p>Första maj</p>
-                        <p>Nationaldagen</p>
-                        <p>Julafton</p>
-                        <p>Juldagen</p>
-                        <p>Annandag jul</p>
-                        <p>Nyårsafton</p>
+                        <p data-date="0001">Nyårsdagen</p>
+                        <p data-date="0006">Trettondedag jul</p>
+                        <p data-date="0401">Första maj</p>
+                        <p data-date="0506">Nationaldagen</p>
+                        <p data-date="1124">Julafton</p>
+                        <p data-date="1125">Juldagen</p>
+                        <p data-date="1126">Annandag jul</p>
+                        <p data-date="1131">Nyårsafton</p>
                     </div>
                 </div>
             </div>
