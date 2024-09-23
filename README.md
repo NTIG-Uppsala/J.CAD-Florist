@@ -72,7 +72,9 @@ För att ändra namnet, bilden eller priset på existerande produkter eller läg
 
 För att ändra telefonnummer ändra texten och href i a-taggarna i `#flowergram` och `#number` i index.html.
 
-För att ändra adress ändra texten och href i a-taggarna i `#address` i index.html.
+För att ändra E-post ändra texten och href i a-taggen i `#email` i index.html. 
+
+För att ändra adress ändra texten och href i a-taggen i `#address` i index.html. Ändra dessutom koordinaterna i arrayen `position` i js/embed-osm-map.js.
 
 För att ändra öppetider ändra det i `#opening-hours-container` i index.html och objektet `openHours` i js/open-hours.js. Objektet består av ett objekt för varje dag. `from` är när det öppnar och `to` är när det stänger för dagarna. `hour` och `minute` är timmarna respektive minuterna för öppetiderna.
 
