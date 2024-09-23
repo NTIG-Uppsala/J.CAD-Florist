@@ -11,7 +11,7 @@ class TestBase(unittest.TestCase):
     def setUpClass(self, jsEnabled: bool = True):
         self.playwright = sync_playwright().start()
         self.browser = self.playwright.chromium.launch(headless=True)
-        self.context = self.browser.new_context(java_script_enabled=jsEnabled) # enable JavaScript by default
+        self.context = self.browser.new_context(java_script_enabled=jsEnabled)  # enable JavaScript by default
         self.page = self.context.new_page()
 
     # Close the browser and page after running the tests
@@ -25,8 +25,8 @@ class TestBase(unittest.TestCase):
     # Set up the page before each test
     def setUp(self, filePathFromRoot: str, jsEnabled: bool = True) -> None:
         filePath = path.abspath(path.join(path.dirname(__file__), "..", filePathFromRoot))
-        self.page.goto(f"file://{filePath}")
-        if jsEnabled: # wait for JavaScript to load if enabled
+        self.page.goto(f"file://{filePath}", wait_until="domcontentloaded", timeout=60000)
+        if jsEnabled:  # wait for JavaScript to load if enabled
             self.page.wait_for_selector("#JSLoaded", state="attached")
 
     # Close the page after each test
@@ -89,6 +89,11 @@ class TestBase(unittest.TestCase):
         self.fillAndSubmitAndAssertInText("#postal-code", "#postal-code-btn", fieldInput, match)
         button.click()
 
+    # Sets the time on the page and asserts that the given match is in the text content in the given order
+    def setTimeAndAssertInTextInOrder(self, year: int, month: int, day: int, hour: int, minute, matches: list[str]) -> None:
+        self.setTime(year, month, day, hour, minute)
+        self.assertInTextInOrder(matches)
+
     # Assertions
 
     # Asserts that the given match is in the text content
@@ -126,3 +131,10 @@ class TestBase(unittest.TestCase):
     def assertAllNotInHTML(self, matches: list[str]) -> None:
         for match in matches:
             self.assertNotInHTML(match)
+
+    # Asserts that the given matches are in the text content in the given order
+    def assertInTextInOrder(self, matches: list[str]) -> None:
+        text = self.page.text_content("body")
+        for index, match in enumerate(matches):
+            if index < len(matches) - 1:
+                self.assertLess(text.index(match), text.index(matches[index + 1]))
