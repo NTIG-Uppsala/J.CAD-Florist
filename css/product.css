@@ -15,6 +15,7 @@
 /* Product */
 .product {
     aspect-ratio: 16 / 14; /* Make sure that product is always the same aspect ratio */
+    position: relative;
     width: 30rem;
     height: auto;
     margin: 1rem;
@@ -61,6 +62,10 @@
     color: var(--main-color-light);
     font-size: var(--lvl9-font-size);
     font-weight: 600;
+}
+
+.price-container {
+    gap: 0.5rem;
 }
 
 .original-price {
