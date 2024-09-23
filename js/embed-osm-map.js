@@ -21,3 +21,16 @@ map.addLayer(layer);
 // Add a marker
 let marker = new L.Marker(position);
 marker.addTo(map);
+
+const mapEl = document.querySelector("#map");
+
+mapEl.addEventListener("touchstart", onTwoFingerDrag);
+mapEl.addEventListener("touchend", onTwoFingerDrag);
+
+const onTwoFingerDrag = (event) => {
+    if (event.touches.length === 2) {
+        map.dragging.enable();
+    } else {
+        map.dragging.disable();
+    }
+};
