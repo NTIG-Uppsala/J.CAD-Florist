@@ -199,7 +199,7 @@ h2 {
 #dynamic-information-container {
     background-color: var(--main-color-deal);
     color: var(--main-color-light);
-    display: none;
+    font-weight: normal;
 }
 
 /* Slideshow and flowergram */

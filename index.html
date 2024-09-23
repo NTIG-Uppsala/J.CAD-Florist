@@ -22,11 +22,11 @@
     <!-- Scripts -->
     <script defer src="js/flowergram.js"></script>
     <script defer src="js/open-hours.js"></script>
-    <script defer src="js/dynamic-information.js"></script>
     <script defer src="js/embed-osm-map.js"></script>
     <script defer src="js/show-script.js"></script>
     <script defer src="js/deal-of-the-day.js"></script>
     <script defer src="js/sort-closed-days.js"></script>
+    <script defer src="js/dynamic-information.js"></script>
 
     <!-- Needed for tests. Should always be loaded last -->
     <script defer src="js/testing-wait-for-js.js"></script>
@@ -41,13 +41,18 @@
         </div>
     </header>
     <!-- Header ends here -->
-    <!-- Open or closed starts here -->
-    <div id="open-or-closed-container" class="container page-top-banner centered-container">
-        <p id="open-or-closed"></p>
+    <div id="banners-container">
+        <!-- Open or closed starts here -->
+        <div id="open-or-closed-container" class="container page-top-banner centered-container">
+            <p id="open-or-closed"></p>
+        </div>
+
+        <!-- Dynamic information starts here -->
+        <div id="dynamic-information-container" class="container page-top-banner centered-container">
+            <p id="dynamic-information"></p>
+        </div>
     </div>
-    <div id="dynamic-information-container" class="container page-top-banner centered-container">
-        <p id="dynamic-information"></p>
-    </div>
+    
     <!-- Open or closed ends here -->
     <!-- Slideshow starts here -->
     <div id="slideshow-and-flowergram-container" class="container centered-container">
@@ -81,7 +86,7 @@
     <section id="products-section" class="container flex-column centered-container">
         <h2 id="produtct-header">Produkter</h2>
         <div id="product-container" class="container">
-            <div class="product">
+            <div id="product-brollopsbukett" class="product">
                 <img src="images/brollopsbukett.jpg" alt="Bröllopsbukett">
                 <p class="deal-of-the-day">Dagens Klipp</p>
                 <div class="product-footer centered-container">

@@ -7,10 +7,14 @@ class TestExtraInfoAnnouncement(TestBase):
         super().setUp(filePathFromRoot="index.html")
 
     def testHeaderDealOfTheDay(self) -> None:
-        self.setTimeAndAssertInTextInLocator(2024, 9, 24, 10, 35, "#dynamic-information", "Dagens klipp")
+        self.setTimeAndAssertInTextInLocator(2024, 9, 24, 10, 35, "#dynamic-information", "Idag kostar")
+
+    def testHeaderDealOfTheDayNotVisibleSunday(self) -> None:
+        self.setTime(2024, 9, 29, 10, 35)
+        self.assertFalse(self.page.is_visible("#dynamic-information-container"))
 
     def testHeaderDynamicInformationNotVisible(self) -> None:
-        self.setTime(2024, 9, 24, 10, 7)
+        self.setTime(2024, 12, 24, 10, 7)
         self.assertFalse(self.page.is_visible("#dynamic-information-container"))
 
 
