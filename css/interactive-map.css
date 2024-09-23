@@ -9,7 +9,10 @@
 
 @media screen and (orientation: portrait) {
     #noscript-map {
-        aspect-ratio: 1 / 2;
+        aspect-ratio: initial;
+        height: 85dvh;
+        width: 90dvw;
+        object-fit: cover;
     }
     #map {
         width: 90dvw;
