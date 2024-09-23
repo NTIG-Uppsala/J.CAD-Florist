@@ -123,6 +123,10 @@
     .product-footer h5 {
         font-size: var(--lvl9-font-size);
     }
+
+    .original-price {
+        font-size: var(--lvl10-font-size);
+    }
 }
 
 @media screen and (max-width: 300px) {
@@ -132,5 +136,9 @@
 
     .product-footer h5 {
         font-size: var(--lvl10-font-size);
+    }
+
+    .original-price {
+        font-size: var(--lvl11-font-size);
     }
 }
