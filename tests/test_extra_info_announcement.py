@@ -10,8 +10,8 @@ class TestExtraInfoAnnouncement(TestBase):
         self.setTimeAndAssertInTextInLocator(2024, 9, 24, 10, 35, "#dynamic-information", "Dagens klipp")
 
     def testHeaderDynamicInformationNotVisible(self) -> None:
-        self.setTime(2024, 9, 29, 10, 07)
-        self.assertFalse(self.page.is_visible("#dynamic-information"))
+        self.setTime(2024, 9, 24, 10, 7)
+        self.assertFalse(self.page.is_visible("#dynamic-information-container"))
 
 
 if __name__ == "__main__":
