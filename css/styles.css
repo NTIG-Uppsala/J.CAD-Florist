@@ -47,6 +47,7 @@
     padding: 0;
     font-family: "abel", sans-serif;
     text-wrap: balance;
+    box-sizing: border-box;
 }
 
 body {
@@ -218,7 +219,6 @@ h2 {
 }
 
 #flowergram-container h4 {
-    box-sizing: border-box;
     color: var(--main-text-color);
     width: 60%;
     background-color: var(--main-color-reg);
