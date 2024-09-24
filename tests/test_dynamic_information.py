@@ -1,7 +1,7 @@
 from utils import *
 
 
-class TestExtraInfoAnnouncement(TestBase):
+class TestDynamicInformaion(TestBase):
 
     def setUp(self) -> None:
         super().setUp(filePathFromRoot="index.html")

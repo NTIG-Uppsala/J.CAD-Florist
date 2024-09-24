@@ -2,7 +2,6 @@
 const updateDynamicInformationStatus = () => {
     // Get the output text field
     const outputTextField = document.querySelector("#dynamic-information");
-    // console.log(outputTextField.parentElement);
 
     // Get the current day, date, hour, minute, month and the opening hours for the current day
     const currentDate = now.getDate();
@@ -23,14 +22,14 @@ const updateDynamicInformationStatus = () => {
 
     // Check if there is a deal of the day and add it to the output text field
     dealsOfTheDay[weekDay].forEach((deal) => {
-        // Get the product that has a deal
+        // Check if this day has a deal
         if (deal.id) {
-            const product = document.querySelector(deal.id);
-            const productName = deal.id.substr(deal.id.indexOf("-") + 1).replace(/-/g, " ");
-            const productPrice = deal.price;
-            const productOriginalPrice = product.querySelector(".original-price").textContent;
+            const product = document.querySelector(deal.id); // Get the product that has a deal
+            const productName = deal.id.substr(deal.id.indexOf("-") + 1).replace(/-/g, " "); // Get the name of the product
+            const productPrice = deal.price; // Get the deal-price of the product
+            const productOriginalPrice = product.querySelector(".original-price").textContent; // Get the original price of the product
     
-            outputTextField.innerHTML = `Idag kostar ${productName} endast ${productPrice} istället för ${productOriginalPrice}!`;
+            outputTextField.innerHTML = `Idag kostar ${productName} endast ${productPrice} istället för ${productOriginalPrice}!`; // Show the deal on the top of the page
         }
     });
 };
