@@ -95,6 +95,10 @@ class TestBase(unittest.TestCase):
         self.setTime(year, month, day, hour, minute)
         self.assertInTextInOrder(matches)
 
+    def setTimeAndAssertInTextInLocator(self, year: int, month: int, day: int, hour: int, minute, selector: str, match: str) -> None:
+        self.setTime(year, month, day, hour, minute)
+        self.assertInTextInLocator(selector, match)
+
     # Assertions
 
     # Asserts that the given match is in the text content
@@ -138,3 +142,6 @@ class TestBase(unittest.TestCase):
         text = self.page.text_content("body")
         for index, match in enumerate(matches[:-1]):
             self.assertLess(text.index(match), text.index(matches[index + 1]))
+
+    def assertInTextInLocator(self, selector: str, match: str) -> None:
+        self.assertIn(match, self.page.text_content(selector))
