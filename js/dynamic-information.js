@@ -37,16 +37,12 @@ const updateDynamicInformationStatus = () => {
 const hideBanner = () => {
     const outputTextField = document.querySelector("#dynamic-information");
     outputTextField.parentElement.style.display = "none";
-    document.documentElement.style.setProperty("--body-height", "var(--body-height-orignal)");
-    document.documentElement.style.setProperty("--body-responsive-height", "var(--body-responsive-height-original)");
     return;
 }
 
 const showBanner = () => {
     const outputTextField = document.querySelector("#dynamic-information");
     outputTextField.parentElement.style.display = "block";
-    document.documentElement.style.setProperty("--body-height", "calc(var(--body-height-orignal) + var(--page-top-banner-height))");
-    document.documentElement.style.setProperty("--body-responsive-height", "calc(var(--body-responsive-height-original) + var(--page-top-banner-height))");
     return;
 }
 

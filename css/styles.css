@@ -38,10 +38,11 @@
     --page-top-banner-height: 3rem;
     --slideshow-height: 82vh;
     --slideshow-responsive-height: 100vh;
-    --body-height-original: calc(var(--header-height) + var(--slideshow-height) + var(--page-top-banner-height));
-    --body-height: calc(var(--body-height-original) + var(--page-top-banner-height));
-    --body-responsive-height-original: calc(var(--header-height) + var(--slideshow-responsive-height) + var(--page-top-banner-height));
-    --body-responsive-height: calc(var(--body-responsive-height-original) + var(--page-top-banner-height));
+    --body-height-original: calc(var(--header-height) + var(--slideshow-height));
+    --body-height: var(--body-height-original);
+    --body-responsive-height-original: calc(var(--header-height) + var(--slideshow-responsive-height));
+    --body-responsive-height: var(--body-responsive-height-original);
+
 }
 
 * {
@@ -155,7 +156,7 @@ header {
     width: 100%;
     height: var(--header-height);
     background-color: var(--main-backround-color-dark);
-    z-index: 1;
+    z-index: 2;
 }
 
 h2 {
@@ -179,11 +180,17 @@ h2 {
     left: 1rem;
 }
 
+#banners-container {
+    position: relative;
+}
+
 /* Page-top banners */
 .page-top-banner {
     font-weight: bold;
     width: 100%;
     height: var(--page-top-banner-height);
+    position: absolute;
+    z-index: 1;
 }
 
 .page-top-banner p {
@@ -200,6 +207,7 @@ h2 {
     background-color: var(--main-color-deal);
     color: var(--main-color-light);
     font-weight: normal;
+    top: calc(var(--page-top-banner-height));
 }
 
 /* Slideshow and flowergram */
