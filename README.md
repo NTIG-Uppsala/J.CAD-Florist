@@ -78,7 +78,7 @@ För att ändra adress ändra texten och href i a-taggen i `#address` i index.ht
 
 För att ändra öppetider ändra det i `#opening-hours-container` i index.html och objektet `openHours` i js/open-hours.js. Objektet består av ett objekt för varje dag. `from` är när det öppnar och `to` är när det stänger för dagarna. `hour` och `minute` är timmarna respektive minuterna för öppetiderna.
 
-För att ändra stängda dagar ändra det i `#closed-days-container` i index.html och objektet `closedDays` i js/open-hours.js. För att ändra vilka dagar lägg till eller ta bort dem i listan för deras respektive månad. Notera att januari är månad 0 och december är månad 11.
+För att ändra stängda dagar ändra det i `#closed-days-container` i index.html genom att ändra p-taggarna (Notera att de ska ha attributen data-date i formatet "MMDD" där januari är månad 0 och december är månad 11. Dagar börjar på 1). Ändra också i objektet `closedDays` i js/open-hours.js genom att lägga till eller ta bort dem i listan för deras respektive månad. Notera att januari är månad 0 och december är månad 11. Dagar börjar på 1.
 
 För att ändra vilka postnummer som levereras till ändra det i listan `zipCodes` i js/flowergram.js.
 

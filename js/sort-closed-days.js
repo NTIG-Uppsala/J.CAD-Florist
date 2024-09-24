@@ -8,23 +8,25 @@ const sortClosedDays = () => {
     // Get the current date in the format "MMDD"
     const currentDate = now.getMonth().toString().padStart(2, "0") + now.getDate().toString().padStart(2, "0");
 
+    // Iterate through the two columns of closed days
     Array.from(closedDays.children).forEach((div) => {
-        // Sort the div based on the date before splitting it based on the current date
         const childrenArray = Array.from(div.children);
+
+        // Sort the closed days in an array based on the date attribute in ascending order
         childrenArray.sort((a, b) => {
             return a.dataset.date - b.dataset.date;
         });
+
+        // Split the children based on the current date, creating two arrays
         const isAfterArray = childrenArray.filter((p) => p.dataset.date >= currentDate);
         const isBeforeArray = childrenArray.filter((p) => p.dataset.date < currentDate);
+
+        // Concatenate the two arrays and append them to the div
         const sortedArray = isAfterArray.concat(isBeforeArray);
         div.innerHTML = "";
         sortedArray.forEach((p) => div.appendChild(p));
     });
 };
 
-// Update the current status
-sortClosedDays();
-
-now.setFullYear(2024, 11, 29);
-
+// Sort the closed days
 sortClosedDays();

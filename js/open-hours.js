@@ -1,18 +1,18 @@
 // List of closed days
 // month: [days]
 const closedDays = {
-    0: [1, 6],
-    1: [],
-    2: [],
-    3: [],
-    4: [1],
-    5: [6],
-    6: [],
-    7: [],
-    8: [],
-    9: [],
-    10: [],
-    11: [24, 25, 26, 31],
+    0: [1, 6], // January
+    1: [], // February
+    2: [], // March
+    3: [], // April
+    4: [1], // May
+    5: [6], // June
+    6: [], // July
+    7: [], // August
+    8: [], // September
+    9: [], // October
+    10: [], // November
+    11: [24, 25, 26, 31], // December
 };
 
 // Object with opening hours for each day

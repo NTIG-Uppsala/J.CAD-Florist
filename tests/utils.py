@@ -136,6 +136,5 @@ class TestBase(unittest.TestCase):
     # Asserts that the given matches are in the text content in the given order
     def assertInTextInOrder(self, matches: list[str]) -> None:
         text = self.page.text_content("body")
-        for index, match in enumerate(matches):
-            if index < len(matches) - 1:
-                self.assertLess(text.index(match), text.index(matches[index + 1]))
+        for index, match in enumerate(matches[:-1]):
+            self.assertLess(text.index(match), text.index(matches[index + 1]))
