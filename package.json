@@ -1,0 +1,26 @@
+{
+  "name": "j.cad-florist",
+  "version": "1.0.0",
+  "description": "Florista är en hemsida skapad åt ett floristföretag skapad av TE4 gruppen J.CAD.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NTIG-Uppsala/J.CAD-Florist.git"
+  },
+  "author": "Axel Thornberg, Jesper Cejie, Eskil Tornberg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NTIG-Uppsala/J.CAD-Florist/issues"
+  },
+  "homepage": "https://github.com/NTIG-Uppsala/J.CAD-Florist#readme",
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}
