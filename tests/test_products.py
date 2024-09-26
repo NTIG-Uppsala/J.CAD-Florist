@@ -34,16 +34,16 @@ class TestProducts(TestBase):
 
     # Test that the product images are displayed
     def testProductImages(self) -> None:
-        self.assertInHTML('<img src="images/brollopsbukett.jpg" alt="Bröllopsbukett">')
-        self.assertInHTML('<img src="images/rosor-10-pack.jpg" alt="Rosor 10-pack">')
-        self.assertInHTML('<img src="images/tulpaner-10-pack.jpg" alt="Tulpaner 10-pack">')
-        self.assertInHTML('<img src="images/sommarbukett.jpg" alt="Sommarbukett">')
-        self.assertInHTML('<img src="images/hostbukett.jpg" alt="Höstbukett">')
-        self.assertInHTML('<img src="images/begravningskrans.jpg" alt="Begravningskrans">')
-        self.assertInHTML('<img src="images/liljor.jpg" alt="Liljor">')
-        self.assertInHTML('<img src="images/hortensia.jpg" alt="Hortensia">')
-        self.assertInHTML('<img src="images/aloe-vera.jpg" alt="Aloe vera">')
-        self.assertInHTML('<img src="images/kaktus.jpg" alt="Kaktus i kruka">')
+        self.assertInHTML('<img loading="lazy" src="images/brollopsbukett.jpg" alt="Bröllopsbukett">')
+        self.assertInHTML('<img loading="lazy" src="images/rosor-10-pack.jpg" alt="Rosor 10-pack">')
+        self.assertInHTML('<img loading="lazy" src="images/tulpaner-10-pack.jpg" alt="Tulpaner 10-pack">')
+        self.assertInHTML('<img loading="lazy" src="images/sommarbukett.jpg" alt="Sommarbukett">')
+        self.assertInHTML('<img loading="lazy" src="images/hostbukett.jpg" alt="Höstbukett">')
+        self.assertInHTML('<img loading="lazy" src="images/begravningskrans.jpg" alt="Begravningskrans">')
+        self.assertInHTML('<img loading="lazy" src="images/liljor.jpg" alt="Liljor">')
+        self.assertInHTML('<img loading="lazy" src="images/hortensia.jpg" alt="Hortensia">')
+        self.assertInHTML('<img loading="lazy" src="images/aloe-vera.jpg" alt="Aloe vera">')
+        self.assertInHTML('<img loading="lazy" src="images/kaktus.jpg" alt="Kaktus i kruka">')
 
 
 if __name__ == "__main__":
