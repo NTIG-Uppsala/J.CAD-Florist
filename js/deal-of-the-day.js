@@ -49,6 +49,7 @@ const setDealOfTheDay = () => {
     products.forEach((product) => {
         if (product.querySelector(".active")) {
             document.querySelector("#product-container").prepend(product);
+            product.setAttribute("fetchPriority", "High");
         }
     });
 };
