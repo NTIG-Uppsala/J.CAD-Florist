@@ -144,5 +144,10 @@ class TestBase(unittest.TestCase):
         for index, match in enumerate(matches[:-1]):
             self.assertLess(text.index(match), text.index(matches[index + 1]))
 
+    # Asserts that the given match is in the text content in the given locator
     def assertInTextInLocator(self, selector: str, match: str) -> None:
         self.assertIn(match, self.page.text_content(selector))
+
+    # Asserts that the nth element with the given locator has the given id
+    def assertNth(self, locator: str, nth: int, id: str) -> None:
+        self.assertEqual(self.page.locator(locator).locator(f"nth={nth}").get_attribute("id"), id)

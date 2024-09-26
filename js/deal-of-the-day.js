@@ -15,10 +15,10 @@ const setDealOfTheDay = () => {
     const weekDay = now.getDay();
 
     // Get all products with an active deal of the day
-    const products = document.querySelectorAll(".product:has(.active)");
+    const activeProducts = document.querySelectorAll(".product:has(.active)");
 
     // Remove any existing active deals of the day (Should not apply to users, but is necessary for testing as well as beneficial for development and as a fail-safe)
-    products.forEach((product) => {
+    activeProducts.forEach((product) => {
         product.querySelector(".active").classList.remove("active");
         product.querySelector(".new-price").classList.remove("new-price");
         product.querySelector(".original-price").remove();
@@ -41,6 +41,15 @@ const setDealOfTheDay = () => {
         // Insert the new price before the old price and make the product active to unhide the "Dagens klipp" text
         product.querySelector(".original-price").before(newPrice);
         product.querySelector("p").classList.add("active");
+    });
+
+    const products = document.querySelectorAll(".product");
+
+    // Move the products with a deal of the day to the top of the product list
+    products.forEach((product) => {
+        if (product.querySelector(".active")) {
+            document.querySelector("#product-container").prepend(product);
+        }
     });
 };
 
