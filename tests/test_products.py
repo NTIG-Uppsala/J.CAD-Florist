@@ -14,6 +14,10 @@ class TestProducts(TestBase):
         self.assertInText("Sommarbukett")
         self.assertInText("Höstbukett")
         self.assertInText("Begravningskrans")
+        self.assertInText("Liljor")
+        self.assertInText("Hortensia")
+        self.assertInText("Aloe vera")
+        self.assertInText("Kaktus i kruka")
 
     # Test that the product prices are displayed
     def testProductPrices(self) -> None:
@@ -23,6 +27,10 @@ class TestProducts(TestBase):
         self.assertInText("200 kr")
         self.assertInText("400 kr")
         self.assertInText("800 kr")
+        self.assertInText("29 kr/st")
+        self.assertInText("59 kr")
+        self.assertInText("99 kr")
+        self.assertInText("99 kr")
 
     # Test that the product images are displayed
     def testProductImages(self) -> None:
