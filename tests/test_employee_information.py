@@ -10,6 +10,9 @@ class TestEmployeeInformation(TestBase):
     def testEmployeeNames(self) -> None:
         self.assertAllInText(["Fredrik", "Örjan", "Anna"])
 
+    def testEmployeeLastNames(self) -> None:
+        self.assertAllInText(["Örtqvist", "Johansson", "Pettersson"])
+
     # Check that the roles are displayed
     def testEmployeeRoles(self) -> None:
         self.assertAllInText(["Ägare", "Florist", "Hortonom"])
