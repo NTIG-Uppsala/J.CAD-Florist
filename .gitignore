@@ -3,3 +3,4 @@ __pycache__
 notes.txt
 generated-screenshots/
 resolutions-and-aspect-ratios.txt
+node_modules/
