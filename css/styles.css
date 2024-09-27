@@ -213,15 +213,6 @@ h2 {
     padding: 0.8rem;
 }
 
-/* Slideshow and flowergram */
-#slideshow-and-flowergram-container {
-    height: var(--slideshow-height);
-}
-
-#slideshow-container {
-    position: relative;
-    overflow: hidden;
-}
 
 /* Flowergram */
 #flowergram-container {
@@ -345,57 +336,60 @@ h2 {
 
 /* Slideshow */
 /* the .slide class styles all images in the slideshow */
+#slideshow-and-flowergram-container {
+    height: var(--slideshow-height);
+}
+
+#slideshow-container {
+    position: relative;  /* Allow absolute positioning of slides */
+    overflow: hidden;    /* Hide overflowing slides */
+}
+
+/* the .slide class styles all images in the slideshow */
 .slide {
     object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%; /* Ensure images take full width */
+    height: 100%; /* Ensure images take full height */
     opacity: 0;
-    animation: fade 18s infinite;
+    animation: fade 18s infinite; /* Default animation for fading */
 }
 
-/* Animates the first image with full opacity through the entire animation */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Keeps the first image visible through the entire animation */
 .slide:nth-of-type(1) {
     animation: fadeFirst 18s infinite;
 }
 
-/* Delays the animation for the second image by 6 seconds */
-.slide:nth-last-of-type(2) {
-    animation-delay: 6s;
+/* Applies fade animations to subsequent images */
+.slide:nth-of-type(2) {
+    animation-delay: 6s; /* Starts 6 seconds after the first */
 }
 
-/* Delays the animation for the third image by 12 seconds*/
-.slide:nth-last-of-type(3) {
-    animation-delay: 12s;
+.slide:nth-of-type(3) {
+    animation-delay: 12s; /* Starts 12 seconds after the first */
 }
 
 /* Animation to fade images in and out */
 @keyframes fade {
-    0% {
+    0%, 66.66% {
         opacity: 0;
     }
     33.33% {
         opacity: 1;
-    }
-    66.66% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
     }
 }
 
 /* Animation to keep the first image's opacity full */
 @keyframes fadeFirst {
-    0% {
-        opacity: 1;
-    }
-    33.33% {
-        opacity: 1;
-    }
-    66.66% {
-        opacity: 1;
-    }
+    0%,
     100% {
         opacity: 1;
     }
