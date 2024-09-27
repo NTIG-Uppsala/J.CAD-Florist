@@ -348,22 +348,24 @@ h2 {
 .slide {
     object-fit: cover;
     position: absolute;
+    top: 0;
+    left: 0;
     opacity: 0;
     animation: fade 18s infinite;
 }
 
 /* Animates the first image with full opacity through the entire animation */
-.slide:nth-child(1) {
+.slide:nth-of-type(1) {
     animation: fadeFirst 18s infinite;
 }
 
 /* Delays the animation for the second image by 6 seconds */
-.slide:nth-child(2) {
+.slide:nth-last-of-type(2) {
     animation-delay: 6s;
 }
 
 /* Delays the animation for the third image by 12 seconds*/
-.slide:nth-child(3) {
+.slide:nth-last-of-type(3) {
     animation-delay: 12s;
 }
 
