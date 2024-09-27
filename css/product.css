@@ -38,6 +38,7 @@
 
 /* Product image */
 .product img {
+    aspect-ratio: 3/2;
     width: 100%;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
