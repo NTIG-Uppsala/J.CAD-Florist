@@ -8,7 +8,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "resize": "node scripts/image-resizer.js"
   },
   "repository": {
     "type": "git",
