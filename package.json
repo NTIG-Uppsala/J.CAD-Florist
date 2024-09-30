@@ -1,7 +1,7 @@
 {
   "name": "j.cad-florist",
   "version": "1.0.0",
-  "description": "Florista är en hemsida skapad åt ett floristföretag skapad av TE4 gruppen J.CAD.",
+  "description": "Florista är en hemsida skapad av TE4 gruppen J.CAD åt ett floristföretag.",
   "main": "index.js",
   "directories": {
     "doc": "docs",
@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/NTIG-Uppsala/J.CAD-Florist#readme",
   "dependencies": {
+    "handlebars": "^4.7.8",
+    "js-yaml": "^4.1.0",
     "sharp": "^0.33.5"
   }
 }
