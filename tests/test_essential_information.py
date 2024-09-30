@@ -4,7 +4,7 @@ from utils import *
 class TestEssentialInformation(TestBase):
 
     def setUp(self) -> None:
-        super().setUp(filePathFromRoot="index.html")
+        super().setUp(filePathFromRoot="public/se/index.html")
 
     # Test that the name of the florist is displayed
     def testName(self) -> None:

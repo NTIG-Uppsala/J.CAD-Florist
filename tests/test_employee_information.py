@@ -4,7 +4,7 @@ from utils import *
 class TestEmployeeInformation(TestBase):
 
     def setUp(self) -> None:
-        super().setUp(filePathFromRoot="index.html")
+        super().setUp(filePathFromRoot="public/se/index.html")
 
     # Check that the employee names are displayed
     def testEmployeeNames(self) -> None:

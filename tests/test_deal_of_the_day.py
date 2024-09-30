@@ -4,7 +4,7 @@ from utils import *
 class TestDealOfTheDay(TestBase):
 
     def setUp(self) -> None:
-        super().setUp(filePathFromRoot="index.html")
+        super().setUp(filePathFromRoot="public/se/index.html")
 
     # Test that the deal of the day is displayed on Monday
     def testDealsMonday(self) -> None:

@@ -8,9 +8,9 @@ class TestNoscript(TestBase):
         super().setUpClass(jsEnabled=False)
 
     def setUp(self) -> None:
-        super().setUp(filePathFromRoot="index.html", jsEnabled=False)
+        super().setUp(filePathFromRoot="public/se/index.html", jsEnabled=False)
 
     # Check that the noscript image is displayed
     def testMap(self) -> None: 
         self.checkNumberOfElements("#noscript-map", 1)
-        self.assertInHTML('img loading="lazy" src="images/noscript-map.png" alt="noscript-map"')
+        self.assertInHTML('img loading="lazy" src="../../images/noscript-map.png" alt="noscript-map"')

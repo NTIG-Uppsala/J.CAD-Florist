@@ -4,7 +4,7 @@ from utils import *
 class TestZipCodes(TestBase):
 
     def setUp(self) -> None:
-        super().setUp(filePathFromRoot="index.html")
+        super().setUp(filePathFromRoot="public/se/index.html")
 
     # Tests that the flowergram text is displayed correctly
     def testFlowergramText(self) -> None:

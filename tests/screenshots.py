@@ -79,7 +79,7 @@ def runMultithreaded() -> None:
             for locIndex, loc in enumerate(locators):
                 folderName = dateAndTime  # folder for the current batch of screenshots
                 fileName = genFileName(resIndex, locIndex, res, loc, dateAndTime)  # generate the filename for the screenshot to be taken
-                executor.submit(takeScreenshot, "index.html", f"{screenshotFolder}/{folderName}/{fileName}", resolutions[res], locators[loc])  # take a screenshot of the page
+                executor.submit(takeScreenshot, "public/se/index.html", f"{screenshotFolder}/{folderName}/{fileName}", resolutions[res], locators[loc])  # take a screenshot of the page
 
 
 if __name__ == "__main__":
