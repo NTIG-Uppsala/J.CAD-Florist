@@ -4,7 +4,7 @@ from utils import *
 class TestDynamicInformaion(TestBase):
 
     def setUp(self) -> None:
-        super().setUp(filePathFromRoot="index.html")
+        super().setUp(filePathFromRoot="public/se/index.html")
 
     def testHeaderDealOfTheDay(self) -> None:
         self.setTimeAndAssertInTextInLocator(2024, 9, 24, 10, 35, "#dynamic-information", "Idag kostar")

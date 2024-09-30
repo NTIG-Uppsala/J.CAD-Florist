@@ -4,7 +4,7 @@ from utils import *
 class TestClosedDays(TestBase):
 
     def setUp(self) -> None:
-        super().setUp(filePathFromRoot="index.html")
+        super().setUp(filePathFromRoot="public/se/index.html")
 
     # Test that the closed days are sorted correctly on New Year's Day
     def testNewYearsDay(self):

@@ -4,7 +4,7 @@ from utils import *
 class TestDynamicOpenHoursHolidays(TestBase):
 
     def setUp(self) -> None:
-        super().setUp(filePathFromRoot="index.html")
+        super().setUp(filePathFromRoot="public/se/index.html")
 
     # Tests that the open hours are displayed on New Year's Day
     def testDynamicOpenHoursDisplayNewYearsDay(self) -> None:

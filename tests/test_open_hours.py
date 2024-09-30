@@ -4,7 +4,7 @@ from utils import *
 class TestOpenHours(TestBase):
 
     def setUp(self) -> None:
-        super().setUp(filePathFromRoot="index.html")
+        super().setUp(filePathFromRoot="public/se/index.html")
 
     # Test that the open hours are displayed
     def testOpenHours(self) -> None:

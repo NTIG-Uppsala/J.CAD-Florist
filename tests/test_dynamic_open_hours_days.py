@@ -4,7 +4,7 @@ from utils import *
 class TestDynamicOpenHoursDays(TestBase):
 
     def setUp(self) -> None:
-        super().setUp(filePathFromRoot="index.html")
+        super().setUp(filePathFromRoot="public/se/index.html")
 
     # Tests that the open hours are displayed correctly during different times of Monday
     def testDynamicOpenHoursDisplayMonday(self) -> None:

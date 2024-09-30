@@ -4,7 +4,7 @@ from utils import *
 class TestMapEmbed(TestBase):
 
     def setUp(self) -> None:
-        super().setUp(filePathFromRoot="index.html")
+        super().setUp(filePathFromRoot="public/se/index.html")
 
     # Test that the OSM map is displayed correctly
     def testMapEmbed(self) -> None:
