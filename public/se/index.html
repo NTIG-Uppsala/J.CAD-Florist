@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Noindex -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../images/florista-favicon-color.ico">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="../../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../../css/product.css">
+    <link rel="stylesheet" type="text/css" href="../../css/employee-information.css">
+    <link rel="stylesheet" type="text/css" href="../../css/interactive-map.css">
+    <!-- OSM -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/leaflet-gesture-handling.min.css">
+    <script src="../../js/leaflet-gesture-handling.min.js"></script>
+    <!-- Scripts -->
+    <script defer src="../../js/flowergram.js"></script>
+    <script defer src="../../js/open-hours.js"></script>
+    <script defer src="../../js/embed-osm-map.js"></script>
+    <script defer src="../../js/show-script.js"></script>
+    <script defer src="../../js/deal-of-the-day.js"></script>
+    <script defer src="../../js/sort-closed-days.js"></script>
+    <script defer src="../../js/dynamic-information.js"></script>
+
+    <!-- Needed for tests. Should always be loaded last -->
+    <script defer src="../../js/testing-wait-for-js.js"></script>
+    <title>Florista</title>
+</head>
+<body>
+    <!-- Header starts here -->
+    <header class="container centered-container">
+        <img loading="lazy" id="logo" src="../../images/logga-florist-1.png" alt="Hemsidans logga">
+        <div id="header-container" class="container flex-column centered-container wh-100">
+            <h1 id="title">florista</h1>
+        </div>
+    </header>
+    <!-- Header ends here -->
+    <div id="banners-container">
+        <!-- Open or closed starts here -->
+        <div id="open-or-closed-container" class="container page-top-banner centered-container">
+            <p id="open-or-closed"></p>
+        </div>
+
+        <!-- Dynamic information starts here -->
+        <div id="dynamic-information-container" class="container page-top-banner centered-container">
+            <p id="dynamic-information"></p>
+        </div>
+    </div>
+    
+    <!-- Open or closed ends here -->
+    <!-- Slideshow starts here -->
+    <div id="slideshow-and-flowergram-container" class="container centered-container">
+        <div id="slideshow-container" class="container centered-container wh-100">
+            <picture>
+                <source media="(min-width: 2560px) and (min-height: 1440px)" srcset="../../images/2560x1440/sommarbukett-lg.jpg" >
+                <source media="(min-width: 1920px) and (min-height: 1080px)" srcset="../../images/1920x1080/sommarbukett-lg.jpg" >
+                <source media="(min-width: 1600px) and (min-height: 900px)" srcset="../../images/1600x900/sommarbukett-lg.jpg" >
+                <source media="(min-width: 1536px) and (min-height: 864px)" srcset="../../images/1536x864/sommarbukett-lg.jpg" >
+                <source media="(min-width: 1440px) and (min-height: 900px)" srcset="../../images/1440x900/sommarbukett-lg.jpg" >
+                <source media="(min-width: 1366px) and (min-height: 768px)" srcset="../../images/1366x768/sommarbukett-lg.jpg" >
+                <source media="(min-width: 1280px) and (min-height: 720px)" srcset="../../images/1280x720/sommarbukett-lg.jpg" >
+                <source media="(min-width: 412px) and (min-height: 915px)" srcset="../../images/412x915/sommarbukett-lg.jpg" >
+                <source media="(min-width: 393px) and (min-height: 873px)" srcset="../../images/393x873/sommarbukett-lg.jpg" >
+                <source media="(min-width: 393px) and (min-height: 851px)" srcset="../../images/393x851/sommarbukett-lg.jpg" >
+                <source media="(min-width: 390px) and (min-height: 844px)" srcset="../../images/390x844/sommarbukett-lg.jpg" >
+                <source media="(min-width: 360px) and (min-height: 800px)" srcset="../../images/360x800/sommarbukett-lg.jpg" >
+                <img src="../../images/375x667/sommarbukett-lg.jpg" class="slide wh-100" alt="Bild av en sommarbukett">
+            </picture>
+
+            <picture>
+                <source media="(min-width: 2560px) and (min-height: 1440px)" srcset="../../images/2560x1440/tulpanbukett-lg.jpg" >
+                <source media="(min-width: 1920px) and (min-height: 1080px)" srcset="../../images/1920x1080/tulpanbukett-lg.jpg" >
+                <source media="(min-width: 1600px) and (min-height: 900px)" srcset="../../images/1600x900/tulpanbukett-lg.jpg" >
+                <source media="(min-width: 1536px) and (min-height: 864px)" srcset="../../images/1536x864/tulpanbukett-lg.jpg" >
+                <source media="(min-width: 1440px) and (min-height: 900px)" srcset="../../images/1440x900/tulpanbukett-lg.jpg" >
+                <source media="(min-width: 1366px) and (min-height: 768px)" srcset="../../images/1366x768/tulpanbukett-lg.jpg" >
+                <source media="(min-width: 1280px) and (min-height: 720px)" srcset="../../images/1280x720/tulpanbukett-lg.jpg" >
+                <source media="(min-width: 412px) and (min-height: 915px)" srcset="../../images/412x915/tulpanbukett-lg.jpg" >
+                <source media="(min-width: 393px) and (min-height: 873px)" srcset="../../images/393x873/tulpanbukett-lg.jpg" >
+                <source media="(min-width: 393px) and (min-height: 851px)" srcset="../../images/393x851/tulpanbukett-lg.jpg" >
+                <source media="(min-width: 390px) and (min-height: 844px)" srcset="../../images/390x844/tulpanbukett-lg.jpg" >
+                <source media="(min-width: 360px) and (min-height: 800px)" srcset="../../images/360x800/tulpanbukett-lg.jpg" >
+                <img src="../../images/375x667/tulpanbukett-lg.jpg" class="slide wh-100" alt="Bild av en tulpanbukett">
+            </picture>
+
+            <picture>
+                <source media="(min-width: 2560px) and (min-height: 1440px)" srcset="../../images/2560x1440/hostbukett-lg.jpg" >
+                <source media="(min-width: 1920px) and (min-height: 1080px)" srcset="../../images/1920x1080/hostbukett-lg.jpg" >
+                <source media="(min-width: 1600px) and (min-height: 900px)" srcset="../../images/1600x900/hostbukett-lg.jpg" >
+                <source media="(min-width: 1536px) and (min-height: 864px)" srcset="../../images/1536x864/hostbukett-lg.jpg" >
+                <source media="(min-width: 1440px) and (min-height: 900px)" srcset="../../images/1440x900/hostbukett-lg.jpg" >
+                <source media="(min-width: 1366px) and (min-height: 768px)" srcset="../../images/1366x768/hostbukett-lg.jpg" >
+                <source media="(min-width: 1280px) and (min-height: 720px)" srcset="../../images/1280x720/hostbukett-lg.jpg" >
+                <source media="(min-width: 412px) and (min-height: 915px)" srcset="../../images/412x915/hostbukett-lg.jpg" >
+                <source media="(min-width: 393px) and (min-height: 873px)" srcset="../../images/393x873/hostbukett-lg.jpg" >
+                <source media="(min-width: 393px) and (min-height: 851px)" srcset="../../images/393x851/hostbukett-lg.jpg" >
+                <source media="(min-width: 390px) and (min-height: 844px)" srcset="../../images/390x844/hostbukett-lg.jpg" >
+                <source media="(min-width: 360px) and (min-height: 800px)" srcset="../../images/360x800/hostbukett-lg.jpg" >
+                <img src="../../images/375x667/hostbukett-lg.jpg" class="slide wh-100" alt="Bild av en höstbukett">
+            </picture>
+
+            <!-- Flowergram starts here -->
+            <div id="flowergram-container" class="container flex-column flex-start-container">
+                <h3>Över&shy;raska med ett blommo&shy;gram</h3>
+                <h4 id="flowergram-btn" class="container centered-container">Skicka blommo&shy;gram</h4>
+                <!-- The popup that appears when pressing "Skicka blommo&shy;gram" -->
+                <div id="flowergram" class="container flex-column flex-start-container">
+                    <h6>Vill du skicka ett blommo&shy;gram?</h6>
+                    <p>Besök oss i butiken eller ring oss på <a href="tel:0630555555">0630-555-555</a>!</p>
+                    <hr id="flowergram-separator">
+                    <p>Kontrollera här om vi levererar till ditt önskade postnummer:</p>
+                    <div id="input-container" class="container">
+                        <input id="postal-code" type="text" placeholder="Ange postnummer">
+                        <button id="postal-code-btn"></button>
+                    </div>
+                    <p id="input-response"></p>
+                </div>
+            </div>
+            <!-- Flowergram ends here -->
+        </div>
+    </div>
+    <!-- Slideshow ends here -->
+
+    <!-- Products starts here -->
+    <section id="products-section" class="container flex-column centered-container">
+        <h2 id="produtct-header">Produkter</h2>
+        <div id="product-container" class="container">
+            <div id="product-brollopsbukett" class="product">
+                <img loading="lazy" src="../../images/brollopsbukett.jpg" alt="Bröllopsbukett">
+                <p class="deal-of-the-day">Dagens Klipp</p>
+                <div class="product-footer centered-container">
+                    <h4>Bröllopsbukett</h4>
+                    <div class="price-container container centered-container">
+                        <h5 class="price">1 200 kr</h5>
+                    </div>
+                </div>
+            </div>  
+            <div id="product-rosor-10-pack" class="product">
+                <img loading="lazy" src="../../images/rosor-10-pack.jpg" alt="Rosor 10-pack">
+                <p class="deal-of-the-day">Dagens Klipp</p>
+                <div class="product-footer centered-container">
+                    <h4>Rosor 10-pack</h4>
+                    <div class="price-container container centered-container">
+                        <h5 class="price">150 kr</h5>
+                    </div>
+                </div>
+            </div>
+            <div id="product-tulpaner-10-pack" class="product">
+                <img loading="lazy" src="../../images/tulpaner-10-pack.jpg" alt="Tulpaner 10-pack">
+                <p class="deal-of-the-day">Dagens Klipp</p>
+                <div class="product-footer centered-container">
+                    <h4>Tulpaner 10-pack</h4>
+                    <div class="price-container container centered-container">
+                        <h5 class="price">100 kr</h5>
+                    </div>
+                </div>
+            </div>
+            <div id="product-sommarbukett" class="product">
+                <img loading="lazy" src="../../images/sommarbukett.jpg" alt="Sommarbukett">
+                <p class="deal-of-the-day">Dagens Klipp</p>
+                <div class="product-footer centered-container">
+                    <h4>Sommarbukett</h4>
+                    <div class="price-container container centered-container">
+                        <h5 class="price">200 kr</h5>
+                    </div>
+                </div>
+            </div>
+            <div id="product-hostbukett" class="product">
+                <img loading="lazy" src="../../images/hostbukett.jpg" alt="Höstbukett">
+                <p class="deal-of-the-day">Dagens Klipp</p>
+                <div class="product-footer centered-container">
+                    <h4>Höstbukett</h4>
+                    <div class="price-container container centered-container">
+                        <h5 class="price">400 kr</h5>
+                    </div>
+                </div>
+            </div>
+            <div id="product-begravningskrans" class="product">
+                <img loading="lazy" src="../../images/begravningskrans.jpg" alt="Begravningskrans">
+                <p class="deal-of-the-day">Dagens Klipp</p>
+                <div class="product-footer centered-container">
+                    <h4>Begravningskrans</h4>
+                    <div class="price-container container centered-container">
+                        <h5 class="price">800 kr</h5>
+                    </div>
+                </div>
+            </div>
+            <div id="product-liljor" class="product">
+                <img loading="lazy" src="../../images/liljor.jpg" alt="Liljor">
+                <p class="deal-of-the-day">Dagens Klipp</p>
+                <div class="product-footer centered-container">
+                    <h4>Liljor</h4>
+                    <div class="price-container container centered-container">
+                        <h5 class="price">29 kr/st</h5>
+                    </div>
+                </div>
+            </div>
+            <div id="product-hortensia" class="product">
+                <img loading="lazy" src="../../images/hortensia.jpg" alt="Hortensia">
+                <p class="deal-of-the-day">Dagens Klipp</p>
+                <div class="product-footer centered-container">
+                    <h4>Hortensia</h4>
+                    <div class="price-container container centered-container">
+                        <h5 class="price">59 kr</h5>
+                    </div>
+                </div>
+            </div>
+            <div id="product-aloe-vera" class="product">
+                <img loading="lazy" src="../../images/aloe-vera.jpg" alt="Aloe vera">
+                <p class="deal-of-the-day">Dagens Klipp</p>
+                <div class="product-footer centered-container">
+                    <h4>Aloe vera</h4>
+                    <div class="price-container container centered-container">
+                        <h5 class="price">99 kr</h5>
+                    </div>
+                </div>
+            </div>
+            <div id="product-kaktus-i-kruka" class="product">
+                <img loading="lazy" src="../../images/kaktus.jpg" alt="Kaktus i kruka">
+                <p class="deal-of-the-day">Dagens Klipp</p>
+                <div class="product-footer centered-container">
+                    <h4>Kaktus i kruka</h4>
+                    <div class="price-container container centered-container">
+                        <h5 class="price">99 kr</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Products ends here -->
+
+    <!-- Interactive map starts here -->
+    <section id="interactive-map-section" class="container flex-column centered-container">
+        <h2>Karta</h2>
+        <!-- OSM interactive map -->
+        <div id="map" class="script"></div>
+        <noscript>
+            <img loading="lazy" src="../../images/noscript-map.png" alt="noscript-map" id="noscript-map">
+        </noscript>
+    </section>
+    <!-- Interactive map ends here -->
+
+    <!-- Employee information starts here -->
+    <section id="employee-section" class="container flex-column centered-container">
+        <h2>Personal</h2>
+        <div id="employees" class="container centered-container">
+            <div id="fredrik-ortqvist-container" class="employee-container container centered-container">
+                <img loading="lazy" src="../../images/employees/fredrik-ortqvist.jpg" alt="Bild på Fredrik Örtqvist" class="employee-img">
+                <div class="employee-information container centered-container">
+                    <p class="fs-8">Fredrik Örtqvist</p>
+                    <p class="fs-8">Ägare<p>
+                </div>
+            </div>
+            <div id="orjan-johansson-container" class="employee-container container centered-container">
+                <img loading="lazy" src="../../images/employees/orjan-johansson.jpg" alt="Bild på Örjan Johansson" class="employee-img">
+                <div class="employee-information container centered-container">
+                    <p class="fs-8">Örjan Johansson</p>
+                    <p class="fs-8">Florist</p>
+                </div>
+            </div>
+            <div id="anna-pettersson-container" class="employee-container container centered-container">
+                <img loading="lazy" src="../../images/employees/anna-pettersson.jpg" alt="Bild på Anna Pettersson" class="employee-img">
+                <div class="employee-information container centered-container">
+                    <p class="fs-8">Anna Pettersson</p>
+                    <p class="fs-8">Hortonom</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Employee information ends here -->
+
+    <!-- Footer -->
+    <footer class="container flex-column centered-container">
+        <!-- Top part of the footer starts here -->
+        <div id="footer-top">
+            <div id="footer-container-1" class="footer-container container">
+                <h6>Kontakta oss</h6>
+                <div id="footer-info">
+                    <div id="address">
+                        <a href="https://maps.app.goo.gl/pne1zVvPmaNENVQz5" target="blank">Fjällgatan 32H, 981 39 KIRUNA</a>
+                    </div>
+                    <div id="number">
+                        <a href="tel:0630555555">0630-555-555</a>
+                    </div>
+                    <div id="email">
+                        <a href="mailto:info@florista.ntig.dev">info@florista.ntig.dev</a>
+                    </div>
+                </div>
+            </div>
+            <div id="footer-container-2" class="footer-container container">
+                <!-- Opening hours -->
+                <h6>Öppettider</h6>
+                <div id="opening-hours-container" class="container centered-container">
+                    <div id="opening-hours-days" class="opening-hours text-left footer-col">
+                        <p>Måndag</p>
+                        <p>Tisdag</p>
+                        <p>Onsdag</p>
+                        <p>Torsdag</p>
+                        <p>Fredag</p>
+                        <p>Lördag</p>
+                        <p>Söndag</p>
+                    </div>
+                    <div id="opening-hours-times" class="opening-hours text-right footer-col">
+                        <p>10-18</p>
+                        <p>10-18</p>
+                        <p>10-17</p>
+                        <p>10-17</p>
+                        <p>10-18</p>
+                        <p>12-16</p>
+                        <p>12-15</p>
+                    </div>
+                </div>
+            </div>
+            <div id="footer-container-3" class="footer-container container">
+                <!-- Closed days -->
+                <h6>Stängda dagar</h6>
+                <div id="closed-days-container" class="container centered-container">
+                    <div id="closed-days-dates" class="closed-days text-left footer-col">
+                        <p data-date="0001">1 jan</p>
+                        <p data-date="0006">6 jan</p>
+                        <p data-date="0401">1 maj</p>
+                        <p data-date="0506">6 jun</p>
+                        <p data-date="1124">24 dec</p>
+                        <p data-date="1125">25 dec</p>
+                        <p data-date="1126">26 dec</p>
+                        <p data-date="1131">31 dec</p>
+                    </div>
+                    <div id="closed-days-names" class="closed-days text-right footer-col">
+                        <p data-date="0001">Nyårsdagen</p>
+                        <p data-date="0006">Trettondedag jul</p>
+                        <p data-date="0401">Första maj</p>
+                        <p data-date="0506">Nationaldagen</p>
+                        <p data-date="1124">Julafton</p>
+                        <p data-date="1125">Juldagen</p>
+                        <p data-date="1126">Annandag jul</p>
+                        <p data-date="1131">Nyårsafton</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Top part of the footer ends here -->
+
+        <!-- Bottom part of the footer starts here -->
+        <div id="footer-bottom" class="container centered-container">
+            <!-- Social medias -->
+            <div id="social-media-container" class="container">
+                <div id="facebook" class="social-media-icon">
+                    <a href="https://www.facebook.com/ntiuppsala">
+                        <img loading="lazy" src="../../images/facebook.svg" alt="Facebook ikon">
+                    </a>
+                </div>
+                <div id="instagram" class="social-media-icon">
+                    <a href="https://www.instagram.com/ntiuppsala/">
+                        <img loading="lazy" src="../../images/instagram.svg" alt="Instagram ikon">
+                    </a>
+                </div>
+                <div id="x" class="social-media-icon">
+                    <a href="https://x.com/ntiuppsala">
+                        <img loading="lazy" src="../../images/twitter-x.svg" alt="X ikon">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom part of the footer ends here -->
+    </footer>
+</body>
+</html> 
