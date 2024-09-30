@@ -1,5 +1,6 @@
 from utils import *
 
+
 class TestNoscript(TestBase):
 
     @classmethod
@@ -11,6 +12,6 @@ class TestNoscript(TestBase):
         super().setUp(filePathFromRoot="index.html", jsEnabled=False)
 
     # Check that the noscript image is displayed
-    def testMap(self) -> None: 
+    def testMap(self) -> None:
         self.checkNumberOfElements("#noscript-map", 1)
-        self.assertInHTML('img  src="images/noscript-map.png" alt="noscript-map"')
+        self.assertInHTML('<img src="images/noscript-map.png" alt="noscript-map" id="noscript-map">')
