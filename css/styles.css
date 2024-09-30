@@ -37,12 +37,13 @@
     --header-height: 8rem;
     --page-top-banner-height: 3rem;
     --slideshow-height: 82vh;
+    --slideshow-height-large-portrait: 40vh;
     --slideshow-responsive-height: 100vh;
     --body-height-original: calc(var(--header-height) + var(--slideshow-height));
     --body-height: var(--body-height-original);
+    --body-height-large-portrait: calc(var(--header-height) + var(--slideshow-height-large-portrait));
     --body-responsive-height-original: calc(var(--header-height) + var(--slideshow-responsive-height));
     --body-responsive-height: var(--body-responsive-height-original);
-
 }
 
 * {
@@ -213,7 +214,6 @@ h2 {
     padding: 0.8rem;
 }
 
-
 /* Flowergram */
 #flowergram-container {
     width: 40rem;
@@ -341,8 +341,8 @@ h2 {
 }
 
 #slideshow-container {
-    position: relative;  /* Allow absolute positioning of slides */
-    overflow: hidden;    /* Hide overflowing slides */
+    position: relative; /* Allow absolute positioning of slides */
+    overflow: hidden; /* Hide overflowing slides */
 }
 
 /* the .slide class styles all images in the slideshow */
@@ -379,7 +379,8 @@ h2 {
 
 /* Animation to fade images in and out */
 @keyframes fade {
-    0%, 66.66% {
+    0%,
+    66.66% {
         opacity: 0;
     }
     33.33% {
@@ -473,7 +474,8 @@ footer {
 }
 
 /* Media queries */
-@media screen and (max-width: 1600px) {
+
+@media screen and (orientation: landscape) and (max-width: 1600px) {
     body {
         height: var(--body-responsive-height);
     }
@@ -588,5 +590,19 @@ footer {
 @media screen and (max-width: 220px) {
     #logo {
         display: none;
+    }
+}
+
+@media screen and (orientation: portrait) and (min-width: 1080px) {
+    #slideshow-and-flowergram-container {
+        height: var(--slideshow-height-large-portrait);
+    }
+
+    body {
+        height: var(--body-height-large-portrait);
+    }
+
+    picture {
+        height: 100%;
     }
 }
