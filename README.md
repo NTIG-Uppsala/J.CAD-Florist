@@ -46,6 +46,23 @@ Det finns också ett python-script som genererar skärmdumpar av hemsidan. Detta
 
 ---
 
+## Bilder
+
+Denna sida använder ett skript för att skapa variationer av bilderna i olika upplösningar för att optimera inladdningstiden. För detta krävs [Node.js](https://nodejs.org/en).
+
+När Node.js är installerat ska följande kommando köras i projektets root-mapp:
+```bash
+npm install
+```
+Detta installerar alla paket som krävs för att köra projektet.
+
+Om du behöver skapa alla bilder på nytt (t.ex. om nya upplösningar eller bilder har lagts till) kör följande kommando: 
+```bash
+npm run resize
+```
+
+---
+
 ## Uppdatera sidan
 
 Pusha de features som är helt klara till `live`-branchen. Andra ändringar ska pushas till `main`-branchen.

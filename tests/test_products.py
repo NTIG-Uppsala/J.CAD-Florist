@@ -34,16 +34,16 @@ class TestProducts(TestBase):
 
     # Test that the product images are displayed
     def testProductImages(self) -> None:
-        self.assertInHTML('<img loading="lazy" src="images/brollopsbukett.jpg" alt="Bröllopsbukett">')
-        self.assertInHTML('<img loading="lazy" src="images/rosor-10-pack.jpg" alt="Rosor 10-pack">')
-        self.assertInHTML('<img loading="lazy" src="images/tulpaner-10-pack.jpg" alt="Tulpaner 10-pack">')
-        self.assertInHTML('<img loading="lazy" src="images/sommarbukett.jpg" alt="Sommarbukett">')
-        self.assertInHTML('<img loading="lazy" src="images/hostbukett.jpg" alt="Höstbukett">')
-        self.assertInHTML('<img loading="lazy" src="images/begravningskrans.jpg" alt="Begravningskrans">')
-        self.assertInHTML('<img loading="lazy" src="images/liljor.jpg" alt="Liljor">')
-        self.assertInHTML('<img loading="lazy" src="images/hortensia.jpg" alt="Hortensia">')
-        self.assertInHTML('<img loading="lazy" src="images/aloe-vera.jpg" alt="Aloe vera">')
-        self.assertInHTML('<img loading="lazy" src="images/kaktus.jpg" alt="Kaktus i kruka">')
+        self.assertInHTML('<img loading="lazy" src="images/480x320/brollopsbukett.jpg" alt="Bröllopsbukett">')
+        self.assertInHTML('<img loading="lazy" src="images/480x320/rosor-10-pack.jpg" alt="Rosor 10-pack">')
+        self.assertInHTML('<img loading="lazy" src="images/480x320/tulpaner-10-pack.jpg" alt="Tulpaner 10-pack">')
+        self.assertInHTML('<img loading="lazy" src="images/480x320/sommarbukett.jpg" alt="Sommarbukett">')
+        self.assertInHTML('<img loading="lazy" src="images/480x320/hostbukett.jpg" alt="Höstbukett">')
+        self.assertInHTML('<img loading="lazy" src="images/480x320/begravningskrans.jpg" alt="Begravningskrans">')
+        self.assertInHTML('<img loading="lazy" src="images/480x320/liljor.jpg" alt="Liljor">')
+        self.assertInHTML('<img loading="lazy" src="images/480x320/hortensia.jpg" alt="Hortensia">')
+        self.assertInHTML('<img loading="lazy" src="images/480x320/aloe-vera.jpg" alt="Aloe vera">')
+        self.assertInHTML('<img loading="lazy" src="images/480x320/kaktus.jpg" alt="Kaktus i kruka">')
 
 
 if __name__ == "__main__":
