@@ -30,7 +30,7 @@
 
     <!-- Needed for tests. Should always be loaded last -->
     <script defer src="{{rootPath}}js/testing-wait-for-js.js"></script>
-    <title>Florista</title>
+    <title>{{companyName}}</title>
 </head>
 <body>
     <!-- Header starts here -->
@@ -70,7 +70,7 @@
                 <source media="(min-width: 393px) and (min-height: 851px)" srcset="{{rootPath}}images/393x851/sommarbukett-lg.jpg" >
                 <source media="(min-width: 390px) and (min-height: 844px)" srcset="{{rootPath}}images/390x844/sommarbukett-lg.jpg" >
                 <source media="(min-width: 360px) and (min-height: 800px)" srcset="{{rootPath}}images/360x800/sommarbukett-lg.jpg" >
-                <img src="{{rootPath}}images/375x667/sommarbukett-lg.jpg" class="slide wh-100" alt="Bild av en sommarbukett">
+                <img src="{{rootPath}}images/375x667/sommarbukett-lg.jpg" class="slide wh-100" alt="{{slideshowSummerBouquetAlt}}">
             </picture>
 
             <picture>
@@ -86,7 +86,7 @@
                 <source media="(min-width: 393px) and (min-height: 851px)" srcset="{{rootPath}}images/393x851/tulpanbukett-lg.jpg" >
                 <source media="(min-width: 390px) and (min-height: 844px)" srcset="{{rootPath}}images/390x844/tulpanbukett-lg.jpg" >
                 <source media="(min-width: 360px) and (min-height: 800px)" srcset="{{rootPath}}images/360x800/tulpanbukett-lg.jpg" >
-                <img src="{{rootPath}}images/375x667/tulpanbukett-lg.jpg" class="slide wh-100" alt="Bild av en tulpanbukett">
+                <img src="{{rootPath}}images/375x667/tulpanbukett-lg.jpg" class="slide wh-100" alt="{{slideshowTulipBouquetAlt}}">
             </picture>
 
             <picture>
@@ -102,21 +102,21 @@
                 <source media="(min-width: 393px) and (min-height: 851px)" srcset="{{rootPath}}images/393x851/hostbukett-lg.jpg" >
                 <source media="(min-width: 390px) and (min-height: 844px)" srcset="{{rootPath}}images/390x844/hostbukett-lg.jpg" >
                 <source media="(min-width: 360px) and (min-height: 800px)" srcset="{{rootPath}}images/360x800/hostbukett-lg.jpg" >
-                <img src="{{rootPath}}images/375x667/hostbukett-lg.jpg" class="slide wh-100" alt="Bild av en höstbukett">
+                <img src="{{rootPath}}images/375x667/hostbukett-lg.jpg" class="slide wh-100" alt="{{slideshowFallBouquetAlt}}">
             </picture>
 
             <!-- Flowergram starts here -->
             <div id="flowergram-container" class="container flex-column flex-start-container">
-                <h3>{{{flowergramTitle}}}</h3>
+                <h3>{{{flowergramHeaderText}}}</h3>
                 <h4 id="flowergram-btn" class="container centered-container">{{{flowergramButtonText}}}</h4>
                 <!-- The popup that appears when pressing "{{{flowergramButtonText}}}" -->
                 <div id="flowergram" class="container flex-column flex-start-container">
                     <h6>{{{flowergramQuestionText}}}</h6>
-                    <p>Besök oss i butiken eller ring oss på <a href="tel:{{companyPhoneLink}}">{{companyPhoneText}}</a>!</p>
+                    <p>{{flowergramVisitOrCall}} <a href="tel:{{companyPhoneLink}}">{{companyPhoneText}}</a>!</p>
                     <hr id="flowergram-separator">
-                    <p>Kontrollera här om vi levererar till ditt önskade postnummer:</p>
+                    <p>{{flowergramZipCheckText}}</p>
                     <div id="input-container" class="container">
-                        <input id="postal-code" type="text" placeholder="Ange postnummer">
+                        <input id="postal-code" type="text" placeholder="{{zipCodePlaceholder}}">
                         <button id="postal-code-btn"></button>
                     </div>
                     <p id="input-response"></p>
@@ -129,103 +129,103 @@
 
     <!-- Products starts here -->
     <section id="products-section" class="container flex-column centered-container">
-        <h2 id="produtct-header">Produkter</h2>
+        <h2 id="produtct-header">{{productsHeaderText}}</h2>
         <div id="product-container" class="container">
             <div id="product-brollopsbukett" class="product">
-                <img loading="lazy" src="{{rootPath}}images/brollopsbukett.jpg" alt="Bröllopsbukett">
-                <p class="deal-of-the-day">Dagens Klipp</p>
+                <img loading="lazy" src="{{rootPath}}images/brollopsbukett.jpg" alt="{{altWeddingBouquet}}">
+                <p class="deal-of-the-day">{{dealOfTheDayText}}</p>
                 <div class="product-footer centered-container">
-                    <h4>Bröllopsbukett</h4>
+                    <h4>{{nameWeddingBouquet}}</h4>
                     <div class="price-container container centered-container">
                         <h5 class="price">{{priceWeddingBouquet}} kr</h5>
                     </div>
                 </div>
             </div>  
             <div id="product-rosor-10-pack" class="product">
-                <img loading="lazy" src="{{rootPath}}images/rosor-10-pack.jpg" alt="Rosor 10-pack">
-                <p class="deal-of-the-day">Dagens Klipp</p>
+                <img loading="lazy" src="{{rootPath}}images/rosor-10-pack.jpg" alt="{{altRoses10Pack}}">
+                <p class="deal-of-the-day">{{dealOfTheDayText}}</p>
                 <div class="product-footer centered-container">
-                    <h4>Rosor 10-pack</h4>
+                    <h4>{{nameRoses10Pack}}</h4>
                     <div class="price-container container centered-container">
                         <h5 class="price">{{priceRoses10Pack}} kr</h5>
                     </div>
                 </div>
             </div>
             <div id="product-tulpaner-10-pack" class="product">
-                <img loading="lazy" src="{{rootPath}}images/tulpaner-10-pack.jpg" alt="Tulpaner 10-pack">
-                <p class="deal-of-the-day">Dagens Klipp</p>
+                <img loading="lazy" src="{{rootPath}}images/tulpaner-10-pack.jpg" alt="{{altTulips10Pack}}">
+                <p class="deal-of-the-day">{{dealOfTheDayText}}</p>
                 <div class="product-footer centered-container">
-                    <h4>Tulpaner 10-pack</h4>
+                    <h4>{{nameTulips10Pack}}</h4>
                     <div class="price-container container centered-container">
                         <h5 class="price">{{priceTulips10Pack}} kr</h5>
                     </div>
                 </div>
             </div>
             <div id="product-sommarbukett" class="product">
-                <img loading="lazy" src="{{rootPath}}images/sommarbukett.jpg" alt="Sommarbukett">
-                <p class="deal-of-the-day">Dagens Klipp</p>
+                <img loading="lazy" src="{{rootPath}}images/sommarbukett.jpg" alt="{{altSummerBouquet}}">
+                <p class="deal-of-the-day">{{dealOfTheDayText}}</p>
                 <div class="product-footer centered-container">
-                    <h4>Sommarbukett</h4>
+                    <h4>{{nameSummerBouquet}}</h4>
                     <div class="price-container container centered-container">
                         <h5 class="price">{{priceSummerBouquet}} kr</h5>
                     </div>
                 </div>
             </div>
             <div id="product-hostbukett" class="product">
-                <img loading="lazy" src="{{rootPath}}images/hostbukett.jpg" alt="Höstbukett">
-                <p class="deal-of-the-day">Dagens Klipp</p>
+                <img loading="lazy" src="{{rootPath}}images/hostbukett.jpg" alt="{{altFallBouquet}}">
+                <p class="deal-of-the-day">{{dealOfTheDayText}}</p>
                 <div class="product-footer centered-container">
-                    <h4>Höstbukett</h4>
+                    <h4>{{nameFallBouquet}}</h4>
                     <div class="price-container container centered-container">
                         <h5 class="price">{{priceFallBouquet}} kr</h5>
                     </div>
                 </div>
             </div>
             <div id="product-begravningskrans" class="product">
-                <img loading="lazy" src="{{rootPath}}images/begravningskrans.jpg" alt="Begravningskrans">
-                <p class="deal-of-the-day">Dagens Klipp</p>
+                <img loading="lazy" src="{{rootPath}}images/begravningskrans.jpg" alt="{{altFuneralWreath}}">
+                <p class="deal-of-the-day">{{dealOfTheDayText}}</p>
                 <div class="product-footer centered-container">
-                    <h4>Begravningskrans</h4>
+                    <h4>{{nameFuneralWreath}}</h4>
                     <div class="price-container container centered-container">
                         <h5 class="price">{{priceFuneralWreath}} kr</h5>
                     </div>
                 </div>
             </div>
             <div id="product-liljor" class="product">
-                <img loading="lazy" src="{{rootPath}}images/liljor.jpg" alt="Liljor">
-                <p class="deal-of-the-day">Dagens Klipp</p>
+                <img loading="lazy" src="{{rootPath}}images/liljor.jpg" alt="{{altLilies}}">
+                <p class="deal-of-the-day">{{dealOfTheDayText}}</p>
                 <div class="product-footer centered-container">
-                    <h4>Liljor</h4>
+                    <h4>{{nameLilies}}</h4>
                     <div class="price-container container centered-container">
                         <h5 class="price">{{priceLilies}} kr/st</h5>
                     </div>
                 </div>
             </div>
             <div id="product-hortensia" class="product">
-                <img loading="lazy" src="{{rootPath}}images/hortensia.jpg" alt="Hortensia">
-                <p class="deal-of-the-day">Dagens Klipp</p>
+                <img loading="lazy" src="{{rootPath}}images/hortensia.jpg" alt="{{altHydrangea}}">
+                <p class="deal-of-the-day">{{dealOfTheDayText}}</p>
                 <div class="product-footer centered-container">
-                    <h4>Hortensia</h4>
+                    <h4>{{nameHydrangea}}</h4>
                     <div class="price-container container centered-container">
                         <h5 class="price">{{priceHydrangea}} kr</h5>
                     </div>
                 </div>
             </div>
             <div id="product-aloe-vera" class="product">
-                <img loading="lazy" src="{{rootPath}}images/aloe-vera.jpg" alt="Aloe vera">
-                <p class="deal-of-the-day">Dagens Klipp</p>
+                <img loading="lazy" src="{{rootPath}}images/aloe-vera.jpg" alt="{{altAloeVera}}">
+                <p class="deal-of-the-day">{{dealOfTheDayText}}</p>
                 <div class="product-footer centered-container">
-                    <h4>Aloe vera</h4>
+                    <h4>{{nameAloeVera}}</h4>
                     <div class="price-container container centered-container">
                         <h5 class="price">{{priceAloeVera}} kr</h5>
                     </div>
                 </div>
             </div>
             <div id="product-kaktus-i-kruka" class="product">
-                <img loading="lazy" src="{{rootPath}}images/kaktus.jpg" alt="Kaktus i kruka">
-                <p class="deal-of-the-day">Dagens Klipp</p>
+                <img loading="lazy" src="{{rootPath}}images/kaktus.jpg" alt="{{altCactusInPot}}">
+                <p class="deal-of-the-day">{{dealOfTheDayText}}</p>
                 <div class="product-footer centered-container">
-                    <h4>Kaktus i kruka</h4>
+                    <h4>{{nameCactusInPot}}</h4>
                     <div class="price-container container centered-container">
                         <h5 class="price">{{priceCactusInPot}} kr</h5>
                     </div>
@@ -237,38 +237,38 @@
 
     <!-- Interactive map starts here -->
     <section id="interactive-map-section" class="container flex-column centered-container">
-        <h2>Karta</h2>
+        <h2>{{mapHeaderText}}</h2>
         <!-- OSM interactive map -->
         <div id="map" class="script"></div>
         <noscript>
-            <img loading="lazy" src="{{rootPath}}images/noscript-map.png" alt="noscript-map" id="noscript-map">
+            <img loading="lazy" src="{{rootPath}}images/noscript-map.png" alt="{{noscriptMapAll}}" id="noscript-map">
         </noscript>
     </section>
     <!-- Interactive map ends here -->
 
     <!-- Employee information starts here -->
     <section id="employee-section" class="container flex-column centered-container">
-        <h2>Personal</h2>
+        <h2>{{employeeInformationHeaderText}}</h2>
         <div id="employees" class="container centered-container">
             <div id="fredrik-ortqvist-container" class="employee-container container centered-container">
-                <img loading="lazy" src="{{rootPath}}images/employees/fredrik-ortqvist.jpg" alt="Bild på Fredrik Örtqvist" class="employee-img">
+                <img loading="lazy" src="{{rootPath}}images/employees/fredrik-ortqvist.jpg" alt="{{fredrikOrtqvistAlt}}" class="employee-img">
                 <div class="employee-information container centered-container">
                     <p class="fs-8">Fredrik Örtqvist</p>
-                    <p class="fs-8">Ägare<p>
+                    <p class="fs-8">{{fredrikOrtqvistTitle}}<p>
                 </div>
             </div>
             <div id="orjan-johansson-container" class="employee-container container centered-container">
-                <img loading="lazy" src="{{rootPath}}images/employees/orjan-johansson.jpg" alt="Bild på Örjan Johansson" class="employee-img">
+                <img loading="lazy" src="{{rootPath}}images/employees/orjan-johansson.jpg" alt="{{orjanJohanssonAlt}}" class="employee-img">
                 <div class="employee-information container centered-container">
                     <p class="fs-8">Örjan Johansson</p>
-                    <p class="fs-8">Florist</p>
+                    <p class="fs-8">{{orjanJohanssonTitle}}</p>
                 </div>
             </div>
             <div id="anna-pettersson-container" class="employee-container container centered-container">
-                <img loading="lazy" src="{{rootPath}}images/employees/anna-pettersson.jpg" alt="Bild på Anna Pettersson" class="employee-img">
+                <img loading="lazy" src="{{rootPath}}images/employees/anna-pettersson.jpg" alt="{{annaPetterssonAlt}}" class="employee-img">
                 <div class="employee-information container centered-container">
                     <p class="fs-8">Anna Pettersson</p>
-                    <p class="fs-8">Hortonom</p>
+                    <p class="fs-8">{{annaPetterssonTitle}}</p>
                 </div>
             </div>
         </div>
@@ -280,10 +280,10 @@
         <!-- Top part of the footer starts here -->
         <div id="footer-top">
             <div id="footer-container-1" class="footer-container container">
-                <h6>Kontakta oss</h6>
+                <h6>{{contactUsHeaderText}}</h6>
                 <div id="footer-info">
                     <div id="address">
-                        <a href="https://maps.app.goo.gl/pne1zVvPmaNENVQz5" target="blank">{{companyAddress}}</a>
+                        <a href="{{companyAddressLink}}" target="blank">{{companyAddress}}</a>
                     </div>
                     <div id="number">
                         <a href="tel:{{companyPhoneLink}}">{{companyPhoneText}}</a>
@@ -295,51 +295,51 @@
             </div>
             <div id="footer-container-2" class="footer-container container">
                 <!-- Opening hours -->
-                <h6>Öppettider</h6>
+                <h6>{{openingHoursHeaderText}}</h6>
                 <div id="opening-hours-container" class="container centered-container">
                     <div id="opening-hours-days" class="opening-hours text-left footer-col">
-                        <p>Måndag</p>
-                        <p>Tisdag</p>
-                        <p>Onsdag</p>
-                        <p>Torsdag</p>
-                        <p>Fredag</p>
-                        <p>Lördag</p>
-                        <p>Söndag</p>
+                        <p>{{monday}}</p>
+                        <p>{{tuesday}}</p>
+                        <p>{{wednesday}}</p>
+                        <p>{{thursday}}</p>
+                        <p>{{friday}}</p>
+                        <p>{{saturday}}</p>
+                        <p>{{sunday}}</p>
                     </div>
                     <div id="opening-hours-times" class="opening-hours text-right footer-col">
-                        <p>10-18</p>
-                        <p>10-18</p>
-                        <p>10-17</p>
-                        <p>10-17</p>
-                        <p>10-18</p>
-                        <p>12-16</p>
-                        <p>12-15</p>
+                        <p>{{openingHoursMonday}}</p>
+                        <p>{{openingHoursTuesday}}</p>
+                        <p>{{openingHoursWednesday}}</p>
+                        <p>{{openingHoursThursday}}</p>
+                        <p>{{openingHoursFriday}}</p>
+                        <p>{{openingHoursSaturday}}</p>
+                        <p>{{openingHoursSunday}}</p>
                     </div>
                 </div>
             </div>
             <div id="footer-container-3" class="footer-container container">
                 <!-- Closed days -->
-                <h6>Stängda dagar</h6>
+                <h6>{{closedDaysHeaderText}}</h6>
                 <div id="closed-days-container" class="container centered-container">
                     <div id="closed-days-dates" class="closed-days text-left footer-col">
-                        <p data-date="0001">1 jan</p>
-                        <p data-date="0006">6 jan</p>
-                        <p data-date="0401">1 maj</p>
-                        <p data-date="0506">6 jun</p>
-                        <p data-date="1124">24 dec</p>
-                        <p data-date="1125">25 dec</p>
-                        <p data-date="1126">26 dec</p>
-                        <p data-date="1131">31 dec</p>
+                        <p data-date="0001">{{closedDaysDateJan1}}</p>
+                        <p data-date="0006">{{closedDaysDateJan6}}</p>
+                        <p data-date="0401">{{closedDaysDateMay1}}</p>
+                        <p data-date="0506">{{closedDaysDateJun6}}</p>
+                        <p data-date="1124">{{closedDaysDateDec24}}</p>
+                        <p data-date="1125">{{closedDaysDateDec25}}</p>
+                        <p data-date="1126">{{closedDaysDateDec26}}</p>
+                        <p data-date="1131">{{closedDaysDateDec31}}</p>
                     </div>
                     <div id="closed-days-names" class="closed-days text-right footer-col">
-                        <p data-date="0001">Nyårsdagen</p>
-                        <p data-date="0006">Trettondedag jul</p>
-                        <p data-date="0401">Första maj</p>
-                        <p data-date="0506">Nationaldagen</p>
-                        <p data-date="1124">Julafton</p>
-                        <p data-date="1125">Juldagen</p>
-                        <p data-date="1126">Annandag jul</p>
-                        <p data-date="1131">Nyårsafton</p>
+                        <p data-date="0001">{{closedDaysNameJan1}}</p>
+                        <p data-date="0006">{{closedDaysNameJan6}}</p>
+                        <p data-date="0401">{{closedDaysNameMay1}}</p>
+                        <p data-date="0506">{{closedDaysNameJun6}}</p>
+                        <p data-date="1124">{{closedDaysNameDec24}}</p>
+                        <p data-date="1125">{{closedDaysNameDec25}}</p>
+                        <p data-date="1126">{{closedDaysNameDec26}}</p>
+                        <p data-date="1131">{{closedDaysNameDec31}}</p>
                     </div>
                 </div>
             </div>
@@ -351,18 +351,18 @@
             <!-- Social medias -->
             <div id="social-media-container" class="container">
                 <div id="facebook" class="social-media-icon">
-                    <a href="https://www.facebook.com/ntiuppsala">
-                        <img loading="lazy" src="{{rootPath}}images/facebook.svg" alt="Facebook ikon">
+                    <a href="{{facebookLink}}">
+                        <img loading="lazy" src="{{rootPath}}images/facebook.svg" alt="{{altFacebookIcon}}">
                     </a>
                 </div>
                 <div id="instagram" class="social-media-icon">
-                    <a href="https://www.instagram.com/ntiuppsala/">
-                        <img loading="lazy" src="{{rootPath}}images/instagram.svg" alt="Instagram ikon">
+                    <a href="{{instagramLink}}">
+                        <img loading="lazy" src="{{rootPath}}images/instagram.svg" alt="{{altInstagramIcon}}">
                     </a>
                 </div>
                 <div id="x" class="social-media-icon">
-                    <a href="https://x.com/ntiuppsala">
-                        <img loading="lazy" src="{{rootPath}}images/twitter-x.svg" alt="X ikon">
+                    <a href="{{xLink}}">
+                        <img loading="lazy" src="{{rootPath}}images/twitter-x.svg" alt="{{altXIcon}}">
                     </a>
                 </div>
             </div>

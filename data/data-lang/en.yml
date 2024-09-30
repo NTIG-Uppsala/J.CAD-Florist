@@ -1,19 +1,19 @@
 # Slideshow
-slideshowSummerBouquetAlt : "Bild av en sommarbukett"
-slideshowTulipBouquetAlt : "Bild av en tulpanbukett"
-slideshowFallBouquetAlt : "Bild av en höstbukett"
+slideshowSummerBouquetAlt : "Picture of a summer bouquet"
+slideshowTulipBouquetAlt : "Picture of a tulip bouquet"
+slideshowFallBouquetAlt : "Picture of a fall bouquet"
 
 # Flowergram
-flowergramHeaderText : "Över&shy;raska med ett blommo&shy;gram"
-flowergramButtonText : "Skicka blommo&shy;gram"
-flowergramQuestionText : "Vill du skicka ett blommo&shy;gram?"
-flowergramVisitOrCall : 'Besök oss i butiken eller ring oss på'
-flowergramZipCheckText : "Kontrollera här om vi levererar till ditt önskade postnummer:"
-zipCodePlaceholder : "Ange postnummer"
+flowergramHeaderText : "Sur&shy;prise some&shy;one with a flower&shy;gram"
+flowergramButtonText : "Send a flower&shy;gram"
+flowergramQuestionText : "Do you want to send a flower&shy;gram?"
+flowergramVisitOrCall : 'Visit us in the store or call us on'
+flowergramZipCheckText : "Double check if we deliver to your zip code:"
+zipCodePlaceholder : "Enter zip code"
 
 # Products section
-productsHeaderText : "Produkter"
-dealOfTheDayText : "Dagens klipp"
+productsHeaderText : "Products"
+dealOfTheDayText : "Deal of the day"
 nameWeddingBouquet : "Bröllopsbukett"
 altWeddingBouquet : "Bröllopsbukett"
 nameRoses10Pack : "Rosor 10-pack"
