@@ -1,373 +1,297 @@
 <!DOCTYPE html>
-<html lang="sv">
-<head>
-    <!-- Noindex -->
-    <meta name="robots" content="noindex, nofollow" />
-    <meta name="googlebot" content="noindex, nofollow" />
+<html lang="{{lang.language}}">
+    <head>
+        <!-- Noindex -->
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="googlebot" content="noindex, nofollow" />
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{rootPath}}images/florista-favicon-color.ico">
-    <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="{{rootPath}}css/styles.css">
-    <link rel="stylesheet" type="text/css" href="{{rootPath}}css/product.css">
-    <link rel="stylesheet" type="text/css" href="{{rootPath}}css/employee-information.css">
-    <link rel="stylesheet" type="text/css" href="{{rootPath}}css/interactive-map.css">
-    <!-- OSM -->
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{rootPath}}css/leaflet-gesture-handling.min.css">
-    <script src="{{rootPath}}js/leaflet-gesture-handling.min.js"></script>
-    <!-- Scripts -->
-    <script defer src="{{rootPath}}js/flowergram.js"></script>
-    <script defer src="{{rootPath}}js/open-hours.js"></script>
-    <script defer src="{{rootPath}}js/embed-osm-map.js"></script>
-    <script defer src="{{rootPath}}js/show-script.js"></script>
-    <script defer src="{{rootPath}}js/deal-of-the-day.js"></script>
-    <script defer src="{{rootPath}}js/sort-closed-days.js"></script>
-    <script defer src="{{rootPath}}js/dynamic-information.js"></script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="{{data.rootPath}}images/florista-favicon-color.ico" />
+        <!-- Stylesheets -->
+        <link rel="stylesheet" type="text/css" href="{{data.rootPath}}css/styles.css" />
+        <link rel="stylesheet" type="text/css" href="{{data.rootPath}}css/product.css" />
+        <link rel="stylesheet" type="text/css" href="{{data.rootPath}}css/employee-information.css" />
+        <link rel="stylesheet" type="text/css" href="{{data.rootPath}}css/interactive-map.css" />
+        <!-- OSM -->
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+        <link rel="stylesheet" type="text/css" href="{{data.rootPath}}css/leaflet-gesture-handling.min.css" />
+        <script src="{{data.rootPath}}js/leaflet-gesture-handling.min.js"></script>
+        <!-- Scripts -->
+        <script defer="true" src="{{data.rootPath}}js/flowergram.js"></script>
+        <script defer="true" src="{{data.rootPath}}js/open-hours.js"></script>
+        <script defer="true" src="{{data.rootPath}}js/embed-osm-map.js"></script>
+        <script defer="true" src="{{data.rootPath}}js/show-script.js"></script>
+        <script defer="true" src="{{data.rootPath}}js/deal-of-the-day.js"></script>
+        <script defer="true" src="{{data.rootPath}}js/sort-closed-days.js"></script>
+        <script defer="true" src="{{data.rootPath}}js/dynamic-information.js"></script>
 
-    <!-- Needed for tests. Should always be loaded last -->
-    <script defer src="{{rootPath}}js/testing-wait-for-js.js"></script>
-    <title>{{companyName}}</title>
-</head>
-<body>
-    <!-- Header starts here -->
-    <header class="container centered-container">
-        <img loading="lazy" id="logo" src="{{rootPath}}images/logga-florist-1.png" alt="Hemsidans logga">
-        <div id="header-container" class="container flex-column centered-container wh-100">
-            <h1 id="title">{{companyName}}</h1>
-        </div>
-    </header>
-    <!-- Header ends here -->
-    <div id="banners-container">
-        <!-- Open or closed starts here -->
-        <div id="open-or-closed-container" class="container page-top-banner centered-container">
-            <p id="open-or-closed"></p>
-        </div>
+        <!-- Needed for tests. Should always be loaded last -->
+        <script defer="true" src="{{data.rootPath}}js/testing-wait-for-js.js"></script>
+        <title>{{data.companyName}}</title>
+    </head>
+    <body>
+        <!-- Header starts here -->
+        <header class="container centered-container">
+            <img id="logo" src="{{data.rootPath}}images/logga-florist-1.png" alt="{{lang.logoAlt}}" />
+            <div id="header-container" class="container flex-column centered-container wh-100">
+                <h1 id="title">{{data.companyName}}</h1>
+            </div>
+        </header>
+        <!-- Header ends here -->
+        <div id="banners-container">
+            <!-- Open or closed starts here -->
+            <div id="open-or-closed-container" class="container page-top-banner centered-container">
+                <p id="open-or-closed"></p>
+            </div>
 
-        <!-- Dynamic information starts here -->
-        <div id="dynamic-information-container" class="container page-top-banner centered-container">
-            <p id="dynamic-information"></p>
-        </div>
-    </div>
-    
-    <!-- Open or closed ends here -->
-    <!-- Slideshow starts here -->
-    <div id="slideshow-and-flowergram-container" class="container centered-container">
-        <div id="slideshow-container" class="container centered-container wh-100">
-            <picture>
-                <source media="(min-width: 2560px) and (min-height: 1440px)" srcset="{{rootPath}}images/2560x1440/sommarbukett-lg.jpg" >
-                <source media="(min-width: 1920px) and (min-height: 1080px)" srcset="{{rootPath}}images/1920x1080/sommarbukett-lg.jpg" >
-                <source media="(min-width: 1600px) and (min-height: 900px)" srcset="{{rootPath}}images/1600x900/sommarbukett-lg.jpg" >
-                <source media="(min-width: 1536px) and (min-height: 864px)" srcset="{{rootPath}}images/1536x864/sommarbukett-lg.jpg" >
-                <source media="(min-width: 1440px) and (min-height: 900px)" srcset="{{rootPath}}images/1440x900/sommarbukett-lg.jpg" >
-                <source media="(min-width: 1366px) and (min-height: 768px)" srcset="{{rootPath}}images/1366x768/sommarbukett-lg.jpg" >
-                <source media="(min-width: 1280px) and (min-height: 720px)" srcset="{{rootPath}}images/1280x720/sommarbukett-lg.jpg" >
-                <source media="(min-width: 412px) and (min-height: 915px)" srcset="{{rootPath}}images/412x915/sommarbukett-lg.jpg" >
-                <source media="(min-width: 393px) and (min-height: 873px)" srcset="{{rootPath}}images/393x873/sommarbukett-lg.jpg" >
-                <source media="(min-width: 393px) and (min-height: 851px)" srcset="{{rootPath}}images/393x851/sommarbukett-lg.jpg" >
-                <source media="(min-width: 390px) and (min-height: 844px)" srcset="{{rootPath}}images/390x844/sommarbukett-lg.jpg" >
-                <source media="(min-width: 360px) and (min-height: 800px)" srcset="{{rootPath}}images/360x800/sommarbukett-lg.jpg" >
-                <img src="{{rootPath}}images/375x667/sommarbukett-lg.jpg" class="slide wh-100" alt="{{slideshowSummerBouquetAlt}}">
-            </picture>
-
-            <picture>
-                <source media="(min-width: 2560px) and (min-height: 1440px)" srcset="{{rootPath}}images/2560x1440/tulpanbukett-lg.jpg" >
-                <source media="(min-width: 1920px) and (min-height: 1080px)" srcset="{{rootPath}}images/1920x1080/tulpanbukett-lg.jpg" >
-                <source media="(min-width: 1600px) and (min-height: 900px)" srcset="{{rootPath}}images/1600x900/tulpanbukett-lg.jpg" >
-                <source media="(min-width: 1536px) and (min-height: 864px)" srcset="{{rootPath}}images/1536x864/tulpanbukett-lg.jpg" >
-                <source media="(min-width: 1440px) and (min-height: 900px)" srcset="{{rootPath}}images/1440x900/tulpanbukett-lg.jpg" >
-                <source media="(min-width: 1366px) and (min-height: 768px)" srcset="{{rootPath}}images/1366x768/tulpanbukett-lg.jpg" >
-                <source media="(min-width: 1280px) and (min-height: 720px)" srcset="{{rootPath}}images/1280x720/tulpanbukett-lg.jpg" >
-                <source media="(min-width: 412px) and (min-height: 915px)" srcset="{{rootPath}}images/412x915/tulpanbukett-lg.jpg" >
-                <source media="(min-width: 393px) and (min-height: 873px)" srcset="{{rootPath}}images/393x873/tulpanbukett-lg.jpg" >
-                <source media="(min-width: 393px) and (min-height: 851px)" srcset="{{rootPath}}images/393x851/tulpanbukett-lg.jpg" >
-                <source media="(min-width: 390px) and (min-height: 844px)" srcset="{{rootPath}}images/390x844/tulpanbukett-lg.jpg" >
-                <source media="(min-width: 360px) and (min-height: 800px)" srcset="{{rootPath}}images/360x800/tulpanbukett-lg.jpg" >
-                <img src="{{rootPath}}images/375x667/tulpanbukett-lg.jpg" class="slide wh-100" alt="{{slideshowTulipBouquetAlt}}">
-            </picture>
-
-            <picture>
-                <source media="(min-width: 2560px) and (min-height: 1440px)" srcset="{{rootPath}}images/2560x1440/hostbukett-lg.jpg" >
-                <source media="(min-width: 1920px) and (min-height: 1080px)" srcset="{{rootPath}}images/1920x1080/hostbukett-lg.jpg" >
-                <source media="(min-width: 1600px) and (min-height: 900px)" srcset="{{rootPath}}images/1600x900/hostbukett-lg.jpg" >
-                <source media="(min-width: 1536px) and (min-height: 864px)" srcset="{{rootPath}}images/1536x864/hostbukett-lg.jpg" >
-                <source media="(min-width: 1440px) and (min-height: 900px)" srcset="{{rootPath}}images/1440x900/hostbukett-lg.jpg" >
-                <source media="(min-width: 1366px) and (min-height: 768px)" srcset="{{rootPath}}images/1366x768/hostbukett-lg.jpg" >
-                <source media="(min-width: 1280px) and (min-height: 720px)" srcset="{{rootPath}}images/1280x720/hostbukett-lg.jpg" >
-                <source media="(min-width: 412px) and (min-height: 915px)" srcset="{{rootPath}}images/412x915/hostbukett-lg.jpg" >
-                <source media="(min-width: 393px) and (min-height: 873px)" srcset="{{rootPath}}images/393x873/hostbukett-lg.jpg" >
-                <source media="(min-width: 393px) and (min-height: 851px)" srcset="{{rootPath}}images/393x851/hostbukett-lg.jpg" >
-                <source media="(min-width: 390px) and (min-height: 844px)" srcset="{{rootPath}}images/390x844/hostbukett-lg.jpg" >
-                <source media="(min-width: 360px) and (min-height: 800px)" srcset="{{rootPath}}images/360x800/hostbukett-lg.jpg" >
-                <img src="{{rootPath}}images/375x667/hostbukett-lg.jpg" class="slide wh-100" alt="{{slideshowFallBouquetAlt}}">
-            </picture>
-
-            <!-- Flowergram starts here -->
-            <div id="flowergram-container" class="container flex-column flex-start-container">
-                <h3>{{{flowergramHeaderText}}}</h3>
-                <h4 id="flowergram-btn" class="container centered-container">{{{flowergramButtonText}}}</h4>
-                <!-- The popup that appears when pressing "{{{flowergramButtonText}}}" -->
-                <div id="flowergram" class="container flex-column flex-start-container">
-                    <h6>{{{flowergramQuestionText}}}</h6>
-                    <p>{{flowergramVisitOrCall}} <a href="tel:{{companyPhoneLink}}">{{companyPhoneText}}</a>!</p>
-                    <hr id="flowergram-separator">
-                    <p>{{flowergramZipCheckText}}</p>
-                    <div id="input-container" class="container">
-                        <input id="postal-code" type="text" placeholder="{{zipCodePlaceholder}}">
-                        <button id="postal-code-btn"></button>
-                    </div>
-                    <p id="input-response"></p>
-                </div>
-            </div>
-            <!-- Flowergram ends here -->
-        </div>
-    </div>
-    <!-- Slideshow ends here -->
-
-    <!-- Products starts here -->
-    <section id="products-section" class="container flex-column centered-container">
-        <h2 id="produtct-header">{{productsHeaderText}}</h2>
-        <div id="product-container" class="container">
-            <div id="product-brollopsbukett" class="product">
-                <img loading="lazy" src="{{rootPath}}images/brollopsbukett.jpg" alt="{{altWeddingBouquet}}">
-                <p class="deal-of-the-day">{{dealOfTheDayText}}</p>
-                <div class="product-footer centered-container">
-                    <h4>{{nameWeddingBouquet}}</h4>
-                    <div class="price-container container centered-container">
-                        <h5 class="price">{{priceWeddingBouquet}} kr</h5>
-                    </div>
-                </div>
-            </div>  
-            <div id="product-rosor-10-pack" class="product">
-                <img loading="lazy" src="{{rootPath}}images/rosor-10-pack.jpg" alt="{{altRoses10Pack}}">
-                <p class="deal-of-the-day">{{dealOfTheDayText}}</p>
-                <div class="product-footer centered-container">
-                    <h4>{{nameRoses10Pack}}</h4>
-                    <div class="price-container container centered-container">
-                        <h5 class="price">{{priceRoses10Pack}} kr</h5>
-                    </div>
-                </div>
-            </div>
-            <div id="product-tulpaner-10-pack" class="product">
-                <img loading="lazy" src="{{rootPath}}images/tulpaner-10-pack.jpg" alt="{{altTulips10Pack}}">
-                <p class="deal-of-the-day">{{dealOfTheDayText}}</p>
-                <div class="product-footer centered-container">
-                    <h4>{{nameTulips10Pack}}</h4>
-                    <div class="price-container container centered-container">
-                        <h5 class="price">{{priceTulips10Pack}} kr</h5>
-                    </div>
-                </div>
-            </div>
-            <div id="product-sommarbukett" class="product">
-                <img loading="lazy" src="{{rootPath}}images/sommarbukett.jpg" alt="{{altSummerBouquet}}">
-                <p class="deal-of-the-day">{{dealOfTheDayText}}</p>
-                <div class="product-footer centered-container">
-                    <h4>{{nameSummerBouquet}}</h4>
-                    <div class="price-container container centered-container">
-                        <h5 class="price">{{priceSummerBouquet}} kr</h5>
-                    </div>
-                </div>
-            </div>
-            <div id="product-hostbukett" class="product">
-                <img loading="lazy" src="{{rootPath}}images/hostbukett.jpg" alt="{{altFallBouquet}}">
-                <p class="deal-of-the-day">{{dealOfTheDayText}}</p>
-                <div class="product-footer centered-container">
-                    <h4>{{nameFallBouquet}}</h4>
-                    <div class="price-container container centered-container">
-                        <h5 class="price">{{priceFallBouquet}} kr</h5>
-                    </div>
-                </div>
-            </div>
-            <div id="product-begravningskrans" class="product">
-                <img loading="lazy" src="{{rootPath}}images/begravningskrans.jpg" alt="{{altFuneralWreath}}">
-                <p class="deal-of-the-day">{{dealOfTheDayText}}</p>
-                <div class="product-footer centered-container">
-                    <h4>{{nameFuneralWreath}}</h4>
-                    <div class="price-container container centered-container">
-                        <h5 class="price">{{priceFuneralWreath}} kr</h5>
-                    </div>
-                </div>
-            </div>
-            <div id="product-liljor" class="product">
-                <img loading="lazy" src="{{rootPath}}images/liljor.jpg" alt="{{altLilies}}">
-                <p class="deal-of-the-day">{{dealOfTheDayText}}</p>
-                <div class="product-footer centered-container">
-                    <h4>{{nameLilies}}</h4>
-                    <div class="price-container container centered-container">
-                        <h5 class="price">{{priceLilies}} kr/st</h5>
-                    </div>
-                </div>
-            </div>
-            <div id="product-hortensia" class="product">
-                <img loading="lazy" src="{{rootPath}}images/hortensia.jpg" alt="{{altHydrangea}}">
-                <p class="deal-of-the-day">{{dealOfTheDayText}}</p>
-                <div class="product-footer centered-container">
-                    <h4>{{nameHydrangea}}</h4>
-                    <div class="price-container container centered-container">
-                        <h5 class="price">{{priceHydrangea}} kr</h5>
-                    </div>
-                </div>
-            </div>
-            <div id="product-aloe-vera" class="product">
-                <img loading="lazy" src="{{rootPath}}images/aloe-vera.jpg" alt="{{altAloeVera}}">
-                <p class="deal-of-the-day">{{dealOfTheDayText}}</p>
-                <div class="product-footer centered-container">
-                    <h4>{{nameAloeVera}}</h4>
-                    <div class="price-container container centered-container">
-                        <h5 class="price">{{priceAloeVera}} kr</h5>
-                    </div>
-                </div>
-            </div>
-            <div id="product-kaktus-i-kruka" class="product">
-                <img loading="lazy" src="{{rootPath}}images/kaktus.jpg" alt="{{altCactusInPot}}">
-                <p class="deal-of-the-day">{{dealOfTheDayText}}</p>
-                <div class="product-footer centered-container">
-                    <h4>{{nameCactusInPot}}</h4>
-                    <div class="price-container container centered-container">
-                        <h5 class="price">{{priceCactusInPot}} kr</h5>
-                    </div>
-                </div>
+            <!-- Dynamic information starts here -->
+            <div id="dynamic-information-container" class="container page-top-banner centered-container">
+                <p id="dynamic-information"></p>
             </div>
         </div>
-    </section>
-    <!-- Products ends here -->
 
-    <!-- Interactive map starts here -->
-    <section id="interactive-map-section" class="container flex-column centered-container">
-        <h2>{{mapHeaderText}}</h2>
-        <!-- OSM interactive map -->
-        <div id="map" class="script"></div>
-        <noscript>
-            <img loading="lazy" src="{{rootPath}}images/noscript-map.png" alt="{{noscriptMapAll}}" id="noscript-map">
-        </noscript>
-    </section>
-    <!-- Interactive map ends here -->
+        <!-- Open or closed ends here -->
+        <!-- Slideshow starts here -->
+        <div id="slideshow-and-flowergram-container" class="container centered-container">
+            <div id="slideshow-container" class="container centered-container wh-100">
 
-    <!-- Employee information starts here -->
-    <section id="employee-section" class="container flex-column centered-container">
-        <h2>{{employeeInformationHeaderText}}</h2>
-        <div id="employees" class="container centered-container">
-            <div id="fredrik-ortqvist-container" class="employee-container container centered-container">
-                <img loading="lazy" src="{{rootPath}}images/employees/fredrik-ortqvist.jpg" alt="{{fredrikOrtqvistAlt}}" class="employee-img">
-                <div class="employee-information container centered-container">
-                    <p class="fs-8">Fredrik Örtqvist</p>
-                    <p class="fs-8">{{fredrikOrtqvistTitle}}<p>
+                <picture class="slide">
+                    <source media="(max-width: 375px) and (max-height: 667px) and (orientation: portrait)" srcset="{{data.rootPath}}images/375x667/sommarbukett-lg.jpg" />
+                    <source media="(max-width: 360px) and (max-height: 800px) and (orientation: portrait)" srcset="{{data.rootPath}}images/360x800/sommarbukett-lg.jpg" />
+                    <source media="(max-width: 390px) and (max-height: 844px) and (orientation: portrait)" srcset="{{data.rootPath}}images/390x844/sommarbukett-lg.jpg" />
+                    <source media="(max-width: 393px) and (max-height: 851px) and (orientation: portrait)" srcset="{{data.rootPath}}images/393x851/sommarbukett-lg.jpg" />
+                    <source media="(max-width: 393px) and (max-height: 873px) and (orientation: portrait)" srcset="{{data.rootPath}}images/393x873/sommarbukett-lg.jpg" />
+                    <source media="(max-width: 412px) and (max-height: 915px) and (orientation: portrait)" srcset="{{data.rootPath}}images/412x915/sommarbukett-lg.jpg" />
+                    <source media="(max-width: 1080px) and (max-height: 1920px) and (orientation: portrait)" srcset="{{data.rootPath}}images/1080x768/sommarbukett-lg.jpg" />
+                    <source media="(max-width: 1440px) and (max-height: 2560px) and (orientation: portrait)" srcset="{{data.rootPath}}images/1440x1024/sommarbukett-lg.jpg" />
+                    <source media="(max-width: 1280px) and (max-height: 720px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1280x720/sommarbukett-lg.jpg" />
+                    <source media="(max-width: 1366px) and (max-height: 768px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1366x768/sommarbukett-lg.jpg" />
+                    <source media="(max-width: 1440px) and (max-height: 900px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1440x900/sommarbukett-lg.jpg" />
+                    <source media="(max-width: 1536px) and (max-height: 864px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1536x864/sommarbukett-lg.jpg" />
+                    <source media="(max-width: 1600px) and (max-height: 900px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1600x900/sommarbukett-lg.jpg" />
+                    <source media="(max-width: 1920px) and (max-height: 1080px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1920x1080/sommarbukett-lg.jpg" />
+                    <img src="{{data.rootPath}}images/2560x1440/sommarbukett-lg.jpg" class="wh-100" alt="{{lang.slideshowSummerBouquetAlt}}" />
+                </picture>
+
+                <picture class="slide">
+                    <source media="(max-width: 375px) and (max-height: 667px) and (orientation: portrait)" srcset="{{data.rootPath}}images/375x667/tulpanbukett-lg.jpg" />
+                    <source media="(max-width: 360px) and (max-height: 800px) and (orientation: portrait)" srcset="{{data.rootPath}}images/360x800/tulpanbukett-lg.jpg" />
+                    <source media="(max-width: 390px) and (max-height: 844px) and (orientation: portrait)" srcset="{{data.rootPath}}images/390x844/tulpanbukett-lg.jpg" />
+                    <source media="(max-width: 393px) and (max-height: 851px) and (orientation: portrait)" srcset="{{data.rootPath}}images/393x851/tulpanbukett-lg.jpg" />
+                    <source media="(max-width: 393px) and (max-height: 873px) and (orientation: portrait)" srcset="{{data.rootPath}}images/393x873/tulpanbukett-lg.jpg" />
+                    <source media="(max-width: 412px) and (max-height: 915px) and (orientation: portrait)" srcset="{{data.rootPath}}images/412x915/tulpanbukett-lg.jpg" />
+                    <source media="(max-width: 1080px) and (max-height: 1920px) and (orientation: portrait)" srcset="{{data.rootPath}}images/1080x768/tulpanbukett-lg.jpg" />
+                    <source media="(max-width: 1440px) and (max-height: 2560px) and (orientation: portrait)" srcset="{{data.rootPath}}images/1440x1024/sommarbukett-lg.jpg" />
+                    <source media="(max-width: 1280px) and (max-height: 720px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1280x720/tulpanbukett-lg.jpg" />
+                    <source media="(max-width: 1366px) and (max-height: 768px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1366x768/tulpanbukett-lg.jpg" />
+                    <source media="(max-width: 1440px) and (max-height: 900px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1440x900/tulpanbukett-lg.jpg" />
+                    <source media="(max-width: 1536px) and (max-height: 864px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1536x864/tulpanbukett-lg.jpg" />
+                    <source media="(max-width: 1600px) and (max-height: 900px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1600x900/tulpanbukett-lg.jpg" />
+                    <source media="(max-width: 1920px) and (max-height: 1080px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1920x1080/tulpanbukett-lg.jpg" />
+                    <img src="{{data.rootPath}}images/2560x1440/tulpanbukett-lg.jpg" class="wh-100" alt="{{lang.slideshowTulipBouquetAlt}}" />
+                </picture>
+
+                <picture class="slide">
+                    <source media="(max-width: 375px) and (max-height: 667px) and (orientation: portrait)" srcset="{{data.rootPath}}images/375x667/hostbukett-lg.jpg" />
+                    <source media="(max-width: 360px) and (max-height: 800px) and (orientation: portrait)" srcset="{{data.rootPath}}images/360x800/hostbukett-lg.jpg" />
+                    <source media="(max-width: 390px) and (max-height: 844px) and (orientation: portrait)" srcset="{{data.rootPath}}images/390x844/hostbukett-lg.jpg" />
+                    <source media="(max-width: 393px) and (max-height: 851px) and (orientation: portrait)" srcset="{{data.rootPath}}images/393x851/hostbukett-lg.jpg" />
+                    <source media="(max-width: 393px) and (max-height: 873px) and (orientation: portrait)" srcset="{{data.rootPath}}images/393x873/hostbukett-lg.jpg" />
+                    <source media="(max-width: 412px) and (max-height: 915px) and (orientation: portrait)" srcset="{{data.rootPath}}images/412x915/hostbukett-lg.jpg" />
+                    <source media="(max-width: 1080px) and (max-height: 1920px) and (orientation: portrait)" srcset="{{data.rootPath}}images/1080x768/hostbukett-lg.jpg" />
+                    <source media="(max-width: 1440px) and (max-height: 2560px) and (orientation: portrait)" srcset="{{data.rootPath}}images/1440x1024/sommarbukett-lg.jpg" />
+                    <source media="(max-width: 1280px) and (max-height: 720px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1280x720/hostbukett-lg.jpg" />
+                    <source media="(max-width: 1366px) and (max-height: 768px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1366x768/hostbukett-lg.jpg" />
+                    <source media="(max-width: 1440px) and (max-height: 900px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1440x900/hostbukett-lg.jpg" />
+                    <source media="(max-width: 1536px) and (max-height: 864px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1536x864/hostbukett-lg.jpg" />
+                    <source media="(max-width: 1600px) and (max-height: 900px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1600x900/hostbukett-lg.jpg" />
+                    <source media="(max-width: 1920px) and (max-height: 1080px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1920x1080/hostbukett-lg.jpg" />
+                    <img src="{{data.rootPath}}images/2560x1440/hostbukett-lg.jpg" class="wh-100" alt="{{lang.slideshowFallBouquetAlt}}" />
+                </picture>
+
+                <!-- Flowergram starts here -->
+                <div id="flowergram-container" class="container flex-column flex-start-container">
+                    <h3>{{{lang.flowergramHeaderText}}}</h3>
+                    <h4 id="flowergram-btn" class="container centered-container">{{{lang.flowergramButtonText}}}</h4>
+                    <!-- The popup that appears when pressing "{{{flowergramButtonText}}}" -->
+                    <div id="flowergram" class="container flex-column flex-start-container">
+                        <h6>{{{lang.flowergramQuestionText}}}</h6>
+                        <p>{{lang.flowergramVisitOrCall}} <a href="tel:{{data.companyPhoneLink}}">{{data.companyPhoneText}}</a>!</p>
+                        <hr id="flowergram-separator" />
+                        <p>{{lang.flowergramZipCheckText}}</p>
+                        <div id="input-container" class="container">
+                            <input id="postal-code" type="text" placeholder="{{lang.zipCodePlaceholder}}" />
+                            <button id="postal-code-btn"></button>
+                        </div>
+                        <p id="input-response"></p>
+                    </div>
                 </div>
-            </div>
-            <div id="orjan-johansson-container" class="employee-container container centered-container">
-                <img loading="lazy" src="{{rootPath}}images/employees/orjan-johansson.jpg" alt="{{orjanJohanssonAlt}}" class="employee-img">
-                <div class="employee-information container centered-container">
-                    <p class="fs-8">Örjan Johansson</p>
-                    <p class="fs-8">{{orjanJohanssonTitle}}</p>
-                </div>
-            </div>
-            <div id="anna-pettersson-container" class="employee-container container centered-container">
-                <img loading="lazy" src="{{rootPath}}images/employees/anna-pettersson.jpg" alt="{{annaPetterssonAlt}}" class="employee-img">
-                <div class="employee-information container centered-container">
-                    <p class="fs-8">Anna Pettersson</p>
-                    <p class="fs-8">{{annaPetterssonTitle}}</p>
-                </div>
+                <!-- Flowergram ends here -->
             </div>
         </div>
-    </section>
-    <!-- Employee information ends here -->
+        <!-- Slideshow ends here -->
 
-    <!-- Footer -->
-    <footer class="container flex-column centered-container">
-        <!-- Top part of the footer starts here -->
-        <div id="footer-top">
-            <div id="footer-container-1" class="footer-container container">
-                <h6>{{contactUsHeaderText}}</h6>
-                <div id="footer-info">
-                    <div id="address">
-                        <a href="{{companyAddressLink}}" target="blank">{{companyAddress}}</a>
+        <!-- Products starts here -->
+        <section id="products-section" class="container flex-column centered-container">
+            <h2 id="produtct-header">{{lang.productsHeaderText}}</h2>
+            <div id="product-container" class="container">
+                {{#each data.products}}
+                    <div class="product" id="{{this.id}}">
+                        <picture>
+                            {{#each this.resolutions}}
+                                <source media="(max-width: {{this.maxWidth}}px)" srcset="{{@root.data.rootPath}}{{this.path}}" />
+                            {{/each}}
+                            <img src="{{@root.data.rootPath}}{{this.defaultPath}}" alt="{{translate this.alt}}" />
+                        </picture>
+                        <p class="deal-of-the-day">{{@root.lang.dealOfTheDayText}}</p>
+                        <div class="product-footer centered-container">
+                            <h4>{{translate this.name}}</h4>
+                            <div class="price-container container centered-container">
+                                <h5 class="price">{{this.price}} {{translate this.unit}}</h5>
+                            </div>
+                        </div>
                     </div>
-                    <div id="number">
-                        <a href="tel:{{companyPhoneLink}}">{{companyPhoneText}}</a>
-                    </div>
-                    <div id="email">
-                        <a href="mailto:{{companyEmail}}">{{companyEmail}}</a>
-                    </div>
-                </div>
+                {{/each}}
             </div>
-            <div id="footer-container-2" class="footer-container container">
-                <!-- Opening hours -->
-                <h6>{{openingHoursHeaderText}}</h6>
-                <div id="opening-hours-container" class="container centered-container">
-                    <div id="opening-hours-days" class="opening-hours text-left footer-col">
-                        <p>{{monday}}</p>
-                        <p>{{tuesday}}</p>
-                        <p>{{wednesday}}</p>
-                        <p>{{thursday}}</p>
-                        <p>{{friday}}</p>
-                        <p>{{saturday}}</p>
-                        <p>{{sunday}}</p>
-                    </div>
-                    <div id="opening-hours-times" class="opening-hours text-right footer-col">
-                        <p>{{openingHoursMonday}}</p>
-                        <p>{{openingHoursTuesday}}</p>
-                        <p>{{openingHoursWednesday}}</p>
-                        <p>{{openingHoursThursday}}</p>
-                        <p>{{openingHoursFriday}}</p>
-                        <p>{{openingHoursSaturday}}</p>
-                        <p>{{openingHoursSunday}}</p>
-                    </div>
-                </div>
-            </div>
-            <div id="footer-container-3" class="footer-container container">
-                <!-- Closed days -->
-                <h6>{{closedDaysHeaderText}}</h6>
-                <div id="closed-days-container" class="container centered-container">
-                    <div id="closed-days-dates" class="closed-days text-left footer-col">
-                        <p data-date="0001">{{closedDaysDateJan1}}</p>
-                        <p data-date="0006">{{closedDaysDateJan6}}</p>
-                        <p data-date="0401">{{closedDaysDateMay1}}</p>
-                        <p data-date="0506">{{closedDaysDateJun6}}</p>
-                        <p data-date="1124">{{closedDaysDateDec24}}</p>
-                        <p data-date="1125">{{closedDaysDateDec25}}</p>
-                        <p data-date="1126">{{closedDaysDateDec26}}</p>
-                        <p data-date="1131">{{closedDaysDateDec31}}</p>
-                    </div>
-                    <div id="closed-days-names" class="closed-days text-right footer-col">
-                        <p data-date="0001">{{closedDaysNameJan1}}</p>
-                        <p data-date="0006">{{closedDaysNameJan6}}</p>
-                        <p data-date="0401">{{closedDaysNameMay1}}</p>
-                        <p data-date="0506">{{closedDaysNameJun6}}</p>
-                        <p data-date="1124">{{closedDaysNameDec24}}</p>
-                        <p data-date="1125">{{closedDaysNameDec25}}</p>
-                        <p data-date="1126">{{closedDaysNameDec26}}</p>
-                        <p data-date="1131">{{closedDaysNameDec31}}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Top part of the footer ends here -->
+        </section>
+        <!-- Products ends here -->
 
-        <!-- Bottom part of the footer starts here -->
-        <div id="footer-bottom" class="container centered-container">
-            <!-- Social medias -->
-            <div id="social-media-container" class="container">
-                <div id="facebook" class="social-media-icon">
-                    <a href="{{facebookLink}}">
-                        <img loading="lazy" src="{{rootPath}}images/facebook.svg" alt="{{altFacebookIcon}}">
-                    </a>
+        <!-- Interactive map starts here -->
+        <section id="interactive-map-section" class="container flex-column centered-container">
+            <h2>{{lang.mapHeaderText}}</h2>
+            <!-- OSM interactive map -->
+            <div id="map" class="script"></div>
+            <noscript>
+                <img loading="lazy" src="{{data.rootPath}}images/noscript-map.png" alt="{{lang.noscriptMapAll}}" id="noscript-map" />
+            </noscript>
+        </section>
+        <!-- Interactive map ends here -->
+
+        <!-- Employee information starts here -->
+        <section id="employee-section" class="container flex-column centered-container">
+            <h2>{{lang.employeeInformationHeaderText}}</h2>
+            <div id="employees" class="container centered-container">
+                <div id="fredrik-ortqvist-container" class="employee-container container centered-container">
+                    <img loading="lazy" src="{{data.rootPath}}images/272x408/fredrik-ortqvist.jpg" alt="{{lang.fredrikOrtqvistAlt}}" class="employee-img" />
+                    <div class="employee-information container centered-container">
+                        <p class="fs-8">Fredrik Örtqvist</p>
+                        <p class="fs-8">{{lang.fredrikOrtqvistTitle}}</p>
+                    </div>
                 </div>
-                <div id="instagram" class="social-media-icon">
-                    <a href="{{instagramLink}}">
-                        <img loading="lazy" src="{{rootPath}}images/instagram.svg" alt="{{altInstagramIcon}}">
-                    </a>
+                <div id="orjan-johansson-container" class="employee-container container centered-container">
+                    <img loading="lazy" src="{{data.rootPath}}images/272x408/orjan-johansson.jpg" alt="{{lang.orjanJohanssonAlt}}" class="employee-img" />
+                    <div class="employee-information container centered-container">
+                        <p class="fs-8">Örjan Johansson</p>
+                        <p class="fs-8">{{lang.orjanJohanssonTitle}}</p>
+                    </div>
                 </div>
-                <div id="x" class="social-media-icon">
-                    <a href="{{xLink}}">
-                        <img loading="lazy" src="{{rootPath}}images/twitter-x.svg" alt="{{altXIcon}}">
-                    </a>
+                <div id="anna-pettersson-container" class="employee-container container centered-container">
+                    <img loading="lazy" src="{{data.rootPath}}images/272x408/anna-pettersson.jpg" alt="{{lang.annaPetterssonAlt}}" class="employee-img" />
+                    <div class="employee-information container centered-container">
+                        <p class="fs-8">Anna Pettersson</p>
+                        <p class="fs-8">{{lang.annaPetterssonTitle}}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Bottom part of the footer ends here -->
-    </footer>
-</body>
-</html> 
+        </section>
+        <!-- Employee information ends here -->
+
+        <!-- Footer -->
+        <footer class="container flex-column centered-container">
+            <!-- Top part of the footer starts here -->
+            <div id="footer-top">
+                <div id="footer-container-1" class="footer-container container">
+                    <h6>{{lang.contactUsHeaderText}}</h6>
+                    <div id="footer-info">
+                        <div id="address">
+                            <a href="{{data.companyAddressLink}}" target="blank">{{data.companyAddress}}</a>
+                        </div>
+                        <div id="number">
+                            <a href="tel:{{data.companyPhoneLink}}">{{data.companyPhoneText}}</a>
+                        </div>
+                        <div id="email">
+                            <a href="mailto:{{data.companyEmail}}">{{data.companyEmail}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer-container-2" class="footer-container container">
+                    <!-- Opening hours -->
+                    <h6>{{lang.openingHoursHeaderText}}</h6>
+                    <div id="opening-hours-container" class="container centered-container">
+                        <div id="opening-hours-days" class="opening-hours text-left footer-col">
+                            <p>{{lang.monday}}</p>
+                            <p>{{lang.tuesday}}</p>
+                            <p>{{lang.wednesday}}</p>
+                            <p>{{lang.thursday}}</p>
+                            <p>{{lang.friday}}</p>
+                            <p>{{lang.saturday}}</p>
+                            <p>{{lang.sunday}}</p>
+                        </div>
+                        <div id="opening-hours-times" class="opening-hours text-right footer-col">
+                            <p>{{data.openingHoursMonday}}</p>
+                            <p>{{data.openingHoursTuesday}}</p>
+                            <p>{{data.openingHoursWednesday}}</p>
+                            <p>{{data.openingHoursThursday}}</p>
+                            <p>{{data.openingHoursFriday}}</p>
+                            <p>{{data.openingHoursSaturday}}</p>
+                            <p>{{data.openingHoursSunday}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer-container-3" class="footer-container container">
+                    <!-- Closed days -->
+                    <h6>{{lang.closedDaysHeaderText}}</h6>
+                    <div id="closed-days-container" class="container centered-container">
+                        <div id="closed-days-dates" class="closed-days text-left footer-col">
+                            <p data-date="0001">{{lang.closedDaysDateJan1}}</p>
+                            <p data-date="0006">{{lang.closedDaysDateJan6}}</p>
+                            <p data-date="0401">{{lang.closedDaysDateMay1}}</p>
+                            <p data-date="0506">{{lang.closedDaysDateJun6}}</p>
+                            <p data-date="1124">{{lang.closedDaysDateDec24}}</p>
+                            <p data-date="1125">{{lang.closedDaysDateDec25}}</p>
+                            <p data-date="1126">{{lang.closedDaysDateDec26}}</p>
+                            <p data-date="1131">{{lang.closedDaysDateDec31}}</p>
+                        </div>
+                        <div id="closed-days-names" class="closed-days text-right footer-col">
+                            <p data-date="0001">{{lang.closedDaysNameJan1}}</p>
+                            <p data-date="0006">{{lang.closedDaysNameJan6}}</p>
+                            <p data-date="0401">{{lang.closedDaysNameMay1}}</p>
+                            <p data-date="0506">{{lang.closedDaysNameJun6}}</p>
+                            <p data-date="1124">{{lang.closedDaysNameDec24}}</p>
+                            <p data-date="1125">{{lang.closedDaysNameDec25}}</p>
+                            <p data-date="1126">{{lang.closedDaysNameDec26}}</p>
+                            <p data-date="1131">{{lang.closedDaysNameDec31}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Top part of the footer ends here -->
+
+            <!-- Bottom part of the footer starts here -->
+            <div id="footer-bottom" class="container centered-container">
+                <!-- Social medias -->
+                <div id="social-media-container" class="container">
+                    <div id="facebook" class="social-media-icon">
+                        <a href="{{data.facebookLink}}">
+                            <img loading="lazy" src="{{data.rootPath}}images/facebook.svg" alt="{{lang.altFacebookIcon}}" />
+                        </a>
+                    </div>
+                    <div id="instagram" class="social-media-icon">
+                        <a href="{{data.instagramLink}}">
+                            <img loading="lazy" src="{{data.rootPath}}images/instagram.svg" alt="{{lang.altInstagramIcon}}" />
+                        </a>
+                    </div>
+                    <div id="x" class="social-media-icon">
+                        <a href="{{data.xLink}}">
+                            <img loading="lazy" src="{{data.rootPath}}images/twitter-x.svg" alt="{{lang.altXIcon}}" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom part of the footer ends here -->
+        </footer>
+    </body>
+</html>

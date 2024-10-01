@@ -1,3 +1,6 @@
+# Header
+logoAlt: "Logo of the website"
+
 # Slideshow
 slideshowSummerBouquetAlt: "Picture of a summer bouquet"
 slideshowTulipBouquetAlt: "Picture of a tulip bouquet"
@@ -97,3 +100,5 @@ holidayClosed: "Today we are closed due to a public holiday. We open at { openin
 beforeOpening: "We are closed. We open at { openingTime } today"
 afterClosing: "We are closed. We open at { openingTime } on { openingDay }"
 open: "We are open. We close at { closingTime } today"
+
+language: "en"

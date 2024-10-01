@@ -1,3 +1,6 @@
+# Header
+logoAlt: "Logotyp för webbplatsen"
+
 # Slideshow
 slideshowSummerBouquetAlt: "Bild av en sommarbukett"
 slideshowTulipBouquetAlt: "Bild av en tulpanbukett"
@@ -97,3 +100,5 @@ holidayClosed: "Idag har vi stängt p.g.a helgdag. Vi öppnar kl. { openingTime 
 beforeOpening: "Vi har stängt. Vi öppnar kl. { openingTime } på idag"
 afterClosing: "Vi har stängt. Vi öppnar kl. { openingTime } på { openingDay }"
 open: "Vi har öppet. Vi stänger kl. { closingTime } idag"
+
+language: "sv"

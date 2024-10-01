@@ -1,30 +1,182 @@
-companyName : "florista"
-companyAddress : "Fjällgatan 32H, 981 39 KIRUNA"
-companyAddressLink : "https://maps.app.goo.gl/pne1zVvPmaNENVQz5"
-companyPhoneText : "0630-555-555"
-companyPhoneLink : "0630555555"
-companyEmail : "info@florista.ntig.dev"
-rootPath : "../../"
+companyName: "florista"
+companyAddress: "Fjällgatan 32H, 981 39 KIRUNA"
+companyAddressLink: "https://maps.app.goo.gl/pne1zVvPmaNENVQz5"
+companyPhoneText: "0630-555-555"
+companyPhoneLink: "0630555555"
+companyEmail: "info@florista.ntig.dev"
+rootPath: "../../"
 
-priceWeddingBouquet : "1 200"
-priceRoses10Pack : "150"
-priceTulips10Pack : "100"
-priceSummerBouquet : "200"
-priceFallBouquet : "400"
-priceFuneralWreath : "800"
-priceLilies : "29"
-priceHydrangea : "59"
-priceAloeVera : "99"
-priceCactusInPot : "99"
+priceWeddingBouquet: "1 200"
+priceRoses10Pack: "150"
+priceTulips10Pack: "100"
+priceSummerBouquet: "200"
+priceFallBouquet: "400"
+priceFuneralWreath: "800"
+priceLilies: "29"
+priceHydrangea: "59"
+priceAloeVera: "99"
+priceCactusInPot: "99"
 
-openingHoursMonday : "10-18"
-openingHoursTuesday : "10-18"
-openingHoursWednesday : "10-17"
-openingHoursThursday : "10-17"
-openingHoursFriday : "10-18"
-openingHoursSaturday : "12-16"
-openingHoursSunday : "12-15"
+openingHoursMonday: "10-18"
+openingHoursTuesday: "10-18"
+openingHoursWednesday: "10-17"
+openingHoursThursday: "10-17"
+openingHoursFriday: "10-18"
+openingHoursSaturday: "12-16"
+openingHoursSunday: "12-15"
 
-facebookLink : "https://www.facebook.com/ntiuppsala"
-instagramLink : "https://www.instagram.com/ntiuppsala"
-xLink : "https://x.com/ntiuppsala"
+facebookLink: "https://www.facebook.com/ntiuppsala"
+instagramLink: "https://www.instagram.com/ntiuppsala"
+xLink: "https://x.com/ntiuppsala"
+
+products:
+    - id: "product-brollopsbukett"
+      resolutions:
+          - maxWidth: 320
+            path: "images/224x149/brollopsbukett.jpg"
+          - maxWidth: 360
+            path: "images/256x170/brollopsbukett.jpg"
+          - maxWidth: 440
+            path: "images/320x213/brollopsbukett.jpg"
+          - maxWidth: 520
+            path: "images/384x256/brollopsbukett.jpg"
+      defaultPath: "images/480x320/brollopsbukett.jpg"
+      alt: "altWeddingBouquet"
+      name: "nameWeddingBouquet"
+      price: "1 200"
+      unit: "sek"
+    - id: "product-rosor-10-pack"
+      resolutions:
+          - maxWidth: 320
+            path: "images/224x149/rosor-10-pack.jpg"
+          - maxWidth: 360
+            path: "images/256x170/rosor-10-pack.jpg"
+          - maxWidth: 440
+            path: "images/320x213/rosor-10-pack.jpg"
+          - maxWidth: 520
+            path: "images/384x256/rosor-10-pack.jpg"
+      defaultPath: "images/480x320/rosor-10-pack.jpg"
+      alt: "altRoses10Pack"
+      name: "nameRoses10Pack"
+      price: "150"
+      unit: "sek"
+    - id: "product-tulpaner-10-pack"
+      resolutions:
+          - maxWidth: 320
+            path: "images/224x149/tulpaner-10-pack.jpg"
+          - maxWidth: 360
+            path: "images/256x170/tulpaner-10-pack.jpg"
+          - maxWidth: 440
+            path: "images/320x213/tulpaner-10-pack.jpg"
+          - maxWidth: 520
+            path: "images/384x256/tulpaner-10-pack.jpg"
+      defaultPath: "images/480x320/tulpaner-10-pack.jpg"
+      alt: "altTulips10Pack"
+      name: "nameTulips10Pack"
+      price: "100"
+      unit: "sek"
+    - id: "product-sommarbukett"
+      resolutions:
+          - maxWidth: 320
+            path: "images/224x149/sommarbukett.jpg"
+          - maxWidth: 360
+            path: "images/256x170/sommarbukett.jpg"
+          - maxWidth: 440
+            path: "images/320x213/sommarbukett.jpg"
+          - maxWidth: 520
+            path: "images/384x256/sommarbukett.jpg"
+      defaultPath: "images/480x320/sommarbukett.jpg"
+      alt: "altSummerBouquet"
+      name: "nameSummerBouquet"
+      price: "200"
+      unit: "sek"
+    - id: "product-hostbukett"
+      resolutions:
+          - maxWidth: 320
+            path: "images/224x149/hostbukett.jpg"
+          - maxWidth: 360
+            path: "images/256x170/hostbukett.jpg"
+          - maxWidth: 440
+            path: "images/320x213/hostbukett.jpg"
+          - maxWidth: 520
+            path: "images/384x256/hostbukett.jpg"
+      defaultPath: "images/480x320/hostbukett.jpg"
+      alt: "altFallBouquet"
+      name: "nameFallBouquet"
+      price: "400"
+      unit: "sek"
+    - id: "product-begravningskrans"
+      resolutions:
+          - maxWidth: 320
+            path: "images/224x149/begravningskrans.jpg"
+          - maxWidth: 360
+            path: "images/256x170/begravningskrans.jpg"
+          - maxWidth: 440
+            path: "images/320x213/begravningskrans.jpg"
+          - maxWidth: 520
+            path: "images/384x256/begravningskrans.jpg"
+      defaultPath: "images/480x320/begravningskrans.jpg"
+      alt: "altFuneralWreath"
+      name: "nameFuneralWreath"
+      price: "800"
+      unit: "sek"
+    - id: "product-liljor"
+      resolutions:
+          - maxWidth: 320
+            path: "images/224x149/liljor.jpg"
+          - maxWidth: 360
+            path: "images/256x170/liljor.jpg"
+          - maxWidth: 440
+            path: "images/320x213/liljor.jpg"
+          - maxWidth: 520
+            path: "images/384x256/liljor.jpg"
+      defaultPath: "images/480x320/liljor.jpg"
+      alt: "altLilies"
+      name: "nameLilies"
+      price: "29"
+      unit: "sekEach"
+    - id: "product-hortensia"
+      resolutions:
+          - maxWidth: 320
+            path: "images/224x149/hortensia.jpg"
+          - maxWidth: 360
+            path: "images/256x170/hortensia.jpg"
+          - maxWidth: 440
+            path: "images/320x213/hortensia.jpg"
+          - maxWidth: 520
+            path: "images/384x256/hortensia.jpg"
+      defaultPath: "images/480x320/hortensia.jpg"
+      alt: "altHydrangea"
+      name: "nameHydrangea"
+      price: "59"
+      unit: "sek"
+    - id: "product-aloe-vera"
+      resolutions:
+          - maxWidth: 320
+            path: "images/224x149/aloe-vera.jpg"
+          - maxWidth: 360
+            path: "images/256x170/aloe-vera.jpg"
+          - maxWidth: 440
+            path: "images/320x213/aloe-vera.jpg"
+          - maxWidth: 520
+            path: "images/384x256/aloe-vera.jpg"
+      defaultPath: "images/480x320/aloe-vera.jpg"
+      alt: "altAloeVera"
+      name: "nameAloeVera"
+      price: "99"
+      unit: "sek"
+    - id: "product-kaktus-i-kruka"
+      resolutions:
+          - maxWidth: 320
+            path: "images/224x149/kaktus-i-kruka.jpg"
+          - maxWidth: 360
+            path: "images/256x170/kaktus-i-kruka.jpg"
+          - maxWidth: 440
+            path: "images/320x213/kaktus-i-kruka.jpg"
+          - maxWidth: 520
+            path: "images/384x256/kaktus-i-kruka.jpg"
+      defaultPath: "images/480x320/kaktus-i-kruka.jpg"
+      alt: "altCactusInPot"
+      name: "nameCactusInPot"
+      price: "99"
+      unit: "sek"

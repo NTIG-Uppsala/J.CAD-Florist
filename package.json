@@ -8,7 +8,8 @@
     "test": "tests"
   },
   "scripts": {
-    "resize": "node scripts/image-resizer.js"
+    "resize": "node scripts/image-resizer.js",
+    "compile": "node scripts/hbs-compiler.js"
   },
   "repository": {
     "type": "git",
