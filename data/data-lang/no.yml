@@ -1,0 +1,104 @@
+# Header
+logoAlt: "Logoen til nettstedet"
+
+# Slideshow
+slideshowSummerBouquetAlt: "Bilde av en sommerbukett"
+slideshowTulipBouquetAlt: "Bilde av en tulipanbukett"
+slideshowFallBouquetAlt: "Bilde av en høstbukett"
+
+# Flowergram
+flowergramHeaderText: "Overrask noen med et blomstergram"
+flowergramButtonText: "Send et blomstergram"
+flowergramQuestionText: "Vil du sende et blomstergram?"
+flowergramVisitOrCall: "Besøk oss i butikken eller ring oss på "
+flowergramZipCheckText: "Dobbeltsjekk om vi leverer til ditt postnummer:"
+zipCodePlaceholder: "Angi postnummer"
+
+# Products section
+productsHeaderText: "Produkter"
+dealOfTheDayText: "Dagens tilbud"
+nameWeddingBouquet: "Bryllupsbukett"
+altWeddingBouquet: "Bryllupsbukett"
+nameRoses10Pack: "Roser 10-pakke"
+altRoses10Pack: "Roser 10-pakke"
+nameTulips10Pack: "Tulipaner 10-pakke"
+altTulips10Pack: "Tulipaner 10-pakke"
+nameSummerBouquet: "Sommerbukett"
+altSummerBouquet: "Sommerbukett"
+nameFallBouquet: "Høstbukett"
+altFallBouquet: "Høstbukett"
+nameFuneralWreath: "Begravelseskrans"
+altFuneralWreath: "Begravelseskrans"
+nameLilies: "Liljer"
+altLilies: "Liljer"
+nameHydrangea: "Hortensia"
+altHydrangea: "Hortensia"
+nameAloeVera: "Aloe vera"
+altAloeVera: "Aloe vera"
+nameCactusInPot: "Kaktus i krukke"
+altCactusInPot: "Kaktus i krukke"
+
+# Map section
+mapHeaderText: "Kart"
+noscriptMapAlt: "Kart over butikkens beliggenhet"
+
+# Employee information section
+employeeInformationHeaderText: "Butikkpersonale"
+fredrikOrtqvistTitle: "Eier"
+fredrikOrtqvistAlt: "Bilde av Fredrik Örtqvist"
+orjanJohanssonTitle: "Florist"
+orjanJohanssonAlt: "Bilde av Örjan Johansson"
+annaPetterssonTitle: "Horticulturist"
+annaPetterssonAlt: "Bilde av Anna Pettersson"
+
+# Footer
+
+# Contact information
+contactUsHeaderText: "Kontakt oss"
+
+# Opening hours
+openingHoursHeaderText: "Åpningstider"
+monday: "Mandag"
+tuesday: "Tirsdag"
+wednesday: "Onsdag"
+thursday: "Torsdag"
+friday: "Fredag"
+saturday: "Lørdag"
+sunday: "Søndag"
+
+# Closed days
+closedDaysHeaderText: "Stengte dager"
+closedDaysDateJan1: "1 Jan"
+closedDaysNameJan1: "Nyttårsdagen"
+closedDaysDateJan6: "6 Jan"
+closedDaysNameJan6: "Helligtrekongersdag"
+closedDaysDateMay1: "1 mai"
+closedDaysNameMay1: "Arbeidernes internasjonale kampdag"
+closedDaysDateJun6: "6 jun"
+closedDaysNameJun6: "Sveriges nasjonaldag"
+closedDaysDateDec24: "24 des"
+closedDaysNameDec24: "Julaften"
+closedDaysDateDec25: "25 des"
+closedDaysNameDec25: "Første juledag"
+closedDaysDateDec26: "26 des"
+closedDaysNameDec26: "Andre juledag"
+closedDaysDateDec31: "31 des"
+closedDaysNameDec31: "Nyttårsaften"
+
+# Social media icons
+altFacebookIcon: "Facebook-ikon"
+altInstagramIcon: "Instagram-ikon"
+altXIcon: "X-ikon"
+
+# JavaScript
+dealOfTheDayTextBanner: "I dag koster { productName } bare { productPrice } i stedet for { productOldPrice }"
+noZipCode: "Du må angi et postnummer!"
+zipCodeNotCorrectLength: "Postnummeret må være femsifret!"
+invalidZipCode: "Vi leverer dessverre ikke til dette postnummeret!"
+validZipCode: "Vi leverer til dette postnummeret!"
+holidayClosed: "I dag er vi stengt på grunn av helligdag. Vi åpner klokka { openingTime } på { openingDay }"
+beforeOpening: "Vi er stengt. Vi åpner klokka { openingTime } i dag"
+afterClosing: "Vi er stengt. Vi åpner klokka { openingTime } på { openingDay }"
+open: "Vi er åpent. Vi stenger klokka { closingTime } i dag"
+
+language: "nb"
