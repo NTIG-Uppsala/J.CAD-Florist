@@ -12,6 +12,12 @@ const templateFile = "templates/index.hbs"; // Path to the Handlebars template f
 const dataFolder = "data/data/"; // Path to a data folder where all the data files will be stored
 const dataLangFolder = "data/data-lang/"; // Path to a data folder where all the language data files will be stored
 const outputFolder = "public/"; // Path to the output folder
+const jsFile = "js/data.js"; // Path to tje output js file for all the data
+
+// Function to convert JS object to a string without quotes around keys
+const objectToString = (obj) => {
+    return JSON.stringify(obj, null, 2).replace(/"([^"]+)":/g, "$1:"); // Remove quotes around object keys
+};
 
 // Create the output folders if they don't exist
 if (!fs.existsSync(outputFolder)) {
@@ -36,6 +42,8 @@ fs.readdirSync(`${dataLangFolder}/`).forEach((file) => {
     dataLangObj[dataLangFile] = dataLang;
 });
 
+const allLocalizationData = {};
+
 // Create a function to compile the Handlebars template to HTML
 const templateContents = fs.readFileSync(templateFile, "utf8");
 const template = handlebars.compile(templateContents); // Correctly use the Handlebars instance
@@ -48,6 +56,8 @@ Object.keys(dataObj).forEach((dataFile) => {
             data: dataObj[dataFile],
             lang: dataLangObj[dataLangFile],
         };
+
+        allLocalizationData[dataLangFile] = combinedData;
 
         // Generate the HTML output for the combined data
         const outputHtml = template(combinedData);
@@ -68,3 +78,12 @@ Object.keys(dataObj).forEach((dataFile) => {
         console.log(`Generated ${outputFile}`);
     });
 });
+
+const jsData = `
+const lang = document.querySelector("#data").dataset.lang;
+const data = ${objectToString(allLocalizationData)}[lang];
+`;
+
+fs.writeFileSync(`${jsFile}`, jsData);
+
+console.log(`Generated ${jsFile}`);

@@ -1,5 +1,6 @@
 # Header
 logoAlt: "Logo of the website"
+chooseLanguage: "Choose language"
 
 # Slideshow
 slideshowSummerBouquetAlt: "Picture of a summer bouquet"
@@ -37,6 +38,8 @@ nameAloeVera: "Aloe vera"
 altAloeVera: "Aloe vera"
 nameCactusInPot: "Cactus in pot"
 altCactusInPot: "Cactus in pot"
+sek: "SEK"
+sekEach: "SEK/unit"
 
 # Map section
 mapHeaderText: "Map"
@@ -102,3 +105,4 @@ afterClosing: "We are closed. We open at { openingTime } on { openingDay }"
 open: "We are open. We close at { closingTime } today"
 
 language: "en"
+languageKey: "en"

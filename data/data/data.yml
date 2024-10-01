@@ -168,14 +168,14 @@ products:
     - id: "product-kaktus-i-kruka"
       resolutions:
           - maxWidth: 320
-            path: "images/224x149/kaktus-i-kruka.jpg"
+            path: "images/224x149/kaktus.jpg"
           - maxWidth: 360
-            path: "images/256x170/kaktus-i-kruka.jpg"
+            path: "images/256x170/kaktus.jpg"
           - maxWidth: 440
-            path: "images/320x213/kaktus-i-kruka.jpg"
+            path: "images/320x213/kaktus.jpg"
           - maxWidth: 520
-            path: "images/384x256/kaktus-i-kruka.jpg"
-      defaultPath: "images/480x320/kaktus-i-kruka.jpg"
+            path: "images/384x256/kaktus.jpg"
+      defaultPath: "images/480x320/kaktus.jpg"
       alt: "altCactusInPot"
       name: "nameCactusInPot"
       price: "99"

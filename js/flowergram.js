@@ -22,22 +22,22 @@ const checkZIPCode = () => {
 
     // Check if the user has entered a ZIP code
     if (zip === "") {
-        writeOutput("Du måste skriva in ett postnummer!", "red");
+        writeOutput(data.lang.noZipCode, "red");
         return;
     }
 
     // Check if the ZIP code is 5 digits long
     if (zip.length !== 5) {
-        writeOutput("Postnumret måste vara 5 siffror!", "red");
+        writeOutput(data.lang.zipCodeNotCorrectLength, "red");
         return;
     }
 
     // Check if the ZIP code is valid
     if (!zipCodes.includes(zip)) {
-        writeOutput("Vi levererar tyvärr inte till detta postnummer!", "red");
+        writeOutput(data.lang.invalidZipCode, "red");
         return;
     }
-    writeOutput("Vi levererar till detta postnummer!", "green");
+    writeOutput(data.lang.validZipCode, "green");
 };
 
 // Adds event listeners to the input field and button

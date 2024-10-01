@@ -1,12 +1,12 @@
 // Object for the deals of the day with the day of the week as key and an array of objects for each deal with the price and the id of the product as value
 const dealsOfTheDay = {
     0: [],
-    1: [{ price: "89 kr", id: "#product-tulpaner-10-pack" }],
-    2: [{ price: "19 kr/st", id: "#product-liljor" }],
-    3: [{ price: "39 kr", id: "#product-hortensia" }],
-    4: [{ price: "79 kr", id: "#product-aloe-vera" }],
-    5: [{ price: "79 kr", id: "#product-kaktus-i-kruka" }],
-    6: [{ price: "127 kr", id: "#product-rosor-10-pack" }],
+    1: [{ price: "89 " + data.lang.sek, id: "#product-tulpaner-10-pack" }],
+    2: [{ price: "19 " + data.lang.sekEach, id: "#product-liljor" }],
+    3: [{ price: "39 " + data.lang.sek, id: "#product-hortensia" }],
+    4: [{ price: "79 " + data.lang.sek, id: "#product-aloe-vera" }],
+    5: [{ price: "79 " + data.lang.sek, id: "#product-kaktus-i-kruka" }],
+    6: [{ price: "127 " + data.lang.sek, id: "#product-rosor-10-pack" }],
 };
 
 // Function to set the deal of the day

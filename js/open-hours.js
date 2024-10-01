@@ -70,24 +70,24 @@ const updateCurrentStatus = () => {
 
     // Check if the store is closed for a holiday
     if (closedDays[currentMonth].includes(currentDate)) {
-        outputTextField.innerHTML = `Idag har vi stängt p.g.a helgdag. Vi öppnar kl. ${nextOpenString} på ${nextOpenDayName}`;
+        outputTextField.innerHTML = data.lang.holidayClosed.replace("{ openingTime }", nextOpenString).replace("{ openingDay }", nextOpenDayName);
         return;
     }
 
     // Check if the store has not opened for the day yet
     if (currentHour < currentDayObject.from.hour || (currentHour === currentDayObject.from.hour && currentMinute < currentDayObject.from.minute)) {
-        outputTextField.innerHTML = `Vi har stängt. Vi öppnar kl. ${currentDayObject.from.hour}:${currentDayObject.from.minute < 10 ? "0" + currentDayObject.from.minute : currentDayObject.from.minute} idag`;
+        outputTextField.innerHTML = data.lang.beforeOpening.replace("{ openingTime }", nextOpenString).replace("{ openingDay }", nextOpenDayName);
         return;
     }
 
     // Check if the store has closed for the day
     if (currentHour >= currentDayObject.to.hour || (currentHour === currentDayObject.to.hour && currentMinute >= currentDayObject.to.minute)) {
-        outputTextField.innerHTML = `Vi har stängt. Vi öppnar kl. ${nextOpenString} på ${nextOpenDayName}`;
+        outputTextField.innerHTML = data.lang.afterClosing.replace("{ openingTime }", nextOpenString).replace("{ openingDay }", nextOpenDayName);
         return;
     }
 
     // The store is open
-    outputTextField.innerHTML = `Vi har öppet. Vi stänger kl. ${nextCloseString} idag`;
+    outputTextField.innerHTML = data.lang.open.replace("{ closingTime }", nextCloseString);
 };
 
 // Update the current status

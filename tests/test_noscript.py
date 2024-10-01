@@ -14,4 +14,4 @@ class TestNoscript(TestBase):
     # Check that the noscript image is displayed
     def testMap(self) -> None:
         self.checkNumberOfElements("#noscript-map", 1)
-        self.assertInHTML('img loading="lazy" src="../../images/noscript-map.png" alt="noscript-map"')
+        self.assertInHTML('img loading="lazy" src="../../images/noscript-map.png" alt="Karta över butikens läge"')

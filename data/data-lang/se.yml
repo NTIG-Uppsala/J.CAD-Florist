@@ -1,5 +1,6 @@
 # Header
 logoAlt: "Logotyp för webbplatsen"
+chooseLanguage: "Välj språk"
 
 # Slideshow
 slideshowSummerBouquetAlt: "Bild av en sommarbukett"
@@ -37,6 +38,8 @@ nameAloeVera: "Aloe vera"
 altAloeVera: "Aloe vera"
 nameCactusInPot: "Kaktus i kruka"
 altCactusInPot: "Kaktus i kruka"
+sek: "kr"
+sekEach: "kr/st"
 
 # Map section
 mapHeaderText: "Karta"
@@ -97,8 +100,9 @@ zipCodeNotCorrectLength: "Postnumret måste vara 5 siffror!"
 invalidZipCode: "Vi levererar tyvärr inte till detta postnummer!"
 validZipCode: "Vi levererar till detta postnummer!"
 holidayClosed: "Idag har vi stängt p.g.a helgdag. Vi öppnar kl. { openingTime } på { openingDay }"
-beforeOpening: "Vi har stängt. Vi öppnar kl. { openingTime } på idag"
+beforeOpening: "Vi har stängt. Vi öppnar kl. { openingTime } idag"
 afterClosing: "Vi har stängt. Vi öppnar kl. { openingTime } på { openingDay }"
 open: "Vi har öppet. Vi stänger kl. { closingTime } idag"
 
 language: "sv"
+languageKey: "se"

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="{{lang.language}}">
     <head>
         <!-- Noindex -->
@@ -19,25 +18,39 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
         <link rel="stylesheet" type="text/css" href="{{data.rootPath}}css/leaflet-gesture-handling.min.css" />
         <script src="{{data.rootPath}}js/leaflet-gesture-handling.min.js"></script>
+        {{! Data }}
+        <script defer src="{{data.rootPath}}js/data.js"></script>
         <!-- Scripts -->
-        <script defer="true" src="{{data.rootPath}}js/flowergram.js"></script>
-        <script defer="true" src="{{data.rootPath}}js/open-hours.js"></script>
-        <script defer="true" src="{{data.rootPath}}js/embed-osm-map.js"></script>
-        <script defer="true" src="{{data.rootPath}}js/show-script.js"></script>
-        <script defer="true" src="{{data.rootPath}}js/deal-of-the-day.js"></script>
-        <script defer="true" src="{{data.rootPath}}js/sort-closed-days.js"></script>
-        <script defer="true" src="{{data.rootPath}}js/dynamic-information.js"></script>
+        <script defer src="{{data.rootPath}}js/flowergram.js"></script>
+        <script defer src="{{data.rootPath}}js/open-hours.js"></script>
+        <script defer src="{{data.rootPath}}js/embed-osm-map.js"></script>
+        <script defer src="{{data.rootPath}}js/show-script.js"></script>
+        <script defer src="{{data.rootPath}}js/deal-of-the-day.js"></script>
+        <script defer src="{{data.rootPath}}js/sort-closed-days.js"></script>
+        <script defer src="{{data.rootPath}}js/dynamic-information.js"></script>
 
         <!-- Needed for tests. Should always be loaded last -->
-        <script defer="true" src="{{data.rootPath}}js/testing-wait-for-js.js"></script>
+        <script defer src="{{data.rootPath}}js/testing-wait-for-js.js"></script>
         <title>{{data.companyName}}</title>
     </head>
     <body>
         <!-- Header starts here -->
-        <header class="container centered-container">
-            <img id="logo" src="{{data.rootPath}}images/logga-florist-1.png" alt="{{lang.logoAlt}}" />
+        <header class="container">
+            <div class="image-container">
+                <img id="logo" src="{{data.rootPath}}images/logga-florist-1.png" alt="{{lang.logoAlt}}" />
+            </div>
             <div id="header-container" class="container flex-column centered-container wh-100">
                 <h1 id="title">{{data.companyName}}</h1>
+            </div>
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <button class="dropdown-button">{{lang.chooseLanguage}}</button>
+                    <div class="dropdown-content">
+                        <a class="dropdown-item" href="../se">Svenska</a>
+                        <a class="dropdown-item" href="../no">Norsk</a>
+                        <a class="dropdown-item" href="../en">English</a>
+                    </div>
+                </div>
             </div>
         </header>
         <!-- Header ends here -->
@@ -121,7 +134,7 @@
                         <h6>{{{lang.flowergramQuestionText}}}</h6>
                         <p>{{lang.flowergramVisitOrCall}} <a href="tel:{{data.companyPhoneLink}}">{{data.companyPhoneText}}</a>!</p>
                         <hr id="flowergram-separator" />
-                        <p>{{lang.flowergramZipCheckText}}</p>
+                        <p>{{{lang.flowergramZipCheckText}}}</p>
                         <div id="input-container" class="container">
                             <input id="postal-code" type="text" placeholder="{{lang.zipCodePlaceholder}}" />
                             <button id="postal-code-btn"></button>
@@ -165,7 +178,7 @@
             <!-- OSM interactive map -->
             <div id="map" class="script"></div>
             <noscript>
-                <img loading="lazy" src="{{data.rootPath}}images/noscript-map.png" alt="{{lang.noscriptMapAll}}" id="noscript-map" />
+                <img loading="lazy" src="{{data.rootPath}}images/noscript-map.png" alt="{{lang.noscriptMapAlt}}" id="noscript-map" />
             </noscript>
         </section>
         <!-- Interactive map ends here -->
@@ -293,5 +306,6 @@
             </div>
             <!-- Bottom part of the footer ends here -->
         </footer>
+        <div id="data" style="display: none;" data-lang="{{lang.languageKey}}"></div>
     </body>
 </html>

@@ -25,11 +25,11 @@ const updateDynamicInformationStatus = () => {
         // Check if this day has a deal
         if (deal.id) {
             const product = document.querySelector(deal.id); // Get the product that has a deal
-            const productName = deal.id.substr(deal.id.indexOf("-") + 1).replace(/-/g, " "); // Get the name of the product
+            const productName = product.querySelector("h4").textContent.toLowerCase(); // Get the name of the product
             const productPrice = deal.price; // Get the deal-price of the product
             const productOriginalPrice = product.querySelector(".original-price").textContent; // Get the original price of the product
-    
-            outputTextField.innerHTML = `Idag kostar ${productName} endast ${productPrice} istället för ${productOriginalPrice}!`; // Show the deal on the top of the page
+            const output = data.lang.dealOfTheDayTextBanner.replace("{ productName }", productName).replace("{ productPrice }", productPrice).replace("{ productOldPrice }", productOriginalPrice); // Create the output text
+            outputTextField.innerHTML = output; // Show the deal on the top of the page
         }
     });
 };

@@ -1,5 +1,6 @@
 # Header
 logoAlt: "Logoen til nettstedet"
+chooseLanguage: "Velg språk"
 
 # Slideshow
 slideshowSummerBouquetAlt: "Bilde av en sommerbukett"
@@ -7,11 +8,11 @@ slideshowTulipBouquetAlt: "Bilde av en tulipanbukett"
 slideshowFallBouquetAlt: "Bilde av en høstbukett"
 
 # Flowergram
-flowergramHeaderText: "Overrask noen med et blomstergram"
-flowergramButtonText: "Send et blomstergram"
-flowergramQuestionText: "Vil du sende et blomstergram?"
+flowergramHeaderText: "Over&shy;rask noen med et blomster&shy;gram"
+flowergramButtonText: "Send et blomster&shy;gram"
+flowergramQuestionText: "Vil du sende et blomster&shy;gram?"
 flowergramVisitOrCall: "Besøk oss i butikken eller ring oss på "
-flowergramZipCheckText: "Dobbeltsjekk om vi leverer til ditt postnummer:"
+flowergramZipCheckText: "Dobbelt&shy;sjekk om vi leverer til ditt post&shy;nummer:"
 zipCodePlaceholder: "Angi postnummer"
 
 # Products section
@@ -37,6 +38,8 @@ nameAloeVera: "Aloe vera"
 altAloeVera: "Aloe vera"
 nameCactusInPot: "Kaktus i krukke"
 altCactusInPot: "Kaktus i krukke"
+sek: "SEK"
+sekEach: "SEK/stk"
 
 # Map section
 mapHeaderText: "Kart"
@@ -102,3 +105,4 @@ afterClosing: "Vi er stengt. Vi åpner klokka { openingTime } på { openingDay }
 open: "Vi er åpent. Vi stenger klokka { closingTime } i dag"
 
 language: "nb"
+languageKey: "no"

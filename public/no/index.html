@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="nb">
     <head>
         <!-- Noindex -->
@@ -19,25 +18,38 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
         <link rel="stylesheet" type="text/css" href="../../css/leaflet-gesture-handling.min.css" />
         <script src="../../js/leaflet-gesture-handling.min.js"></script>
+        <script defer src="../../js/data.js"></script>
         <!-- Scripts -->
-        <script defer="true" src="../../js/flowergram.js"></script>
-        <script defer="true" src="../../js/open-hours.js"></script>
-        <script defer="true" src="../../js/embed-osm-map.js"></script>
-        <script defer="true" src="../../js/show-script.js"></script>
-        <script defer="true" src="../../js/deal-of-the-day.js"></script>
-        <script defer="true" src="../../js/sort-closed-days.js"></script>
-        <script defer="true" src="../../js/dynamic-information.js"></script>
+        <script defer src="../../js/flowergram.js"></script>
+        <script defer src="../../js/open-hours.js"></script>
+        <script defer src="../../js/embed-osm-map.js"></script>
+        <script defer src="../../js/show-script.js"></script>
+        <script defer src="../../js/deal-of-the-day.js"></script>
+        <script defer src="../../js/sort-closed-days.js"></script>
+        <script defer src="../../js/dynamic-information.js"></script>
 
         <!-- Needed for tests. Should always be loaded last -->
-        <script defer="true" src="../../js/testing-wait-for-js.js"></script>
+        <script defer src="../../js/testing-wait-for-js.js"></script>
         <title>florista</title>
     </head>
     <body>
         <!-- Header starts here -->
-        <header class="container centered-container">
-            <img id="logo" src="../../images/logga-florist-1.png" alt="Logoen til nettstedet" />
+        <header class="container">
+            <div class="image-container">
+                <img id="logo" src="../../images/logga-florist-1.png" alt="Logoen til nettstedet" />
+            </div>
             <div id="header-container" class="container flex-column centered-container wh-100">
                 <h1 id="title">florista</h1>
+            </div>
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <button class="dropdown-button">Velg språk</button>
+                    <div class="dropdown-content">
+                        <a class="dropdown-item" href="../se">Svenska</a>
+                        <a class="dropdown-item" href="../no">Norsk</a>
+                        <a class="dropdown-item" href="../en">English</a>
+                    </div>
+                </div>
             </div>
         </header>
         <!-- Header ends here -->
@@ -114,14 +126,14 @@
 
                 <!-- Flowergram starts here -->
                 <div id="flowergram-container" class="container flex-column flex-start-container">
-                    <h3>Overrask noen med et blomstergram</h3>
-                    <h4 id="flowergram-btn" class="container centered-container">Send et blomstergram</h4>
+                    <h3>Over&shy;rask noen med et blomster&shy;gram</h3>
+                    <h4 id="flowergram-btn" class="container centered-container">Send et blomster&shy;gram</h4>
                     <!-- The popup that appears when pressing "" -->
                     <div id="flowergram" class="container flex-column flex-start-container">
-                        <h6>Vil du sende et blomstergram?</h6>
+                        <h6>Vil du sende et blomster&shy;gram?</h6>
                         <p>Besøk oss i butikken eller ring oss på  <a href="tel:0630555555">0630-555-555</a>!</p>
                         <hr id="flowergram-separator" />
-                        <p>Dobbeltsjekk om vi leverer til ditt postnummer:</p>
+                        <p>Dobbelt&shy;sjekk om vi leverer til ditt post&shy;nummer:</p>
                         <div id="input-container" class="container">
                             <input id="postal-code" type="text" placeholder="Angi postnummer" />
                             <button id="postal-code-btn"></button>
@@ -150,7 +162,7 @@
                         <div class="product-footer centered-container">
                             <h4>Bryllupsbukett</h4>
                             <div class="price-container container centered-container">
-                                <h5 class="price">1 200 sek</h5>
+                                <h5 class="price">1 200 SEK</h5>
                             </div>
                         </div>
                     </div>
@@ -166,7 +178,7 @@
                         <div class="product-footer centered-container">
                             <h4>Roser 10-pakke</h4>
                             <div class="price-container container centered-container">
-                                <h5 class="price">150 sek</h5>
+                                <h5 class="price">150 SEK</h5>
                             </div>
                         </div>
                     </div>
@@ -182,7 +194,7 @@
                         <div class="product-footer centered-container">
                             <h4>Tulipaner 10-pakke</h4>
                             <div class="price-container container centered-container">
-                                <h5 class="price">100 sek</h5>
+                                <h5 class="price">100 SEK</h5>
                             </div>
                         </div>
                     </div>
@@ -198,7 +210,7 @@
                         <div class="product-footer centered-container">
                             <h4>Sommerbukett</h4>
                             <div class="price-container container centered-container">
-                                <h5 class="price">200 sek</h5>
+                                <h5 class="price">200 SEK</h5>
                             </div>
                         </div>
                     </div>
@@ -214,7 +226,7 @@
                         <div class="product-footer centered-container">
                             <h4>Høstbukett</h4>
                             <div class="price-container container centered-container">
-                                <h5 class="price">400 sek</h5>
+                                <h5 class="price">400 SEK</h5>
                             </div>
                         </div>
                     </div>
@@ -230,7 +242,7 @@
                         <div class="product-footer centered-container">
                             <h4>Begravelseskrans</h4>
                             <div class="price-container container centered-container">
-                                <h5 class="price">800 sek</h5>
+                                <h5 class="price">800 SEK</h5>
                             </div>
                         </div>
                     </div>
@@ -246,7 +258,7 @@
                         <div class="product-footer centered-container">
                             <h4>Liljer</h4>
                             <div class="price-container container centered-container">
-                                <h5 class="price">29 sekEach</h5>
+                                <h5 class="price">29 SEK/stk</h5>
                             </div>
                         </div>
                     </div>
@@ -262,7 +274,7 @@
                         <div class="product-footer centered-container">
                             <h4>Hortensia</h4>
                             <div class="price-container container centered-container">
-                                <h5 class="price">59 sek</h5>
+                                <h5 class="price">59 SEK</h5>
                             </div>
                         </div>
                     </div>
@@ -278,23 +290,23 @@
                         <div class="product-footer centered-container">
                             <h4>Aloe vera</h4>
                             <div class="price-container container centered-container">
-                                <h5 class="price">99 sek</h5>
+                                <h5 class="price">99 SEK</h5>
                             </div>
                         </div>
                     </div>
                     <div class="product" id="product-kaktus-i-kruka">
                         <picture>
-                                <source media="(max-width: 320px)" srcset="../../images/224x149/kaktus-i-kruka.jpg" />
-                                <source media="(max-width: 360px)" srcset="../../images/256x170/kaktus-i-kruka.jpg" />
-                                <source media="(max-width: 440px)" srcset="../../images/320x213/kaktus-i-kruka.jpg" />
-                                <source media="(max-width: 520px)" srcset="../../images/384x256/kaktus-i-kruka.jpg" />
-                            <img src="../../images/480x320/kaktus-i-kruka.jpg" alt="Kaktus i krukke" />
+                                <source media="(max-width: 320px)" srcset="../../images/224x149/kaktus.jpg" />
+                                <source media="(max-width: 360px)" srcset="../../images/256x170/kaktus.jpg" />
+                                <source media="(max-width: 440px)" srcset="../../images/320x213/kaktus.jpg" />
+                                <source media="(max-width: 520px)" srcset="../../images/384x256/kaktus.jpg" />
+                            <img src="../../images/480x320/kaktus.jpg" alt="Kaktus i krukke" />
                         </picture>
                         <p class="deal-of-the-day">Dagens tilbud</p>
                         <div class="product-footer centered-container">
                             <h4>Kaktus i krukke</h4>
                             <div class="price-container container centered-container">
-                                <h5 class="price">99 sek</h5>
+                                <h5 class="price">99 SEK</h5>
                             </div>
                         </div>
                     </div>
@@ -308,7 +320,7 @@
             <!-- OSM interactive map -->
             <div id="map" class="script"></div>
             <noscript>
-                <img loading="lazy" src="../../images/noscript-map.png" alt="" id="noscript-map" />
+                <img loading="lazy" src="../../images/noscript-map.png" alt="Kart over butikkens beliggenhet" id="noscript-map" />
             </noscript>
         </section>
         <!-- Interactive map ends here -->
@@ -436,5 +448,6 @@
             </div>
             <!-- Bottom part of the footer ends here -->
         </footer>
+        <div id="data" style="display: none;" data-lang="no"></div>
     </body>
 </html>
