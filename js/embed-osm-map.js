@@ -1,5 +1,5 @@
 // Position of the marker and center of the map
-const position = [67.86593, 20.2341];
+const position = [data.data.companyAddressCoordinatesLat, data.data.companyAddressCoordinatesLng];
 
 // Map options including center and zoom level
 let mapOptions = {
