@@ -1,6 +1,5 @@
 # Header
 logoAlt: "Logo of the website"
-chooseLanguage: "Choose language"
 
 # Slideshow
 slideshowSummerBouquetAlt: "Picture of a summer bouquet"
@@ -94,7 +93,7 @@ altInstagramIcon: "Instagram-icon"
 altXIcon: "X-icon"
 
 # JavaScript
-dealOfTheDayTextBanner: "Today { productName } costs only { productPrice } instead of { productOldPrice }"
+dealOfTheDayTextBanner: "Today { productName } only costs { productPrice } instead of { productOldPrice }"
 noZipCode: "You must enter a zip code!"
 zipCodeNotCorrectLength: "The zip code must be 5 digits!"
 invalidZipCode: "We unfortunately do not deliver to this zip code!"

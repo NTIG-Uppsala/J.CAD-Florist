@@ -295,7 +295,6 @@ const data = {
     },
     lang: {
       logoAlt: "Logo of the website",
-      chooseLanguage: "Choose language",
       slideshowSummerBouquetAlt: "Picture of a summer bouquet",
       slideshowTulipBouquetAlt: "Picture of a tulip bouquet",
       slideshowFallBouquetAlt: "Picture of a fall bouquet",
@@ -367,7 +366,7 @@ const data = {
       altFacebookIcon: "Facebook-icon",
       altInstagramIcon: "Instagram-icon",
       altXIcon: "X-icon",
-      dealOfTheDayTextBanner: "Today { productName } costs only { productPrice } instead of { productOldPrice }",
+      dealOfTheDayTextBanner: "Today { productName } only costs { productPrice } instead of { productOldPrice }",
       noZipCode: "You must enter a zip code!",
       zipCodeNotCorrectLength: "The zip code must be 5 digits!",
       invalidZipCode: "We unfortunately do not deliver to this zip code!",
@@ -674,7 +673,6 @@ const data = {
     },
     lang: {
       logoAlt: "Logoen til nettstedet",
-      chooseLanguage: "Velg språk",
       slideshowSummerBouquetAlt: "Bilde av en sommerbukett",
       slideshowTulipBouquetAlt: "Bilde av en tulipanbukett",
       slideshowFallBouquetAlt: "Bilde av en høstbukett",
@@ -1053,7 +1051,6 @@ const data = {
     },
     lang: {
       logoAlt: "Logotyp för webbplatsen",
-      chooseLanguage: "Välj språk",
       slideshowSummerBouquetAlt: "Bild av en sommarbukett",
       slideshowTulipBouquetAlt: "Bild av en tulpanbukett",
       slideshowFallBouquetAlt: "Bild av en höstbukett",

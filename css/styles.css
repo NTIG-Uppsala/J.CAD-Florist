@@ -160,7 +160,7 @@ header {
     z-index: 2;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 h2 {
@@ -177,7 +177,7 @@ h2 {
 }
 
 .image-container {
-    width: fit-content;
+    width: 10rem;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -196,39 +196,48 @@ h2 {
     align-items: center;
     height: 100%;
     width: fit-content;
+    padding: 1rem;
 }
 
 .dropdown-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: fit-content;
+    flex-direction: column;
+    width: 10rem;
 }
 
 .dropdown {
-    margin: 1rem;
     width: 10rem;
     font-size: var(--lvl9-font-size);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-self: flex-end;
+    right: 0;
 }
 
 .dropdown-content {
     display: none;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    position: absolute;
+    width: 10rem;
+    position: relative;
     z-index: 1;
     background-color: var(--main-color-dark);
+    align-self: flex-end;
+    right: 2rem;
 }
 
 .dropdown-button {
     background-color: var(--main-color-deal);
     color: var(--main-color-light);
-    width: 100%;
+    width: 4rem;
     height: 4rem;
+    margin: 2rem;
+    margin-left: 4rem;
     border: none;
     cursor: pointer;
     font-size: var(--lvl8-font-size);
@@ -236,7 +245,11 @@ h2 {
 
 .dropdown-item {
     color: var(--main-color-light);
-    width: 100%;
+    width: fit-content;
+    padding: 0.5rem;
+    text-decoration: none;
+    justify-self: center;
+    align-self: center;
 }
 
 #banners-container {
@@ -597,9 +610,8 @@ footer {
 }
 
 @media screen and (max-width: 500px) {
-    #logo {
-        width: 12%;
-        height: auto;
+    .image-container {
+        display: none;
     }
 }
 
@@ -610,6 +622,20 @@ footer {
 }
 
 @media screen and (max-width: 400px) {
+    .dropdown-container {
+        width: 8rem;
+    }
+    .dropdown-content {
+        margin-right: 1rem;
+    }
+
+    .dropdown-button {
+        margin-left: 2rem;
+    }
+    #title {
+        font-size: var(--lvl3-font-size);
+    }
+
     #logo {
         width: 15%;
     }
@@ -621,13 +647,13 @@ footer {
 
 @media screen and (max-width: 360px) {
     #title {
-        font-size: var(--lvl3-font-size);
+        font-size: var(--lvl4-font-size);
     }
 }
 
 @media screen and (max-width: 300px) {
     #title {
-        font-size: var(--lvl4-font-size);
+        font-size: var(--lvl5-font-size);
     }
 
     .page-top-banner p {
