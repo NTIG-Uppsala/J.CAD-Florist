@@ -1,11 +1,16 @@
+# Company Information
 companyName: "florista"
 companyAddress: "Fjällgatan 32H, 981 39 KIRUNA"
 companyAddressLink: "https://maps.app.goo.gl/pne1zVvPmaNENVQz5"
+companyAddressCoordinatesLat: 67.86593
+companyAddressCoordinatesLng: 20.2341
 companyPhoneText: "0630-555-555"
 companyPhoneLink: "0630555555"
 companyEmail: "info@florista.ntig.dev"
-rootPath: "../../"
 
+rootPath: "../../" # Root file path used in all compiled html-files to link to files from the root directory
+
+# Product Prices
 priceWeddingBouquet: "1 200"
 priceRoses10Pack: "150"
 priceTulips10Pack: "100"
@@ -17,18 +22,7 @@ priceHydrangea: "59"
 priceAloeVera: "99"
 priceCactusInPot: "99"
 
-openingHoursMonday: "10-18"
-openingHoursTuesday: "10-18"
-openingHoursWednesday: "10-17"
-openingHoursThursday: "10-17"
-openingHoursFriday: "10-18"
-openingHoursSaturday: "12-16"
-openingHoursSunday: "12-15"
-
-facebookLink: "https://www.facebook.com/ntiuppsala"
-instagramLink: "https://www.instagram.com/ntiuppsala"
-xLink: "https://x.com/ntiuppsala"
-
+# Products
 products:
     - id: "product-brollopsbukett"
       resolutions:
@@ -45,6 +39,7 @@ products:
       name: "nameWeddingBouquet"
       price: "1 200"
       unit: "sek"
+
     - id: "product-rosor-10-pack"
       resolutions:
           - maxWidth: 320
@@ -60,6 +55,7 @@ products:
       name: "nameRoses10Pack"
       price: "150"
       unit: "sek"
+
     - id: "product-tulpaner-10-pack"
       resolutions:
           - maxWidth: 320
@@ -75,6 +71,7 @@ products:
       name: "nameTulips10Pack"
       price: "100"
       unit: "sek"
+
     - id: "product-sommarbukett"
       resolutions:
           - maxWidth: 320
@@ -90,6 +87,7 @@ products:
       name: "nameSummerBouquet"
       price: "200"
       unit: "sek"
+
     - id: "product-hostbukett"
       resolutions:
           - maxWidth: 320
@@ -105,6 +103,7 @@ products:
       name: "nameFallBouquet"
       price: "400"
       unit: "sek"
+
     - id: "product-begravningskrans"
       resolutions:
           - maxWidth: 320
@@ -120,6 +119,7 @@ products:
       name: "nameFuneralWreath"
       price: "800"
       unit: "sek"
+
     - id: "product-liljor"
       resolutions:
           - maxWidth: 320
@@ -135,6 +135,7 @@ products:
       name: "nameLilies"
       price: "29"
       unit: "sekEach"
+
     - id: "product-hortensia"
       resolutions:
           - maxWidth: 320
@@ -150,6 +151,7 @@ products:
       name: "nameHydrangea"
       price: "59"
       unit: "sek"
+
     - id: "product-aloe-vera"
       resolutions:
           - maxWidth: 320
@@ -165,6 +167,7 @@ products:
       name: "nameAloeVera"
       price: "99"
       unit: "sek"
+
     - id: "product-kaktus-i-kruka"
       resolutions:
           - maxWidth: 320
@@ -180,3 +183,16 @@ products:
       name: "nameCactusInPot"
       price: "99"
       unit: "sek"
+
+# Opening Hours
+openingHoursMonday: "10-18"
+openingHoursTuesday: "10-18"
+openingHoursWednesday: "10-17"
+openingHoursThursday: "10-17"
+openingHoursFriday: "10-18"
+openingHoursSaturday: "12-16"
+openingHoursSunday: "12-15"
+
+facebookLink: "https://www.facebook.com/ntiuppsala"
+instagramLink: "https://www.instagram.com/ntiuppsala"
+xLink: "https://x.com/ntiuppsala"
