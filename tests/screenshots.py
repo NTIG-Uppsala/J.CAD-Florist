@@ -14,6 +14,7 @@ def getPagePath(pagePathFromRoot: str) -> str:  # function for getting the file 
 
 resolutions: dict[str, dict[str, int]] = {  # resolutions for the screenshots
     "1080p": {"width": 1920, "height": 1080},
+    "1080p Portrait": {"width": 1080, "height": 1920},
     "1440p": {"width": 2560, "height": 1440},
     "iPhone SE": {"width": 320, "height": 568},
     "iPhone XR": {"width": 414, "height": 896},
