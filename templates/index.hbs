@@ -152,9 +152,12 @@
         <section id="products-section" class="container flex-column centered-container">
             <h2 id="produtct-header">{{lang.productsHeaderText}}</h2>
             <div id="product-container" class="container">
+
+                {{!-- Loops through all products --}}
                 {{#each data.products}}
                     <div class="product" id="{{this.id}}">
                         <picture>
+                            {{!-- Loops through all resolutions of the product image --}}
                             {{#each this.resolutions}}
                                 <source media="(max-width: {{this.maxWidth}}px)" srcset="{{@root.data.rootPath}}{{this.path}}" />
                             {{/each}}
