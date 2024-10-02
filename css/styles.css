@@ -147,8 +147,9 @@ a {
 }
 
 .script {
-    visibility: hidden;
+    display: none;
 }
+
 
 /* Header */
 header {

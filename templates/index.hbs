@@ -14,17 +14,11 @@
         <link rel="stylesheet" type="text/css" href="{{data.rootPath}}css/product.css" />
         <link rel="stylesheet" type="text/css" href="{{data.rootPath}}css/employee-information.css" />
         <link rel="stylesheet" type="text/css" href="{{data.rootPath}}css/interactive-map.css" />
-        <!-- OSM -->
-        <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
-        <link rel="stylesheet" type="text/css" href="{{data.rootPath}}css/leaflet-gesture-handling.min.css" />
-        <script src="{{data.rootPath}}js/leaflet-gesture-handling.min.js"></script>
         {{! Data }}
         <script defer src="{{data.rootPath}}js/data.js"></script>
         <!-- Scripts -->
         <script defer src="{{data.rootPath}}js/flowergram.js"></script>
         <script defer src="{{data.rootPath}}js/open-hours.js"></script>
-        <script defer src="{{data.rootPath}}js/embed-osm-map.js"></script>
         <script defer src="{{data.rootPath}}js/show-script.js"></script>
         <script defer src="{{data.rootPath}}js/deal-of-the-day.js"></script>
         <script defer src="{{data.rootPath}}js/sort-closed-days.js"></script>
@@ -44,7 +38,7 @@
                 <h1 id="title">{{data.companyName}}</h1>
             </div>
             <div class="dropdown-container container flex-column">
-                <div class="dropdown container flex-column ">
+                <div class="dropdown container flex-column">
                     <button class="dropdown-button">&#9776;</button>
                     <div class="dropdown-content">
                         <a class="dropdown-item" href="../se">Svenska</a>
@@ -153,11 +147,11 @@
             <h2 id="produtct-header">{{lang.productsHeaderText}}</h2>
             <div id="product-container" class="container">
 
-                {{!-- Loops through all products --}}
+                {{! Loops through all products }}
                 {{#each data.products}}
                     <div class="product" id="{{this.id}}">
                         <picture>
-                            {{!-- Loops through all resolutions of the product image --}}
+                            {{! Loops through all resolutions of the product image }}
                             {{#each this.resolutions}}
                                 <source media="(max-width: {{this.maxWidth}}px)" srcset="{{@root.data.rootPath}}{{this.path}}" />
                             {{/each}}
@@ -179,8 +173,11 @@
         <!-- Interactive map starts here -->
         <section id="interactive-map-section" class="container flex-column centered-container">
             <h2>{{lang.mapHeaderText}}</h2>
-            <!-- OSM interactive map -->
-            <div id="map" class="script"></div>
+            <!-- Google Maps interactive map -->
+            <div class="script" id="map">
+                <iframe id="map" src="{{data.companyMapSource}}" style="border:0; width: 100%; border-radius: 7px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
             <noscript>
                 <img loading="lazy" src="{{data.rootPath}}images/noscript-map.png" alt="{{lang.noscriptMapAlt}}" id="noscript-map" />
             </noscript>
