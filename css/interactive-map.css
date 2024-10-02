@@ -2,7 +2,7 @@
     aspect-ratio: 2 / 1;
 }
 
-#map {
+.map {
     aspect-ratio: 2 / 1;
     width: 60dvw;
 }
@@ -14,7 +14,7 @@
         width: 90svw;
         object-fit: cover;
     }
-    #map {
+    .map {
         width: 90svw;
         height: 85svh;
         aspect-ratio: initial;

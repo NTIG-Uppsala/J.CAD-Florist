@@ -97,9 +97,7 @@ Namn på produkter ändras i respektive språkfil i [språkfilsmappen](data/data
 ### Företagsinfo
 Företagsinformation, som företagets namn, adress eller kontaktuppgifter, ändras i [data.yml](data/data/data.yml) under "Company Information"-kommentaren.
 
-Om adressen ändras behöver även google-maps-länken till adressen samt dess koordinater ändras.
-
-För att hitta koordinaterna: skriv in adressen i google-maps och högerklicka på platsen som visas. Koordinaterna kommer då visas och du kan klicka på dem för att kopiera dem. Infoga sedan den första siffran i `companyAddressCoordinatesLat` och den andra siffran i `companyAddressCoordinatesLng` i [data.yml](data/data/data.yml)-filen.
+För kartan finns det en länk i `companyMapSource` i [data.yml](data/data/data.yml) under "Company Information"-kommentaren som också behöver ändras.
 
 ### Öppettider
 
