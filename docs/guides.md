@@ -1,8 +1,8 @@
 # Guider
 
----
-
 ## Publicera GitHub Pages
+
+I detta projekt används GitHub Pages som en staging area för att smidigt kunna presentera färdiga features för kunden och product ownern. Pages används också för att smidigt kunna testa delar av hemsidan på på olika enheter.
 
 1. Logga in på github.com.
 2. Öppna J.CAD-FLORIST-repositoryn.
@@ -13,8 +13,10 @@
 7. Tryck sedan på "Save".
 
 ---
+## Webbservern
+### Hur man kommer åt webbservern
 
-## Hur man kommer åt webbservern
+Webbservern används för att publicera features som product owner har godkänt som helt klara så att de kan användas av kunden.
 
 1. Öppna en kommandotolk och skriv:
     ```bash
@@ -32,18 +34,18 @@
     ```
 6. Växla till den senaste releasen:
     ```bash
-    git checkout <din tag>
+    git checkout <din tagg>
     ```
 
 ---
 
-## Hur man släpper en ny release
+### Hur man släpper en ny release
 
 Öppna en kommandotolk och skriv:
 
 ```bash
 git fetch
-git checkout <din tag>
+git checkout <din tagg>
 ```
 
 Om du är osäker, lista alla taggar genom att skriva:

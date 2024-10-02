@@ -28,19 +28,19 @@ Medlemmar: Axel Thornberg, Jesper Cejie, Eskil Tornberg.
 
 ## Tester
 
-För att köra tester krävs det att man installerar saker. För det första krävs Python 3.x.
+För att köra tester krävs det att man installerar saker. För det första krävs Python 3.12.5 vilket installeras via [python.org](https://www.python.org/downloads/release/python-3125/).
 
-Kör sedan följande kommandon i terminalen:
+Öppna sedan projektet i en kommandotolk och kör dessa kommandon:
 
 ```bash
-    pip install playwright lxml
+pip install playwright lxml
 ```
 
 ```bash
-    playwright install
+playwright install
 ```
 
-För att konfiguera testerna så tryck view --> testing --> configure python tests --> unittests --> tests.
+För att konfiguera testerna tryck view --> testing --> configure python tests --> unittests --> tests.
 
 Det finns också ett python-script som genererar skärmdumpar av hemsidan. Detta skript körs genom att skriva `py .\tests\screenshots.py` i en terminal som har navigerat till projektets huvudmapp.
 
@@ -65,7 +65,7 @@ npm run resize
 
 ## Uppdatera sidan
 
-Pusha de features som är helt klara till `live`-branchen. Andra ändringar ska pushas till `main`-branchen.
+Alla ändringar som är klara ska pushas till `main`-branchen. När en feature är helt klar ska `live`-branchen rebasas till den commiten i `main`-branchen.
 
 ---
 
@@ -77,30 +77,45 @@ Alla tester ligger i tests-mappen. Testerna är uppdelade i flera filer som alla
 
 ## Ikoner
 
-Ikoner tagna från: [icons8](https://icons8.com/), [iconmonstr](https://iconmonstr.com/).
+Ikoner är tagna från [icons8](https://icons8.com/) och [iconmonstr](https://iconmonstr.com/).
 
 ---
 
 ## Hur man ändrar information på hemsidan:
 
-Allt som följer måste även ändras i test-filerna.
+Allt som följer måste även ändras i test-filerna så att informationen som kontrolleras av testerna stämmer med vad som borde kontrolleras.
 
-För att ändra namnet, bilden eller priset på existerande produkter eller lägga till nya produkter hitta och ändra elementen i `#product-container` i index.html.
+### Produkter
+Priset på existerande produkter ändras i [data.yml](data/data/data.yml)-filen under "Product Prices"-kommentaren.
 
-För att ändra telefonnummer ändra texten och href i a-taggarna i `#flowergram` och `#number` i index.html.
+Nya produkter läggs till under "Products"-kommentaren. Se då till att följa samma formattering som de produkter som redan existerar.
 
-För att ändra E-post ändra texten och href i a-taggen i `#email` i index.html. 
+Bilder på produkter ändras också under "Products"-kommentaren i respektive produkt.
 
-För att ändra adress ändra texten och href i a-taggen i `#address` i index.html. Ändra dessutom koordinaterna i arrayen `position` i js/embed-osm-map.js.
+Namn på produkter ändras i respektive språkfil i [språkfilsmappen](data/data-lang/) under "Products section"-kommentaren. Här kan man också redigera alt-texten för bilderna.
 
-För att ändra öppetider ändra det i `#opening-hours-container` i index.html och objektet `openHours` i js/open-hours.js. Objektet består av ett objekt för varje dag. `from` är när det öppnar och `to` är när det stänger för dagarna. `hour` och `minute` är timmarna respektive minuterna för öppetiderna.
+### Företagsinfo
+Företagsinformation, som företagets namn, adress eller kontaktuppgifter, ändras i [data.yml](data/data/data.yml) under "Company Information"-kommentaren.
 
-För att ändra stängda dagar ändra det i `#closed-days-container` i index.html genom att ändra p-taggarna (Notera att de ska ha attributen data-date i formatet "MMDD" där januari är månad 0 och december är månad 11. Dagar börjar på 1). Ändra också i objektet `closedDays` i js/open-hours.js genom att lägga till eller ta bort dem i listan för deras respektive månad. Notera att januari är månad 0 och december är månad 11. Dagar börjar på 1.
+Om adressen ändras behöver även google-maps-länken till adressen samt dess koordinater ändras.
 
+För att hitta koordinaterna: skriv in adressen i google-maps och högerklicka på platsen som visas. Koordinaterna kommer då visas och du kan klicka på dem för att kopiera dem. Infoga sedan den första siffran i `companyAddressCoordinatesLat` och den andra siffran i `companyAddressCoordinatesLng` i [data.yml](data/data/data.yml)-filen.
+
+### Öppettider
+
+Öppettider ändras i [data.yml](data/data/data.yml)-filen under kommentaren "Opening Hours".
+
+### Stängda dagar
+Information om stängda dagar ändras i respektive språkfil i [språkfilsmappen](data/data-lang/) under "Closed days"-kommentaren.
+
+### Vilka postnummer som levereras till
 För att ändra vilka postnummer som levereras till ändra det i listan `zipCodes` i js/flowergram.js.
 
-För att ändra information om personalen, gå till index.html och leta efter en div-tagg med id `employee-section`. Under den div-taggen finns all information om personal som går att ändra på.
+### Information om personal
+Information om personal ändras i respektive språkfil i [språkfilsmappen](data/data-lang/) under "Employee information section"-kommentaren.
 
+### Dagens klipp
 För att ändra dagens klipp är det objektet `dealsOfTheDay` i js/deal-of-the-day.js som ska ändras. Objektet har 7 nycklar, en för varje dag där söndag är dag 0 och Lördag är dag 6. Dessa nycklars världen är listor med objekt där varje objekt är ett klipp. Varje klipp har två nycklar och två världen. `price` bestämmer nya priset och `id` bestämmer id:t på produkten. Ändra värdet på dessa nycklar om existerande klipp ska ändras. För att lägga till nya klipp skapa nya objekt som följer samma struktur i listan som motsvarar den dag som klippet ska gälla på.
 
+### Informationsmeddelande
 För att ändra vad som visas i informationsmeddelandet, ändra `outputTextField.innerHTML` i js/dynamic-information.js.

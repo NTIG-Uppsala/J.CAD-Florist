@@ -1,6 +1,7 @@
 # Handlebars
+Handlebars används för att enkelt kunna ändra information på hemsidan utan att behöva leta i en stökig html-fil.
 ## Ändra information
-Om en variabel använder speciella tecken (t.ex. &), använd då {{{varName}}} (tre måsvingar) istället för {{varName}} (två måsvingar).
+Om en variabel använder speciella tecken (t.ex. &), använd då `{{{varName}}}` (tre måsvingar) istället för `{{varName}}` (två måsvingar).
 
 När du lägger in eller redigerar information på hemsidan, se till att du använder rätt .yml-fil. Information som är likadan oavsett språk eller andra faktorer ska läggas i `data/data/data.yml`. Information som ändras baserat på språk ska läggas i `data/data-lang/{språk}.yml`.
 
