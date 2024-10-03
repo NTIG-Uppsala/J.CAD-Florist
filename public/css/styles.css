@@ -107,7 +107,7 @@ a {
 
 /* Header */
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     height: var(--header-height);
@@ -116,6 +116,7 @@ header {
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
+    transition: 250ms;
 }
 
 h2 {
