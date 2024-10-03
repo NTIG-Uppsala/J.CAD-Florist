@@ -13,7 +13,7 @@ const writeOutput = (message, color) => {
 };
 
 // Function to check if the ZIP code is valid
-const checkZIPCode = () => {
+const checkZipCode = () => {
     // Get the value from the input field and remove all non-digit characters
     const zip = inputField.value.replace(/\D/g, "");
 
@@ -42,13 +42,13 @@ const checkZIPCode = () => {
 
 // Adds event listeners to the input field and button
 
-inputButton.addEventListener("click", checkZIPCode);
+inputButton.addEventListener("click", checkZipCode);
 
-inputField.addEventListener("blur", checkZIPCode);
+inputField.addEventListener("blur", checkZipCode);
 
 inputField.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
-        checkZIPCode();
+        checkZipCode();
     }
 });
 
