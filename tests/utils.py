@@ -3,6 +3,8 @@ from playwright.sync_api import sync_playwright, expect
 from lxml import etree, html
 from os import path
 
+# Set root dir relative to the html file dir
+relativeRootDir = "../"
 
 class TestBase(unittest.TestCase):
 

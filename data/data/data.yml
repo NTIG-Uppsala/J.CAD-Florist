@@ -7,7 +7,7 @@ companyPhoneText: "0630-555-555"
 companyPhoneLink: "0630555555"
 companyEmail: "info@florista.ntig.dev"
 
-rootPath: "../../" # Root file path used in all compiled html-files to link to files from the root directory
+rootPath: "../" # Root file path used in all compiled html-files to link to files from the root directory
 
 # Product Prices
 priceWeddingBouquet: "1 200"

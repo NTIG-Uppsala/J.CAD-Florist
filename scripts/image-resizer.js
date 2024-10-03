@@ -40,7 +40,7 @@ const imageResizer = (folder, resolutions) => {
 };
 
 // Output folder
-const imageFolder = "images/";
+const imageFolder = "public/images/";
 
 // Slideshow images
 const slideshowFolder = "assets/images/slideshow/";

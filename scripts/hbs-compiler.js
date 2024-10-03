@@ -12,7 +12,7 @@ const templateFile = "templates/index.hbs"; // Path to the Handlebars template f
 const dataFolder = "data/data/"; // Path to a data folder where all the data files will be stored
 const dataLangFolder = "data/data-lang/"; // Path to a data folder where all the language data files will be stored
 const outputFolder = "public/"; // Path to the output folder
-const jsFile = "js/data.js"; // Path to tje output js file for all the data
+const jsFile = "public/js/data.js"; // Path to the output js file for all the data
 
 // Function to convert JS object to a string without quotes around keys
 const objectToString = (obj) => {

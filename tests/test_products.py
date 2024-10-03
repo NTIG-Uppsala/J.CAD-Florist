@@ -1,6 +1,5 @@
 from utils import *
 
-
 class TestProducts(TestBase):
 
     def setUp(self) -> None:
@@ -34,16 +33,16 @@ class TestProducts(TestBase):
 
     # Test that the product images are displayed
     def testProductImages(self) -> None:
-        self.assertInHTML('<img src="../../images/480x320/brollopsbukett.jpg" alt="Bröllopsbukett">')
-        self.assertInHTML('<img src="../../images/480x320/rosor-10-pack.jpg" alt="Rosor 10-pack">')
-        self.assertInHTML('<img src="../../images/480x320/tulpaner-10-pack.jpg" alt="Tulpaner 10-pack">')
-        self.assertInHTML('<img src="../../images/480x320/sommarbukett.jpg" alt="Sommarbukett">')
-        self.assertInHTML('<img src="../../images/480x320/hostbukett.jpg" alt="Höstbukett">')
-        self.assertInHTML('<img src="../../images/480x320/begravningskrans.jpg" alt="Begravningskrans">')
-        self.assertInHTML('<img src="../../images/480x320/liljor.jpg" alt="Liljor">')
-        self.assertInHTML('<img src="../../images/480x320/hortensia.jpg" alt="Hortensia">')
-        self.assertInHTML('<img src="../../images/480x320/aloe-vera.jpg" alt="Aloe vera">')
-        self.assertInHTML('<img src="../../images/480x320/kaktus.jpg" alt="Kaktus i kruka">')
+        self.assertInHTML('<img src="' + relativeRootDir + 'images/480x320/brollopsbukett.jpg" alt="Bröllopsbukett">')
+        self.assertInHTML('<img src="' + relativeRootDir + 'images/480x320/rosor-10-pack.jpg" alt="Rosor 10-pack">')
+        self.assertInHTML('<img src="' + relativeRootDir + 'images/480x320/tulpaner-10-pack.jpg" alt="Tulpaner 10-pack">')
+        self.assertInHTML('<img src="' + relativeRootDir + 'images/480x320/sommarbukett.jpg" alt="Sommarbukett">')
+        self.assertInHTML('<img src="' + relativeRootDir + 'images/480x320/hostbukett.jpg" alt="Höstbukett">')
+        self.assertInHTML('<img src="' + relativeRootDir + 'images/480x320/begravningskrans.jpg" alt="Begravningskrans">')
+        self.assertInHTML('<img src="' + relativeRootDir + 'images/480x320/liljor.jpg" alt="Liljor">')
+        self.assertInHTML('<img src="' + relativeRootDir + 'images/480x320/hortensia.jpg" alt="Hortensia">')
+        self.assertInHTML('<img src="' + relativeRootDir + 'images/480x320/aloe-vera.jpg" alt="Aloe vera">')
+        self.assertInHTML('<img src="' + relativeRootDir + 'images/480x320/kaktus.jpg" alt="Kaktus i kruka">')
 
 
 if __name__ == "__main__":
