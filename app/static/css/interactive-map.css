@@ -1,0 +1,22 @@
+#noscript-map {
+    aspect-ratio: 2 / 1;
+}
+
+.map {
+    aspect-ratio: 2 / 1;
+    width: 60dvw;
+}
+
+@media screen and (orientation: portrait) {
+    #noscript-map {
+        aspect-ratio: initial;
+        height: 85svh;
+        width: 90svw;
+        object-fit: cover;
+    }
+    .map {
+        width: 90svw;
+        height: 85svh;
+        aspect-ratio: initial;
+    }
+}

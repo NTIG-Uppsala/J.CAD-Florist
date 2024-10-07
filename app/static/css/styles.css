@@ -1,0 +1,687 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Italiana&display=swap");
+
+:root {
+    --main-color-light: rgb(255, 255, 242);
+    --main-color-reg: rgb(235, 235, 211.02);
+    --main-color-darker: rgb(202, 202, 182);
+    --main-color-dark: rgb(0, 0, 0);
+    --main-logo-color: rgb(206, 175, 73);
+    --main-color-gray: rgb(128, 128, 128);
+    --main-color-deal: rgb(97, 72, 207);
+    --btn-hover-color: var(--main-color-darker);
+
+    --main-text-color: var(--main-color-dark);
+    --secondary-text-color: var(--text-color-light);
+    --text-color-light: var(--main-color-light);
+    --link-color: var(--main-color-dark);
+    --main-border-color: var(--main-color-dark);
+    --main-backround-color-dark: var(--main-color-dark);
+
+    --border-thin: 1px solid var(--main-border-color);
+    --border-reg: 2px solid var(--main-border-color);
+    --base-font-size: 1rem;
+
+    /* This section defines font sizes that scale exponentially*/
+    --lvl1-font-size: calc(var(--base-font-size) * 4.5);
+    --lvl2-font-size: calc(var(--base-font-size) * pow(1.2, 8));
+    --lvl3-font-size: calc(var(--base-font-size) * pow(1.2, 7));
+    --lvl4-font-size: calc(var(--base-font-size) * pow(1.2, 6));
+    --lvl5-font-size: calc(var(--base-font-size) * pow(1.2, 5));
+    --lvl6-font-size: calc(var(--base-font-size) * pow(1.2, 4));
+    --lvl7-font-size: calc(var(--base-font-size) * pow(1.2, 3));
+    --lvl8-font-size: calc(var(--base-font-size) * pow(1.2, 2));
+    --lvl9-font-size: calc(var(--base-font-size) * pow(1.2, 1));
+    --lvl10-font-size: calc(var(--base-font-size) * pow(1.2, 0));
+    --lvl11-font-size: calc(var(--base-font-size) * pow(1.2, -1));
+
+    --header-height: 8rem;
+    --page-top-banner-height: 3rem;
+    --slideshow-height: 82vh;
+    --slideshow-height-large-portrait: 40vh;
+    --slideshow-responsive-height: 100vh;
+    --body-height-original: calc(var(--header-height) + var(--slideshow-height));
+    --body-height: var(--body-height-original);
+    --body-height-large-portrait: calc(var(--header-height) + var(--slideshow-height-large-portrait));
+    --body-responsive-height-original: calc(var(--header-height) + var(--slideshow-responsive-height));
+    --body-responsive-height: var(--body-responsive-height-original);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "abel", sans-serif;
+    text-wrap: balance;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--main-color-light);
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    height: var(--body-height);
+}
+
+/* Styling for header and paragraph tags */
+h1 {
+    font-size: var(--lvl1-font-size);
+}
+h2 {
+    font-size: var(--lvl4-font-size);
+}
+h3 {
+    font-size: var(--lvl5-font-size);
+}
+h4 {
+    font-size: var(--lvl7-font-size);
+}
+h5 {
+    font-size: var(--lvl8-font-size);
+}
+h6 {
+    font-size: var(--lvl9-font-size);
+}
+p {
+    font-size: var(--base-font-size);
+}
+
+a {
+    color: var(--link-color);
+}
+
+.fs-1 {
+    font-size: var(--lvl1-font-size);
+}
+.fs-2 {
+    font-size: var(--lvl2-font-size);
+}
+.fs-3 {
+    font-size: var(--lvl3-font-size);
+}
+.fs-4 {
+    font-size: var(--lvl4-font-size);
+}
+.fs-5 {
+    font-size: var(--lvl5-font-size);
+}
+.fs-6 {
+    font-size: var(--lvl6-font-size);
+}
+.fs-7 {
+    font-size: var(--lvl7-font-size);
+}
+.fs-8 {
+    font-size: var(--lvl8-font-size);
+}
+.fs-9 {
+    font-size: var(--lvl9-font-size);
+}
+.fs-10 {
+    font-size: var(--lvl10-font-size);
+}
+.fs-11 {
+    font-size: var(--lvl11-font-size);
+}
+
+.container {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.centered-container {
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-start-container {
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.wh-100 {
+    width: 100%;
+    height: 100%;
+}
+
+.script {
+    display: none;
+}
+
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--main-backround-color-dark);
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+h2 {
+    height: fit-content;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+/* Title */
+#title {
+    color: var(--main-logo-color);
+    font-weight: bolder;
+    font-size: var(--lvl1-font-size);
+}
+
+.image-container {
+    width: 10rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo */
+#logo {
+    width: auto;
+    height: 95%;
+    margin-left: 1rem;
+}
+
+#header-container {
+    height: 100%;
+    width: fit-content;
+    padding: 1rem;
+}
+
+.dropdown-container {
+    width: 10rem;
+}
+
+.dropdown {
+    width: 10rem;
+    font-size: var(--lvl9-font-size);
+    justify-content: flex-end;
+    justify-self: flex-end;
+    right: 0;
+}
+
+.dropdown-content {
+    display: none;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    width: 10rem;
+    position: relative;
+    z-index: 1;
+    background-color: var(--main-color-dark);
+    align-self: flex-end;
+    right: 2rem;
+}
+
+.dropdown-button {
+    background-color: var(--main-color-deal);
+    color: var(--main-color-light);
+    width: 4rem;
+    height: 4rem;
+    margin: 2rem;
+    margin-left: 4rem;
+    border: none;
+    cursor: pointer;
+    font-size: var(--lvl8-font-size);
+}
+
+.dropdown-item {
+    color: var(--main-color-light);
+    width: fit-content;
+    padding: 0.5rem;
+    text-decoration: none;
+    justify-self: center;
+    align-self: center;
+}
+
+#banners-container {
+    position: relative;
+}
+
+/* Page-top banners */
+.page-top-banner {
+    font-weight: bold;
+    width: 100%;
+    height: var(--page-top-banner-height);
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+}
+
+.page-top-banner p {
+    font-size: var(--lvl9-font-size);
+}
+
+/* Open or closed */
+#open-or-closed-container {
+    background-color: var(--main-color-reg);
+    color: var(--main-text-color);
+}
+
+#dynamic-information-container {
+    background-color: var(--main-color-deal);
+    color: var(--main-color-light);
+    font-weight: normal;
+    top: calc(var(--page-top-banner-height));
+    height: auto;
+    padding: 0.8rem;
+}
+
+/* Flowergram */
+#flowergram-container {
+    width: 40rem;
+    height: 80%;
+    position: absolute;
+    left: 5rem;
+    top: 13rem;
+    max-width: 90dvw;
+}
+
+#flowergram-container h3 {
+    color: var(--secondary-text-color);
+}
+
+#flowergram-container h4 {
+    color: var(--main-text-color);
+    width: 60%;
+    background-color: var(--main-color-reg);
+    border: var(--border-reg);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    min-height: 5rem;
+    max-height: max-content;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+#flowergram-container h4:hover {
+    background-color: var(--btn-hover-color);
+    cursor: pointer;
+}
+
+#flowergram {
+    visibility: hidden;
+    width: 60%;
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+    height: fit-content;
+    background-color: var(--main-color-reg);
+    margin-top: 3rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: var(--border-reg);
+    min-height: min-content;
+    max-height: max-content;
+}
+
+#flowergram.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+#flowergram p {
+    width: 90%;
+    color: var(--main-text-color);
+}
+
+#flowergram-separator {
+    background-color: var(--main-border-color);
+    width: 100%;
+    height: 1px;
+    transform: scaleY(0.5);
+    transform-origin: center;
+    border: none;
+    margin: 0.2rem 0;
+}
+
+#input-container {
+    margin-top: 0.5rem;
+}
+
+#postal-code {
+    background-color: var(--main-color-light);
+    width: 65%;
+    height: 2rem;
+    font-size: var(--base-font-size);
+    border: var(--border-thin);
+    padding-left: 0.5rem;
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+#postal-code::placeholder {
+    color: var(--main-text-color);
+}
+
+#postal-code:focus {
+    outline: none;
+}
+
+#postal-code-btn {
+    background-color: var(--main-color-light);
+    border-radius: 0 0.5rem 0.5rem 0;
+    border: var(--border-thin);
+    border-left: none;
+    width: 2.5rem;
+    background-image: url("../images/search-thin-black.svg");
+    background-size: 1.3rem;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#postal-code-btn:hover {
+    background-color: var(--btn-hover-color);
+    cursor: pointer;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Flowergram ends here */
+
+/* Slideshow */
+/* the .slide class styles all images in the slideshow */
+#slideshow-and-flowergram-container {
+    height: var(--slideshow-height);
+}
+
+#slideshow-container {
+    position: relative; /* Allow absolute positioning of slides */
+    overflow: hidden; /* Hide overflowing slides */
+}
+
+/* the .slide class styles all images in the slideshow */
+.slide {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure images take full width */
+    height: 100%; /* Ensure images take full height */
+    opacity: 0;
+    animation: fade 18s infinite; /* Default animation for fading */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Keeps the first image visible through the entire animation */
+.slide:nth-of-type(1) {
+    animation: fadeFirst 18s infinite;
+}
+
+/* Applies fade animations to subsequent images */
+.slide:nth-of-type(2) {
+    animation-delay: 6s; /* Starts 6 seconds after the first */
+}
+
+.slide:nth-of-type(3) {
+    animation-delay: 12s; /* Starts 12 seconds after the first */
+}
+
+/* Animation to fade images in and out */
+@keyframes fade {
+    0%,
+    66.66% {
+        opacity: 0;
+    }
+    33.33% {
+        opacity: 1;
+    }
+}
+
+/* Animation to keep the first image's opacity full */
+@keyframes fadeFirst {
+    0%,
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    min-height: 20vh;
+    background-color: var(--main-color-light);
+    z-index: 1;
+    padding-top: 1%;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#footer-top {
+    width: 100%;
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer-container {
+    position: relative; /* Needed to position the pseudo-element */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+/* Creates a pseudo-element in footer-container-1 and footer-container-2. */
+/* The psuedo-element is positioned absolutely with a distance of 10% from the top and bottom as well as too the right to create a border. */
+#footer-container-1::after,
+#footer-container-2::after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    bottom: 5%;
+    right: 0;
+    width: 1px;
+    background-color: var(--main-border-color);
+}
+
+#footer-bottom {
+    width: 25%;
+    height: 25%;
+}
+
+#footer-info,
+.opening-hours,
+.closed-days {
+    list-style: none;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.footer-col {
+    margin: 0rem 0.5rem;
+}
+
+/* Social medias */
+#social-media-container {
+    justify-content: center;
+    list-style: none;
+}
+
+.social-media-icon {
+    margin: 0 2em;
+}
+
+#social-media-container img {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Media queries */
+
+@media screen and (orientation: landscape) and (max-width: 1600px) {
+    body {
+        height: var(--body-responsive-height);
+    }
+
+    #slideshow-and-flowergram-container {
+        width: 100%;
+        height: var(--slideshow-responsive-height);
+    }
+
+    .slide {
+        width: 100%;
+        height: var(--slideshow-responsive-height);
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #flowergram-container {
+        width: 20rem;
+        left: auto;
+        right: auto;
+        top: 8rem;
+        align-items: center;
+    }
+
+    #flowergram-container h3 {
+        text-align: center;
+    }
+
+    #flowergram-container h4 {
+        width: 20rem;
+        max-width: 90dvw;
+    }
+
+    #flowergram {
+        margin-top: 1rem;
+        width: 20rem;
+        max-width: 80dvw;
+    }
+
+    #footer-top {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        justify-content: center;
+    }
+
+    #footer-container-1::after,
+    #footer-container-2::after {
+        content: none;
+    }
+
+    #footer-info {
+        margin-bottom: 1rem;
+    }
+
+    .footer-col {
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .image-container {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    #flowergram-container {
+        top: calc(8rem + var(--lvl9-font-size));
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .dropdown-container {
+        width: 8rem;
+    }
+    .dropdown-content {
+        margin-right: 1rem;
+    }
+
+    .dropdown-button {
+        margin-left: 2rem;
+    }
+    #title {
+        font-size: var(--lvl3-font-size);
+    }
+
+    #logo {
+        width: 15%;
+    }
+
+    .social-media-icon {
+        margin: 0 1em;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    #title {
+        font-size: var(--lvl4-font-size);
+    }
+}
+
+@media screen and (max-width: 300px) {
+    #title {
+        font-size: var(--lvl5-font-size);
+    }
+
+    .page-top-banner p {
+        font-size: var(--lvl10-font-size);
+    }
+
+    #logo {
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .page-top-banner p {
+        font-size: var(--lvl11-font-size);
+    }
+}
+
+@media screen and (max-width: 220px) {
+    #logo {
+        display: none;
+    }
+}
+
+@media screen and (orientation: portrait) and (min-width: 1080px) {
+    #slideshow-and-flowergram-container {
+        height: var(--slideshow-height-large-portrait);
+    }
+
+    body {
+        height: var(--body-height-large-portrait);
+    }
+
+    picture {
+        height: 100%;
+    }
+}
