@@ -2,9 +2,16 @@ from flask import render_template
 from app import app
 
 @app.route('/')
-@app.route('/index')
 @app.route('/se')
-def index():
+def se():
+    return render_template('index.html')
+
+@app.route('/en')
+def en():
+    return render_template('index.html')
+
+@app.route('/no')
+def no():
     return render_template('index.html')
 
 # Istället för handlebars har en index fil som en template som ändrar språk beroende på vilken route som används
