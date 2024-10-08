@@ -1,13 +1,14 @@
 {% extends "base.html" %} <!--Inkludera base.html, som innehåller navbar som ska inkluderas i varje fil-->
+    <body>
         <!-- Header starts here -->
         <header class="container">
             <a href=".">
                 <div class="image-container">
-                    <img id="logo" src="../images/logga-florist-1.png" alt="Logo of the website" />
+                    <img id="logo" src="{{url_for('static', filename='images/logga-florist-1.png')}}" alt="{{lang.logoAlt}}" />
                 </div>
             </a>
             <div id="header-container" class="container flex-column centered-container wh-100">
-                <h1 id="title">florista</h1>
+                <h1 id="title">{{data.companyName}}</h1>
             </div>
             <div class="dropdown-container container flex-column">
                 <div class="dropdown container flex-column">
@@ -39,71 +40,71 @@
             <div id="slideshow-container" class="container centered-container wh-100">
 
                 <picture class="slide">
-                    <source media="(max-width: 375px) and (max-height: 667px) and (orientation: portrait)" srcset="../images/375x667/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 360px) and (max-height: 800px) and (orientation: portrait)" srcset="../images/360x800/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 390px) and (max-height: 844px) and (orientation: portrait)" srcset="../images/390x844/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 393px) and (max-height: 851px) and (orientation: portrait)" srcset="../images/393x851/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 393px) and (max-height: 873px) and (orientation: portrait)" srcset="../images/393x873/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 412px) and (max-height: 915px) and (orientation: portrait)" srcset="../images/412x915/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 1080px) and (max-height: 1920px) and (orientation: portrait)" srcset="../images/1080x768/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 1440px) and (max-height: 2560px) and (orientation: portrait)" srcset="../images/1440x1024/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 1280px) and (max-height: 720px) and (orientation: landscape)" srcset="../images/1280x720/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 1366px) and (max-height: 768px) and (orientation: landscape)" srcset="../images/1366x768/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 1440px) and (max-height: 900px) and (orientation: landscape)" srcset="../images/1440x900/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 1536px) and (max-height: 864px) and (orientation: landscape)" srcset="../images/1536x864/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 1600px) and (max-height: 900px) and (orientation: landscape)" srcset="../images/1600x900/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 1920px) and (max-height: 1080px) and (orientation: landscape)" srcset="../images/1920x1080/sommarbukett-lg.jpg" />
-                    <img src="../images/2560x1440/sommarbukett-lg.jpg" class="wh-100" alt="Picture of a summer bouquet" />
+                    <source media="(max-width: 375px) and (max-height: 667px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/375x667/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 360px) and (max-height: 800px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/360x800/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 390px) and (max-height: 844px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/390x844/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 393px) and (max-height: 851px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/393x851/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 393px) and (max-height: 873px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/393x873/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 412px) and (max-height: 915px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/412x915/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1080px) and (max-height: 1920px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/1080x768/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1440px) and (max-height: 2560px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/1440x1024/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1280px) and (max-height: 720px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1280x720/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1366px) and (max-height: 768px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1366x768/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1440px) and (max-height: 900px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1440x900/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1536px) and (max-height: 864px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1536x864/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1600px) and (max-height: 900px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1600x900/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1920px) and (max-height: 1080px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1920x1080/sommarbukett-lg.jpg')}}" />
+                    <img src="{{url_for('static', filename='images/2560x1440/sommarbukett-lg.jpg')}}" class="wh-100" alt="{{lang.slideshowSummerBouquetAlt}}" />
                 </picture>
 
                 <picture class="slide">
-                    <source media="(max-width: 375px) and (max-height: 667px) and (orientation: portrait)" srcset="../images/375x667/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 360px) and (max-height: 800px) and (orientation: portrait)" srcset="../images/360x800/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 390px) and (max-height: 844px) and (orientation: portrait)" srcset="../images/390x844/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 393px) and (max-height: 851px) and (orientation: portrait)" srcset="../images/393x851/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 393px) and (max-height: 873px) and (orientation: portrait)" srcset="../images/393x873/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 412px) and (max-height: 915px) and (orientation: portrait)" srcset="../images/412x915/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 1080px) and (max-height: 1920px) and (orientation: portrait)" srcset="../images/1080x768/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 1440px) and (max-height: 2560px) and (orientation: portrait)" srcset="../images/1440x1024/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 1280px) and (max-height: 720px) and (orientation: landscape)" srcset="../images/1280x720/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 1366px) and (max-height: 768px) and (orientation: landscape)" srcset="../images/1366x768/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 1440px) and (max-height: 900px) and (orientation: landscape)" srcset="../images/1440x900/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 1536px) and (max-height: 864px) and (orientation: landscape)" srcset="../images/1536x864/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 1600px) and (max-height: 900px) and (orientation: landscape)" srcset="../images/1600x900/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 1920px) and (max-height: 1080px) and (orientation: landscape)" srcset="../images/1920x1080/tulpanbukett-lg.jpg" />
-                    <img src="../images/2560x1440/tulpanbukett-lg.jpg" class="wh-100" alt="Picture of a tulip bouquet" />
+                    <source media="(max-width: 375px) and (max-height: 667px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/375x667/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 360px) and (max-height: 800px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/360x800/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 390px) and (max-height: 844px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/390x844/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 393px) and (max-height: 851px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/393x851/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 393px) and (max-height: 873px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/393x873/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 412px) and (max-height: 915px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/412x915/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1080px) and (max-height: 1920px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/1080x768/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1440px) and (max-height: 2560px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/1440x1024/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1280px) and (max-height: 720px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1280x720/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1366px) and (max-height: 768px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1366x768/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1440px) and (max-height: 900px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1440x900/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1536px) and (max-height: 864px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1536x864/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1600px) and (max-height: 900px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1600x900/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1920px) and (max-height: 1080px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1920x1080/tulpanbukett-lg.jpg')}}" />
+                    <img src="{{url_for('static', filename='images/2560x1440/tulpanbukett-lg.jpg')}}" class="wh-100" alt="{{lang.slideshowTulipBouquetAlt}}" />
                 </picture>
 
                 <picture class="slide">
-                    <source media="(max-width: 375px) and (max-height: 667px) and (orientation: portrait)" srcset="../images/375x667/hostbukett-lg.jpg" />
-                    <source media="(max-width: 360px) and (max-height: 800px) and (orientation: portrait)" srcset="../images/360x800/hostbukett-lg.jpg" />
-                    <source media="(max-width: 390px) and (max-height: 844px) and (orientation: portrait)" srcset="../images/390x844/hostbukett-lg.jpg" />
-                    <source media="(max-width: 393px) and (max-height: 851px) and (orientation: portrait)" srcset="../images/393x851/hostbukett-lg.jpg" />
-                    <source media="(max-width: 393px) and (max-height: 873px) and (orientation: portrait)" srcset="../images/393x873/hostbukett-lg.jpg" />
-                    <source media="(max-width: 412px) and (max-height: 915px) and (orientation: portrait)" srcset="../images/412x915/hostbukett-lg.jpg" />
-                    <source media="(max-width: 1080px) and (max-height: 1920px) and (orientation: portrait)" srcset="../images/1080x768/hostbukett-lg.jpg" />
-                    <source media="(max-width: 1440px) and (max-height: 2560px) and (orientation: portrait)" srcset="../images/1440x1024/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 1280px) and (max-height: 720px) and (orientation: landscape)" srcset="../images/1280x720/hostbukett-lg.jpg" />
-                    <source media="(max-width: 1366px) and (max-height: 768px) and (orientation: landscape)" srcset="../images/1366x768/hostbukett-lg.jpg" />
-                    <source media="(max-width: 1440px) and (max-height: 900px) and (orientation: landscape)" srcset="../images/1440x900/hostbukett-lg.jpg" />
-                    <source media="(max-width: 1536px) and (max-height: 864px) and (orientation: landscape)" srcset="../images/1536x864/hostbukett-lg.jpg" />
-                    <source media="(max-width: 1600px) and (max-height: 900px) and (orientation: landscape)" srcset="../images/1600x900/hostbukett-lg.jpg" />
-                    <source media="(max-width: 1920px) and (max-height: 1080px) and (orientation: landscape)" srcset="../images/1920x1080/hostbukett-lg.jpg" />
-                    <img src="../images/2560x1440/hostbukett-lg.jpg" class="wh-100" alt="Picture of a fall bouquet" />
+                    <source media="(max-width: 375px) and (max-height: 667px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/375x667/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 360px) and (max-height: 800px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/360x800/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 390px) and (max-height: 844px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/390x844/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 393px) and (max-height: 851px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/393x851/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 393px) and (max-height: 873px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/393x873/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 412px) and (max-height: 915px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/412x915/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1080px) and (max-height: 1920px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/1080x768/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1440px) and (max-height: 2560px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/1440x1024/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1280px) and (max-height: 720px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1280x720/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1366px) and (max-height: 768px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1366x768/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1440px) and (max-height: 900px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1440x900/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1536px) and (max-height: 864px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1536x864/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1600px) and (max-height: 900px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1600x900/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1920px) and (max-height: 1080px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1920x1080/hostbukett-lg.jpg')}}" />
+                    <img src="{{url_for('static', filename='images/2560x1440/hostbukett-lg.jpg')}}" class="wh-100" alt="{{lang.slideshowFallBouquetAlt}}" />
                 </picture>
 
                 <!-- Flowergram starts here -->
                 <div id="flowergram-container" class="container flex-column flex-start-container">
-                    <h3>Sur&shy;prise some&shy;one with a flower&shy;gram</h3>
-                    <h4 id="flowergram-btn" class="container centered-container">Send a flower&shy;gram</h4>
-                    <!-- The popup that appears when pressing "" -->
+                    <h3>{{{lang.flowergramHeaderText}}}</h3>
+                    <h4 id="flowergram-btn" class="container centered-container">{{{lang.flowergramButtonText}}}</h4>
+                    <!-- The popup that appears when pressing "{{{flowergramButtonText}}}" -->
                     <div id="flowergram" class="container flex-column flex-start-container">
-                        <h6>Do you want to send a flower&shy;gram?</h6>
-                        <p>Visit us in the store or call us on <a href="tel:0630555555">0630-555-555</a>!</p>
+                        <h6>{{{lang.flowergramQuestionText}}}</h6>
+                        <p>{{lang.flowergramVisitOrCall}} <a href="tel:{{data.companyPhoneLink}}">{{data.companyPhoneText}}</a>!</p>
                         <hr id="flowergram-separator" />
-                        <p>Double check if we deliver to your zip code:</p>
+                        <p>{{{lang.flowergramZipCheckText}}}</p>
                         <div id="input-container" class="container">
-                            <input id="postal-code" type="text" placeholder="Enter zip code" />
+                            <input id="postal-code" type="text" placeholder="{{lang.zipCodePlaceholder}}" />
                             <button id="postal-code-btn"></button>
                         </div>
                         <p id="input-response"></p>
@@ -116,210 +117,69 @@
 
         <!-- Products starts here -->
         <section id="products-section" class="container flex-column centered-container">
-            <h2 id="produtct-header">Products</h2>
+            <h2 id="produtct-header">{{lang.productsHeaderText}}</h2>
             <div id="product-container" class="container">
 
-                    <div class="product" id="product-brollopsbukett">
+                {{! Loops through all products }}
+                {{#each data.products}}
+                    <div class="product" id="{{this.id}}">
                         <picture>
-                                <source media="(max-width: 320px)" srcset="../images/224x149/brollopsbukett.jpg" />
-                                <source media="(max-width: 360px)" srcset="../images/256x170/brollopsbukett.jpg" />
-                                <source media="(max-width: 440px)" srcset="../images/320x213/brollopsbukett.jpg" />
-                                <source media="(max-width: 520px)" srcset="../images/384x256/brollopsbukett.jpg" />
-                            <img src="../images/480x320/brollopsbukett.jpg" alt="Wedding bouquet" />
+                            {{! Loops through all resolutions of the product image }}
+                            {{#each this.resolutions}}
+                                <source media="(max-width: {{this.maxWidth}}px)" srcset="{{@root.data.rootPath}}{{this.path}}" />
+                            {{/each}}
+                            <img src="{{@root.data.rootPath}}{{this.defaultPath}}" alt="{{translate this.alt}}" />
                         </picture>
-                        <p class="deal-of-the-day">Deal of the day</p>
+                        <p class="deal-of-the-day">{{@root.lang.dealOfTheDayText}}</p>
                         <div class="product-footer centered-container">
-                            <h4>Wedding bouquet</h4>
+                            <h4>{{translate this.name}}</h4>
                             <div class="price-container container centered-container">
-                                <h5 class="price">1 200 SEK</h5>
+                                <h5 class="price">{{this.price}} {{translate this.unit}}</h5>
                             </div>
                         </div>
                     </div>
-                    <div class="product" id="product-rosor-10-pack">
-                        <picture>
-                                <source media="(max-width: 320px)" srcset="../images/224x149/rosor-10-pack.jpg" />
-                                <source media="(max-width: 360px)" srcset="../images/256x170/rosor-10-pack.jpg" />
-                                <source media="(max-width: 440px)" srcset="../images/320x213/rosor-10-pack.jpg" />
-                                <source media="(max-width: 520px)" srcset="../images/384x256/rosor-10-pack.jpg" />
-                            <img src="../images/480x320/rosor-10-pack.jpg" alt="Roses 10-pack" />
-                        </picture>
-                        <p class="deal-of-the-day">Deal of the day</p>
-                        <div class="product-footer centered-container">
-                            <h4>Roses 10-pack</h4>
-                            <div class="price-container container centered-container">
-                                <h5 class="price">150 SEK</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product" id="product-tulpaner-10-pack">
-                        <picture>
-                                <source media="(max-width: 320px)" srcset="../images/224x149/tulpaner-10-pack.jpg" />
-                                <source media="(max-width: 360px)" srcset="../images/256x170/tulpaner-10-pack.jpg" />
-                                <source media="(max-width: 440px)" srcset="../images/320x213/tulpaner-10-pack.jpg" />
-                                <source media="(max-width: 520px)" srcset="../images/384x256/tulpaner-10-pack.jpg" />
-                            <img src="../images/480x320/tulpaner-10-pack.jpg" alt="Tulips 10-pack" />
-                        </picture>
-                        <p class="deal-of-the-day">Deal of the day</p>
-                        <div class="product-footer centered-container">
-                            <h4>Tulips 10-pack</h4>
-                            <div class="price-container container centered-container">
-                                <h5 class="price">100 SEK</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product" id="product-sommarbukett">
-                        <picture>
-                                <source media="(max-width: 320px)" srcset="../images/224x149/sommarbukett.jpg" />
-                                <source media="(max-width: 360px)" srcset="../images/256x170/sommarbukett.jpg" />
-                                <source media="(max-width: 440px)" srcset="../images/320x213/sommarbukett.jpg" />
-                                <source media="(max-width: 520px)" srcset="../images/384x256/sommarbukett.jpg" />
-                            <img src="../images/480x320/sommarbukett.jpg" alt="Summer bouquet" />
-                        </picture>
-                        <p class="deal-of-the-day">Deal of the day</p>
-                        <div class="product-footer centered-container">
-                            <h4>Summer bouquet</h4>
-                            <div class="price-container container centered-container">
-                                <h5 class="price">200 SEK</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product" id="product-hostbukett">
-                        <picture>
-                                <source media="(max-width: 320px)" srcset="../images/224x149/hostbukett.jpg" />
-                                <source media="(max-width: 360px)" srcset="../images/256x170/hostbukett.jpg" />
-                                <source media="(max-width: 440px)" srcset="../images/320x213/hostbukett.jpg" />
-                                <source media="(max-width: 520px)" srcset="../images/384x256/hostbukett.jpg" />
-                            <img src="../images/480x320/hostbukett.jpg" alt="Fall bouquet" />
-                        </picture>
-                        <p class="deal-of-the-day">Deal of the day</p>
-                        <div class="product-footer centered-container">
-                            <h4>Fall bouquet</h4>
-                            <div class="price-container container centered-container">
-                                <h5 class="price">400 SEK</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product" id="product-begravningskrans">
-                        <picture>
-                                <source media="(max-width: 320px)" srcset="../images/224x149/begravningskrans.jpg" />
-                                <source media="(max-width: 360px)" srcset="../images/256x170/begravningskrans.jpg" />
-                                <source media="(max-width: 440px)" srcset="../images/320x213/begravningskrans.jpg" />
-                                <source media="(max-width: 520px)" srcset="../images/384x256/begravningskrans.jpg" />
-                            <img src="../images/480x320/begravningskrans.jpg" alt="Funeral wreath" />
-                        </picture>
-                        <p class="deal-of-the-day">Deal of the day</p>
-                        <div class="product-footer centered-container">
-                            <h4>Funeral wreath</h4>
-                            <div class="price-container container centered-container">
-                                <h5 class="price">800 SEK</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product" id="product-liljor">
-                        <picture>
-                                <source media="(max-width: 320px)" srcset="../images/224x149/liljor.jpg" />
-                                <source media="(max-width: 360px)" srcset="../images/256x170/liljor.jpg" />
-                                <source media="(max-width: 440px)" srcset="../images/320x213/liljor.jpg" />
-                                <source media="(max-width: 520px)" srcset="../images/384x256/liljor.jpg" />
-                            <img src="../images/480x320/liljor.jpg" alt="Lilies" />
-                        </picture>
-                        <p class="deal-of-the-day">Deal of the day</p>
-                        <div class="product-footer centered-container">
-                            <h4>Lilies</h4>
-                            <div class="price-container container centered-container">
-                                <h5 class="price">29 SEK/unit</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product" id="product-hortensia">
-                        <picture>
-                                <source media="(max-width: 320px)" srcset="../images/224x149/hortensia.jpg" />
-                                <source media="(max-width: 360px)" srcset="../images/256x170/hortensia.jpg" />
-                                <source media="(max-width: 440px)" srcset="../images/320x213/hortensia.jpg" />
-                                <source media="(max-width: 520px)" srcset="../images/384x256/hortensia.jpg" />
-                            <img src="../images/480x320/hortensia.jpg" alt="Hydrangea" />
-                        </picture>
-                        <p class="deal-of-the-day">Deal of the day</p>
-                        <div class="product-footer centered-container">
-                            <h4>Hydrangea</h4>
-                            <div class="price-container container centered-container">
-                                <h5 class="price">59 SEK</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product" id="product-aloe-vera">
-                        <picture>
-                                <source media="(max-width: 320px)" srcset="../images/224x149/aloe-vera.jpg" />
-                                <source media="(max-width: 360px)" srcset="../images/256x170/aloe-vera.jpg" />
-                                <source media="(max-width: 440px)" srcset="../images/320x213/aloe-vera.jpg" />
-                                <source media="(max-width: 520px)" srcset="../images/384x256/aloe-vera.jpg" />
-                            <img src="../images/480x320/aloe-vera.jpg" alt="Aloe vera" />
-                        </picture>
-                        <p class="deal-of-the-day">Deal of the day</p>
-                        <div class="product-footer centered-container">
-                            <h4>Aloe vera</h4>
-                            <div class="price-container container centered-container">
-                                <h5 class="price">99 SEK</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product" id="product-kaktus-i-kruka">
-                        <picture>
-                                <source media="(max-width: 320px)" srcset="../images/224x149/kaktus.jpg" />
-                                <source media="(max-width: 360px)" srcset="../images/256x170/kaktus.jpg" />
-                                <source media="(max-width: 440px)" srcset="../images/320x213/kaktus.jpg" />
-                                <source media="(max-width: 520px)" srcset="../images/384x256/kaktus.jpg" />
-                            <img src="../images/480x320/kaktus.jpg" alt="Cactus in pot" />
-                        </picture>
-                        <p class="deal-of-the-day">Deal of the day</p>
-                        <div class="product-footer centered-container">
-                            <h4>Cactus in pot</h4>
-                            <div class="price-container container centered-container">
-                                <h5 class="price">99 SEK</h5>
-                            </div>
-                        </div>
-                    </div>
+                {{/each}}
             </div>
         </section>
         <!-- Products ends here -->
 
         <!-- Interactive map starts here -->
         <section id="interactive-map-section" class="container flex-column centered-container">
-            <h2>Map</h2>
+            <h2>{{lang.mapHeaderText}}</h2>
             <!-- Google Maps interactive map -->
             <div class="script map">
-                <iframe class="map" src="https://www.google.com/maps/embed?pb&#x3D;!1m18!1m12!1m3!1d1503.2561387938995!2d20.23140837816331!3d67.8660575009758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d0ba6368d7c9a3%3A0xe3887ef038c559b0!2sFj%C3%A4llgatan%2032%2C%20981%2039%20Kiruna!5e0!3m2!1ssv!2sse!4v1694676651494!5m2!1ssv!2sse" style="border:0; width: 100%; border-radius: 7px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                <iframe class="map" src="{{data.companyMapSource}}" style="border:0; width: 100%; border-radius: 7px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
             <noscript>
-                <img loading="lazy" src="../images/noscript-map.png" alt="Map of the store&#x27;s location" id="noscript-map" />
+                <img loading="lazy" src="{{url_for('static', filename='images/noscript-map.png')}}" alt="{{lang.noscriptMapAlt}}" id="noscript-map" />
             </noscript>
         </section>
         <!-- Interactive map ends here -->
 
         <!-- Employee information starts here -->
         <section id="employee-section" class="container flex-column centered-container">
-            <h2>Staff</h2>
+            <h2>{{lang.employeeInformationHeaderText}}</h2>
             <div id="employees" class="container centered-container">
                 <div id="fredrik-ortqvist-container" class="employee-container container centered-container">
-                    <img loading="lazy" src="../images/272x408/fredrik-ortqvist.jpg" alt="Picture of Fredrik Örtqvist" class="employee-img" />
+                    <img loading="lazy" src="{{url_for('static', filename='images/272x408/fredrik-ortqvist.jpg')}}" alt="{{lang.fredrikOrtqvistAlt}}" class="employee-img" />
                     <div class="employee-information container centered-container">
                         <p class="fs-8">Fredrik Örtqvist</p>
-                        <p class="fs-8">Owner</p>
+                        <p class="fs-8">{{lang.fredrikOrtqvistTitle}}</p>
                     </div>
                 </div>
                 <div id="orjan-johansson-container" class="employee-container container centered-container">
-                    <img loading="lazy" src="../images/272x408/orjan-johansson.jpg" alt="Picture of Örjan Johansson" class="employee-img" />
+                    <img loading="lazy" src="{{url_for('static', filename='images/272x408/orjan-johansson.jpg')}}" alt="{{lang.orjanJohanssonAlt}}" class="employee-img" />
                     <div class="employee-information container centered-container">
                         <p class="fs-8">Örjan Johansson</p>
-                        <p class="fs-8">Florist</p>
+                        <p class="fs-8">{{lang.orjanJohanssonTitle}}</p>
                     </div>
                 </div>
                 <div id="anna-pettersson-container" class="employee-container container centered-container">
-                    <img loading="lazy" src="../images/272x408/anna-pettersson.jpg" alt="Picture of Anna Pettersson" class="employee-img" />
+                    <img loading="lazy" src="{{url_for('static', filename='images/272x408/anna-pettersson.jpg')}}" alt="{{lang.annaPetterssonAlt}}" class="employee-img" />
                     <div class="employee-information container centered-container">
                         <p class="fs-8">Anna Pettersson</p>
-                        <p class="fs-8">Horticulturist</p>
+                        <p class="fs-8">{{lang.annaPetterssonTitle}}</p>
                     </div>
                 </div>
             </div>
@@ -331,66 +191,66 @@
             <!-- Top part of the footer starts here -->
             <div id="footer-top">
                 <div id="footer-container-1" class="footer-container container">
-                    <h6>Contact us</h6>
+                    <h6>{{lang.contactUsHeaderText}}</h6>
                     <div id="footer-info">
                         <div id="address">
-                            <a href="https://maps.app.goo.gl/pne1zVvPmaNENVQz5" target="blank">Fjällgatan 32H, 981 39 KIRUNA</a>
+                            <a href="{{data.companyAddressLink}}" target="blank">{{data.companyAddress}}</a>
                         </div>
                         <div id="number">
-                            <a href="tel:0630555555">0630-555-555</a>
+                            <a href="tel:{{data.companyPhoneLink}}">{{data.companyPhoneText}}</a>
                         </div>
                         <div id="email">
-                            <a href="mailto:info@florista.ntig.dev">info@florista.ntig.dev</a>
+                            <a href="mailto:{{data.companyEmail}}">{{data.companyEmail}}</a>
                         </div>
                     </div>
                 </div>
                 <div id="footer-container-2" class="footer-container container">
                     <!-- Opening hours -->
-                    <h6>Opening hours</h6>
+                    <h6>{{lang.openingHoursHeaderText}}</h6>
                     <div id="opening-hours-container" class="container centered-container">
                         <div id="opening-hours-days" class="opening-hours text-left footer-col">
-                            <p>Monday</p>
-                            <p>Tuesday</p>
-                            <p>Wednesday</p>
-                            <p>Thursday</p>
-                            <p>Friday</p>
-                            <p>Saturday</p>
-                            <p>Sunday</p>
+                            <p>{{lang.monday}}</p>
+                            <p>{{lang.tuesday}}</p>
+                            <p>{{lang.wednesday}}</p>
+                            <p>{{lang.thursday}}</p>
+                            <p>{{lang.friday}}</p>
+                            <p>{{lang.saturday}}</p>
+                            <p>{{lang.sunday}}</p>
                         </div>
                         <div id="opening-hours-times" class="opening-hours text-right footer-col">
-                            <p>10-18</p>
-                            <p>10-18</p>
-                            <p>10-17</p>
-                            <p>10-17</p>
-                            <p>10-18</p>
-                            <p>12-16</p>
-                            <p>12-15</p>
+                            <p>{{data.openingHoursMonday}}</p>
+                            <p>{{data.openingHoursTuesday}}</p>
+                            <p>{{data.openingHoursWednesday}}</p>
+                            <p>{{data.openingHoursThursday}}</p>
+                            <p>{{data.openingHoursFriday}}</p>
+                            <p>{{data.openingHoursSaturday}}</p>
+                            <p>{{data.openingHoursSunday}}</p>
                         </div>
                     </div>
                 </div>
                 <div id="footer-container-3" class="footer-container container">
                     <!-- Closed days -->
-                    <h6>Closed days</h6>
+                    <h6>{{lang.closedDaysHeaderText}}</h6>
                     <div id="closed-days-container" class="container centered-container">
                         <div id="closed-days-dates" class="closed-days text-left footer-col">
-                            <p data-date="0001">1 Jan</p>
-                            <p data-date="0006">6 Jan</p>
-                            <p data-date="0401">1 May</p>
-                            <p data-date="0506">6 Jun</p>
-                            <p data-date="1124">24 Dec</p>
-                            <p data-date="1125">25 Dec</p>
-                            <p data-date="1126">26 Dec</p>
-                            <p data-date="1131">31 Dec</p>
+                            <p data-date="0001">{{lang.closedDaysDateJan1}}</p>
+                            <p data-date="0006">{{lang.closedDaysDateJan6}}</p>
+                            <p data-date="0401">{{lang.closedDaysDateMay1}}</p>
+                            <p data-date="0506">{{lang.closedDaysDateJun6}}</p>
+                            <p data-date="1124">{{lang.closedDaysDateDec24}}</p>
+                            <p data-date="1125">{{lang.closedDaysDateDec25}}</p>
+                            <p data-date="1126">{{lang.closedDaysDateDec26}}</p>
+                            <p data-date="1131">{{lang.closedDaysDateDec31}}</p>
                         </div>
                         <div id="closed-days-names" class="closed-days text-right footer-col">
-                            <p data-date="0001">New Year&#x27;s Day</p>
-                            <p data-date="0006">Epiphany</p>
-                            <p data-date="0401">May Day</p>
-                            <p data-date="0506">National Day</p>
-                            <p data-date="1124">Julafton</p>
-                            <p data-date="1125">Christmas Day</p>
-                            <p data-date="1126">Boxing Day</p>
-                            <p data-date="1131">New Year&#x27;s Eve</p>
+                            <p data-date="0001">{{lang.closedDaysNameJan1}}</p>
+                            <p data-date="0006">{{lang.closedDaysNameJan6}}</p>
+                            <p data-date="0401">{{lang.closedDaysNameMay1}}</p>
+                            <p data-date="0506">{{lang.closedDaysNameJun6}}</p>
+                            <p data-date="1124">{{lang.closedDaysNameDec24}}</p>
+                            <p data-date="1125">{{lang.closedDaysNameDec25}}</p>
+                            <p data-date="1126">{{lang.closedDaysNameDec26}}</p>
+                            <p data-date="1131">{{lang.closedDaysNameDec31}}</p>
                         </div>
                     </div>
                 </div>
@@ -402,22 +262,24 @@
                 <!-- Social medias -->
                 <div id="social-media-container" class="container">
                     <div id="facebook" class="social-media-icon">
-                        <a href="https://www.facebook.com/ntiuppsala">
-                            <img loading="lazy" src="../images/facebook.svg" alt="Facebook-icon" />
+                        <a href="{{data.facebookLink}}">
+                            <img loading="lazy" src="{{url_for('static', filename='images/facebook.svg')}}" alt="{{lang.altFacebookIcon}}" />
                         </a>
                     </div>
                     <div id="instagram" class="social-media-icon">
-                        <a href="https://www.instagram.com/ntiuppsala">
-                            <img loading="lazy" src="../images/instagram.svg" alt="Instagram-icon" />
+                        <a href="{{data.instagramLink}}">
+                            <img loading="lazy" src="{{url_for('static', filename='images/instagram.svg')}}" alt="{{lang.altInstagramIcon}}" />
                         </a>
                     </div>
                     <div id="x" class="social-media-icon">
-                        <a href="https://x.com/ntiuppsala">
-                            <img loading="lazy" src="../images/twitter-x.svg" alt="X-icon" />
+                        <a href="{{data.xLink}}">
+                            <img loading="lazy" src="{{url_for('static', filename='images/twitter-x.svg')}}" alt="{{lang.altXIcon}}" />
                         </a>
                     </div>
                 </div>
             </div>
             <!-- Bottom part of the footer ends here -->
         </footer>
-        <div id="data" style="display: none;" data-lang="en"></div>
+        <div id="data" style="display: none;" data-lang="{{lang.languageKey}}"></div>
+    </body>
+</html>
