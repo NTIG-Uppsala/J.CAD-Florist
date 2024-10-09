@@ -1,14 +1,15 @@
-let prevScrollpos = window.scrollY; // Get the current page offset
-const header = document.getElementsByTagName("header")[0]; // Get the header element
-const headerHeight = header.clientHeight; // Get the height of the header
+// Define variables
+let prevScrollpos = window.scrollY;
+const header = document.getElementsByTagName("header")[0];
+const headerHeight = header.clientHeight;
 
-window.addEventListener('scroll', () => { // When the user scrolls
-    console.log('scrolling');
-    const currentScrollPos = window.scrollY; // Get the current page offset
-    if (prevScrollpos > currentScrollPos) { // If the previous offset is greater than the current offset
-        header.style.top = "0"; // Show the header
-    } else { // If the previous offset is less than the current offset
-        header.style.top = `-${headerHeight}px`; // Hide the header
+// Event listener to hide the header on scroll down and show it on scroll up
+window.addEventListener('scroll', () => {
+    const currentScrollPos = window.scrollY;
+    if (prevScrollpos > currentScrollPos) {
+        header.style.top = "0";
+    } else {
+        header.style.top = `-${headerHeight}px`;
     }
-    prevScrollpos = currentScrollPos; // Set the previous offset to the current offset
+    prevScrollpos = currentScrollPos;
 });
