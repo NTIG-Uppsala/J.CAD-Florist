@@ -32,8 +32,7 @@
     --lvl10-font-size: calc(var(--base-font-size) * pow(1.2, 0));
     --lvl11-font-size: calc(var(--base-font-size) * pow(1.2, -1));
 
-    --header-height: 8rem;
-    --page-top-banner-height: 3rem;
+    --header-height: 5rem;
     --slideshow-height: 82vh;
     --slideshow-height-large-portrait: 40vh;
     --slideshow-responsive-height: 100vh;
