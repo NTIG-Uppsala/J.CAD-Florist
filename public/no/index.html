@@ -10,6 +10,7 @@
         <!-- Favicon -->
         <link rel="icon" type="image/x-icon" href="../images/florista-favicon-color.ico" />
         <!-- Stylesheets -->
+        <link rel="stylesheet" type="text/css" href="../css/variables.css" />
         <link rel="stylesheet" type="text/css" href="../css/styles.css" />
         <link rel="stylesheet" type="text/css" href="../css/product.css" />
         <link rel="stylesheet" type="text/css" href="../css/employee-information.css" />
@@ -22,6 +23,8 @@
         <script defer src="../js/deal-of-the-day.js"></script>
         <script defer src="../js/sort-closed-days.js"></script>
         <script defer src="../js/dynamic-information.js"></script>
+        <script defer src="../js/header-on-scroll.js"></script>
+        <script defer src="../js/scroll-position.js"></script>
 
         <!-- Needed for tests. Should always be loaded last -->
         <script defer src="../js/testing-wait-for-js.js"></script>
@@ -35,9 +38,11 @@
                     <img id="logo" src="../images/logga-florist-1.png" alt="Logoen til nettstedet" />
                 </div>
             </a>
-            <div id="header-container" class="container flex-column centered-container wh-100">
-                <h1 id="title">florista</h1>
-            </div>
+            <nav class="fs-8 nav-bar container centered-container wh-100">
+                <a href="#products-section">Produkter</a>
+                <a href="#interactive-map-section">Kart</a>
+                <a href="#employee-section">Butikkpersonale</a>
+            </nav>
             <div class="dropdown-container container flex-column">
                 <div class="dropdown container flex-column">
                     <button class="dropdown-button">&#9776;</button>
