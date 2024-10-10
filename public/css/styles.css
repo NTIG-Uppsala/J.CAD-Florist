@@ -180,8 +180,8 @@ h2 {
 }
 
 .dropdown-button {
-    background-color: var(--main-color-deal);
-    color: var(--main-color-light);
+    background-color: var(--main-logo-color);
+    color: var(--main-color-dark);
     width: 3rem;
     height: 3rem;
     margin: 1rem;
@@ -191,12 +191,18 @@ h2 {
 }
 
 .dropdown-item {
+    display: block;
     color: var(--main-color-light);
-    width: fit-content;
+    width: 100%;
     padding: 0.5rem;
     text-decoration: none;
     justify-self: center;
     align-self: center;
+}
+
+.dropdown-item:hover {
+    color: var(--main-color-dark);
+    background-color: var(--main-color-light);
 }
 
 #banners-container {
