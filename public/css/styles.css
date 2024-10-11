@@ -117,12 +117,13 @@ header {
 header .nav-bar {
     display: flex;
     justify-content: space-between;
-    width: 30%;
+    width: fit-content;
 }
 
 header .nav-bar a {
     color: var(--main-logo-color);
     text-decoration: none;
+    padding: 0 calc((1rem + 3dvw)/2);
 }
 
 .nav-bar a::after {
