@@ -1,19 +1,18 @@
-# Kodningsstandard
+# Coding Standard
 
-* Kod och filnamn skrivs på engelska.
-* Kommentarer skrivs på engelska.
-* Commits i git skrivs på svenska.
-* Variabelnamn och funktioner skriv med camelCase.
-* ID:n och klasser i html skrivs med camelCase.
-* Klasser i python och javascript ska skrivas med PascalCase.
-* Filnamn definieras med kebab-case.
-* Filnamn på testfiler skrivs i snake_case.
-* Branchnamn i git skrivs med camelCase.
-* Funktioner ska oftast vara korta och ha ett specifikt syfte. Om funktionen börjar bli väldigt lång (omkring mer än 100 rader långt) bör det funderas över ifall den kan delas upp i separata funktioner.
-* Undvik globala variabler så länge de inte behövs.
-* När det är möjligt i språket tillämpas datatyper för variabler och resultattyper för funktioner. Detta gör koden tydligare och är en bra regel att följa.
+* Code and file names are written in English.
+* Comments are written in English.
+* Variable names and functions are written in camelCase.
+* IDs and classes in HTML are written in camelCase.
+* Classes in Python and JavaScript should be written in PascalCase.
+* File names are defined using kebab-case.
+* File names for test files are written in snake_case.
+* Branch names in Git are written in camelCase.
+* Functions should generally be short and have a specific purpose. If a function becomes very long (around more than 100 lines), consider whether it can be split into separate functions.
+* Avoid global variables unless they are necessary.
+* When possible in the language, apply data types for variables and return types for functions. This makes the code clearer and is a good rule to follow.
 
-* Formattering
+* Formatting
     * settings.json:
     ```json
     "editor.defaultFormatter": "esbenp.prettier-vscode",
