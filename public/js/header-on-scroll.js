@@ -12,3 +12,9 @@ window.addEventListener('scroll', () => { // When the user scrolls
     }
     prevScrollpos = currentScrollPos; // Set the previous offset to the current offset
 });
+
+document.addEventListener('mouseover', (event) => {
+    if (event.clientY <= headerHeight) { // Check if the mouse is within the height of the header
+        header.style.top = "0"; // Show the header
+    }
+});
