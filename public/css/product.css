@@ -8,7 +8,7 @@
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -16,7 +16,7 @@
 .product {
     aspect-ratio: 16 / 14; /* Make sure that product is always the same aspect ratio */
     position: relative;
-    width: 30rem;
+    width: 20rem;
     height: auto;
     margin: 1rem;
 }
@@ -97,6 +97,18 @@
 }
 
 /* Media queries */
+
+@media screen and (max-width: 783px) {
+    
+    .product {
+        aspect-ratio: 16 / 14; /* Make sure that product is always the same aspect ratio */
+        position: relative;
+        width: 30rem;
+        height: auto;
+        margin: 1rem;
+    }
+}
+
 @media screen and (max-width: 440px) {
     #product-container {
         width: 100%; /* Make products cover a larger width of the screen when screen width is less than 441px*/
