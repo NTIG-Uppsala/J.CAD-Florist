@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="actions">
+    <a href="{{ url_for('index') }}">Return to main site</a>
+</div>
+
+<!-- <div class="fs-1">Edit information</div> -->
+<h2>Edit information</h2>
+<div class="form-container">
+    <form action="" method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.phoneNumber.label }}:<br>
+            {{ form.phoneNumber (size=32) }}<br>
+            {% for error in form.phoneNumber.errors %}
+            <span class="form-error">*{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+</div>
+
+{% endblock %}
