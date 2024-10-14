@@ -1,4 +1,4 @@
-// Initialize previous scroll position and get header element and its height
+// Initialize previous scroll position and get header element and its height 
 let prevScrollPos = window.scrollY;
 const header = document.querySelector("header");
 const headerHeight = header.offsetHeight;
@@ -27,10 +27,13 @@ const handleScroll = () => {
 
     // Only update header visibility if mouse is not interacting with the header
     if (!isMouseInsideHeader && !isMouseNearHeader && !hasInteractedWithHeader) {
-        if (prevScrollPos > currentScrollPos) {
-            header.style.top = "0"; // Show header
+        // Do not hide the header if at the very top of the page
+        if (currentScrollPos === 0) {
+            header.style.top = "0"; // Always show the header at the top of the page
+        } else if (prevScrollPos > currentScrollPos) {
+            header.style.top = "0"; // Show header when scrolling up
         } else {
-            header.style.top = `-${headerHeight}px`; // Hide header
+            header.style.top = `-${headerHeight}px`; // Hide header when scrolling down
         }
     }
     prevScrollPos = currentScrollPos; // Update previous scroll position
@@ -45,8 +48,8 @@ const handleMouseMove = throttle((event) => {
         header.style.top = "0"; // Show header
     } else {
         isMouseNearHeader = false;
-        if (!isMouseInsideHeader && hasInteractedWithHeader) {
-            header.style.top = `-${headerHeight}px`; // Hide header
+        if (!isMouseInsideHeader && hasInteractedWithHeader && window.scrollY !== 0) {
+            header.style.top = `-${headerHeight}px`; // Hide header only if not at the top of the page
         }
     }
 }, 100);
@@ -61,8 +64,9 @@ const handleMouseEnter = () => {
 // Handle mouse leave event to hide header when mouse leaves the header
 const handleMouseLeave = () => {
     isMouseInsideHeader = false;
-    if (!isMouseNearHeader && hasInteractedWithHeader) {
-        header.style.top = `-${headerHeight}px`; // Hide header
+    // Do not hide header if at the top of the page
+    if (!isMouseNearHeader && hasInteractedWithHeader && window.scrollY !== 0) {
+        header.style.top = `-${headerHeight}px`; // Hide header only if not at the top of the page
     }
     hasInteractedWithHeader = false;
 };
