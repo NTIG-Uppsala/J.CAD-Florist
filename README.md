@@ -2,7 +2,11 @@
 
 Florista is a website created for a florist company by the TE4 group J.CAD.
 
-Members: Axel Thornberg, Jesper Cejie, Eskil Tornberg.
+Project Group 1: Albin Andersson, Carl Eriksson Skogh, David Cavalli-Björkman, Joel Jansson
+
+Project Group 2: Axel Thornberg, Eskil Tornberg, Jesper Cejie
+
+Project Group 3: David Cavalli-Björkman, Eskil Tornberg, Ivar Bjerling, Tim Kelso
 
 [Link to the website](https://ntig-uppsala.github.io/J.CAD-Florist/)
 
