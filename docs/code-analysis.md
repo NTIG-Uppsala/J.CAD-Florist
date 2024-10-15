@@ -1,14 +1,14 @@
-# Kodanalys
+# Code Analysis
 
-För att validera HTML och CSS-koden använder vi VS Code extensionen W3C Web Validator.
+To validate the HTML and CSS code, we use the VS Code extension W3C Web Validator.
 
-Sök på extension id “CelianRiboulet.webvalidator” i extensions i VS Code för att hitta.
-Efter installation dyker en liten knapp upp nere i vänster hörn (W3C validation).
-Detta kommer att lista alla felen i "problems" inne i terminalen.
+Search for the extension ID “CelianRiboulet.webvalidator” in the extensions in VS Code to find it.
+After installation, a small button will appear in the bottom-left corner (W3C validation).
+This will list all the errors in the 'problems' section inside the terminal.
 
 ---
 
-# Validering
+# Validation
 
 -   HTML: https://validator.w3.org/
 

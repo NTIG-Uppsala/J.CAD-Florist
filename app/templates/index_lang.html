@@ -1,53 +1,17 @@
-<!DOCTYPE html>
-<html lang="{{lang.language}}">
-    <head>
-        <!-- Noindex -->
-        <meta name="robots" content="noindex, nofollow" />
-        <meta name="googlebot" content="noindex, nofollow" />
-
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="{{data.rootPath}}images/florista-favicon-color.ico" />
-        <!-- Stylesheets -->
-        <link rel="stylesheet" type="text/css" href="{{data.rootPath}}css/variables.css" />
-        <link rel="stylesheet" type="text/css" href="{{data.rootPath}}css/styles.css" />
-        <link rel="stylesheet" type="text/css" href="{{data.rootPath}}css/product.css" />
-        <link rel="stylesheet" type="text/css" href="{{data.rootPath}}css/employee-information.css" />
-        <link rel="stylesheet" type="text/css" href="{{data.rootPath}}css/interactive-map.css" />
-        {{! Data }}
-        <script defer src="{{data.rootPath}}js/data.js"></script>
-        <!-- Scripts -->
-        <script defer src="{{data.rootPath}}js/flowergram.js"></script>
-        <script defer src="{{data.rootPath}}js/open-hours.js"></script>
-        <script defer src="{{data.rootPath}}js/show-script.js"></script>
-        <script defer src="{{data.rootPath}}js/deal-of-the-day.js"></script>
-        <script defer src="{{data.rootPath}}js/sort-closed-days.js"></script>
-        <script defer src="{{data.rootPath}}js/dynamic-information.js"></script>
-        <script defer src="{{data.rootPath}}js/dynamic-header-visibility.js"></script>
-        <script defer src="{{data.rootPath}}js/scroll-position.js"></script>
-
-        <!-- Needed for tests. Should always be loaded last -->
-        <script defer src="{{data.rootPath}}js/testing-wait-for-js.js"></script>
-        <title>{{data.companyName}}</title>
-    </head>
+{% extends "base.html" %} <!--Inkludera base.html, som innehåller navbar som ska inkluderas i varje fil-->
+<!--This will be the main index file when we have multi-language support through flask-->
     <body>
         <!-- Header starts here -->
         <header class="container">
             <a href=".">
                 <div class="image-container">
-                    <img id="logo" src="{{data.rootPath}}images/logga-florist-1.png" alt="{{lang.logoAlt}}" />
+                    <img id="logo" src="{{url_for('static', filename='images/logga-florist-1.png')}}" alt="{{lang.logoAlt}}" />
                 </div>
             </a>
-            {{!-- <div id="header-container" class="container flex-column centered-container wh-100">
+            <div id="header-container" class="container flex-column centered-container wh-100">
                 <h1 id="title">{{data.companyName}}</h1>
-            </div> --}}
-            <nav class="fs-8 nav-bar container centered-container wh-100">
-                <a href="#products-section">{{lang.productsHeaderText}}</a>
-                <a href="#interactive-map-section">{{lang.mapHeaderText}}</a>
-                <a href="#employee-section">{{lang.employeeInformationHeaderText}}</a>
-            </nav>
-            <div class="container flex-column">
+            </div>
+            <div class="dropdown-container container flex-column">
                 <div class="dropdown container flex-column">
                     <button class="dropdown-button">&#9776;</button>
                     <div class="dropdown-content">
@@ -77,57 +41,57 @@
             <div id="slideshow-container" class="container centered-container wh-100">
 
                 <picture class="slide">
-                    <source media="(max-width: 375px) and (max-height: 667px) and (orientation: portrait)" srcset="{{data.rootPath}}images/375x667/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 360px) and (max-height: 800px) and (orientation: portrait)" srcset="{{data.rootPath}}images/360x800/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 390px) and (max-height: 844px) and (orientation: portrait)" srcset="{{data.rootPath}}images/390x844/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 393px) and (max-height: 851px) and (orientation: portrait)" srcset="{{data.rootPath}}images/393x851/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 393px) and (max-height: 873px) and (orientation: portrait)" srcset="{{data.rootPath}}images/393x873/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 412px) and (max-height: 915px) and (orientation: portrait)" srcset="{{data.rootPath}}images/412x915/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 1080px) and (max-height: 1920px) and (orientation: portrait)" srcset="{{data.rootPath}}images/1080x768/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 1440px) and (max-height: 2560px) and (orientation: portrait)" srcset="{{data.rootPath}}images/1440x1024/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 1280px) and (max-height: 720px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1280x720/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 1366px) and (max-height: 768px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1366x768/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 1440px) and (max-height: 900px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1440x900/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 1536px) and (max-height: 864px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1536x864/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 1600px) and (max-height: 900px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1600x900/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 1920px) and (max-height: 1080px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1920x1080/sommarbukett-lg.jpg" />
-                    <img src="{{data.rootPath}}images/2560x1440/sommarbukett-lg.jpg" class="wh-100" alt="{{lang.slideshowSummerBouquetAlt}}" />
+                    <source media="(max-width: 375px) and (max-height: 667px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/375x667/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 360px) and (max-height: 800px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/360x800/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 390px) and (max-height: 844px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/390x844/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 393px) and (max-height: 851px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/393x851/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 393px) and (max-height: 873px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/393x873/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 412px) and (max-height: 915px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/412x915/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1080px) and (max-height: 1920px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/1080x768/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1440px) and (max-height: 2560px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/1440x1024/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1280px) and (max-height: 720px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1280x720/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1366px) and (max-height: 768px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1366x768/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1440px) and (max-height: 900px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1440x900/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1536px) and (max-height: 864px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1536x864/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1600px) and (max-height: 900px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1600x900/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1920px) and (max-height: 1080px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1920x1080/sommarbukett-lg.jpg')}}" />
+                    <img src="{{url_for('static', filename='images/2560x1440/sommarbukett-lg.jpg')}}" class="wh-100" alt="{{lang.slideshowSummerBouquetAlt}}" />
                 </picture>
 
                 <picture class="slide">
-                    <source media="(max-width: 375px) and (max-height: 667px) and (orientation: portrait)" srcset="{{data.rootPath}}images/375x667/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 360px) and (max-height: 800px) and (orientation: portrait)" srcset="{{data.rootPath}}images/360x800/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 390px) and (max-height: 844px) and (orientation: portrait)" srcset="{{data.rootPath}}images/390x844/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 393px) and (max-height: 851px) and (orientation: portrait)" srcset="{{data.rootPath}}images/393x851/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 393px) and (max-height: 873px) and (orientation: portrait)" srcset="{{data.rootPath}}images/393x873/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 412px) and (max-height: 915px) and (orientation: portrait)" srcset="{{data.rootPath}}images/412x915/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 1080px) and (max-height: 1920px) and (orientation: portrait)" srcset="{{data.rootPath}}images/1080x768/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 1440px) and (max-height: 2560px) and (orientation: portrait)" srcset="{{data.rootPath}}images/1440x1024/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 1280px) and (max-height: 720px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1280x720/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 1366px) and (max-height: 768px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1366x768/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 1440px) and (max-height: 900px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1440x900/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 1536px) and (max-height: 864px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1536x864/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 1600px) and (max-height: 900px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1600x900/tulpanbukett-lg.jpg" />
-                    <source media="(max-width: 1920px) and (max-height: 1080px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1920x1080/tulpanbukett-lg.jpg" />
-                    <img src="{{data.rootPath}}images/2560x1440/tulpanbukett-lg.jpg" class="wh-100" alt="{{lang.slideshowTulipBouquetAlt}}" />
+                    <source media="(max-width: 375px) and (max-height: 667px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/375x667/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 360px) and (max-height: 800px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/360x800/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 390px) and (max-height: 844px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/390x844/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 393px) and (max-height: 851px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/393x851/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 393px) and (max-height: 873px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/393x873/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 412px) and (max-height: 915px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/412x915/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1080px) and (max-height: 1920px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/1080x768/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1440px) and (max-height: 2560px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/1440x1024/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1280px) and (max-height: 720px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1280x720/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1366px) and (max-height: 768px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1366x768/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1440px) and (max-height: 900px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1440x900/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1536px) and (max-height: 864px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1536x864/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1600px) and (max-height: 900px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1600x900/tulpanbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1920px) and (max-height: 1080px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1920x1080/tulpanbukett-lg.jpg')}}" />
+                    <img src="{{url_for('static', filename='images/2560x1440/tulpanbukett-lg.jpg')}}" class="wh-100" alt="{{lang.slideshowTulipBouquetAlt}}" />
                 </picture>
 
                 <picture class="slide">
-                    <source media="(max-width: 375px) and (max-height: 667px) and (orientation: portrait)" srcset="{{data.rootPath}}images/375x667/hostbukett-lg.jpg" />
-                    <source media="(max-width: 360px) and (max-height: 800px) and (orientation: portrait)" srcset="{{data.rootPath}}images/360x800/hostbukett-lg.jpg" />
-                    <source media="(max-width: 390px) and (max-height: 844px) and (orientation: portrait)" srcset="{{data.rootPath}}images/390x844/hostbukett-lg.jpg" />
-                    <source media="(max-width: 393px) and (max-height: 851px) and (orientation: portrait)" srcset="{{data.rootPath}}images/393x851/hostbukett-lg.jpg" />
-                    <source media="(max-width: 393px) and (max-height: 873px) and (orientation: portrait)" srcset="{{data.rootPath}}images/393x873/hostbukett-lg.jpg" />
-                    <source media="(max-width: 412px) and (max-height: 915px) and (orientation: portrait)" srcset="{{data.rootPath}}images/412x915/hostbukett-lg.jpg" />
-                    <source media="(max-width: 1080px) and (max-height: 1920px) and (orientation: portrait)" srcset="{{data.rootPath}}images/1080x768/hostbukett-lg.jpg" />
-                    <source media="(max-width: 1440px) and (max-height: 2560px) and (orientation: portrait)" srcset="{{data.rootPath}}images/1440x1024/sommarbukett-lg.jpg" />
-                    <source media="(max-width: 1280px) and (max-height: 720px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1280x720/hostbukett-lg.jpg" />
-                    <source media="(max-width: 1366px) and (max-height: 768px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1366x768/hostbukett-lg.jpg" />
-                    <source media="(max-width: 1440px) and (max-height: 900px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1440x900/hostbukett-lg.jpg" />
-                    <source media="(max-width: 1536px) and (max-height: 864px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1536x864/hostbukett-lg.jpg" />
-                    <source media="(max-width: 1600px) and (max-height: 900px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1600x900/hostbukett-lg.jpg" />
-                    <source media="(max-width: 1920px) and (max-height: 1080px) and (orientation: landscape)" srcset="{{data.rootPath}}images/1920x1080/hostbukett-lg.jpg" />
-                    <img src="{{data.rootPath}}images/2560x1440/hostbukett-lg.jpg" class="wh-100" alt="{{lang.slideshowFallBouquetAlt}}" />
+                    <source media="(max-width: 375px) and (max-height: 667px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/375x667/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 360px) and (max-height: 800px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/360x800/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 390px) and (max-height: 844px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/390x844/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 393px) and (max-height: 851px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/393x851/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 393px) and (max-height: 873px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/393x873/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 412px) and (max-height: 915px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/412x915/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1080px) and (max-height: 1920px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/1080x768/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1440px) and (max-height: 2560px) and (orientation: portrait)" srcset="{{url_for('static', filename='images/1440x1024/sommarbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1280px) and (max-height: 720px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1280x720/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1366px) and (max-height: 768px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1366x768/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1440px) and (max-height: 900px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1440x900/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1536px) and (max-height: 864px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1536x864/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1600px) and (max-height: 900px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1600x900/hostbukett-lg.jpg')}}" />
+                    <source media="(max-width: 1920px) and (max-height: 1080px) and (orientation: landscape)" srcset="{{url_for('static', filename='images/1920x1080/hostbukett-lg.jpg')}}" />
+                    <img src="{{url_for('static', filename='images/2560x1440/hostbukett-lg.jpg')}}" class="wh-100" alt="{{lang.slideshowFallBouquetAlt}}" />
                 </picture>
 
                 <!-- Flowergram starts here -->
@@ -189,7 +153,7 @@
                 </iframe>
             </div>
             <noscript>
-                <img loading="lazy" src="{{data.rootPath}}images/noscript-map.png" alt="{{lang.noscriptMapAlt}}" id="noscript-map" />
+                <img loading="lazy" src="{{url_for('static', filename='images/noscript-map.png')}}" alt="{{lang.noscriptMapAlt}}" id="noscript-map" />
             </noscript>
         </section>
         <!-- Interactive map ends here -->
@@ -199,21 +163,21 @@
             <h2>{{lang.employeeInformationHeaderText}}</h2>
             <div id="employees" class="container centered-container">
                 <div id="fredrik-ortqvist-container" class="employee-container container centered-container">
-                    <img loading="lazy" src="{{data.rootPath}}images/272x408/fredrik-ortqvist.jpg" alt="{{lang.fredrikOrtqvistAlt}}" class="employee-img" />
+                    <img loading="lazy" src="{{url_for('static', filename='images/272x408/fredrik-ortqvist.jpg')}}" alt="{{lang.fredrikOrtqvistAlt}}" class="employee-img" />
                     <div class="employee-information container centered-container">
                         <p class="fs-8">Fredrik Örtqvist</p>
                         <p class="fs-8">{{lang.fredrikOrtqvistTitle}}</p>
                     </div>
                 </div>
                 <div id="orjan-johansson-container" class="employee-container container centered-container">
-                    <img loading="lazy" src="{{data.rootPath}}images/272x408/orjan-johansson.jpg" alt="{{lang.orjanJohanssonAlt}}" class="employee-img" />
+                    <img loading="lazy" src="{{url_for('static', filename='images/272x408/orjan-johansson.jpg')}}" alt="{{lang.orjanJohanssonAlt}}" class="employee-img" />
                     <div class="employee-information container centered-container">
                         <p class="fs-8">Örjan Johansson</p>
                         <p class="fs-8">{{lang.orjanJohanssonTitle}}</p>
                     </div>
                 </div>
                 <div id="anna-pettersson-container" class="employee-container container centered-container">
-                    <img loading="lazy" src="{{data.rootPath}}images/272x408/anna-pettersson.jpg" alt="{{lang.annaPetterssonAlt}}" class="employee-img" />
+                    <img loading="lazy" src="{{url_for('static', filename='images/272x408/anna-pettersson.jpg')}}" alt="{{lang.annaPetterssonAlt}}" class="employee-img" />
                     <div class="employee-information container centered-container">
                         <p class="fs-8">Anna Pettersson</p>
                         <p class="fs-8">{{lang.annaPetterssonTitle}}</p>
@@ -300,17 +264,17 @@
                 <div id="social-media-container" class="container">
                     <div id="facebook" class="social-media-icon">
                         <a href="{{data.facebookLink}}">
-                            <img loading="lazy" src="{{data.rootPath}}images/facebook.svg" alt="{{lang.altFacebookIcon}}" />
+                            <img loading="lazy" src="{{url_for('static', filename='images/facebook.svg')}}" alt="{{lang.altFacebookIcon}}" />
                         </a>
                     </div>
                     <div id="instagram" class="social-media-icon">
                         <a href="{{data.instagramLink}}">
-                            <img loading="lazy" src="{{data.rootPath}}images/instagram.svg" alt="{{lang.altInstagramIcon}}" />
+                            <img loading="lazy" src="{{url_for('static', filename='images/instagram.svg')}}" alt="{{lang.altInstagramIcon}}" />
                         </a>
                     </div>
                     <div id="x" class="social-media-icon">
                         <a href="{{data.xLink}}">
-                            <img loading="lazy" src="{{data.rootPath}}images/twitter-x.svg" alt="{{lang.altXIcon}}" />
+                            <img loading="lazy" src="{{url_for('static', filename='images/twitter-x.svg')}}" alt="{{lang.altXIcon}}" />
                         </a>
                     </div>
                 </div>

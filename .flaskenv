@@ -1,0 +1,2 @@
+FLASK_APP=florista.py
+FLASK_RUN_PORT=8993

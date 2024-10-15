@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+    <head>
+        <!-- Noindex -->
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="googlebot" content="noindex, nofollow" />
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='images/florista-favicon-color.ico')}}" />
+        <!-- Stylesheets -->
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/variables.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/styles.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/product.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/employee-information.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/interactive-map.css')}}" />
+        <script defer src="{{url_for('static', filename='js/data.js')}}"></script>
+        <!-- Scripts -->
+        <script defer src="{{url_for('static', filename='js/flowergram.js')}}"></script>
+        <script defer src="{{url_for('static', filename='js/open-hours.js')}}"></script>
+        <script defer src="{{url_for('static', filename='js/show-script.js')}}"></script>
+        <script defer src="{{url_for('static', filename='js/deal-of-the-day.js')}}"></script>
+        <script defer src="{{url_for('static', filename='js/sort-closed-days.js')}}"></script>
+        <script defer src="{{url_for('static', filename='js/dynamic-information.js')}}"></script>
+        <script defer src="{{url_for('static', filename='js/dynamic-header-visibility.js')}}"></script>
+        <script defer src="{{url_for('static', filename='js/scroll-position.js')}}"></script>
+
+        <!-- Needed for tests. Should always be loaded last -->
+        <script defer src="{{url_for('static', filename='js/testing-wait-for-js.js')}}"></script>
+        <title>florista</title>
+    </head>
+    <body>
+    {% block content %}{% endblock %}
+    <div class="messages"> <!--Error messages-->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+	</div>
+    </body>
+</html>

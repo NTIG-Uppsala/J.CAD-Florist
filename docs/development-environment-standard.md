@@ -1,4 +1,4 @@
-# Utvecklingsmiljöstandard
+# Development Environment Standard
 * OS: Windows 11 v23H2
 * Html: HTML5
 * CSS: CSS 3
