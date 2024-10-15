@@ -49,6 +49,7 @@ When a feature is fully finished, it should be merged or rebased into the `live`
 ---
 
 ## Web Server
+
 ### How to Access the Web Server
 
 The web server is used to publish features that the product owner has approved as fully complete so they can be used by the customer.
@@ -59,7 +60,7 @@ ssh root@<ip> -p <port>
 ```
 2. Type `yes` if prompted.
 3. When prompted, enter the password.
-4. Navigate to the correct directory:
+4. After having entered the server navigate to the correct directory:
 ```bash
 cd /var/www/html
 ```
@@ -67,35 +68,35 @@ cd /var/www/html
 ```bash
 git clone https://github.com/NTIG-Uppsala/J.CAD-Florist .
 ```
-6. Switch to the latest release:
-```bash
-git checkout <your tag>
-```
 
 ---
 
-### How to Release a New Version
+### How to Switch to a New Version
 
-Open a command prompt and type:
+While located at `/var/www/html`, run:
 
 ```bash
 git fetch
 git checkout <your tag>
 ```
 
-If you're unsure, list all tags by typing:
+You can list all tags by typing:
 
 ```bash
 git tag
 ```
 
 ## Installing and Running Flask
-The website backend is built with the Flask web framework.
+
+\(For a comprehensive guide to Flask, refer to [Miguel Grinberg's Flask Mega Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)\)
+
+The website backend is built through [Flask](https://palletsprojects.com/projects/flask/), a Python-based web framework.
 
 ### Python Virtual Environment
+
 To run the website, all dependencies for it need to be installed.
-This can be done through a python virtual environment, which ensures that all python packages that are installed via `pip` will be containerized inside of the virtual environment, instead of globally on the system.
-First, create a python virtual environment:
+This can be done through a Python virtual environment, which ensures that all Python packages that are installed via `pip` will be containerized inside of the virtual environment, instead of globally on the system.
+First, create a Python virtual environment:
 
 ``python -m venv venv``
 
@@ -112,8 +113,8 @@ To exit the virtual environment, simply run `exit` on the command line.
 
 ### Install Dependencies
 
-After having created and entered the python virtual environment, you can install the necessary dependencies to be able to run the Flask application.
-The file [requirements.txt](requirements.txt) contains the python packages necessary for the project.
+After having created and entered the Python virtual environment, you can install the necessary dependencies to be able to run the Flask application.
+The file [requirements.txt](requirements.txt) contains the Python packages necessary for the project.
 To install the packages, run the following in the root directory of the project:
 
 ``pip install -r requirements.txt``
@@ -125,6 +126,7 @@ After installing additional packages for the project, ensure that requirements.t
 ``pip freeze > requirements.txt``
 
 ### Run Development Server
+
 To start a development Flask server for the website, run:
 
 ``flask run``
@@ -135,13 +137,15 @@ To change the port that the server runs on, edit the value of `FLASK_RUN_PORT` i
 ---
 
 ## Overview of the Flask Application
-The python file `florista.py` located in the root directory is the main file that is executed when running `flask run`, and in turn imports everything from the `app/` directory.
-The `app/` directory contains all the files and directories which the website uses, which is treated by Flask as a python package when imported.
+
+The Python file `florista.py` located in the root directory is the main file that is executed when running `flask run`, and in turn imports everything from the `app/` directory.
+The `app/` directory contains all the files and directories which the website uses, and is treated by Flask as a Python package when imported.
 This is due to the `__init__.py` located in it, which initializes the `app` package and configures various things at startup.
 
 Inside of the `app/` directory are various files directories which perform different functions for the website.
 
 ### Routes and Templates
+
 `routes.py` describes the routes for the website.
 It contains functions which are interpreted and return at different routes, or pathways of the website.
 This can be static or template HTML files, but also for instance files or redirects to other functions inside of `routes.py`.
@@ -179,11 +183,76 @@ All the content within the template files then have to be defined as:
 
 where `<content>` is replaced with the actual HTML content.
 
-### Database
-The project uses an sqlite database, which is handled through the SQLAlchemy python package.
+### Database and Migrations
+
+The project uses an sqlite database, which is manipulated through the SQLAlchemy Python toolkit.
 
 `models.py` describes models used to create tables for the database.
 It consists of class definitions that act as schemas for creating database tables.
+Following is a simple example model definition:
+
+```bash
+import sqlalchemy as sa
+import sqlalchemy.orm as so
+from app import db
+
+class TempInfo(db.Model):
+    id: so.Mapped[int] = so.mapped_column(primary_key=True)
+    test: so.Mapped[str] = so.mapped_column(sa.String(32), index=True, unique=True)
+
+    def __repr__(self):
+        return '<TempInfo {}>'.format(self.test)
+```
+
+The project uses the `flask-migrate` Python package to handle database migrations.
+Migrations simplify the act of changing the database as new models and/or changes to the models are added.
+It ensures that the database does not need to be recreated each time a change is made.
+The `migrations/` directory located at the root directory contains the database migrations information, which is already present in the source tree.
+If needing to initialize a new database migrations repository, `flask db init` would be run.
+
+After creating a new database model, run the following after switching out `<message>` for an appropriate description of what has been changed:
+
+```bash
+flask db migrate -m "<message>"
+```
+
+This will create database migrations for the added models.
+To apply the changes to the database, run:
+
+```bash
+flask db upgrade
+```
+
+This will modify the `app.db` sqlite database file located in `app/`.
+You can also run `flask db downgrade`, to downgrade to a previous version of the database migrations.
+More info about migrations can be found [here](https://flask-migrate.readthedocs.io/en/latest/index.html)
+
+After having updated the database migrations and database, you can start creating tables from the models to the database.
+Adding to or changing the database can be done in different ways.
+It can be done through the site itself by using [web forms](#web-forms), or manually on the command line.
+To add data directly through the command line, first run `flask shell` to enter a Python shell.
+Then replace the example table model and data with the actual model and data in the following code and then paste it into the shell:
+
+```bash
+tableRow = TempInfo(test="testing")
+db.session.add(tableRow)
+db.session.commit()
+```
+
+To go through and query the rows in a table, run:
+
+```bash
+query = sa.select(TempInfo)
+tempInfo = db.session.scalars(query)
+for table in tempInfo:
+    print(table.id, table.test)
+```
+
+### Web Forms
+
+The file `forms.py` consists of classes that define forms for the website.
+The classes can then be used to populate forms inside HTML templates by sending forms through `routes.py`.
+Forms can be used to change database information through the site itself, and for instance create a login and sign up interface for the website.
 
 ### Static
 
@@ -192,10 +261,17 @@ The `static/` directory contains various subdirectories containing static files 
 `static/js/` contains the JavaScript files used for frontend scripting on the website.
 `static/images/` contains all the images which are used on the website.
 
-### Miscellaneous
+### Config
 
 `config.py` sets various configurations used by the Flask application.
 It defines the class `Config` which contains variables used by Flask.
+
+### Changing Shell Context
+
+Running `flask shell` starts a Python shell with various predefined objects sourced form the project.
+`florista.py` contains a definition of function `make_shell_context()` that contains a return statement for a Python dictionary containing key-value pairs to define objects that should be present in the shell.
+To add new objects to be present by default when running `flask shell`.
+For instance, the key-value pair `'db': db` will initialize `'db'` to return the object `db` in the shell.
 
 ---
 
@@ -234,42 +310,3 @@ If there is a need to create all images again (e.g., if new resolutions or image
 ```bash
 npm run resize
 ```
-
----
-
-## How to Change Information on the Website:
-
-Everything that follows must also be changed in the test files so that the information checked by the tests aligns with what should be checked.
-
-### Products
-The price of existing products is changed in the [data.yml](data/data/data.yml) file under the "Product Prices" comment.
-
-New products are added under the "Products" comment. Make sure to follow the same formatting as the existing products.
-
-Product images are also changed under the "Products" comment for each respective product.
-
-Product names are changed in the respective language file in the [språkfilsmappen](data/data-lang/) under the "Products section" comment. Here you can also edit the alt text for the images.
-
-### Company Information
-Company information, such as the company name, address, or contact details, is changed in [data.yml](data/data/data.yml) under the "Company Information" comment.
-
-For the map, there is a link in `companyMapSource` in [data.yml](data/data/data.yml) under the "Company Information" comment that also needs to be changed.
-
-### Opening Hours
-
-Opening hours are changed in the [data.yml](data/data/data.yml) file under the "Opening Hours" comment.
-
-### Closed Days
-Information about closed days is changed in the respective language file in the [language file directory](data/data-lang/) under the "Closed days" comment.
-
-### Delivery Zip Codes
-To change which zip codes are delivered to, modify the list `zipCodes` in [flowergram.js](public/js/flowergram.js).
-
-### Staff Information
-Staff information is changed in the respective language file in the [language file directory](data/data-lang/) under the "Employee information section" comment.
-
-### Deals of the Day
-To change the deals of the day, the object `dealsOfTheDay` in [deal-of-the-day.js](public/js/deal-of-the-day.js) should be modified. The object has 7 keys, one for each day where Sunday is day 0 and Saturday is day 6. The values of these keys are lists of objects where each object is a deal. Each deal has two keys and two values: `price` determines the new price and `id` determines the product ID. Change the values of these keys if existing deals need to be modified. To add new deals, create new objects that follow the same structure in the list corresponding to the day the deal should apply.
-
-### Information Message
-To change what is displayed in the information message, modify `outputTextField.innerHTML` in [dynamic-information.js](public/js/dynamic-information.js).
