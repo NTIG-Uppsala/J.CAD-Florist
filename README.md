@@ -30,28 +30,6 @@ Icons are taken from [icons8](https://icons8.com/) and [iconmonstr](https://icon
 
 ---
 
-## Configuration of GitHub Pages
-
-In this project, GitHub Pages is used as a staging area to easily present completed features to the customer. Pages are also used to easily test parts of the website on different devices.
-
-1. Log in to github.com.
-2. Open the J.CAD-FLORIST repository.
-3. Navigate to "Settings."
-4. Select the "Pages" tab under "Code and automation."
-5. Ensure that "Source" under "Build and deployment" is set to "Deploy from a branch."
-6. Under "Branch," select "live" and "/ (root)."
-7. Then click "Save."
-
----
-
-## Update GitHub Pages Site
-
-Github Pages is built from the `live` branch.
-All completed changes should be pushed to the `main` branch. 
-When a feature is fully finished, it should be merged or rebased into the `live` branch.
-
----
-
 ## Installing and Running Flask
 
 \(For a comprehensive guide to Flask, refer to [Miguel Grinberg's Flask Mega Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)\)
