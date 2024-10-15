@@ -1,3 +1,8 @@
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# Note: This file is not used in the current version of the application
+# It is kept for reference purposes only and to perserve code history
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 from app import db
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
