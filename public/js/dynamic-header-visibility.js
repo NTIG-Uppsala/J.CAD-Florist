@@ -27,8 +27,8 @@ const handleScroll = () => {
 
     // Only update header visibility if mouse is not interacting with the header
     if (!isMouseInsideHeader && !isMouseNearHeader && !hasInteractedWithHeader) {
-        // Do not hide the header if at the very top of the page
-        if (currentScrollPos === 0) {
+        // Always show header if the scroll position is within one header height from the top
+        if (currentScrollPos <= headerHeight) {
             header.style.top = "0"; // Always show the header at the top of the page
         } else if (prevScrollPos > currentScrollPos) {
             header.style.top = "0"; // Show header when scrolling up
@@ -41,6 +41,7 @@ const handleScroll = () => {
 
 // Handle mouse move event to show header when mouse is near the top of the page
 const handleMouseMove = throttle((event) => {
+    const currentScrollPos = window.scrollY;
     const isNearTop = event.clientY <= headerHeight;
 
     if (isNearTop && !hasInteractedWithHeader) {
@@ -48,7 +49,7 @@ const handleMouseMove = throttle((event) => {
         header.style.top = "0"; // Show header
     } else {
         isMouseNearHeader = false;
-        if (!isMouseInsideHeader && hasInteractedWithHeader && window.scrollY !== 0) {
+        if (!isMouseInsideHeader && hasInteractedWithHeader && currentScrollPos > headerHeight) {
             header.style.top = `-${headerHeight}px`; // Hide header only if not at the top of the page
         }
     }
@@ -63,9 +64,10 @@ const handleMouseEnter = () => {
 
 // Handle mouse leave event to hide header when mouse leaves the header
 const handleMouseLeave = () => {
+    const currentScrollPos = window.scrollY;
     isMouseInsideHeader = false;
     // Do not hide header if at the top of the page
-    if (!isMouseNearHeader && hasInteractedWithHeader && window.scrollY !== 0) {
+    if (!isMouseNearHeader && hasInteractedWithHeader && currentScrollPos > headerHeight) {
         header.style.top = `-${headerHeight}px`; // Hide header only if not at the top of the page
     }
     hasInteractedWithHeader = false;
