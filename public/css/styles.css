@@ -455,6 +455,9 @@ footer {
     text-align: center;
 }
 
+.footer-container a {
+    color: var(--link-color);
+}
 /* Creates a pseudo-element in footer-container-1 and footer-container-2. */
 /* The psuedo-element is positioned absolutely with a distance of 10% from the top and bottom as well as too the right to create a border. */
 #footer-container-1::after,
