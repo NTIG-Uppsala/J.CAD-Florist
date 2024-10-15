@@ -52,44 +52,6 @@ When a feature is fully finished, it should be merged or rebased into the `live`
 
 ---
 
-## Web Server
-
-### How to Access the Web Server
-
-The web server is used to publish features that the product owner has approved as fully complete so they can be used by the customer.
-
-1. Open a command prompt and type:
-```bash
-ssh root@<ip> -p <port>
-```
-2. Type `yes` if prompted.
-3. When prompted, enter the password.
-4. After having entered the server navigate to the correct directory:
-```bash
-cd /var/www/html
-```
-5. If the directory is empty:
-```bash
-git clone https://github.com/NTIG-Uppsala/J.CAD-Florist .
-```
-
----
-
-### How to Switch to a New Version
-
-While located at `/var/www/html`, run:
-
-```bash
-git fetch
-git checkout <your tag>
-```
-
-You can list all tags by typing:
-
-```bash
-git tag
-```
-
 ## Installing and Running Flask
 
 \(For a comprehensive guide to Flask, refer to [Miguel Grinberg's Flask Mega Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)\)
@@ -137,6 +99,9 @@ To start a development Flask server for the website, run:
 
 This will start the server on a specific port, which is then printed on the console.
 To change the port that the server runs on, edit the value of `FLASK_RUN_PORT` in the [.flaskenv](.flaskenv) file.
+
+`flask run` is useful to run a flask server during development.
+To deploy the flask application on a real web server, refer to [this section](#deploy-flask-on-a-server).
 
 ---
 
@@ -278,6 +243,113 @@ To add new objects to be present by default when running `flask shell`.
 For instance, the key-value pair `'db': db` will initialize `'db'` to return the object `db` in the shell.
 
 ---
+
+## Web Server
+
+### How to Access the Web Server
+
+The web server is used to publish features that the product owner has approved as fully complete so they can be used by the customer.
+
+1. Open a command prompt and type:
+```bash
+ssh root@<ip> -p <port>
+```
+2. Type `yes` if prompted.
+3. When prompted, enter the password.
+4. After having entered the server navigate to the correct directory:
+```bash
+cd /var/www/html
+```
+5. If the directory is empty:
+```bash
+git clone https://github.com/NTIG-Uppsala/J.CAD-Florist .
+```
+
+---
+
+### How to Switch to a New Version
+
+While located at `/var/www/html`, run:
+
+```bash
+git fetch
+git checkout <your tag>
+```
+
+You can list all tags by typing:
+
+```bash
+git tag
+```
+
+---
+
+### Deploy Flask On a Server
+
+`flask run` is useful as a server during development.
+However, for when deploying the Flask application on a real web server, a WSGI server should instead be used to deliver the Flask application.
+In this project, [gunicorn](https://gunicorn.org/) is used as a WSGI server.
+
+To deploy the Flask application on a server, first follow the above parts in the [Web Server](#web-server) section for a general guide on accessing and deploying the right version of the project.
+Once you have the project ready, make sure to follow the section on [installing and running flask](#installing-and-running-flask).
+
+Make sure you have nginx installed, and if not already present, add the following to `/etc/nginx/sites-available/default`:
+
+```
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    client_max_body_size 50M;
+
+    server_name _;
+
+    location / {
+        #forward application requests to the gunicorn server
+        proxy_pass http://localhost:8993
+        proxy_redirect off;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}
+```
+
+If not already present, add a systemd service file at `/etc/systemd/system/florista.service` containing the following:
+
+```
+[Unit]
+Description=Gunicorn instance to serve Florista
+After=network.target
+
+[Service]
+Group=www-data
+WorkingDirectory=/var/www/html
+Environment="PATH=/var/www/html/venv/bin"
+ExecStart=/var/www/html/venv/bin/gunicorn -w 4 -b :8993 florista:app
+
+[Install]
+WantedBy=multi-user.target
+```
+
+This configures the service to start a gunicorn process with 4 workers on port 8993 by sourcing florista.py in /var/www/html/ inside of the Python virtual environment.
+To start the gunicorn process, start the florista service by running the following:
+
+```bash
+systemctl start florista
+```
+
+You can stop the gunicorn process by running:
+
+```bash
+systemctl start florista
+```
+
+and query the status of the service with:
+
+```bash
+systemctl status florista
+```
 
 ## Website Content Tests
 
